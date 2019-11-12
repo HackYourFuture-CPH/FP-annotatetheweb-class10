@@ -59,8 +59,8 @@ Main repository for the final project for Class 10
 
 The Final Project runs on these dates:
 
-*Class Dates* - Classes are held on Hack Your Future
-Week01  - 24/11  
+### Class Dates - Classes are held on Hack Your Future    
+Week01  - 24/11      
 Week02  - 01/12  
 Week03  - 08/12  
 Week04  - 15/12  
@@ -71,7 +71,7 @@ Week06  -  12/01
 Week07  -  19/01   
 Week08  -  26/01 (graduation)    
 
-*Study groups dates* - Studygroups are held on CodeArt - Teknikerbyen 5, Virum    
+### Study groups dates - Studygroups are held on CodeArt - Teknikerbyen 5, Virum            
 5 sessions from 10:00 to 15:00.
 
 Week01 - 26/11     
