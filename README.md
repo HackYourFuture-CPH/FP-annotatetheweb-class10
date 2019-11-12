@@ -94,7 +94,11 @@ At least @Allan and/or @Kseniia will be there with you guys.
 This Final Project is made in collaboration with CodeArt.
 @Allan and @Kseniia work there and they will help us during this project.
 
-The goal of this project is to replicate this website https://www.annotatetheweb.com/
+The goal of this project is to replicate this website https://www.annotatetheweb.com/ following the mockups below:
+
+https://www.figma.com/proto/QYeFmfAU7XAaewnskogsxH/Class10-Final-Project-Mockups
+
+If you don't have access to the mockups, please write on #Class10 channel.
 
 #### 💼 Business Glossary
 
