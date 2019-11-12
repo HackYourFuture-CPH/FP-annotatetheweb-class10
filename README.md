@@ -153,7 +153,13 @@ If you need to make changes to the specification, this can be done via the
 ### <img width=20px height=20x src="/storybook.svg"  alt="Storybook logo"></a> Working with Storybook 
 Tool for developing UI components in isolation 
 
-Check here https://storybook.js.org/
+Here is how to get started with storybook:
+
+```
+npm run storybook
+```
+
+For more information, Check here https://storybook.js.org/
 
 ### <img width=30px height=30x src="/aws.svg"  alt="AWS S3 logo"></a><img width=30px height=30x src="/s3.png"  alt="AWS S3 logo"></a> Working with AWS - Amazon Services
 AWS is used for uploading files on a AWS S3 bucket. There is a user on the AWS that has `AmazonS3FullAccess`. There is not a AWS root key, but ONLY a key and a secret key for the AWS user. 
