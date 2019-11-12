@@ -71,8 +71,8 @@ Week06  -  12/01
 Week07  -  19/01   
 Week08  -  26/01 (graduation)    
 
-### Study groups dates - Studygroups are held on CodeArt - Teknikerbyen 5, Virum            
-5 sessions from 10:00 to 15:00.
+### Study groups dates - Studygroups are held on CodeArt            
+5 sessions from 10:00 to 15:00 at Teknikerbyen 5, Virum 
 
 Week01 - 26/11     
 Week02 - 10/12     
