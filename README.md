@@ -107,7 +107,7 @@ If you don't have access to the mockups, please write on #Class10 channel.
 
 #### 🗄️ Database Model Diagram
 
-*Add here the DB Model Diagram* - Use https://dbdiagram.io/
+Check here the DB Diagram https://dbdiagram.io/d/5dc962d4edf08a25543dc63b 
 
 - [How to make changes on the diagram](/diagram.md)
 
