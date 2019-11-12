@@ -4,7 +4,7 @@
  <img width=150px height=150px src="https://www.hackyourfuture.dk/static/logo-dark.svg" alt="Project logo"></a>
 </p>
 
-<h3 align="center">Boilerplate for Final projects
+<h3 align="center">Final Project for Class 10 - Annotate the Web
 </h3>
 
 
@@ -60,26 +60,26 @@ Main repository for the final project for Class 10
 The Final Project runs on these dates:
 
 *Class Dates* - Classes are held on Hack Your Future
-Week01  - 24/11
-Week02  - 01/12
-Week03  - 08/12
-Week04  - 15/12
-Holidays -  22/12
-Holidays -  29/12
-Week05 -  05/01
-Week06  -  12/01
-Week07  -  19/01
-Week08  -  26/01 (graduation)  
+Week01  - 24/11  
+Week02  - 01/12  
+Week03  - 08/12  
+Week04  - 15/12  
+Holidays -  22/12  
+Holidays -  29/12   
+Week05 -  05/01   
+Week06  -  12/01   
+Week07  -  19/01   
+Week08  -  26/01 (graduation)    
 
-*Study groups dates* - Studygroups are held on CodeArt - Teknikerbyen 5, Virum 
+*Study groups dates* - Studygroups are held on CodeArt - Teknikerbyen 5, Virum    
 5 sessions from 10:00 to 15:00.
 
-Week01 - 26/11 
-Week02 - 10/12 
-Week03 - 17/12 
-Week04 - 14/01  
-Week05 - 21/01 
-
+Week01 - 26/11     
+Week02 - 10/12     
+Week03 - 17/12      
+Week04 - 14/01      
+Week05 - 21/01     
+    
 At least @Allan and/or @Kseniia will be there with you guys.
 
 ## 🕛 Class Daily Agenda 🕓
