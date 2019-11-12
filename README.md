@@ -14,8 +14,6 @@
 ## 📝 Table of Contents
 
 - [About](#about)   
-        - [Setting up the boilerplate](/setting-up-instructions.md)   
-        - [Plan the project](/planning.md)
 - [Project's Calendar](#-projects-calendar)   
 - [Class Daily Agenda](#-class-daily-agenda-)   
 - [The Customer](#-the-customer)   
@@ -40,17 +38,8 @@
 
 ## 🧐 About <a name = "about"></a>
 
-This repository is a boilerplate and set-up instructions for the Final Project.
 
-To setup the boilerplate for a New Final project you MUST read this first [HERE](/setting-up-instructions.md)
-
-After the previous steps, you have new repository ready but you need plan the project, 
-check [HERE](/planning.md) before you go more down.
-
-🚨Delete the About Topic from you new repository README.MD file     
-🚨Delete the instructions files:    
-- [Setting up Instructions](/setting-up-instructions.md)     
-- [Planning](/planning.md)    
+Main repository for the final project for Class 10
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
@@ -68,14 +57,32 @@ check [HERE](/planning.md) before you go more down.
 
 ## 📅 Project's Calendar
 
-*Add the dates for the project and study groups*
-*Class Dates*   
-*Study groups dates*    
+The Final Project runs on these dates:
 
+*Class Dates* - Classes are held on Hack Your Future
+Week01  - 24/11
+Week02  - 01/12
+Week03  - 08/12
+Week04  - 15/12
+Holidays -  22/12
+Holidays -  29/12
+Week05 -  05/01
+Week06  -  12/01
+Week07  -  19/01
+Week08  -  26/01 (graduation)  
+
+*Study groups dates* - Studygroups are held on CodeArt - Teknikerbyen 5, Virum 
+5 sessions from 10:00 to 15:00.
+
+Week01 - 26/11 
+Week02 - 10/12 
+Week03 - 17/12 
+Week04 - 14/01  
+Week05 - 21/01 
+
+At least @Allan and/or @Kseniia will be there with you guys.
 
 ## 🕛 Class Daily Agenda 🕓
-
-*Add the Class schedule for the project*
 
 - 12:00 - 13:30 - ...   
 - 13:30 - 14:00 - ...   
@@ -84,7 +91,10 @@ check [HERE](/planning.md) before you go more down.
 
 ## 👩🏻‍💼💡👨🏽‍💼 The Customer 
 
-*Add here information about the customer/partner*
+This Final Project is made in collaboration with CodeArt.
+@Allan and @Kseniia work there and they will help us during this project.
+
+The goal of this project is to replicate this website https://www.annotatetheweb.com/
 
 #### 💼 Business Glossary
 
