@@ -53,6 +53,14 @@ cp .env.example .env
 - Open the `.env` file and update any parameters according to the environment
   you are running.
 
+##### Environment variables for Local DB
+
+Please make sure that you .env file matches your workbench connections settings. Check the images below.
+
+<img width=200px height=2000xenv_file_db_credentials.png"  alt="environment db credentials"></a>
+
+<img width=200px height=2000x src="/workbench_connection.png"  alt="workbench connection"></a>
+
 #### Database setup
 
 Working with sql we use a tool called knex which helps with writing queries and
