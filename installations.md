@@ -59,7 +59,7 @@ Please make sure that you .env file matches your workbench connections settings.
 
 <img width=200px height=150px src="/env_file_db_credentials.png"  alt="environment db credentials"></a>
 
-<img width=500px height=400px src="/workbench_connection.png"  alt="workbench connection"></a>
+<img width=525px height=400px src="/workbench_connection.png"  alt="workbench connection"></a>
 
 #### Database setup
 
