@@ -55,7 +55,7 @@ cp .env.example .env
 
 ##### Environment variables for Local DB
 
-Please make sure that you .env file matches your workbench connections settings. Be aware that this password it your own workbench password so it might not be root. Check the images below.
+Please make sure that you .env file matches your workbench connections settings. Be aware that this password it's your own workbench password, so it might not be root. Check the images below.
 
 <img width=200px height=150px src="/env_file_db_credentials.png"  alt="environment db credentials"></a>
 
