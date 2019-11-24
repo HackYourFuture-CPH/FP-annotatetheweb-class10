@@ -95,6 +95,7 @@ This Final Project is made in collaboration with CodeArt.
 @Allan and @Kseniia work there and they will help us during this project.
 
 The goal of this project is to replicate this website https://www.annotatetheweb.com/
+See the initial inspiration slidedeck about the background for the project: [HERE](CodeArt%20-%20HYF%20Final%20Project.pdf)
 
 #### 💼 Business Glossary
 
