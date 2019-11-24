@@ -172,6 +172,8 @@ The idea is that first you call RequestScreenshot with the url (and potentially 
 In return you get json with a unique key. You can now check using the CheckScreenshot service with the provided key. When the screenshot is ready you'll receive a url to the screenshot image, other you will receive json with an error indicating it's not ready yet.
 Be aware, that the screenshot service still has a few problems with some websites - especially those that load content dynamically based on javascript events (like hackyourfuture.dk) so don't expect perfect results from the start.
 
+#### Design
+UI Design can be found [HERE](https://www.figma.com/file/QYeFmfAU7XAaewnskogsxH/Class10-Final-Project-Mockups?node-id=0%3A1)
 
 ## 📜 [Getting the HackYourFuture certificate](/certificate.md)
 
