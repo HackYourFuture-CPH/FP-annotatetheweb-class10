@@ -165,7 +165,12 @@ REMEMBER, this key should be kept super secret!!! NEVER add this to any PR!!
 First clone the repo on your local machine using a terminal or a git client.
 
 #### 💾 [Installations](/installations.md)
-
+#### Screenshot service
+A webservice has been set up that can take screenshots of a given url. The screenshot will be placed in an Azure blob storage and you'll receive a url to it.
+See the swagger documentation: [HERE](https://api.annotatetheweb.com/swagger/).
+The idea is that first you call RequestScreenshot with the url (and potentially screen width to take a screenshot in).
+In return you get json with a unique key. You can now check using the CheckScreenshot service with the provided key. When the screenshot is ready you'll receive a url to the screenshot image, other you will receive json with an error indicating it's not ready yet.
+Be aware, that the screenshot service still has a few problems with some websites - especially those that load content dynamically based on javascript events (like hackyourfuture.dk) so don't expect perfect results from the start.
 
 
 ## 📜 [Getting the HackYourFuture certificate](/certificate.md)
