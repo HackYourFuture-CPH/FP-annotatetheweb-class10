@@ -12,8 +12,6 @@ router.get("/", (req, res, next) => {
   
   let { limit, offset, orderBy, order } = req.query;
 
-  console.log(typeof limit);
-
   usersController
     .getUsers(limit, offset, orderBy, order)
     .then(result => res.json(result))
