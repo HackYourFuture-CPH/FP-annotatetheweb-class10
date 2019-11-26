@@ -1,55 +1,53 @@
 body {
-    margin: 0;
-    /* I set height in order to show that it is fixed */
-    height: 120vh;
+  margin: 0;
+  /* I set height in order to show that it is fixed */
+  height: 120vh;
 }
 
 .icon-image {
-    width: 1.5rem;
+  width: 1.5rem;
 }
 
 .wrapper-desktop {
-    display: flex;
-    justify-content: center;
-    left: 0;
-    width: 3.1rem;
-    /* Height should be set equal to the body hight */
-    height: 120vh;
-    background-color: rgba(83, 82, 82, 0.849);
+  display: flex;
+  justify-content: center;
+  left: 0;
+  width: 3.1rem;
+  /* Height should be set equal to the body hight */
+  height: 120vh;
+  background-color: rgba(83, 82, 82, 0.849);
 }
 
 /* Change black colour of png icons to white */
 .invert-color {
-    -webkit-filter: invert(98%);
+  -webkit-filter: invert(98%);
 }
 
 /* Inactive icons are less white */
 .inactive {
-    -webkit-filter: invert(40%);
-    pointer-events: none;
+  -webkit-filter: invert(40%);
+  pointer-events: none;
 }
 
 button {
-    background: none;
-    color: inherit;
-    border: none;
-    cursor: pointer;
-    outline: inherit;
-    display: block;
-    padding: 1rem;
+  background: none;
+  color: inherit;
+  border: none;
+  cursor: pointer;
+  outline: inherit;
+  display: block;
+  padding: 1rem;
 }
 
 .side-menu-desktop {
-    top: 20%;
-    position: fixed;
-   
+  top: 20%;
+  position: fixed;
 }
 
 .icon-width {
-    font-size: 1.3rem;
+  font-size: 1.3rem;
 }
 
 .light:hover {
-    color: rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
 }
-

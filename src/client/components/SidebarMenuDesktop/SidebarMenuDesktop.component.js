@@ -17,32 +17,20 @@ const SidebarMenuDesktop = () => {
         <button className="icon-width light">
           <FontAwesomeIcon icon={faSearch} className="invert-color" />
         </button>
-        <button className="icon-width light inactive" >
-          <FontAwesomeIcon icon={faCopy}  className="invert-color " />
+        <button className="icon-width light inactive">
+          <FontAwesomeIcon icon={faCopy} className="invert-color " />
         </button>
         <button className="icon-width inactive light">
-          <FontAwesomeIcon
-            icon={faEnvelope}
-            
-            className="invert-color "
-          />
+          <FontAwesomeIcon icon={faEnvelope} className="invert-color " />
         </button>
         <button className="icon-width light">
-          <FontAwesomeIcon
-            icon={faCommentAlt}
-            
-            className="invert-color"
-          />
+          <FontAwesomeIcon icon={faCommentAlt} className="invert-color" />
         </button>
         <button className="icon-width light">
-          <FontAwesomeIcon
-            icon={faShareAlt}
-            
-            className="invert-color"
-          />
+          <FontAwesomeIcon icon={faShareAlt} className="invert-color" />
         </button>
         <button className="icon-width light inactive">
-          <FontAwesomeIcon icon={faCog}  className="invert-color" />
+          <FontAwesomeIcon icon={faCog} className="invert-color" />
         </button>
 
       </div>

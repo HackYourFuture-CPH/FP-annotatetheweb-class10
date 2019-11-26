@@ -1,38 +1,37 @@
 body {
-    margin: 0;
-    height: 120vh;
+  margin: 0;
+  height: 120vh;
 }
 
 .icon-image {
-    width: 1.5rem;
+  width: 1.5rem;
 }
 
 .wrapper {
-    bottom: 0;
-    position: fixed;
-    width: 100%;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
 }
 
-/* Mobile first version */
 /* Change black colour of png icons to white */
 .invert-color {
-    -webkit-filter: invert(98%);
+  -webkit-filter: invert(98%);
 }
 
 /* Inactive icons are less white */
 .inactive {
-    -webkit-filter: invert(40%);
-    pointer-events: none;
+  -webkit-filter: invert(40%);
+  pointer-events: none;
 }
 
 button {
-    background: none;
-    color: inherit;
-    border: none;
-    cursor: pointer;
-    outline: inherit;
-    display: block;
-    padding: 1rem;
+  background: none;
+  color: inherit;
+  border: none;
+  cursor: pointer;
+  outline: inherit;
+  display: block;
+  padding: 1rem;
 }
 
 /* button:hover {
@@ -40,9 +39,7 @@ button {
 } */
 
 .side-menu {
-    background-color: rgba(83, 82, 82, 0.849);
-    display: flex;
-    justify-content: space-between;
+  background-color: rgba(83, 82, 82, 0.849);
+  display: flex;
+  justify-content: space-between;
 }
-
-
