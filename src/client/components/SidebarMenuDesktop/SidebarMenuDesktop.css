@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    /* I set height in order to show that it is fixed */
     height: 120vh;
 }
 
@@ -7,13 +8,16 @@ body {
     width: 1.5rem;
 }
 
-.wrapper {
-    bottom: 0;
-    position: fixed;
-    width: 100%;
+.wrapper-desktop {
+    display: flex;
+    justify-content: center;
+    left: 0;
+    width: 10%;
+    /* Height should be set equal to the body hight */
+    height: 120vh;
+    background-color: rgba(83, 82, 82, 0.849);
 }
 
-/* Mobile first version */
 /* Change black colour of png icons to white */
 .invert-color {
     -webkit-filter: invert(98%);
@@ -39,10 +43,9 @@ button:hover {
     background-color: rgb(71, 71, 71);
 }
 
-.side-menu {
-    background-color: rgba(83, 82, 82, 0.849);
-    display: flex;
-    justify-content: space-between;
+.side-menu-desktop {
+    top: 20%;
+    position: fixed;
 }
 
 
