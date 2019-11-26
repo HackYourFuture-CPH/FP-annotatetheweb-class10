@@ -169,8 +169,9 @@ First clone the repo on your local machine using a terminal or a git client.
 A webservice has been set up that can take screenshots of a given url. The screenshot will be placed in an Azure blob storage and you'll receive a url to it.
 See the swagger documentation: [HERE](https://api.annotatetheweb.com/swagger/).
 The idea is that first you call RequestScreenshot with the url (and potentially screen width to take a screenshot in).
-In return you get json with a unique key. You can now check using the CheckScreenshot service with the provided key. When the screenshot is ready you'll receive a url to the screenshot image, other you will receive json with an error indicating it's not ready yet.
+In return you get json with a unique key. You can now check using the CheckScreenshot service with the provided key. When the screenshot is ready you'll receive a url to the screenshot image, otherwise you will receive json with an error indicating it's not ready yet.
 Be aware, that the screenshot service still has a few problems with some websites - especially those that load content dynamically based on javascript events (like hackyourfuture.dk) so don't expect perfect results from the start.
+There is also a method for future use, that will take raw html to render and get a screenshot from that.
 
 #### Design
 UI Design can be found [HERE](https://www.figma.com/file/QYeFmfAU7XAaewnskogsxH/Class10-Final-Project-Mockups?node-id=0%3A1)
