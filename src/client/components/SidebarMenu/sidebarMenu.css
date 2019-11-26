@@ -1,15 +1,29 @@
+body {
+    margin: 0;
+    height: 120vh;
+}
+
+
 .icon-image {
     width: 1.5rem;
 }
+
+.wrapper {
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+}
+
 /* Mobile first version */
 /* Change black colour of png icons to white */
-img {
-    -webkit-filter: invert(100%);
+.invert-color {
+    -webkit-filter: invert(98%);
 }
 
 /* Inactive icons are less white */
 .inactive {
-    -webkit-filter: invert(70%);
+    -webkit-filter: invert(40%);
+    pointer-events: none;
 }
 
 button {
@@ -22,15 +36,14 @@ button {
     padding: 1rem;
 }
 
+button:hover {
+    background-color: rgb(71, 71, 71);
+}
+
 .side-menu {
     background-color: rgba(83, 82, 82, 0.849);
-    width: 100%;
     display: flex;
     justify-content: space-between;
 }
 
-/* Hover */
 
-.active:hover {
-    background-color: rgba(78, 77, 77, 0.835);
-}
