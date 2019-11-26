@@ -14,35 +14,35 @@ const SidebarMenuDesktop = () => {
   return (
     <div className="wrapper-desktop">
       <div className="side-menu-desktop">
-        <button>
-          <FontAwesomeIcon icon={faSearch} size="lg" className="invert-color" />
+        <button className="icon-width light">
+          <FontAwesomeIcon icon={faSearch} className="invert-color" />
         </button>
-        <button className="inactive">
-          <FontAwesomeIcon icon={faCopy} size="lg" className="invert-color " />
+        <button className="icon-width light inactive" >
+          <FontAwesomeIcon icon={faCopy}  className="invert-color " />
         </button>
-        <button className="inactive">
+        <button className="icon-width inactive light">
           <FontAwesomeIcon
             icon={faEnvelope}
-            size="lg"
+            
             className="invert-color "
           />
         </button>
-        <button>
+        <button className="icon-width light">
           <FontAwesomeIcon
             icon={faCommentAlt}
-            size="lg"
+            
             className="invert-color"
           />
         </button>
-        <button>
+        <button className="icon-width light">
           <FontAwesomeIcon
             icon={faShareAlt}
-            size="lg"
+            
             className="invert-color"
           />
         </button>
-        <button className="inactive">
-          <FontAwesomeIcon icon={faCog} size="lg" className="invert-color" />
+        <button className="icon-width light inactive">
+          <FontAwesomeIcon icon={faCog}  className="invert-color" />
         </button>
 
       </div>

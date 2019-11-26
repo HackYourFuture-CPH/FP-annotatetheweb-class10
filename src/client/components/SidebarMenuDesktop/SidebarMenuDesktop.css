@@ -12,7 +12,7 @@ body {
     display: flex;
     justify-content: center;
     left: 0;
-    width: 10%;
+    width: 3.1rem;
     /* Height should be set equal to the body hight */
     height: 120vh;
     background-color: rgba(83, 82, 82, 0.849);
@@ -39,13 +39,17 @@ button {
     padding: 1rem;
 }
 
-button:hover {
-    background-color: rgb(71, 71, 71);
-}
-
 .side-menu-desktop {
     top: 20%;
     position: fixed;
+   
 }
 
+.icon-width {
+    font-size: 1.3rem;
+}
+
+.light:hover {
+    color: rgb(255, 255, 255);
+}
 

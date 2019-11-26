@@ -35,9 +35,9 @@ button {
     padding: 1rem;
 }
 
-button:hover {
+/* button:hover {
     background-color: rgb(71, 71, 71);
-}
+} */
 
 .side-menu {
     background-color: rgba(83, 82, 82, 0.849);
