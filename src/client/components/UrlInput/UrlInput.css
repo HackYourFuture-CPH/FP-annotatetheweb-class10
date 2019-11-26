@@ -1,0 +1,13 @@
+@import "../../App.css";
+
+.url-input{
+    border-radius: 40px;
+    border: unset;
+    width: 100%;
+    max-width: 500px; 
+    height: 65px;
+    background-color: #CDE769;
+    font-family: 'Open Sans';
+    font-size: 25px;
+    padding: 0 40px;
+}
