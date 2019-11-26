@@ -1,3 +1,36 @@
 .icon-image {
-    width: 1rem;
+    width: 1.5rem;
+}
+/* Mobile first version */
+/* Change black colour of png icons to white */
+img {
+    -webkit-filter: invert(100%);
+}
+
+/* Inactive icons are less white */
+.inactive {
+    -webkit-filter: invert(70%);
+}
+
+button {
+    background: none;
+    color: inherit;
+    border: none;
+    cursor: pointer;
+    outline: inherit;
+    display: block;
+    padding: 1rem;
+}
+
+.side-menu {
+    background-color: rgba(83, 82, 82, 0.849);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Hover */
+
+.active:hover {
+    background-color: rgba(78, 77, 77, 0.835);
 }

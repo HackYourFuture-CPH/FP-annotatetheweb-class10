@@ -2,10 +2,10 @@ import React from 'react';
 import './sidebarMenu.css';
 
 const Icon = (iconData) => {
-    console.log(iconData.iconAlt)
+    console.log(iconData)
   return (
     <button>
-      <img class="icon-image" src={iconData.iconSrc} alt={iconData.iconAlt} />
+      <img  src={iconData.iconSrc} alt={iconData.iconAlt} className={iconData.imgClass}/>
     </button>
   );
 };

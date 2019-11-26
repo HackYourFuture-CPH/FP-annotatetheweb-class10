@@ -1,4 +1,5 @@
 import React from 'react';
+import './sidebarMenu.css';
 import Icon from './Icon';
 import searchIcon from './icons/search.png';
 import projectIcon from './icons/project.png';
@@ -10,12 +11,12 @@ import settingsIcon from './icons/settings.png';
 const SidebarMenu = () => {
     return (
         <div className="side-menu">
-            <Icon iconSrc={searchIcon} iconAlt="search" /> 
-            <Icon iconSrc={projectIcon} iconAlt="project" /> 
-            <Icon iconSrc={emailIcon} iconAlt="email" /> 
-            <Icon iconSrc={commentsIcon} iconAlt="comments" /> 
-            <Icon iconSrc={shareIcon} iconAlt="share" /> 
-            <Icon iconSrc={settingsIcon} iconAlt="settings" /> 
+            <Icon iconSrc={searchIcon} iconAlt="search" imgClass="icon-image active"/> 
+            <Icon iconSrc={projectIcon} iconAlt="project" imgClass="icon-image inactive" /> 
+            <Icon iconSrc={emailIcon} iconAlt="email" imgClass="icon-image inactive"/> 
+            <Icon iconSrc={commentsIcon} iconAlt="comments" imgClass="icon-image active" /> 
+            <Icon iconSrc={shareIcon} iconAlt="share" imgClass="icon-image active"/> 
+            <Icon iconSrc={settingsIcon} iconAlt="settings" imgClass="icon-image inactive" /> 
         </div>
     )
 }
