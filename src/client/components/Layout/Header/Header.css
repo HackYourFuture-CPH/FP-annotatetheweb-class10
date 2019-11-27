@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Pacifico&display=swap");
+
+.header {
+  position: absolute;
+  width: 1767px;
+  height: 105px;
+  left: 77px;
+  top: 50px;
+}
+
+.logo {
+  position: absolute;
+  width: 440px;
+  height: 105px;
+  left: 77px;
+  top: 50px;
+
+  font-family: Pacifico;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 60px;
+  line-height: 105px;
+
+  color: #2d2e36;
+
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.navigation {
+  position: absolute;
+  width: 587px;
+  height: 80px;
+  left: 1257px;
+  top: 62px;
+}
+
+.RegisterBtn {
+  position: absolute;
+  width: 215px;
+  height: 80px;
+  left: 1629px;
+  top: 62px;
+
+  background: #ffffff;
+  border: 3px solid #2d2e36;
+  box-sizing: border-box;
+  border-radius: 50px;
+}
+
+.btn-list {
+  position: absolute;
+  left: 1257px;
+}
+.btn {
+  width: 120px;
+  height: 29px;
+  top: 81px;
+
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 34px;
+
+  color: #2d2e36;
+}
