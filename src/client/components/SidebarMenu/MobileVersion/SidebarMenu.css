@@ -1,16 +1,12 @@
 body {
   margin: 0;
-  height: 120vh;
-}
-
-.icon-image {
-  width: 1.5rem;
 }
 
 .wrapper {
   bottom: 0;
   position: fixed;
-  width: 100%;
+  width: 100vw;
+  background-color: rgba(83, 82, 82, 0.849);
 }
 
 /* Change black colour of png icons to white */
@@ -34,12 +30,12 @@ button {
   padding: 1rem;
 }
 
-/* button:hover {
-    background-color: rgb(71, 71, 71);
-} */
+button:hover {
+  background-color: rgb(71, 71, 71);
+}
 
 .side-menu {
-  background-color: rgba(83, 82, 82, 0.849);
   display: flex;
   justify-content: space-between;
+  width: 100%;
 }

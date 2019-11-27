@@ -1,11 +1,5 @@
 body {
   margin: 0;
-  /* I set height in order to show that it is fixed */
-  height: 120vh;
-}
-
-.icon-image {
-  width: 1.5rem;
 }
 
 .wrapper-desktop {
@@ -13,9 +7,9 @@ body {
   justify-content: center;
   left: 0;
   width: 3.1rem;
-  /* Height should be set equal to the body hight */
-  height: 120vh;
+  height: 100vh;
   background-color: rgba(83, 82, 82, 0.849);
+  position: fixed;
 }
 
 /* Change black colour of png icons to white */
@@ -36,7 +30,8 @@ button {
   cursor: pointer;
   outline: inherit;
   display: block;
-  padding: 1rem;
+  padding: 1rem 0.7rem;
+  overflow: hidden;
 }
 
 .side-menu-desktop {
@@ -44,7 +39,7 @@ button {
   position: fixed;
 }
 
-.icon-width {
+.icon-width-desktop {
   font-size: 1.3rem;
 }
 

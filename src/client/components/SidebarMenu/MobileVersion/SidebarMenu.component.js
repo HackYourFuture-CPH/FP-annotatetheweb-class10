@@ -14,35 +14,53 @@ const SidebarMenu = () => {
   return (
     <div className="wrapper">
       <div className="side-menu">
-        <button>
-          <FontAwesomeIcon icon={faSearch} size="lg" className="invert-color" />
+        <button className="light">
+          <FontAwesomeIcon
+            icon={faSearch}
+            size="lg"
+            className="invert-color"
+            fixedWidth
+          />
         </button>
-        <button className="inactive">
-          <FontAwesomeIcon icon={faCopy} size="lg" className="invert-color " />
+        <button className="light inactive">
+          <FontAwesomeIcon
+            icon={faCopy}
+            size="lg"
+            className="invert-color"
+            fixedWidth
+          />
         </button>
-        <button className="inactive">
+        <button className="light inactive">
           <FontAwesomeIcon
             icon={faEnvelope}
             size="lg"
             className="invert-color "
+            fixedWidth
           />
         </button>
-        <button>
+        <button className="light">
           <FontAwesomeIcon
             icon={faCommentAlt}
             size="lg"
             className="invert-color"
+            fixedWidth
           />
         </button>
-        <button>
+        <button className="light">
           <FontAwesomeIcon
             icon={faShareAlt}
             size="lg"
             className="invert-color"
+            fixedWidth
           />
         </button>
-        <button className="inactive">
-          <FontAwesomeIcon icon={faCog} size="lg" className="invert-color" />
+        <button className="light inactive">
+          <FontAwesomeIcon
+            icon={faCog}
+            size="lg"
+            className="invert-color"
+            fixedWidth
+          />
         </button>
 
       </div>
