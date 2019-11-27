@@ -1,8 +1,4 @@
-body {
-  margin: 0;
-}
-
-.wrapper-desktop {
+.sidebar-menu-wrapper-desktop {
   display: flex;
   justify-content: center;
   left: 0;
@@ -12,18 +8,7 @@ body {
   position: fixed;
 }
 
-/* Change black colour of png icons to white */
-.invert-color {
-  -webkit-filter: invert(98%);
-}
-
-/* Inactive icons are less white */
-.inactive {
-  -webkit-filter: invert(40%);
-  pointer-events: none;
-}
-
-button {
+.sidebar-menu-button-desktop {
   background: none;
   color: inherit;
   border: none;
@@ -34,15 +19,15 @@ button {
   overflow: hidden;
 }
 
-.side-menu-desktop {
+.sidebar-menu-button-desktop:hover {
+  background-color: rgb(71, 71, 71);
+}
+
+.sidebar-menu-desktop {
   top: 20%;
   position: fixed;
 }
 
-.icon-width-desktop {
+.sidebar-menu-icon-width-desktop {
   font-size: 1.3rem;
-}
-
-.light:hover {
-  color: rgb(255, 255, 255);
 }

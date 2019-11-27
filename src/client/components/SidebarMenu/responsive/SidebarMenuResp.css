@@ -1,8 +1,4 @@
-body {
-  margin: 0;
-}
-
-.wrapper-resp {
+.sidebar-menu-wrapper-resp {
   bottom: 0;
   position: fixed;
   width: 100vw;
@@ -10,17 +6,17 @@ body {
 }
 
 /* Change black colour of png icons to white */
-.invert-color {
+.sidebar-menu-invert-color {
   -webkit-filter: invert(98%);
 }
 
 /* Inactive icons are less white */
-.inactive {
+.sidebar-menu-inactive {
   -webkit-filter: invert(40%);
   pointer-events: none;
 }
 
-button {
+.sidebar-menu-button-resp {
   background: none;
   color: inherit;
   border: none;
@@ -30,18 +26,22 @@ button {
   padding: 1rem;
 }
 
-button:hover {
+.sidebar-menu-button-resp:hover {
   background-color: rgb(71, 71, 71);
 }
 
-.side-menu-resp {
+.sidebar-menu-resp {
   display: flex;
   justify-content: space-between;
   width: 100%;
 }
 
+.black:hover {
+  color: rgb(255, 255, 255);
+}
+
 @media (min-width: 566px) {
-  .wrapper-resp {
+  .sidebar-menu-wrapper-resp {
     justify-content: center;
     left: 0;
     width: 3.1rem;
@@ -50,17 +50,17 @@ button:hover {
     position: fixed;
   }
 
-  .side-menu-resp {
+  .sidebar-menu-resp {
     display: block;
     top: 20%;
     position: fixed;
   }
 
-  .icon-width-resp {
+  .sidebar-menu-icon-width-resp {
     font-size: 1rem;
   }
 
-  button {
+  .sidebar-menu-button-resp {
     padding: 1rem 0.7rem;
   }
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import './SidebarMenu.css';
+import './SidebarMenuMobile.css';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {
   faSearch,
@@ -12,53 +12,53 @@ import {
 
 const SidebarMenu = () => {
   return (
-    <div className="wrapper">
-      <div className="side-menu">
-        <button className="light">
+    <div className="sidebar-menu-wrapper-mobile">
+      <div className="sidebar-menu-mobile">
+        <button className="sidebar-menu-button-mobile black">
           <FontAwesomeIcon
             icon={faSearch}
             size="lg"
-            className="invert-color"
+            className="sidebar-menu-invert-color"
             fixedWidth
           />
         </button>
-        <button className="light inactive">
+        <button className="sidebar-menu-button-mobile black sidebar-menu-inactive">
           <FontAwesomeIcon
             icon={faCopy}
             size="lg"
-            className="invert-color"
+            className="sidebar-menu-invert-color"
             fixedWidth
           />
         </button>
-        <button className="light inactive">
+        <button className="sidebar-menu-button-mobile black sidebar-menu-inactive">
           <FontAwesomeIcon
             icon={faEnvelope}
             size="lg"
-            className="invert-color "
+            className="sidebar-menu-invert-color "
             fixedWidth
           />
         </button>
-        <button className="light">
+        <button className="sidebar-menu-button-mobile black">
           <FontAwesomeIcon
             icon={faCommentAlt}
             size="lg"
-            className="invert-color"
+            className="sidebar-menu-invert-color"
             fixedWidth
           />
         </button>
-        <button className="light">
+        <button className="sidebar-menu-button-mobile black">
           <FontAwesomeIcon
             icon={faShareAlt}
             size="lg"
-            className="invert-color"
+            className="sidebar-menu-invert-color"
             fixedWidth
           />
         </button>
-        <button className="light inactive">
+        <button className="sidebar-menu-button-mobile black sidebar-menu-inactive">
           <FontAwesomeIcon
             icon={faCog}
             size="lg"
-            className="invert-color"
+            className="sidebar-menu-invert-color"
             fixedWidth
           />
         </button>

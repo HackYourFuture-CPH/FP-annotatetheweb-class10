@@ -1,26 +1,11 @@
-body {
-  margin: 0;
-}
-
-.wrapper {
+.sidebar-menu-wrapper-mobile {
   bottom: 0;
   position: fixed;
   width: 100vw;
   background-color: rgba(83, 82, 82, 0.849);
 }
 
-/* Change black colour of png icons to white */
-.invert-color {
-  -webkit-filter: invert(98%);
-}
-
-/* Inactive icons are less white */
-.inactive {
-  -webkit-filter: invert(40%);
-  pointer-events: none;
-}
-
-button {
+.sidebar-menu-button-mobile {
   background: none;
   color: inherit;
   border: none;
@@ -30,11 +15,11 @@ button {
   padding: 1rem;
 }
 
-button:hover {
+.sidebar-menu-button-mobile:hover {
   background-color: rgb(71, 71, 71);
 }
 
-.side-menu {
+.sidebar-menu-mobile {
   display: flex;
   justify-content: space-between;
   width: 100%;

@@ -12,41 +12,49 @@ import {
 
 const SidebarMenuDesktop = () => {
   return (
-    <div className="wrapper-desktop">
-      <div className="side-menu-desktop">
-        <button className="icon-width-desktop light">
+    <div className="sidebar-menu-wrapper-desktop">
+      <div className="sidebar-menu-desktop">
+        <button className="sidebar-menu-button-desktop sidebar-menu-icon-width-desktop black">
           <FontAwesomeIcon
             icon={faSearch}
-            className="invert-color"
+            className="sidebar-menu-invert-color"
             fixedWidth
           />
         </button>
-        <button className="icon-width-desktop light inactive">
-          <FontAwesomeIcon icon={faCopy} fixedWidth className="invert-color " />
+        <button className="sidebar-menu-button-desktop sidebar-menu-icon-width-desktop black sidebar-menu-inactive">
+          <FontAwesomeIcon
+            icon={faCopy}
+            fixedWidth
+            className="sidebar-menu-invert-color "
+          />
         </button>
-        <button className="icon-width-desktop inactive light">
+        <button className="sidebar-menu-button-desktop sidebar-menu-icon-width-desktop sidebar-menu-inactive black">
           <FontAwesomeIcon
             icon={faEnvelope}
-            className="invert-color"
+            className="sidebar-menu-invert-color"
             fixedWidth
           />
         </button>
-        <button className="icon-width-desktop light">
+        <button className="sidebar-menu-button-desktop sidebar-menu-icon-width-desktop black">
           <FontAwesomeIcon
             icon={faCommentAlt}
-            className="invert-color"
+            className="sidebar-menu-invert-color"
             fixedWidth
           />
         </button>
-        <button className="icon-width-desktop light">
+        <button className="sidebar-menu-button-desktop sidebar-menu-icon-width-desktop black">
           <FontAwesomeIcon
             icon={faShareAlt}
-            className="invert-color"
+            className="sidebar-menu-invert-color"
             fixedWidth
           />
         </button>
-        <button className="icon-width-desktop light inactive">
-          <FontAwesomeIcon icon={faCog} className="invert-color" fixedWidth />
+        <button className="sidebar-menu-button-desktop sidebar-menu-icon-width-desktop black sidebar-menu-inactive">
+          <FontAwesomeIcon
+            icon={faCog}
+            className="sidebar-menu-invert-color"
+            fixedWidth
+          />
         </button>
 
       </div>
