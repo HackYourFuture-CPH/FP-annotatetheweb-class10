@@ -1,67 +1,66 @@
 body {
-    margin: 0;
-  }
-  
+  margin: 0;
+}
+
+.wrapper-resp {
+  bottom: 0;
+  position: fixed;
+  width: 100vw;
+  background-color: rgba(83, 82, 82, 0.849);
+}
+
+/* Change black colour of png icons to white */
+.invert-color {
+  -webkit-filter: invert(98%);
+}
+
+/* Inactive icons are less white */
+.inactive {
+  -webkit-filter: invert(40%);
+  pointer-events: none;
+}
+
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  cursor: pointer;
+  outline: inherit;
+  display: block;
+  padding: 1rem;
+}
+
+button:hover {
+  background-color: rgb(71, 71, 71);
+}
+
+.side-menu-resp {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+@media (min-width: 566px) {
   .wrapper-resp {
-    bottom: 0;
-    position: fixed;
-    width: 100vw;
+    justify-content: center;
+    left: 0;
+    width: 3.1rem;
+    height: 100vh;
     background-color: rgba(83, 82, 82, 0.849);
+    position: fixed;
   }
-  
-  /* Change black colour of png icons to white */
-  .invert-color {
-    -webkit-filter: invert(98%);
-  }
-  
-  /* Inactive icons are less white */
-  .inactive {
-    -webkit-filter: invert(40%);
-    pointer-events: none;
-  }
-  
-  button {
-    background: none;
-    color: inherit;
-    border: none;
-    cursor: pointer;
-    outline: inherit;
-    display: block;
-    padding: 1rem;
-  }
-  
-  button:hover {
-    background-color: rgb(71, 71, 71);
-  }
-  
+
   .side-menu-resp {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+    display: block;
+    top: 20%;
+    position: fixed;
   }
-  
 
-  @media (min-width: 566px) { 
-      .wrapper-resp {
-        justify-content: center;
-        left: 0;
-        width: 3.1rem;
-        height: 100vh;
-        background-color: rgba(83, 82, 82, 0.849);
-        position: fixed;
-      }
-
-      .side-menu-resp {
-        display: block;
-        top: 20%;
-        position: fixed;
-      }
-
-      .icon-width-resp {
-        font-size: 1rem;
-      }
-
-      button {
-          padding: 1rem 0.7rem;
-      }
+  .icon-width-resp {
+    font-size: 1rem;
   }
+
+  button {
+    padding: 1rem 0.7rem;
+  }
+}

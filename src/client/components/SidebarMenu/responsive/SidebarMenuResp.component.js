@@ -11,61 +11,61 @@ import {
 import './SidebarMenuResp.css';
 
 const SidebarMenuResp = () => {
-    return (
-        <div className="wrapper-resp">
-          <div className="side-menu-resp">
-            <button className="icon-width-resp light">
-              <FontAwesomeIcon
-                icon={faSearch}
-                size="lg"
-                className="invert-color"
-                fixedWidth
-              />
-            </button>
-            <button className="icon-width-resp light inactive">
-              <FontAwesomeIcon
-                icon={faCopy}
-                size="lg"
-                className="invert-color"
-                fixedWidth
-              />
-            </button>
-            <button className="icon-width-resp light inactive">
-              <FontAwesomeIcon
-                icon={faEnvelope}
-                size="lg"
-                className="invert-color "
-                fixedWidth
-              />
-            </button>
-            <button className="icon-width-resp light">
-              <FontAwesomeIcon
-                icon={faCommentAlt}
-                size="lg"
-                className="invert-color"
-                fixedWidth
-              />
-            </button>
-            <button className="icon-width-resp light">
-              <FontAwesomeIcon
-                icon={faShareAlt}
-                size="lg"
-                className="invert-color"
-                fixedWidth
-              />
-            </button>
-            <button className="icon-width-resp light inactive">
-              <FontAwesomeIcon
-                icon={faCog}
-                size="lg"
-                className="invert-color"
-                fixedWidth
-              />
-            </button>
-    
-          </div>
-        </div>
-      );
-}
+  return (
+    <div className="wrapper-resp">
+      <div className="side-menu-resp">
+        <button className="icon-width-resp light">
+          <FontAwesomeIcon
+            icon={faSearch}
+            size="lg"
+            className="invert-color"
+            fixedWidth
+          />
+        </button>
+        <button className="icon-width-resp light inactive">
+          <FontAwesomeIcon
+            icon={faCopy}
+            size="lg"
+            className="invert-color"
+            fixedWidth
+          />
+        </button>
+        <button className="icon-width-resp light inactive">
+          <FontAwesomeIcon
+            icon={faEnvelope}
+            size="lg"
+            className="invert-color "
+            fixedWidth
+          />
+        </button>
+        <button className="icon-width-resp light">
+          <FontAwesomeIcon
+            icon={faCommentAlt}
+            size="lg"
+            className="invert-color"
+            fixedWidth
+          />
+        </button>
+        <button className="icon-width-resp light">
+          <FontAwesomeIcon
+            icon={faShareAlt}
+            size="lg"
+            className="invert-color"
+            fixedWidth
+          />
+        </button>
+        <button className="icon-width-resp light inactive">
+          <FontAwesomeIcon
+            icon={faCog}
+            size="lg"
+            className="invert-color"
+            fixedWidth
+          />
+        </button>
+
+      </div>
+    </div>
+  );
+};
 
 export default SidebarMenuResp;
