@@ -36,31 +36,96 @@
 
 .RegisterBtn {
   position: absolute;
+width: 215px;
+height: 80px;
+left: 1629px;
+top: 62px;
+
+}
+.RegisterText {
+  position: absolute;
+width: 110px;
+height: 29px;
+left: 1690px;
+top: 84px;
+
+font-family: Open Sans;
+font-style: normal;
+font-weight: bold;
+font-size: 25px;
+line-height: 34px;
+
+color: #2D2E36;
+
+
+}
+.Rectangle11{
+  position: absolute;
   width: 215px;
   height: 80px;
   left: 1629px;
   top: 62px;
-
-  background: #ffffff;
-  border: 3px solid #2d2e36;
+  
+  background: #FFFFFF;
+  border: 3px solid #2D2E36;
   box-sizing: border-box;
   border-radius: 50px;
 }
-
-.btn-list {
+.Anot{
   position: absolute;
-  left: 1257px;
-}
-.btn {
   width: 120px;
   height: 29px;
+  left: 1257px;
   top: 81px;
-
+  
   font-family: Open Sans;
   font-style: normal;
   font-weight: bold;
   font-size: 25px;
   line-height: 34px;
+  
+  color: #2D2E36;
 
-  color: #2d2e36;
+}
+.line4{
+  position: absolute;
+width: 120px;
+height: 0px;
+left: 1257px;
+top: 129px;
+
+border: 5px solid #CDE769;
+transform: rotate(-0.48deg);
+}
+.Abt{
+  position: absolute;
+width: 82px;
+height: 29px;
+left: 1409px;
+top: 81px;
+
+font-family: Open Sans;
+font-style: normal;
+font-weight: bold;
+font-size: 25px;
+line-height: 34px;
+
+color: #2D2E36;
+
+}
+.lgn{
+  position: absolute;
+width: 82px;
+height: 29px;
+left: 1519px;
+top: 81px;
+
+font-family: Open Sans;
+font-style: normal;
+font-weight: bold;
+font-size: 25px;
+line-height: 34px;
+
+color: #2D2E36;
+
 }

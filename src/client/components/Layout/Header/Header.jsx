@@ -7,13 +7,14 @@ const Header = () => {
             <div className="logo">Annotate the web</div>
             <div className='navigation'>
                 <div className="RegisterBtn">
+                    <div className="Rectangle11"></div>
                     <div className="RegisterText">Register</div>
                 </div>
-                <div className='btn-list'>
-                    <p className='btn'>Annotate</p>
-                    <p className='btn'>About</p>
-                    <p className='btn'>Login</p>
-                </div>
+    
+                    <div className='Anot'>Annotate</div>
+                    <div className='line4'></div>
+                    <div className='Abt'>About</div>
+                    <div className='lgn'>Login</div>
             </div>
         </div>
     )

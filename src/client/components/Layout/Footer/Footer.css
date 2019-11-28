@@ -1,7 +1,25 @@
-.footer{
-    position: absolute;
-    width: 1920px;
-    height: 100px;
-    left: 1px;
-    top: 1749px;
+.footer {
+  position: absolute;
+  width: 1920px;
+  height: 100px;
+  left: 1px;
+  top: 1749px;
+  background: #2d2e36;
+}
+.content {
+  position: absolute;
+  width: 591px;
+  height: 29px;
+  left: 668px;
+  top: 1807px;
+
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+
+  color: #ffffff;
+
+  opacity: 0.7;
 }
