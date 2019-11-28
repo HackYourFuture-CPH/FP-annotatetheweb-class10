@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Pacifico&display=swap");
+.nav-style {
+    font-weight: bold;
+    letter-spacing: 1px;
+    color:#2D2E36;  
+    font-family: "Open Sans";
+    font-size: 25px;
+    line-height: 34px;
+}
+.register-button{
+    border-radius: 40px;
+    background-color:white;
+    border: 1px solid black;
+    width: 215px;
+    height: 80px;
+}
+.nav-elements {
+     display: flex; 
+    list-style-type: none;     
+}
+.nav-elements li {
+   padding: 5px 30px ;  
+}
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  float:right;
+  margin:30px 10px 0 10px;
+}
+a:link {
+    text-decoration: none;
+  }
+  
+a:hover {
+    text-underline-position: under;
+    border-bottom: 4px solid #CDE769;
+  }
