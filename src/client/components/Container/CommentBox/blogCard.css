@@ -1,0 +1,76 @@
+/*class for div whole container */
+.blog-card{   
+    width: 40%;
+    height: 30%;
+    border-radius: 8px;   
+    display: flex;
+    flex-direction: column;    
+    justify-content: space-evenly;  
+    margin-left: 10px; 
+    border-style: solid;
+    border-color: rgb(112, 144, 117);
+}
+/*class for div consists of the lable and input */
+.inputBox{
+    width: 50%;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-content: center;     
+    position: absolute;
+    z-index: 2;
+}
+.blog-card-label{
+    font-family: serif;
+    font-size: 12px;
+    margin-bottom: 8%;
+    margin-top: 0px;
+}
+/*class for input */
+.blog-card-control{
+    width: 70%;
+    height: 20px;
+    border-radius: 10px;
+    background-color: whitesmoke;
+    font-family: sans-serif;  
+    font-size: 10px;    
+}
+/* class for div of consists of dot button list*/
+.btn-right{ 
+    font-size: 16px;
+    width: 30px;
+    height: 100px;
+    margin-bottom: 2px;
+    margin-top: 2px; 
+    text-align: center;       
+}
+/*class for div consists .btn-right and .dropdown-contentcontent*/
+.menu-right{    
+    display: flex;
+    justify-content: flex-end;
+}
+/* display property for .dropdown-content should be none in actual and 
+changed to flex in clickHandler function*/
+.dropdown-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    margin-top: 15px;
+    background-color: #c4c4c4;
+    min-width: 100px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: -3;    
+}
+/*class for for each list items*/
+.listComponent{
+    list-style-type: none;
+    cursor: pointer;
+    font-size: 12px;
+}
+.listComponent:hover{
+    background-color:  #f1f1f1;
+}
+
