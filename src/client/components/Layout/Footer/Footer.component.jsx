@@ -8,13 +8,13 @@ const Footer = ({}) => {
       <div className="content">
         Created by:
         <a href="https://www.hackyourfuture.dk" target="_blank">
-          {" "}
-          HACK YOUR FUTURE{" "}
+          {""}
+          HACK YOUR FUTURE{""}
         </a>
         and
         <a href="https://www.codeart.dk" target="_blank">
           {" "}
-          Code: art{" "}
+          Code: art{"logo "}
         </a>
       </div>
     </footer>
