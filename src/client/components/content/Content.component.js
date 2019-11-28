@@ -1,24 +1,13 @@
 import React from "react";
 import "./Content.css";
 
-const theme = {
-  textAlign: "center",
-  fontFamily: {
-    title: "'Pacifico', cursive",
-    main: "'Open Sans', sans-serif",
-    sizeTitle: "2em",
-    sizeText: "1em"
-  },
-  colors: {
-    primary: "#F0F0F0"
-  },
-  images: {
-    width: "10em",
-    height: "auto"
-  }
-};
-
-const Content = ({ title = "", text = "", hyfLogo = {}, codeartLogo = {} }) => {
+const Content = ({
+  title = "",
+  text = "",
+  hyfLogo = {},
+  codeartLogo = {},
+  theme = {}
+}) => {
   return (
     <div style={{ backgroundColor: theme.colors.primary }}>
       <h2

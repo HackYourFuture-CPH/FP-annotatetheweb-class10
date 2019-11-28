@@ -1,5 +1,6 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
+import { themeContent } from "../theme";
 import Content from "./Content.component";
 
 import hyf from "../../assets/images/hyf.png";
@@ -22,6 +23,7 @@ storiesOf("Content", module).add("Content", () => (
       text="This tool will help you to annotate any webpage that you want, collaborate with others and share your comments."
       hyfLogo={hyfLogo}
       codeartLogo={codeartLogo}
+      theme={themeContent}
     />
   </div>
 ));
