@@ -1,12 +1,13 @@
 import React from 'react';
 import './UrlInput.css';
 
-const UrlInput = ({ placeholder }) => {
+const UrlInput = ({ placeholder, onEnter }) => {
+
     return (
         <input type="url" placeholder={placeholder} className="url-input"
             onKeyPress={event => {
                 if (event.key === 'Enter') {
-                    console.log("Confirm");
+                    { onEnter(event.target.value) }
                 }
             }} />
     );
