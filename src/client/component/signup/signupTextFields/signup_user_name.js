@@ -2,6 +2,7 @@
 import React from 'react';
 import '../signup.css';
 
+// consist of both Username and full name text label and text field boxes 
 const Name = ({title})=>{
     return(
         <label>
