@@ -1,14 +1,14 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import SignupEmailAddress from "../component/signup/signupTextFields/signup_emailAddress_txtfield";
-import SignupTitle from "../component/signup/title/signup_title";
+import SignupEmailAddress from "../components/signup/signupTextFields/signup_emailAddress_txtfield";
+import SignupTitle from "../components/signup/title/signup_title";
 import '@fortawesome/free-brands-svg-icons';
 import { faGoogle, faTwitter, faFacebook } from "@fortawesome/free-brands-svg-icons";
-import SignupButtons from "../component/signup/SignupButtons/Signup_buttons";
-import SignupFormLine from '../component/signup/signupFormLine/signup_form_line';
-import CheckBox from "../component/signup/checkbox/signup_checkbox";
-import Name from "../component/signup/signupTextFields/signup_user_name";
-import SignupPassword from "../component/signup/signupTextFields/signup_password";
+import SignupButtons from "../components/signup/SignupButtons/Signup_buttons";
+import SignupFormLine from '../components/signup/signupFormLine/signup_form_line';
+import CheckBox from "../components/signup/checkbox/signup_checkbox";
+import Name from "../components/signup/signupTextFields/signup_user_name";
+import SignupPassword from "../components/signup/signupTextFields/signup_password";
 
 
 storiesOf ("components",module)
