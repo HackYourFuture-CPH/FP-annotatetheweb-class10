@@ -94,7 +94,11 @@ At least @Allan and/or @Kseniia will be there with you guys.
 This Final Project is made in collaboration with CodeArt.
 @Allan and @Kseniia work there and they will help us during this project.
 
-The goal of this project is to replicate this website https://www.annotatetheweb.com/
+The goal of this project is to replicate this website https://www.annotatetheweb.com/ following the mockups below:
+
+https://www.figma.com/proto/QYeFmfAU7XAaewnskogsxH/Class10-Final-Project-Mockups
+
+If you don't have access to the mockups, please write on #Class10 channel.
 
 #### 💼 Business Glossary
 
@@ -103,7 +107,7 @@ The goal of this project is to replicate this website https://www.annotatetheweb
 
 #### 🗄️ Database Model Diagram
 
-*Add here the DB Model Diagram* - Use https://dbdiagram.io/
+Check here the DB Diagram https://dbdiagram.io/d/5dc962d4edf08a25543dc63b 
 
 - [How to make changes on the diagram](/diagram.md)
 
@@ -149,7 +153,13 @@ If you need to make changes to the specification, this can be done via the
 ### <img width=20px height=20x src="/storybook.svg"  alt="Storybook logo"></a> Working with Storybook 
 Tool for developing UI components in isolation 
 
-Check here https://storybook.js.org/
+Here is how to get started with storybook:
+
+```
+npm run storybook
+```
+
+For more information, Check here https://storybook.js.org/
 
 ### <img width=30px height=30x src="/aws.svg"  alt="AWS S3 logo"></a><img width=30px height=30x src="/s3.png"  alt="AWS S3 logo"></a> Working with AWS - Amazon Services
 AWS is used for uploading files on a AWS S3 bucket. There is a user on the AWS that has `AmazonS3FullAccess`. There is not a AWS root key, but ONLY a key and a secret key for the AWS user. 
