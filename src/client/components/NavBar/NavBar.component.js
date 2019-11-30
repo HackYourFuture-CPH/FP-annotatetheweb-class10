@@ -1,10 +1,10 @@
 import React from "react";
 import "./NavBar.css";
 
-const NavBar = ({ title, navElements }) => {
+const NavBar = ({ title, navElements,href }) => {
   const navList = navElements.map(item => {
     return (
-      <a href="#">
+      <a className = "nav-link" href={href}>
         <li className="nav-style" key={item.id}>
           {item.title}
         </li>

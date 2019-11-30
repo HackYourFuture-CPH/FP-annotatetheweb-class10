@@ -10,5 +10,6 @@ storiesOf("NavBar", module).add("with title ", () => (
       { title: "About", id: 2 },
       { title: "Login", id: 3 }
     ]}
+    href ="#" 
   />
 ));
