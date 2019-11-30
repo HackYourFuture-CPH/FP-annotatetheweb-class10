@@ -1,13 +1,13 @@
 import React,{Component} from 'react';
 import './FormTitle.css';
 
-const FormTitle = (()=>{
+const FormTitle = ( () => {
     
-return(
+    return(
 
-        <div className='form-title'>Login to Annotate the web</div>
+            <div className='form-title'>Login to Annotate the web</div>
        
-)
-})
+          )
+  })
 
 export default FormTitle;
