@@ -6,11 +6,6 @@ import {faGoogle} from '@fortawesome/free-brands-svg-icons';
 import { fab,
          faFacebookSquare, 
          faTwitter } from '@fortawesome/free-brands-svg-icons';
-
-         
-
-
-
 import FormButtons from './Button.component';
 
 storiesOf('FormButtons',module)

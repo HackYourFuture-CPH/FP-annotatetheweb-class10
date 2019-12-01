@@ -1,11 +1,8 @@
-import React,{Component} from 'react';
-import { useState } from "react";
-import './FormField.css'
+import React from 'react';
+import './FormField.css';
 
 
-
-
-const FormField = ( ( {text,box,title,inputtype,textholder,inputclass,changehandler} ) => {
+const FormField = ( {text, box, title, inputtype, textholder, inputclass, changehandler} ) => {
          
          return(
                     <label className={text}>
@@ -20,5 +17,5 @@ const FormField = ( ( {text,box,title,inputtype,textholder,inputclass,changehand
               )
      }
     
-)
+
 export default FormField;

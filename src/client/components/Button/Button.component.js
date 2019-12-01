@@ -1,11 +1,9 @@
-import React,{Component} from 'react';
+import React from 'react';
 import './Button.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { fab } from '@fortawesome/free-brands-svg-icons';
 
 
-const FormButtons = ( {title,buttons,logo,align,submit,click} )  => {   
+const FormButtons = ( {title, buttons, logo, align, click} )  => {   
      
     return(
             
