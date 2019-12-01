@@ -1,5 +1,4 @@
 import React from 'react';
-import  { useState } from "react";
 import {storiesOf} from '@storybook/react';
 import FormField from './FormField.component';
 
