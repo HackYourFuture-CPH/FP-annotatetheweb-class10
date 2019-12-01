@@ -1,0 +1,12 @@
+.register-button{
+    border-radius: 40px;
+    background-color:white;
+    border: 1px solid black;
+    width: 215px;
+    height: 80px;
+    color:#2D2E36;  
+    font-family: "Open Sans";
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
