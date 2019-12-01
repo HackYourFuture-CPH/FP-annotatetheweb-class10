@@ -16,11 +16,11 @@ const Content = ({
           fontSize: theme.fontFamily.sizeTitle,
           textAlign: theme.textAlign
         }}
-        className="contentTitle"
+        className="content-title"
       >
         {title}
       </h2>
-      <span className="contentText">{text}</span>
+      <span className="content-text">{text}</span>
       <h2
         style={{
           fontFamily: theme.fontFamily.title,
@@ -32,7 +32,7 @@ const Content = ({
       </h2>
       <div
         style={{ background: theme.colors.primary }}
-        className="contentFooter"
+        className="content-footer"
       >
         <img
           src={codeartLogo.src}
