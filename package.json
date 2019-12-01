@@ -44,6 +44,8 @@
   },
   "devDependencies": {
     "@storybook/react": "^5.2.6",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
     "body-parser": "^1.19.0",
     "clean-webpack-plugin": "^3.0.0",
     "concurrently": "^4.1.0",
