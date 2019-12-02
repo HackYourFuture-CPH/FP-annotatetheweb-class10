@@ -7,13 +7,7 @@
     "node": "8.11.1"
   },
   "scripts": {
-    "build": "webpack --mode production",
-    "start": "npm run build && node ./src/server/bin/server",
-    "client": "webpack-dev-server --mode development --devtool inline-source-map --hot",
-    "server": "nodemon ./src/server/bin/server",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "db:setup": "cd ./src/server/ && knex migrate:latest && knex seed:run",
-    "storybook": "cd ./src/client/ && start-storybook -p 3007"
+    "test": "jest"
   },
   "author": "Shanawaz Islam",
   "license": "MIT",
@@ -45,7 +39,10 @@
     "winston": "^3.2.1"
   },
   "devDependencies": {
+    "@storybook/addon-storyshots": "^5.2.8",
     "@storybook/react": "^5.2.6",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
     "body-parser": "^1.19.0",
     "clean-webpack-plugin": "^3.0.0",
     "concurrently": "^4.1.0",
@@ -57,8 +54,11 @@
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-standard": "^3.0.1",
     "express-form-data": "^2.0.10",
+    "jest": "^24.9.0",
+    "jest-dom": "^4.0.0",
     "node-sass": "^4.12.0",
     "nodemon": "^1.12.1",
+    "react-test-renderer": "^16.12.0",
     "sass-loader": "^7.1.0",
     "sequelize-cli": "^5.4.0",
     "webpack": "4.35.0",
