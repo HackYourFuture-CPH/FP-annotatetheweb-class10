@@ -7,7 +7,6 @@ import {DotButton} from "../components/DotButton/DotButton.story";
 import {Anchor} from "../components/Container/DropDown/DropDown.story";
 import {List} from "../components/List/List.story";
 import { from } from "array-flatten";
-
 storiesOf("Button", module)
   .add("with text", () => <Button>Hello!</Button>)
   .add("with emoji", () => (
@@ -17,6 +16,6 @@ storiesOf("Button", module)
       </span>
     </Button>
   ));
-  
-  
+import { Content } from "../components/content/Content.story";
+import { SidebarMenu } from '../components/SidebarMenu/SidebarMenu.story';
 
