@@ -11,6 +11,10 @@ import {
 import './SidebarMenuResp.css';
 import Button from './ButtonResp';
 
+const onButtonClick = () => {
+  return true;
+};
+
 const SidebarMenuResp = () => {
   return (
     <div className="sidebar-menu-wrapper-resp">
@@ -22,6 +26,7 @@ const SidebarMenuResp = () => {
             'sidebar-menu-button-resp sidebar-menu-icon-width-resp black pink'
           }
           fontClasses={'sidebar-menu-invert-color'}
+          onClick={onButtonClick}
         />
         <Button
           iconName={faCopy}
@@ -29,6 +34,7 @@ const SidebarMenuResp = () => {
             'sidebar-menu-button-resp sidebar-menu-icon-width-resp black sidebar-menu-inactive'
           }
           fontClasses={'sidebar-menu-invert-color'}
+          onClick={onButtonClick}
         />
         <Button
           iconName={faEnvelope}
@@ -36,6 +42,7 @@ const SidebarMenuResp = () => {
             'sidebar-menu-button-resp sidebar-menu-icon-width-resp black sidebar-menu-inactive'
           }
           fontClasses={'sidebar-menu-invert-color'}
+          onClick={onButtonClick}
         />
         <Button
           iconName={faCommentAlt}
@@ -43,6 +50,7 @@ const SidebarMenuResp = () => {
             'sidebar-menu-button-resp sidebar-menu-icon-width-resp black'
           }
           fontClasses={'sidebar-menu-invert-color'}
+          onClick={onButtonClick}
         />
         <Button
           iconName={faShareAlt}
@@ -50,6 +58,7 @@ const SidebarMenuResp = () => {
             'sidebar-menu-button-resp sidebar-menu-icon-width-resp black'
           }
           fontClasses={'sidebar-menu-invert-color'}
+          onClick={onButtonClick}
         />
         <Button
           iconName={faCog}
@@ -57,6 +66,7 @@ const SidebarMenuResp = () => {
             'sidebar-menu-button-resp sidebar-menu-icon-width-resp black sidebar-menu-inactive'
           }
           fontClasses={'sidebar-menu-invert-color'}
+          onClick={onButtonClick}
         />
 
       </div>
