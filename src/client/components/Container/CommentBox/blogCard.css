@@ -16,7 +16,7 @@
     border-style: solid;
     border-width: thick;
     border-color: hsl(71, 53%, 77%);
-    
+    margin-bottom: 20px;
 }
 /*class for div consists of the lable and input */
 .inputBox{
@@ -60,7 +60,7 @@ button.btn-right{
     background-color:white;
     outline:none;
     cursor: pointer;
-    margin-top: 15px;
+    margin-top: 6px;
     margin-right: 20px;
 }
 /*class for div consists .btn-right and .dropdown-contentcontent*/
@@ -68,15 +68,14 @@ button.btn-right{
     display: flex;
     justify-content: flex-end;
 }
-/* display property for .dropdown-content should be none in actual and 
-changed to flex in clickHandler function*/
+/* display property for .dropdown-content */
 .dropdown-content {
     display: none;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     position: absolute;
     margin-top: 15px;    
-    width: 100px;
+    width: 80px;
     height: 100px;
     overflow: auto;    
     z-index: -3;    
@@ -95,4 +94,11 @@ changed to flex in clickHandler function*/
     background-color:whitesmoke;
     outline:none;
     cursor: pointer;
+    font-size: 10px;
+}
+.comment-list{  
+    position: relative;  
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
 }
