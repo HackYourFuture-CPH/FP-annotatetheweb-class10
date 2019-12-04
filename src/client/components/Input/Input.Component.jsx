@@ -10,7 +10,7 @@ const Input = props => {
             <input
                 className="blog-card-control"       
                 type={props.inputType}       
-                onKeyDown={props.handleChange}
+                onKeyDown={props.handleInputChange}
                 placeholder={props.placeholder}        
             /> 
         </div>
