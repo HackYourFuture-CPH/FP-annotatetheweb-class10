@@ -3,11 +3,11 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
 
 
-const Button = ({iconName, buttonClasses, fontClasses, onButtonClick}) => {
+const Button = ({icon, buttonClasses, fontClasses, onButtonClick}) => {
   return (
     <button className={buttonClasses} onClick={onButtonClick} >
       <FontAwesomeIcon
-        icon={iconName}
+        icon={icon}
         size="lg"
         className={fontClasses}
         fixedWidth

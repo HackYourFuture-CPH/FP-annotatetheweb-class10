@@ -1,28 +1,31 @@
-import React from "react";
-import { render, fireEvent } from "@testing-library/react";
-import Button from "./Button.component";
-import "@testing-library/jest-dom/extend-expect";
-import {
-    faSearch,
-    faCog,
-  } from '@fortawesome/free-solid-svg-icons';
+import React from 'react';
+import {render, fireEvent} from '@testing-library/react';
+import Button from './Button.component';
+import '@testing-library/jest-dom/extend-expect';
+import {faSearch, faCog} from '@fortawesome/free-solid-svg-icons';
 
- 
-test ('if component have right classNames', () => {
-   const {container } = render(<Button iconName={faCog} buttonClasses="sidebar-menu-button-resp" fontClasses="sidebar-menu-invert-color" />);
-   expect(container.firstChild.firstChild).toHaveClass('sidebar-menu-invert-color');
-   expect(container.firstChild).toHaveClass('sidebar-menu-button-resp');
-})
+test ('if first child (button) of component have right classNames', () => {
+  const {container} = render (
+    <Button icon={faCog} buttonClasses="sidebar-menu-button-resp" />
+  );
+  expect (container.firstChild).toHaveClass ('sidebar-menu-button-resp');
+});
 
-// 
-test('button is clicked and onClick is called', () => {
-    const iconName = faSearch;
-    const onClick = jest.fn();
-    const { getByText } = render (<Button iconName={iconName} onClick={onClick} buttonClasses="test" fontClasses="testing" />);
+test ('if second child (FontAwesome) of component has the right classNames', () => {
+  const {container} = render (
+    <Button icon={faSearch} fontClasses="sidebar-menu-invert-color" />
+  );
+  expect (container.firstChild.firstChild).toHaveClass (
+    'sidebar-menu-invert-color'
+  );
+});
 
-    fireEvent.click(getByText(iconName));
-    expect(onClick).toHaveBeenCalled();
-})
+// Getting error here
+test ('button is clicked and onClick is called', () => {
+  const icon = faSearch;
+  const onClick = jest.fn ();
+  const { getByText } = render(<Button icon={icon} onClick={onClick} />)
 
-
-
+  fireEvent.click(getByText(icon));
+  expect (onClick).toHaveBeenCalled();
+});

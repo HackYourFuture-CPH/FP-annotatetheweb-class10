@@ -9,7 +9,7 @@ import {
   faCog,
 } from '@fortawesome/free-solid-svg-icons';
 import './SidebarMenuResp.css';
-import Button from './ButtonResp';
+import Button from './Button.component';
 
 const onButtonClick = () => {
   return true;
@@ -21,7 +21,7 @@ const SidebarMenuResp = () => {
       <div className="sidebar-menu-resp">
 
         <Button
-          iconName={faSearch}
+          icon={faSearch}
           buttonClasses={
             'sidebar-menu-button-resp sidebar-menu-icon-width-resp black pink'
           }
@@ -29,7 +29,7 @@ const SidebarMenuResp = () => {
           onClick={onButtonClick}
         />
         <Button
-          iconName={faCopy}
+          icon={faCopy}
           buttonClasses={
             'sidebar-menu-button-resp sidebar-menu-icon-width-resp black sidebar-menu-inactive'
           }
@@ -37,7 +37,7 @@ const SidebarMenuResp = () => {
           onClick={onButtonClick}
         />
         <Button
-          iconName={faEnvelope}
+          icon={faEnvelope}
           buttonClasses={
             'sidebar-menu-button-resp sidebar-menu-icon-width-resp black sidebar-menu-inactive'
           }
@@ -45,7 +45,7 @@ const SidebarMenuResp = () => {
           onClick={onButtonClick}
         />
         <Button
-          iconName={faCommentAlt}
+          icon={faCommentAlt}
           buttonClasses={
             'sidebar-menu-button-resp sidebar-menu-icon-width-resp black'
           }
@@ -53,7 +53,7 @@ const SidebarMenuResp = () => {
           onClick={onButtonClick}
         />
         <Button
-          iconName={faShareAlt}
+          icon={faShareAlt}
           buttonClasses={
             'sidebar-menu-button-resp sidebar-menu-icon-width-resp black'
           }
@@ -61,7 +61,7 @@ const SidebarMenuResp = () => {
           onClick={onButtonClick}
         />
         <Button
-          iconName={faCog}
+          icon={faCog}
           buttonClasses={
             'sidebar-menu-button-resp sidebar-menu-icon-width-resp black sidebar-menu-inactive'
           }
