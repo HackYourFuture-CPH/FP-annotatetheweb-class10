@@ -1,0 +1,26 @@
+.sidebar-menu-wrapper-mobile {
+  bottom: 0;
+  position: fixed;
+  width: 100vw;
+  background-color: rgba(83, 82, 82, 0.849);
+}
+
+.sidebar-menu-button-mobile {
+  background: none;
+  color: inherit;
+  border: none;
+  cursor: pointer;
+  outline: inherit;
+  display: block;
+  padding: 1rem;
+}
+
+.sidebar-menu-button-mobile:hover {
+  background-color: rgb(71, 71, 71);
+}
+
+.sidebar-menu-mobile {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
