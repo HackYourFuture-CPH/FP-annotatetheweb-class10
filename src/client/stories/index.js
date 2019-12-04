@@ -1,13 +1,5 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { Button } from "@storybook/react/demo";
-
-storiesOf("Button", module)
-  .add("with text", () => <Button>Hello!</Button>)
-  .add("with emoji", () => (
-    <Button>
-      <span role="img" aria-label="so cool">
-        😀 😎 👍 💯
-      </span>
-    </Button>
-  ));
+import { Header } from "../components/Header/Header.story";
+import{Footer } from "../components/Footer/Footer.story";
+import{Navigation} from "../components/Navigation/Navigation.story";
