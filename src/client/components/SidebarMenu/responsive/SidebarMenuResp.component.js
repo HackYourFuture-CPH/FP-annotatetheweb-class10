@@ -11,7 +11,7 @@ import {
 import './SidebarMenuResp.css';
 import Button from './Button.component';
 
-const onButtonClick = () => {
+const onClick = () => {
   return true;
 };
 
@@ -26,7 +26,7 @@ const SidebarMenuResp = () => {
             'sidebar-menu-button-resp sidebar-menu-icon-width-resp black pink'
           }
           fontClasses={'sidebar-menu-invert-color'}
-          onClick={onButtonClick}
+          onClick={onClick}
         />
         <Button
           icon={faCopy}

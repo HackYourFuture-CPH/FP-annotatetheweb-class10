@@ -27,5 +27,5 @@ test ('button is clicked and onClick is called', () => {
   const {container} = render (<Button icon={icon} onClick={onClick} />);
 
   fireEvent.click (container.firstChild);
-  expect(onClick).toHaveBeenCalled();
+  expect (onClick).toHaveBeenCalled ();
 });
