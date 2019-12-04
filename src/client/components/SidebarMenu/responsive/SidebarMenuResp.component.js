@@ -34,7 +34,7 @@ const SidebarMenuResp = () => {
             'sidebar-menu-button-resp sidebar-menu-icon-width-resp black sidebar-menu-inactive'
           }
           fontClasses={'sidebar-menu-invert-color'}
-          onClick={onButtonClick}
+          onClick={onClick}
         />
         <Button
           icon={faEnvelope}
@@ -42,7 +42,7 @@ const SidebarMenuResp = () => {
             'sidebar-menu-button-resp sidebar-menu-icon-width-resp black sidebar-menu-inactive'
           }
           fontClasses={'sidebar-menu-invert-color'}
-          onClick={onButtonClick}
+          onClick={onClick}
         />
         <Button
           icon={faCommentAlt}
@@ -50,7 +50,7 @@ const SidebarMenuResp = () => {
             'sidebar-menu-button-resp sidebar-menu-icon-width-resp black'
           }
           fontClasses={'sidebar-menu-invert-color'}
-          onClick={onButtonClick}
+          onClick={onClick}
         />
         <Button
           icon={faShareAlt}
@@ -58,7 +58,7 @@ const SidebarMenuResp = () => {
             'sidebar-menu-button-resp sidebar-menu-icon-width-resp black'
           }
           fontClasses={'sidebar-menu-invert-color'}
-          onClick={onButtonClick}
+          onClick={onClick}
         />
         <Button
           icon={faCog}
@@ -66,7 +66,7 @@ const SidebarMenuResp = () => {
             'sidebar-menu-button-resp sidebar-menu-icon-width-resp black sidebar-menu-inactive'
           }
           fontClasses={'sidebar-menu-invert-color'}
-          onClick={onButtonClick}
+          onClick={onClick}
         />
 
       </div>

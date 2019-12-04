@@ -20,7 +20,6 @@ test ('if second child (FontAwesome) of component has the right classNames', () 
   );
 });
 
-// Getting error here
 test ('button is clicked and onClick is called', () => {
   const icon = faSearch;
   const onClick = jest.fn ();
