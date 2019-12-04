@@ -24,8 +24,8 @@ test ('if second child (FontAwesome) of component has the right classNames', () 
 test ('button is clicked and onClick is called', () => {
   const icon = faSearch;
   const onClick = jest.fn ();
-  const { getByText } = render(<Button icon={icon} onClick={onClick} />)
+  const {getByText} = render (<Button icon={icon} onClick={onClick} />);
 
-  fireEvent.click(getByText(icon));
-  expect (onClick).toHaveBeenCalled();
+  fireEvent.click (getByText (icon));
+  expect (onClick).toHaveBeenCalled ();
 });
