@@ -2,9 +2,10 @@ import React from "react";
 import Button from "../../Button/Button.Component";
 
 const DropDown = props => {
+  const id = props.titleArray;
   return(
     <div class="dropdown-content" style={dropdownStyle}>
-      {props.titleArray.map(title => <Button title={title} onClickHandle={props.onClickHandle}/> )}   
+      { props.titleArray.map(element => <Button title={element.title} onClickHandle={props.onClickHandle.bind(this,element.id)}/> )}   
     </div> 
   )     
 }
