@@ -99,7 +99,7 @@ _Add here information about the Business Glossary_
 
 Check here the DB Diagram https://dbdiagram.io/d/5ddd225aedf08a25543e6302
 
-<img width=500px height=500x src="/dbdiagram.png"  alt="AWS S3 logo">
+<img width=700px height=700x src="/dbdiagram.png"  alt="AWS S3 logo">
 
 - [How to make changes on the diagram](/diagram.md)
 
