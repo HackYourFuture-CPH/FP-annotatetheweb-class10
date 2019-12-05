@@ -8,6 +8,7 @@ exports.seed = function(knex) {
         {
           screenshot_id: 1,
           url: "https://www.google.com/",
+          key: "screenshot_001",
           height: "50",
           width: "50",
           fk_project_id: 1
