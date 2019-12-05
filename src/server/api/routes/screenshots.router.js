@@ -5,14 +5,14 @@ const express = require("express");
 const router = express.Router({ mergeParams: true });
 
 // controllers
-const usersController = require("../controllers/users.controller");
+const screenshotsController = require("../controllers/screenshots.controller");
 
-// ENDPOINT: /api/screenshots/ :GET to get all users
+// ENDPOINT: /api/screenshots/ :GET to get all screenshots
 router.get("/", (req, res, next) => {
   
   let { limit, offset, orderBy, order } = req.query;
 
-  usersController
+  screenshotsController
     .getScreenshots(limit, offset, orderBy, order)
     .then(result => res.json(result))
     .catch(next);

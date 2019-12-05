@@ -6,7 +6,7 @@ const router = express.Router();
 // Router imports
 const modulesRouter = require("./modules.router");
 const userRouter = require("./users.router");
-const screenshotRouter = require("./screenshot.router");
+const screenshotRouter = require("./screenshots.router");
 
 // swagger-ui-express
 const swaggerUi = require("swagger-ui-express");
