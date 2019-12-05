@@ -1,18 +1,24 @@
 "use strict";
 
 const knex = require("../../config/db");
+const { paginate } = require("../lib/utils/pagination");
 
-const getScreenshots = async params => {
-  return {};
+const getScreenshots = ({
+  limit,
+  offset,
+  orderBy = "screenshot_id",
+  order
+} = {}) => {
+  return paginate(knex("screenshots"), { limit, offset, orderBy, order });
 };
 
 const getScreenshotById = async screenshotId => {
-  return {};
+  return knex("screenshots").where({ screenshot_id: screenshotId });
 };
 
 const editScreenshot = async (screenshotId, updatedScreenshot) => {
   return knex("screenshots")
-    .where({ id_screenshot: screenshotId })
+    .where({ screenshot_id: screenshotId })
     .update({
       url: updatedScreenshot.url,
       key: updatedScreenshot.key,
@@ -27,7 +33,7 @@ const editScreenshot = async (screenshotId, updatedScreenshot) => {
 
 const deleteScreenshot = async (screenshotId, req) => {
   return knex("screenshots")
-    .where({ id: screenshotId })
+    .where({ screenshot_id: screenshotId })
     .del();
 };
 
