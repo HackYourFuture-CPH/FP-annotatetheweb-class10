@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import DotButton from "../../DotButton/DotButton.Component";
 import DropDown from "../DropDown/DropDown.Component";
 import Input from "../../Input/Input.Component";
-import CommentList from "../CommentList.Component/CommentList.Component";
+import CommentList from "../CommentList/CommentList.Component";
 import './blogCard.css';
 
 //BlogCard class component
