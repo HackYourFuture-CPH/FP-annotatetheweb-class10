@@ -2,6 +2,7 @@ exports.up = function(knex) {
   return knex.schema.createTable("screenshots", table => {
     table.increments("screenshot_id").notNullable();
     table.string("url").notNullable();
+    table.string("key").notNullable();
     table.float("height").notNullable();
     table.float("width").notNullable();
     table
