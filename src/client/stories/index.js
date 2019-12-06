@@ -15,11 +15,17 @@ import Name from "../components/signup/signupTextFields/signupUserName";
 import SignupPassword from "../components/signup/signupTextFields/signupPassword";
 
 storiesOf("components", module)
+// signupEmailAddressTxtField (Story)
   .add("signup EmailAddress Textfield", () => <SignupEmailAddress />)
+  // signupPassword (Story)
   .add("Signup Password", () => <SignupPassword />)
+  // signupUserName -->FullName (Story)
   .add("signup FullName Textfield", () => <Name title="Username" />)
+  // signupUserName -->UserName (Story)
   .add("signup UserName TextField", () => <Name title="Full Name" />)
+  // signuptitle (Story)
   .add("signup Title", () => <SignupTitle />)
+  // signupButton -->Google Button (Story)
   .add("signup Google Button", () => (
     <SignupButtons
       title="Signup with Google"
@@ -29,6 +35,7 @@ storiesOf("components", module)
       align="googleLogoAlign"
     />
   ))
+  // signupButton -->Create account (Story)
   .add("signup Create Account", () => (
     <SignupButtons
       title="Create Account"
@@ -36,11 +43,15 @@ storiesOf("components", module)
       signupBtnText="signupCreateAccountTxt"
     />
   ))
+  // signupbutton -->Twitter (Story)
   .add("signup Twitter Button", () => (
     <SignupButtons logo={faTwitter} signupBtn="twitterBtn" />
   ))
+  // signupbutton -->Facebook (Story)
   .add("signup Facebook Button", () => (
     <SignupButtons logo={faFacebook} signupBtn="facebookBtn" />
   ))
+  // signupCheckBox (Story)
   .add("Signup Form Checked", () => <CheckBox />)
+  // signupFormLine (Story)
   .add("signup Form Line (Or)", () => <SignupFormLine />);
