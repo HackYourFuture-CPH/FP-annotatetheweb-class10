@@ -4,12 +4,12 @@ import "../signup.css";
 const SignupPassword = () => {
   return (
     <label>
-      <div className="signup-password">Password</div>
+      <div className="signupPassword">Password</div>
       <input
         type="password"
         placeholder="6+ character"
         //onChange={this.handleChange}
-        className="signup-passwordBox"
+        className="signupPasswordBox"
       />
     </label>
   );

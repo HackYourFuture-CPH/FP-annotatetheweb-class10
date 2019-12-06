@@ -3,14 +3,21 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "@fortawesome/free-brands-svg-icons";
 import "../signup.css";
 
-const SignupButtons = ({ title, signupBtn, text, logo, signupBtnTxt }) => {
+const SignupButtons = ({
+  title,
+  text,
+  logo,
+  align,
+  signupBtnTxt,
+  signupButton
+}) => {
   function onClickHandler() {
-    // shoul add the onclick function here
+    alert("your account has been created!");
   }
 
   return (
-    <button onclick={onClickHandler} className={signupBtn}>
-      <FontAwesomeIcon icon={logo} className={text} />
+    <button onclick={onClickHandler} className={signupButton}>
+      <FontAwesomeIcon icon={logo} className={text} className={align} />
       <h3 className={signupBtnTxt} icon={logo}>
         {title}
       </h3>
