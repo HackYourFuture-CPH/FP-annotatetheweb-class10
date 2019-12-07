@@ -2,16 +2,16 @@ import React from 'react';
 import './FormField.css';
 
 
-const FormField = ( {text, box, title, inputtype, textholder, inputclass, changehandler} ) => {
+const FormField = ( {text, box, title, inputType, textHolder, inputClass, changeHandler} ) => {
          
          return(
                     <label className={text}>
                        <div className={box}>{title}</div>
                         <input 
-                          type={inputtype}
-                          placeholder={textholder}
-                          onChange={changehandler}
-                          className={inputclass}/>
+                          type={inputType}
+                          placeholder={textHolder}
+                          onChange={changeHandler}
+                          className={inputClass}/>
                     </label>
           
               )
