@@ -11,6 +11,7 @@ const Content = ({
   return (
     <div style={{ backgroundColor: theme.colors.primary }}>
       <h2
+        data-testid="title"
         style={{
           fontFamily: theme.fontFamily.title,
           fontSize: theme.fontFamily.sizeTitle,
@@ -20,7 +21,9 @@ const Content = ({
       >
         {title}
       </h2>
-      <span className="content-text">{text}</span>
+      <span data-testid="text" className="content-text">
+        {text}
+      </span>
       <h2
         style={{
           fontFamily: theme.fontFamily.title,
