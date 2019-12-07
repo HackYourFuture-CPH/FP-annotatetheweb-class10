@@ -7,5 +7,61 @@
     "contact": {}
   },
   "host": "",
-  "basePath": "/api"
+  "basePath": "/api",
+  "paths": {
+    "/screenshots": {
+      "parameters": [
+        {
+          "name": "url",
+          "required": true,
+          "in": "path",
+          "type": "string"
+        },
+        {
+          "name": "key",
+          "required": true,
+          "in": "path",
+          "type": "string"
+        },
+        {
+          "name": "height",
+          "required": true,
+          "in": "path",
+          "type": "number"
+        },
+        {
+          "name": "width",
+          "required": true,
+          "in": "path",
+          "type": "number"
+        },
+        {
+          "name": "fk_project_id",
+          "required": true,
+          "in": "path",
+          "type": "integer"
+        }
+      ],
+      "post": {
+        "operationId": "createRoot",
+        "summary": "Enable root user",
+        "description": "Enables the root user for a specified database instance and returns the root password.\n",
+        "produces": ["application/json"]
+      },
+      "get": {
+        "operationId": "isRootEnabled",
+        "summary": "Show root-enabled status for database instance",
+        "description": "Shows root-enabled status for a database instance.\n",
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "examples": {
+              "application/json": "{\n    \"rootEnabled\": true\n}"
+            }
+          }
+        }
+      }
+    }
+  }
 }
