@@ -6,15 +6,15 @@ const error = require("../lib/utils/http-error");
 //GET all annotations
 const getAnnotations = async req => {
   try {
-    return await knex("annotation").select(
-      "annotation.annotation_id",
-      "annotation.title",
-      "annotation.description",
-      "annotation.fk_screenshot_id",
-      "annotation.area",
-      "annotation.updated_at",
-      "annotation.created_at",
-      "annotation.deleted_at"
+    return await knex("annotations").select(
+      "annotations.annotation_id",
+      "annotations.title",
+      "annotations.description",
+      "annotations.fk_screenshot_id",
+      "annotations.area",
+      "annotations.updated_at",
+      "annotations.created_at",
+      "annotations.deleted_at"
     );
   } catch (error) {
     return error.message;
@@ -23,11 +23,11 @@ const getAnnotations = async req => {
 
 // GET specific:id
 
-const getAnnotationById = async id => {
+const getAnnotationsById = async id => {
   try {
-    const annotations = await knex("annotation")
+    const annotations = await knex("annotations")
       .select(
-        "annotation.id as id",
+        "annotations.id as id",
         "title",
         "description",
         "fk_screenshot_id",
@@ -48,5 +48,5 @@ const getAnnotationById = async id => {
 
 module.exports = {
   getAnnotations,
-  getAnnotationById
+  getAnnotationsById
 };
