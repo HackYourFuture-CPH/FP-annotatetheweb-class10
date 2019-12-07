@@ -8,16 +8,11 @@
   },
   "host": "",
   "basePath": "/api",
-  "schemes": [
-    "http",
-    "https"
-  ],
+  "schemes": ["http", "https"],
   "paths": {
     "/screenshots/{key}": {
       "get": {
-        "tags": [
-          "Screenshot"
-        ],
+        "tags": ["Screenshot"],
         "summary": "Checks the status of a taken screenshot and returns information about the screenshot if it's ready.",
         "operationId": "Screenshot_CheckStatusOnScreenshot",
         "consumes": [],
@@ -45,7 +40,47 @@
           }
         }
       }
-    }
-  },
-  "definitions": {}
+    },
+    "/screenshots": {
+      "parameters": [
+        {
+          "name": "url",
+          "required": true,
+          "in": "path",
+          "type": "string"
+        },
+        {
+          "name": "key",
+          "required": true,
+          "in": "path",
+          "type": "string"
+        },
+        {
+          "name": "height",
+          "required": true,
+          "in": "path",
+          "type": "number"
+        },
+        {
+          "name": "width",
+          "required": true,
+          "in": "path",
+          "type": "number"
+        },
+        {
+          "name": "fk_project_id",
+          "required": true,
+          "in": "path",
+          "type": "integer"
+        }
+      ],
+      "post": {
+        "operationId": "createRoot",
+        "summary": "Enable root user",
+        "description": "Enables the root user for a specified database instance and returns the root password.\n",
+        "produces": ["application/json"]
+      }
+    },
+    "definitions": {}
+  }
 }
