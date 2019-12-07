@@ -1,0 +1,107 @@
+.MobileMenu-menuwrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.MobileMenu-toggler {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  opacity: 0;
+}
+.MobileMenu-hamburgur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 30px;
+  height: 30px;
+  padding: 1rem;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.MobileMenu-lines {
+  position: relative;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  transition: all 0.4s ease;
+}
+.MobileMenu-lines::before,
+.MobileMenu-lines::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: -7px;
+  width: 100%;
+  height: 2px;
+  background: inherit;
+}
+.MobileMenu-lines::after {
+  top: 7px;
+}
+
+/* Toggler animate */
+.MobileMenu-toggler:checked + .MobileMenu-hamburgur > div {
+  transform: rotate(135deg);
+}
+/* Turn line to X */
+.MobileMenu-toggler:checked + .MobileMenu-hamburgur > div::before,
+.MobileMenu-toggler:checked + .MobileMenu-hamburgur > div::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+.MobileMenu-toggler:checked:hover + .MobileMenu-hamburgur > div {
+  transform: rotate(225deg);
+}
+.MobileMenu-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 50%;
+  /* visibility: hidden; */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.MobileMenu-menu > div {
+  width: 200vw;
+  height: 200vw;
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  /* transform: scale(0); */
+  transition: all 0.4s ease;
+}
+.MobileMenu-menu > div > div {
+  text-align: center;
+  max-width: 90vw;
+  max-height: 100vh;
+  /* opacity: 0; */
+  /*test*/
+  transition: opacity 0.4s ease;
+}
+.MobileMenu-menu > div > div > ul > li {
+  font-size: 18px;
+  padding: 10px;
+  list-style: none;
+  color: black;
+}
+
+.MobileMenu-menu > div > div > ul > li > a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.4s ease;
+}
