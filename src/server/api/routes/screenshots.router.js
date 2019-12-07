@@ -22,7 +22,7 @@ router.get ('/', (req, res, next) => {
 // Get screenshot by screenshot_id
 router.get ('/:screenshot_id', (req, res, next) => {
   screenshotsController
-    .getScreenshotById (req.params.screenshot_id)
+    .getScreenshotById (req.query.screenshot_id)
     .then (result => res.json (result))
     .catch (next);
 });
