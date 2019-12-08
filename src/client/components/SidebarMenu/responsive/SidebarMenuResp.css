@@ -12,7 +12,7 @@
 
 /* Inactive icons are less white */
 .sidebar-menu-inactive {
-  -webkit-filter: invert(40%);
+  filter: invert(40%);
   pointer-events: none;
 }
 
