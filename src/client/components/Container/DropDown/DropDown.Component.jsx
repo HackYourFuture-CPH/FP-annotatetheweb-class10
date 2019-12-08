@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "../../Button/Button.Component";
+import dropdownStyle from "./Them";
 
 const DropDown = props => {
   const id = props.titleArray;
@@ -9,9 +10,5 @@ const DropDown = props => {
     </div> 
   )     
 }
-const dropdownStyle = {
-  display: 'flex',
-  zIndex: '4',
-  marginTop: '25px'
-}
+
 export default DropDown;
