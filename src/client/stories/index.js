@@ -10,7 +10,6 @@ import CheckBox from "../components/signup/checkbox/signupCheckBox";
 import Name from "../components/signup/signupTextFields/signupUserName";
 import SignupPassword from "../components/signup/signupTextFields/signupPassword";
 
-
 storiesOf ("components",module)
 .add ("signup EmailAddress Textfield",()=> <SignupEmailAddress/>)
 .add ("Signup Password",()=><SignupPassword/>)
@@ -23,5 +22,3 @@ storiesOf ("components",module)
 .add ("signup Facebook Button",()=><SignupButtons  logo={faFacebook} signupBtn="facebookBtn"/>)
 .add("Signup Form Checked",()=><CheckBox/>)
 .add("signup Form Line (Or)",()=><SignupFormLine/>)
-  
-
