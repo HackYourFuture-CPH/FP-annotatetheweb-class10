@@ -5,12 +5,12 @@ import FormField  from "./FormField.component";
 
 
 it("email field and password field should take correct values" , () => {
-       let inputtype;
+       let inputType;
        const handleChange=jest.fn();
-             if(inputtype === 'email' || inputtype=== 'password')
+             if(inputType === 'email' || inputType=== 'password')
                 {
                       const {  getByText } = render(<FormButtons onChange={handleChange} />);
-                      fireEvent.click(getByText(inputtype));
+                      fireEvent.click(getByText(inputType));
                       expect(handleChange).toHaveTextContent("1");
                 }
     }

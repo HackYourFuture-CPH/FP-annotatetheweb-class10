@@ -16,6 +16,11 @@ module.exports = {
 module.exports = {
   getUsers
 }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> feature-1
 
 
 >>>>>>> da5ad3bdae26d6b96dc11cabef36eefb31dfa41c
