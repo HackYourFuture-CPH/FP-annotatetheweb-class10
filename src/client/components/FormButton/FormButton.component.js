@@ -1,9 +1,9 @@
 import React from 'react';
-import './Button.css';
+import './FormButton.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
-const FormButtons = ( {title, buttons, logo, align, click} )  => {   
+const FormButton = ( {title, buttons, logo, align, click} )  => {   
      
     return(
             
@@ -16,4 +16,4 @@ const FormButtons = ( {title, buttons, logo, align, click} )  => {
           )
 }
 
-export default FormButtons;
+export default FormButton;
