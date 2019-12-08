@@ -18,6 +18,6 @@ router.use(`/documentation`, swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 // Application routes
 router.use(`/modules`, modulesRouter);
 router.use(`/users`, userRouter);
-router.use(`/screenshots`, screenshotRouter )
+router.use(`/screenshots`, screenshotRouter);
 
 module.exports = router;
