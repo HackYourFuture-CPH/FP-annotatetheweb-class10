@@ -14,7 +14,9 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "db:setup": "cd ./src/server/ && knex migrate:latest && knex seed:run",
     "storybook": "cd ./src/client/ && start-storybook -p 3007",
+
     "test": "jest --watch"
+
   },
   "author": "Shanawaz Islam",
   "license": "MIT",
@@ -57,7 +59,9 @@
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-standard": "^3.0.1",
     "express-form-data": "^2.0.10",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^24.9.0",
+    "mock-knex": "^0.4.7",
     "node-sass": "^4.12.0",
     "nodemon": "^1.12.1",
     "sass-loader": "^7.1.0",
@@ -65,6 +69,12 @@
     "webpack": "4.35.0",
     "webpack-cli": "3.3.5",
     "webpack-dev-server": "3.7.2"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "identity-obj-proxy"
+    }
   },
   "eslintConfig": {
     "extends": "react-app"
