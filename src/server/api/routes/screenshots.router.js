@@ -1,28 +1,43 @@
-'use strict';
+"use strict";
 
 // router setup
-const express = require ('express');
-const router = express.Router ({mergeParams: true});
+const express = require("express");
+const router = express.Router({ mergeParams: true });
 
 // controllers
-const screenshotsController = require ('../controllers/screenshots.controller');
+const screenshotsController = require("../controllers/screenshots.controller");
 
 // ENDPOINT: /api/screenshots/ :GET to get all screenshots
-router.get ('/', (req, res, next) => {
-  let {limit, offset, orderBy, order} = req.query;
+router.get("/", (req, res, next) => {
+  let { limit, offset, orderBy, order } = req.query;
 
   screenshotsController
-    .getScreenshots (limit, offset, orderBy, order)
-    .then (result => res.json (result))
-    .catch (next);
+    .getScreenshots(limit, offset, orderBy, order)
+    .then(result => res.json(result))
+    .catch(next);
 });
 
 // Get screenshot by screenshot key
-router.get ('/:key', (req, res, next) => {
+router.get("/:key", (req, res, next) => {
   screenshotsController
-    .getScreenshotByKey (req.params.key)
-    .then (result => res.json (result))
-    .catch (next);
+    .getScreenshotByKey(req.params.key)
+    .then(result => res.json(result))
+    .catch(next);
+});
+
+// ENDPOINT: /api/screenshots/ :POST
+router.post("/", (req, res, next) => {
+  screenshotController
+    .createScreenshot(req.body)
+    .then(result => res.json(result))
+    .catch(error => {
+      console.log(error);
+
+      res
+        .status(400)
+        .send("Bad request")
+        .end();
+    });
 });
 
 module.exports = router;
