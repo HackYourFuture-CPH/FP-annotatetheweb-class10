@@ -1,0 +1,22 @@
+@import "../../App.css";
+
+.url-input {
+  border-radius: 40px;
+  border: unset;
+  width: 100%;
+  max-width: 500px;
+  height: 65px;
+  background-color: #cde769;
+  font-family: "Open Sans";
+  font-size: 25px;
+  padding: 0 40px;
+  color: rgba(110, 110, 110, 0.5);
+}
+
+.url-input::placeholder {
+  color: rgba(110, 110, 110, 0.5);
+}
+
+.url-input:focus {
+  outline: none;
+}
