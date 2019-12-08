@@ -7,8 +7,6 @@
     "node": "8.11.1"
   },
   "scripts": {
-<<<<<<< HEAD
-=======
     "build": "webpack --mode production",
     "start": "npm run build && node ./src/server/bin/server",
     "client": "webpack-dev-server --mode development --devtool inline-source-map --hot",
@@ -16,22 +14,16 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "db:setup": "cd ./src/server/ && knex migrate:latest && knex seed:run",
     "storybook": "cd ./src/client/ && start-storybook -p 3007",
->>>>>>> da5ad3bdae26d6b96dc11cabef36eefb31dfa41c
     "test": "jest"
   },
   "author": "Shanawaz Islam",
   "license": "MIT",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
-<<<<<<< HEAD
     "@fortawesome/free-brands-svg-icons": "^5.11.2",
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
     "@fortawesome/react-fontawesome": "^0.1.7",
     "add": "^2.0.6",
-=======
-    "@fortawesome/free-solid-svg-icons": "^5.11.2",
-    "@fortawesome/react-fontawesome": "^0.1.7",
->>>>>>> da5ad3bdae26d6b96dc11cabef36eefb31dfa41c
     "app-root-path": "^2.2.1",
     "babel-polyfill": "^6.26.0",
     "circular-json": "^0.5.9",
@@ -79,16 +71,12 @@
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-standard": "^3.0.1",
     "express-form-data": "^2.0.10",
-<<<<<<< HEAD
     "ignore-styles": "^5.0.1",
     "jest": "^24.9.0",
     "jest-css-modules": "^2.1.0",
     "jest-dom": "^4.0.0",
-=======
     "identity-obj-proxy": "^3.0.0",
-    "jest": "^24.9.0",
     "mock-knex": "^0.4.7",
->>>>>>> da5ad3bdae26d6b96dc11cabef36eefb31dfa41c
     "node-sass": "^4.12.0",
     "nodemon": "^1.12.1",
     "react-test-renderer": "^16.12.0",
@@ -100,12 +88,8 @@
   },
   "jest": {
     "moduleNameMapper": {
-<<<<<<< HEAD
-      "\\.(css|less|scss|sss|styl)$": "<rootDir>/node_modules/jest-css-modules"
-=======
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less|scss|sss|styl)$": "<rootDir>/node_modules/jest-css-modules",
       "\\.(css|less)$": "identity-obj-proxy"
->>>>>>> da5ad3bdae26d6b96dc11cabef36eefb31dfa41c
     }
   },
   "eslintConfig": {
