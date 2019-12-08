@@ -3,7 +3,6 @@ import{ render, fireEvent} from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import FormButtons from "./Button.component";
 
-
 it("click on button- function onClick is called" , () => {
        let title;
        const handleClick=jest.fn();
