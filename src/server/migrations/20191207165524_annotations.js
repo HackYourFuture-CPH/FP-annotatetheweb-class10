@@ -2,7 +2,7 @@
 exports.up = function(knex) {
 
     return knex.schema.createTable("annotations",(table)=>{
-    table.increment("annotation_id").notNullable();
+    table.increments("annotation_id").notNullable();
     table.string("title").notNullable();
     table.string("description").notNullable();
     table.integer("fk_screenshot_id")
