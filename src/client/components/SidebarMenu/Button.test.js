@@ -19,12 +19,3 @@ test ('if second child (FontAwesome) of component has the right classNames', () 
     'sidebar-menu-invert-color'
   );
 });
-
-test ('button is clicked and onClick is called', () => {
-  const icon = faSearch;
-  const onClick = jest.fn ();
-  const {container} = render (<Button icon={icon} onClick={onClick} />);
-
-  fireEvent.click (container.firstChild);
-  expect (onClick).toHaveBeenCalled ();
-});
