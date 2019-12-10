@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../../Button/Button.Component";
+import Button from "../../Button/Button.component";
 
 const DropDown = props => {
   const id = props.titleArray;
