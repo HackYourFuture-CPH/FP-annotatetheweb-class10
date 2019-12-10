@@ -1,4 +1,4 @@
-.profile-Image {
+.profile-image {
   height: 35px;
   width: 35px;
   border-radius: 50%;
@@ -10,7 +10,7 @@
   display: flex;
   padding-bottom: 10px;
 }
-.profile-Name {
+.profile-name {
   font-family: "Open Sans", sans-serif;
   padding-top: 7%;
 }

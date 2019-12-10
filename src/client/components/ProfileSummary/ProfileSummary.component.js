@@ -7,9 +7,9 @@ const ProfileSummary = ({ profileImage, profileName }) => {
       <img
         src={profileImage.src}
         alt={profileImage.alt}
-        className="profile-Image"
+        className="profile-image"
       />
-      <span className="profile-Name">{profileName}</span>
+      <span className="profile-name">{profileName}</span>
     </div>
   );
 };
