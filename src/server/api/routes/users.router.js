@@ -1,4 +1,7 @@
+<<<<<<< HEAD
+=======
 "use strict";
+>>>>>>> da5ad3bdae26d6b96dc11cabef36eefb31dfa41c
 
 // router setup
 const express = require("express");
