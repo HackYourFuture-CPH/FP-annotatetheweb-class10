@@ -42,43 +42,47 @@
       }
     },
     "/screenshots": {
-      "parameters": [
-        {
-          "name": "url",
-          "required": true,
-          "in": "path",
-          "type": "string"
-        },
-        {
-          "name": "key",
-          "required": true,
-          "in": "path",
-          "type": "string"
-        },
-        {
-          "name": "height",
-          "required": true,
-          "in": "path",
-          "type": "number"
-        },
-        {
-          "name": "width",
-          "required": true,
-          "in": "path",
-          "type": "number"
-        },
-        {
-          "name": "fk_project_id",
-          "required": true,
-          "in": "path",
-          "type": "integer"
-        }
-      ],
       "post": {
-        "operationId": "createRoot",
-        "summary": "Enable root user",
-        "description": "Enables the root user for a specified database instance and returns the root password.\n",
-        "produces": ["application/json"]
+        "summary": "Create new screenshot",
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Create screenshot",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": ["url", "key", "height", "width", "fk_project_id"],
+              "properties": {
+                "url": {
+                  "type": "string"
+                },
+                "key": {
+                  "type": "string"
+                },
+                "height": {
+                  "type": "integer",
+                  "format": "int32",
+                  "minimum": 0
+                },
+                "width": {
+                  "type": "integer",
+                  "format": "int32",
+                  "minimum": 0
+                },
+                "fk_project_id": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
       }
     },
     "definitions": {}
