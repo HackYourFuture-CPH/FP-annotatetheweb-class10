@@ -3,12 +3,12 @@ import "./MobileMenu.css";
 
 const MobileMenu = () => {
   return (
-    <div ClassName="MobileMenu-menuwrap">
-      <input type="checkbox" className="MobileMenu-toggler"></input>
-      <div className="MobileMenu-hamburgur">
-        <div className="MobileMenu-lines"></div>
+    <div ClassName="mobilemenu-menuwrap">
+      <input type="checkbox" className="mobilemenu-toggler"></input>
+      <div className="mobilemenu-hamburgur">
+        <div className="mobilemenu-lines"></div>
       </div>
-      <div className="MobileMenu-menu">
+      <div className="mobilemenu-menu">
         <div>
           <div>
             <ul>
@@ -22,7 +22,7 @@ const MobileMenu = () => {
                 <a href="#">Login</a>
               </li>
             </ul>
-            <button className="MobileMenu-button">Register</button>
+            <button className="mobilemenu-button">Register</button>
           </div>
         </div>
       </div>

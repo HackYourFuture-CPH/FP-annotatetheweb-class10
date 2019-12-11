@@ -1,10 +1,10 @@
-.MobileMenu-menuwrap {
+.mobilemenu-menuwrap {
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1;
 }
-.MobileMenu-toggler {
+.mobilemenu-toggler {
   position: absolute;
   top: 0;
   left: 0;
@@ -14,7 +14,7 @@
   height: 50px;
   opacity: 0;
 }
-.MobileMenu-hamburgur {
+.mobilemenu-hamburgur {
   position: absolute;
   top: 0;
   left: 0;
@@ -27,7 +27,7 @@
   align-items: center;
   justify-content: center;
 }
-.MobileMenu-lines {
+.mobilemenu-lines {
   position: relative;
   width: 100%;
   height: 2px;
@@ -36,8 +36,8 @@
   justify-content: center;
   transition: all 0.4s ease;
 }
-.MobileMenu-lines::before,
-.MobileMenu-lines::after {
+.mobilemenu-lines::before,
+.mobilemenu-lines::after {
   content: "";
   position: absolute;
   z-index: 1;
@@ -46,37 +46,37 @@
   height: 2px;
   background: inherit;
 }
-.MobileMenu-lines::after {
+.mobilemenu-lines::after {
   top: 7px;
 }
 
 /* Toggler animate */
-.MobileMenu-toggler:checked + .MobileMenu-hamburgur > div {
+.mobilemenu-toggler:checked + .mobilemenu-hamburgur > div {
   transform: rotate(135deg);
 }
 /* Turn line to X */
-.MobileMenu-toggler:checked + .MobileMenu-hamburgur > div::before,
-.MobileMenu-toggler:checked + .MobileMenu-hamburgur > div::after {
+.mobilemenu-toggler:checked + .mobilemenu-hamburgur > div::before,
+.mobilemenu-toggler:checked + .mobilemenu-hamburgur > div::after {
   top: 0;
   transform: rotate(90deg);
 }
-.MobileMenu-toggler:checked:hover + .MobileMenu-hamburgur > div {
+.mobilemenu-toggler:checked:hover + .mobilemenu-hamburgur > div {
   transform: rotate(225deg);
 }
-.MobileMenu-toggler:checked ~ .MobileMenu-menu {
+.mobilemenu-toggler:checked ~ .mobilemenu-menu {
   visibility: visible;
 }
 
-.MobileMenu-toggler:checked ~ .MobileMenu-menu > div {
+.mobilemenu-toggler:checked ~ .mobilemenu-menu > div {
   transform: scale(1);
 }
 
-.MobileMenu-toggler:checked ~ .MobileMenu-menu > div > div {
+.mobilemenu-toggler:checked ~ .mobilemenu-menu > div > div {
   opacity: 1;
   transition: opacity 0.4s ease;
 }
 
-.MobileMenu-menu {
+.mobilemenu-menu {
   position: fixed;
   top: 0;
   left: 0;
@@ -88,7 +88,7 @@
   align-items: center;
   justify-content: center;
 }
-.MobileMenu-menu > div {
+.mobilemenu-menu > div {
   width: 200vw;
   height: 200vw;
   display: flex;
@@ -98,32 +98,32 @@
   transform: scale(0);
   transition: all 0.4s ease;
 }
-.MobileMenu-menu > div > div {
+.mobilemenu-menu > div > div {
   text-align: center;
   max-width: 90vw;
   max-height: 100vh;
   opacity: 0;
   transition: opacity 0.4s ease;
 }
-.MobileMenu-menu > div > div > ul > li {
+.mobilemenu-menu > div > div > ul > li {
   font-size: 18px;
   padding: 10px;
   list-style: none;
   color: black;
 }
 
-.MobileMenu-menu > div > div > ul > li:hover {
+.mobilemenu-menu > div > div > ul > li:hover {
   text-underline-position: under;
   border-bottom: 4px solid #cde769;
 }
 
-.MobileMenu-menu > div > div > ul > li > a {
+.mobilemenu-menu > div > div > ul > li > a {
   color: inherit;
   text-decoration: none;
   transition: color 0.4s ease;
 }
 
-.MobileMenu-button {
+.mobilemenu-button {
   border-radius: 40px;
   background-color: white;
   border: 1px solid black;
