@@ -1,0 +1,66 @@
+.sidebar-menu-wrapper {
+  bottom: 0;
+  position: fixed;
+  width: 100vw;
+  background-color: rgba(83, 82, 82, 0.849);
+}
+
+/* Change black colour of png icons to white */
+.sidebar-menu-invert-color {
+  -webkit-filter: invert(98%);
+}
+
+/* Inactive icons are less white */
+.sidebar-menu-inactive {
+  filter: invert(40%);
+  pointer-events: none;
+}
+
+.sidebar-menu-button {
+  background: none;
+  color: inherit;
+  border: none;
+  cursor: pointer;
+  outline: inherit;
+  display: block;
+  padding: 1rem;
+}
+
+.sidebar-menu-button:hover {
+  background-color: rgb(71, 71, 71);
+}
+
+.sidebar-menu {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.black:hover {
+  color: rgb(255, 255, 255);
+}
+
+@media (min-width: 566px) {
+  .sidebar-menu-wrapper {
+    justify-content: center;
+    left: 0;
+    width: 3.1rem;
+    height: 100vh;
+    background-color: rgba(83, 82, 82, 0.849);
+    position: fixed;
+  }
+
+  .sidebar-menu {
+    display: block;
+    top: 20%;
+    position: fixed;
+  }
+
+  .sidebar-menu-icon-width {
+    font-size: 1rem;
+  }
+
+  .sidebar-menu-button {
+    padding: 1rem 0.7rem;
+  }
+}
