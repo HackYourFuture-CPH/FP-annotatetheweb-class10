@@ -43,8 +43,8 @@ class BlogCard extends Component {
             <DotButton title={'...'} onClickHandle={this.onClickHandle} />
             {this.state.showDropdown && <DropDown titleArray={titleArray} onClickHandle={this.onClickHandle} /> }       
           </div>
-          <Input name={"blogCardLabel"} title={"make blog as cards"} placeholder={"add comment..."}
-            type={"input"} 
+          <Input name="blogCardLabel" title="make blog as cards" placeholder="add comment..."
+            type="input" 
             handleInputChange={this.handleInputChange}
           />         
         </div>
