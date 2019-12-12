@@ -4,7 +4,7 @@ const knex = require("../../config/db");
 const error = require("../lib/utils/http-error");
 
 //GET all annotations
-const getAnnotations = async req => {
+const getAnnotations = ()=> {
   try {
     return await knex("annotations").select(
       "annotations.annotation_id",
