@@ -1,7 +1,7 @@
 import React, {Component} from "react";
-import DotButton from "../../DotButton/DotButton.component";
+import DotButton from "../../components/DotButton/DotButton.component";
 import DropDown from "../DropDown/DropDown.component";
-import Input from "../../Input/Input.component";
+import Input from "../../components/Input/Input.component";
 import CommentList from "../CommentList/CommentList.component";
 import './blogCard.css';
 
