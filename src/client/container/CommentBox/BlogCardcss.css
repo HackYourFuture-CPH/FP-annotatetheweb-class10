@@ -19,27 +19,26 @@
     border-width: thick;
     border-color: hsl(71, 53%, 77%);
     margin-bottom: 20px;
-    position: fixed;
 }
 
 
 /*class for div consists of the lable and input */
 
-.inputBox {
-    width: 100%;
+.input-box {
+    width: 50%;
     margin-left: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    position: relative;
-    z-index: auto;
+    position: absolute;
+    z-index: 2;
 }
 
 .blog-card-label {
     font-family: serif;
     font-size: 12px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     margin-top: 0px;
 }
 
@@ -74,7 +73,7 @@ button.btn-right {
     background-color: white;
     outline: none;
     cursor: pointer;
-    margin-top: 40px;
+    margin-top: 8px;
     margin-right: 20px;
 }
 
@@ -83,7 +82,6 @@ button.btn-right {
 
 .menu-right {
     display: flex;
-    flex-direction: row;
     justify-content: flex-end;
 }
 
@@ -92,9 +90,9 @@ button.btn-right {
 
 .dropdown-content {
     display: none;
+    position: absolute;
     flex-direction: column;
     justify-content: flex-start;
-    margin-top: 500px;
     width: 80px;
     height: 100px;
     overflow: auto;
@@ -123,7 +121,6 @@ button.btn-right {
 }
 
 .comment-list {
-    position: relative;
     margin-top: 20px;
     margin-bottom: 20px;
     margin-left: 20px;
