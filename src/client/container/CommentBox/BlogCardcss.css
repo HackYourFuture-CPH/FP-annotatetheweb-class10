@@ -104,13 +104,13 @@ button.btn-right {
 
 /*class for for each list items*/
 
-.listComponent {
+.list-component {
     list-style-type: none;
     cursor: pointer;
     font-size: 12px;
 }
 
-.listComponent:hover {
+.list-component:hover {
     background-color: #f1f1f1;
 }
 
