@@ -1,13 +1,13 @@
 .mobilemenu-menuwrap {
   position: fixed;
   top: 0;
-  left: 0;
+  right: 0;
   z-index: 1;
 }
 .mobilemenu-toggler {
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
   z-index: 2;
   cursor: pointer;
   width: 50px;
@@ -17,7 +17,7 @@
 .mobilemenu-hamburgur {
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
   z-index: 1;
   width: 30px;
   height: 30px;
@@ -80,8 +80,8 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 50%;
-  height: 50%;
+  width: 100%;
+  height: 100%;
   visibility: hidden;
   overflow: hidden;
   display: flex;
@@ -133,4 +133,7 @@
   font-family: "Open Sans";
   font-size: 18px;
   margin-left: 40px;
+}
+@media only screen and (max-width: 768px) {
+  
 }
