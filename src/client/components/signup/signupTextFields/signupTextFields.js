@@ -22,5 +22,4 @@ const SignupTextFields = ({
     </label>
   );
 };
-
 export default SignupTextFields;
