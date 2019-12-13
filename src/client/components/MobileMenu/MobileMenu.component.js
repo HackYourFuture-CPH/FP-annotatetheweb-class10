@@ -4,6 +4,7 @@ import "./MobileMenu.css";
 const MobileMenu = () => {
   return (
     <div ClassName="mobilemenu-menuwrap">
+      <p className="mobilemenu-title">Annotate the web</p>
       <input type="checkbox" className="mobilemenu-toggler"></input>
       <div className="mobilemenu-hamburgur">
         <div className="mobilemenu-lines"></div>

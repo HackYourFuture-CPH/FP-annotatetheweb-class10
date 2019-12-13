@@ -1,3 +1,7 @@
+.mobilemenu-title{
+  font-size: 22px;
+  text-shadow: 2px 2px 5px gray;
+}
 .mobilemenu-menuwrap {
   position: fixed;
   top: 0;
