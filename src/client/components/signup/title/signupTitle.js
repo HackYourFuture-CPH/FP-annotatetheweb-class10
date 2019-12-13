@@ -1,8 +1,8 @@
 import React from "react";
-import "../signup.css";
+import "./signupTitle.css";
 
 const SignupTitle = () => {
-  return <div className="signupTitle">Sign up to Annotate the web</div>;
+  return <div className="signup-title">Sign up to Annotate the web</div>;
 };
 
 export default SignupTitle;

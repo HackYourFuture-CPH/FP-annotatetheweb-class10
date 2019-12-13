@@ -1,14 +1,30 @@
 import React from "react";
-import "../signup.css";
-
-const CheckBox = ({}) => {
+import "./signupCheckBox.css";
+const CheckBox = ({
+  onChange,
+  checkboxClass,
+  linkClass,
+  text1,
+  text2,
+  text3,
+  text4
+}) => {
   return (
-    <label className="signupCheckBoxTxt">
-      <input type="checkbox" />
-      Creating an account means you're okey with our
-      <a href="#">Terms of Services, Privacy Policy,</a>
-      and our default
-      <a href="#">Notification Settings.</a>
+    <label>
+      <input
+        type="checkbox"
+        onChange={event => {
+          onChange(event.target.checked);
+        }}
+      />
+      <div className={checkboxClass}>{text1}</div>
+      <a href="#" className={linkClass}>
+        {text2}
+      </a>
+      <div className={checkboxClass}>{text3}</div>
+      <a href="#" className={linkClass}>
+        {text4}
+      </a>
     </label>
   );
 };
