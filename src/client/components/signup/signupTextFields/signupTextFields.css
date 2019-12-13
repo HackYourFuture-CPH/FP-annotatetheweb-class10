@@ -1,0 +1,93 @@
+.password-label {
+  position: absolute;
+  width: 274px;
+  height: 30px;
+  left: 1055px;
+  top: 410px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 34px;
+  color: #2d2e36;
+}
+.password-box {
+  position: absolute;
+  width: 310px;
+  font-size: 18px;
+  height: 49px;
+  left: 1050px;
+  top: 450px;
+  font-family: Open Sans;
+  font-size: 16px;
+  background: #f0f0f0;
+  border-radius: 10px;
+}
+.email-address-box {
+  position: absolute;
+  width: 645px;
+  height: 49px;
+  left: 1132px;
+  top: 558px;
+  font-family: open Sans;
+  font-size: 18px;
+  background: #f0f0f0;
+  border-radius: 10px;
+}
+.username-label {
+  position: absolute;
+  width: 274px;
+  height: 30px;
+  left: 1055px;
+  top: 410px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 34px;
+  color: #2d2e36;
+}
+.fullname-label {
+  position: absolute;
+  width: 274px;
+  height: 30px;
+  left: 1055px;
+  top: 410px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 34px;
+  color: #2d2e36;
+}
+.fullname-box {
+  position: absolute;
+  width: 310px;
+  height: 49px;
+  left: 1050px;
+  top: 450px;
+  background: #f0f0f0;
+  border-radius: 10px;
+}
+.username-box {
+  position: absolute;
+  width: 310px;
+  height: 49px;
+  left: 1050px;
+  top: 450px;
+  background: #f0f0f0;
+  border-radius: 10px;
+}
+.email-label {
+  position: absolute;
+  width: 274px;
+  height: 30px;
+  left: 1139px;
+  top: 517px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 34px;
+  color: #2d2e36;
+}
