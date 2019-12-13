@@ -1,4 +1,4 @@
-.mobilemenu-title{
+.mobilemenu-title {
   font-size: 22px;
   text-shadow: 2px 2px 5px gray;
 }
@@ -137,7 +137,4 @@
   font-family: "Open Sans";
   font-size: 18px;
   margin-left: 40px;
-}
-@media only screen and (max-width: 768px) {
-  
 }
