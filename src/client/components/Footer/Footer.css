@@ -4,12 +4,13 @@
   height: 100px;
   left: -1px;
   top: 1749px;
+  
 }
 a{
   text-decoration: none;
   color: inherit;
 }
-.Rectangle-btn {
+.rectangle-btn {
   position: absolute;
   width: 1920px;
   height: 100px;
