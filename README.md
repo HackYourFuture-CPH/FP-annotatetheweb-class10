@@ -97,7 +97,9 @@ _Add here information about the Business Glossary_
 
 #### 🗄️ Database Model Diagram
 
-Check here the DB Diagram https://dbdiagram.io/d/5dc962d4edf08a25543dc63b
+Check here the DB Diagram https://dbdiagram.io/d/5ddd225aedf08a25543e6302
+
+<img width=700px height=700x src="/dbdiagram.png"  alt="AWS S3 logo">
 
 - [How to make changes on the diagram](/diagram.md)
 
