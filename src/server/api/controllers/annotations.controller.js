@@ -3,7 +3,6 @@
 const knex = require("../../config/db");
 const error = require("../lib/utils/http-error");
 
-//GET all annotations
 const getAnnotations = async req => {
   try {
     return await knex("annotations").select(
@@ -20,8 +19,6 @@ const getAnnotations = async req => {
     return error.message;
   }
 };
-
-// GET specific:id
 
 const getAnnotationsById = async id => {
   try {
