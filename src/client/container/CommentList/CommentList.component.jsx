@@ -6,7 +6,7 @@ const CommentList = props => {
     return(
         <div className="comment-list">
             {props.inputValue.map(item =>            
-                <List title={item.comment}/>    
+                <List key={item.id} title={item.comment}/>    
             )}
         </div>
     )     
