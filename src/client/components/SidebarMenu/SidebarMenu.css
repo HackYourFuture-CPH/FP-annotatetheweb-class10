@@ -1,4 +1,4 @@
-.sidebar-menu-wrapper-resp {
+.sidebar-menu-wrapper {
   bottom: 0;
   position: fixed;
   width: 100vw;
@@ -12,11 +12,11 @@
 
 /* Inactive icons are less white */
 .sidebar-menu-inactive {
-  -webkit-filter: invert(40%);
+  filter: invert(40%);
   pointer-events: none;
 }
 
-.sidebar-menu-button-resp {
+.sidebar-menu-button {
   background: none;
   color: inherit;
   border: none;
@@ -26,11 +26,11 @@
   padding: 1rem;
 }
 
-.sidebar-menu-button-resp:hover {
+.sidebar-menu-button:hover {
   background-color: rgb(71, 71, 71);
 }
 
-.sidebar-menu-resp {
+.sidebar-menu {
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -41,7 +41,7 @@
 }
 
 @media (min-width: 566px) {
-  .sidebar-menu-wrapper-resp {
+  .sidebar-menu-wrapper {
     justify-content: center;
     left: 0;
     width: 3.1rem;
@@ -50,17 +50,17 @@
     position: fixed;
   }
 
-  .sidebar-menu-resp {
+  .sidebar-menu {
     display: block;
     top: 20%;
     position: fixed;
   }
 
-  .sidebar-menu-icon-width-resp {
+  .sidebar-menu-icon-width {
     font-size: 1rem;
   }
 
-  .sidebar-menu-button-resp {
+  .sidebar-menu-button {
     padding: 1rem 0.7rem;
   }
 }
