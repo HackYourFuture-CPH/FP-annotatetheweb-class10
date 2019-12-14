@@ -2,10 +2,10 @@
 .nav-style {
     font-weight: bold;
     letter-spacing: 1px;
-    color:#2D2E36;  
     font-family: "Open Sans";
     font-size: 25px;
     line-height: 34px;
+    cursor: pointer;
 }
 
 .nav-elements {
@@ -20,6 +20,9 @@
   flex-direction: row;
   float:right;
   margin:30px 10px 0 10px;
+}
+.nav-link {
+  color: #2D2E36;
 }
 .nav-link:link {
     text-decoration: none;

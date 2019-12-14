@@ -14,7 +14,10 @@ test("if Nav Bar has correct text",()=>{
     navElements ={navElements}
     href ={href}
     />)
-    expect(container.children.length).toBe(1);
+    expect(container.getElementsByTagName('a')[0].innerHTML).toBe('Annotate');
+    expect(container.getElementsByTagName('a')[1].innerHTML).toBe('About');
+    expect(container.getElementsByTagName('a')[2].innerHTML).toBe('Login');
+    
 });
 
 
