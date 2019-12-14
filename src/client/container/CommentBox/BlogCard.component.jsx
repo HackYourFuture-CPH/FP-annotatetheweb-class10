@@ -10,7 +10,6 @@ class BlogCard extends Component {
   
     state = {
     inputValue: [],
-    isEnter: false,
     showDropdown: false      
   };
   //Input event handler
@@ -21,7 +20,7 @@ class BlogCard extends Component {
         comment:event.target.value,
         id: newId 
       }
-      this.setState({inputValue: this.state.inputValue.concat(newComment), isEnter: true});        
+      this.setState({inputValue: this.state.inputValue.concat(newComment)});        
     }
   }
   //button click event handler
@@ -48,9 +47,7 @@ class BlogCard extends Component {
             handleInputChange={this.handleInputChange}
           />         
         </div>
-        {this.state.isEnter && this.state.inputValue && <CommentList inputValue ={this.state.inputValue}
-          
-          />} 
+         <CommentList inputValue ={this.state.inputValue}/> 
          
       </div>      
       </React.Fragment>
