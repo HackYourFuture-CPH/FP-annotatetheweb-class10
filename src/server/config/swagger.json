@@ -1,11 +1,50 @@
 {
-  "swagger": "2.0",
-  "info": {
-    "version": "1.0",
-    "title": "Final project",
-    "description": "API documentation for the final project",
-    "contact": {}
-  },
-  "host": "",
-  "basePath": "/api"
+    "swagger": "2.0",
+    "info": {
+        "version": "v1",
+        "title": "FP-Annotatetheweb-class10"
+    },
+    "host": "",
+    "basePath": "/api",
+    "schemes": ["http", "https"],
+    "paths": {
+        "/annotations": {
+            "post": {
+                "summary": "Create new annotation",
+                "consumes": ["application/json"],
+                "parameters": [{
+                    "name": "body",
+                    "in": "body",
+                    "description": "Create annotation",
+                    "required": true,
+                    "schema": {
+                        "type": "object",
+                        "required": ["title", "description", "area", "fk_screenshot_id"],
+                        "properties": {
+                            "title": {
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "area": {
+                                "type": "object",
+                                "format": "object"
+
+                            },
+                            "fk_screenshot_id": {
+                                "type": "integer"
+                            }
+                        }
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "definitions": {}
+    }
 }
