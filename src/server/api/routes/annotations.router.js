@@ -5,7 +5,6 @@ const router = express.Router({ mergeParams: true });
 
 const annotationsController = require("../controllers/annotations.controller");
 
-
 router.get("/", (req, res, next) => {
   annotationsController
     .getAnnotations(req)
@@ -19,5 +18,4 @@ router.get("/:id", (req, res, next) => {
     .then(result => res.json(result))
     .catch(next);
 });
-
 module.exports = router;

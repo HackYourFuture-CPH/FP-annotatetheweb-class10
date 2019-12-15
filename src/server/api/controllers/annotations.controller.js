@@ -19,7 +19,6 @@ const getAnnotations = async req => {
     return error.message;
   }
 };
-
 const getAnnotationsById = async id => {
   try {
     const annotations = await knex("annotations")
