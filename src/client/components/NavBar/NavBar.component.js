@@ -5,13 +5,11 @@ import "./NavBar.css";
 const NavBar = ({navElements, href }) => {
   const navList = navElements.map(item => {
     return (
-      // <a className="nav-link" href={href} key={item.id}>
         <li className="nav-style" key={item.id}>
         <a className="nav-link" href={href} key={item.id}>
           {item.title}
           </a>
         </li>
-      // </a>
     );
   });
   return (
