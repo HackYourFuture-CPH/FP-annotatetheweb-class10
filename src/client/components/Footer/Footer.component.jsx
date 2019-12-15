@@ -6,17 +6,16 @@ const Footer = () => {
     <footer className="footer-btn">
       <div className="rectangle-btn"></div>
       <div className="content-btn">
-        Created by:{" "}
+        Created by:
         <a
           href="https://www.hackyourfuture.dk"
           target="_blank"
           className="content-logos"
         >
-          {" "}
           HACK YOUR FUTURE
-        </a>{" "}
+        </a>
         <br />
-        and{" "}
+        and
         <a
           href="https://www.codeart.dk"
           target="_blank"
