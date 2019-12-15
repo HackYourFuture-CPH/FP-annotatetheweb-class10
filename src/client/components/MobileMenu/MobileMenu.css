@@ -1,0 +1,140 @@
+.mobilemenu-title {
+  font-size: 22px;
+  text-shadow: 2px 2px 5px gray;
+}
+.mobilemenu-menuwrap {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+.mobilemenu-toggler {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  opacity: 0;
+}
+.mobilemenu-hamburgur {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  width: 30px;
+  height: 30px;
+  padding: 1rem;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mobilemenu-lines {
+  position: relative;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  transition: all 0.4s ease;
+}
+.mobilemenu-lines::before,
+.mobilemenu-lines::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: -7px;
+  width: 100%;
+  height: 2px;
+  background: inherit;
+}
+.mobilemenu-lines::after {
+  top: 7px;
+}
+
+/* Toggler animate */
+.mobilemenu-toggler:checked + .mobilemenu-hamburgur > div {
+  transform: rotate(135deg);
+}
+/* Turn line to X */
+.mobilemenu-toggler:checked + .mobilemenu-hamburgur > div::before,
+.mobilemenu-toggler:checked + .mobilemenu-hamburgur > div::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+.mobilemenu-toggler:checked:hover + .mobilemenu-hamburgur > div {
+  transform: rotate(225deg);
+}
+.mobilemenu-toggler:checked ~ .mobilemenu-menu {
+  visibility: visible;
+}
+
+.mobilemenu-toggler:checked ~ .mobilemenu-menu > div {
+  transform: scale(1);
+}
+
+.mobilemenu-toggler:checked ~ .mobilemenu-menu > div > div {
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+
+.mobilemenu-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mobilemenu-menu > div {
+  width: 200vw;
+  height: 200vw;
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0);
+  transition: all 0.4s ease;
+}
+.mobilemenu-menu > div > div {
+  text-align: center;
+  max-width: 90vw;
+  max-height: 100vh;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.mobilemenu-menu > div > div > ul > li {
+  font-size: 18px;
+  padding: 10px;
+  list-style: none;
+  color: black;
+}
+
+.mobilemenu-menu > div > div > ul > li:hover {
+  text-underline-position: under;
+  border-bottom: 4px solid #cde769;
+}
+
+.mobilemenu-menu > div > div > ul > li > a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.4s ease;
+}
+
+.mobilemenu-button {
+  border-radius: 40px;
+  background-color: white;
+  border: 1px solid black;
+  width: 160px;
+  height: 40px;
+  color: black;
+  font-family: "Open Sans";
+  font-size: 18px;
+  margin-left: 40px;
+}
