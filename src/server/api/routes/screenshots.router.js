@@ -27,7 +27,7 @@ router.get("/:key", (req, res, next) => {
 
 // ENDPOINT: /api/screenshots/ :POST
 router.post("/", (req, res, next) => {
-  screenshotController
+  screenshotsController
     .createScreenshot(req.body)
     .then(result => res.json(result))
     .catch(error => {
