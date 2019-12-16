@@ -9,3 +9,5 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { Content } from "../components/content/Content.story";
 import { SidebarMenu } from '../components/SidebarMenu/SidebarMenu.story';
+import {LoginPage} from '../components/LoginPage/LoginPage.story';
+import {Image} from '../components/LoginPageImage/LoginPageImage.story';
