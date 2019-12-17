@@ -19,7 +19,7 @@ const codeartLogo = {
 storiesOf("Content", module).add("Content", () => (
   <div>
     <Content
-      title="about project"
+      title="About project"
       text="This tool will help you to annotate any webpage that you want, collaborate with others and share your comments."
       hyfLogo={hyfLogo}
       codeartLogo={codeartLogo}
