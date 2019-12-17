@@ -20,6 +20,7 @@ storiesOf("Form Components", module)
       title="Password"
       box="password-label"
       inputType="password"
+      textHolder= "+6 Character"
       inputClass="password-box"
       changeHandler={e => {
         e.target.value;
