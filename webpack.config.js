@@ -45,12 +45,14 @@ module.exports = {
   node: {
     net: "empty",
     tls: "empty",
-    dns: "empty"
+    dns: "empty",
+    fs: "empty"
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: "./public/index.html",
       favicon: "./public/favicon.ico"
     })
-  ]
+  ],
+  
 };
