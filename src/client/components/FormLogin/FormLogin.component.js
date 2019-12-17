@@ -11,9 +11,11 @@ class FormLogin extends Component{
     
     render(){
         return(
+            <div className='main-wrapper'>
             <div className='header-wrapper'>
                <Header title="Annotate the web"/>
-               <FormLoginRegister formLoginRegister='form-login-register' text='Do not have account yet?' register='Register' classRegister='register-class'/>
+               <FormLoginRegister formLoginRegister='form-login-register' text='Do not have account yet?' register='Register' classRegister='register-class' linewrapper='line-wrapper'/>
+            </div>
             </div>
         
             

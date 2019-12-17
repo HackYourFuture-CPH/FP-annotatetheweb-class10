@@ -1,7 +1,7 @@
 .header-wrapper{
   display: flex;
-  flex-direction:rows;
-  flex:2;
+  justify-content: space-between;
+  width:100vw;
 }
 .image{
     background-color:blue;
