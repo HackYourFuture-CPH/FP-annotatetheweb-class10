@@ -1,8 +1,7 @@
-.wrapper{
-    background-color: red;
+.header-wrapper{
   display: flex;
-  flex-direction: rows;
-  flex:4;
+  flex-direction:rows;
+  flex:2;
 }
 .image{
     background-color:blue;
