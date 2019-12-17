@@ -1,11 +1,13 @@
+main-wrapper{
+  
+}
+
+
 .header-wrapper{
   display: flex;
   justify-content: space-between;
-  width:100vw;
+  /* width:100vw; */
 }
-.image{
-    background-color:blue;
-    display: flex;
-    flex-direction: column;
-    flex:1;
+.body-wrapper{
+
 }

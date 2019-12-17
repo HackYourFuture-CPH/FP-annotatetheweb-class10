@@ -5,12 +5,12 @@ import FormButton from "./FormButton.component";
 
 it("click on button- function onClick is called" , () => {
        let title;
-       const handleClick=jest.fn();
+       const onClick=jest.fn();
              if(title === 'Log In' || title === 'Log In With Google')
                 {
-                      const {  getByText } = render(<FormButton onClick={handleClick} />);
+                      const {  getByText } = render(<FormButton onClick={onClick} />);
                       fireEvent.click(getByText(title));
-                      expect(handleClick).toHaveTextContent("1");
+                      expect(onClick).toHaveBeenCalledTimes(1);
                 }
     }
   );
