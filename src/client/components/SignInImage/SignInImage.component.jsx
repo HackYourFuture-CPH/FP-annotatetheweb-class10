@@ -1,5 +1,5 @@
 import React from "react";
-import './LoginPageImage.css';
+import './SignInImage.css';
 
 const image = require('./loginImage.jpg'); 
 console.log(image);
