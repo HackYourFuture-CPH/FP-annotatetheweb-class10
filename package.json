@@ -4,7 +4,7 @@
   "description": "Final Project",
   "main": "index.js",
   "engines": {
-    "node": "8.11.1"
+    "node": "12.9.1"
   },
   "scripts": {
     "build": "webpack --mode production",
