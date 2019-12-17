@@ -1,23 +1,23 @@
 .boxclass{
     font-weight: bold;
-    margin-left:20px;
-    margin-top:20px;
+    /* margin-left:20px; */
+    margin-top:1.25rem;
     font-family:'Open Sans', sans-serif;
-    margin-bottom:10px;
+    margin-bottom:,625rem;
 }
 .email-addres-box {
-    border-radius: 12px;
-    margin-left:15px;
-    height:35px;
-    width:350px;
+    border-radius: .8rem;
+    /* margin-left:1rem; */
+    height:2rem;
+    width:100%;
     border:2px solid rgb(252,248,248);
     background-color: rgb(245,245,245);
 }
 .password-box{
-    border-radius: 12px;
-    margin-left:15px;
-    height:35px;
-    width:350px;
+    border-radius: .8rem;
+    /* margin-left:1rem; */
+    height:2rem;
+    width:100%;
     border:2px solid rgb(252,248,248);
     background-color: rgb(245,245,245);
 
