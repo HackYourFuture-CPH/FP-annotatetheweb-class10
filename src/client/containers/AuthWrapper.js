@@ -8,7 +8,7 @@ export default class AuthWrapper extends React.Component {
 
     componentDidMount() {
         firebase.auth().onAuthStateChanged(user => {
-            {user && console.log('User', user.email)}
+            { user && console.log('User', user.email) }
             if (user) {
                 console.log('signed in');
                 this.setState({ isLoading: false, isAuthenticated: true })
@@ -20,10 +20,12 @@ export default class AuthWrapper extends React.Component {
     };
 
     render() {
-        console.log('From wrapper', this.state.isAuthenticated);
+        if (!this.state.isAuthenticated) {
+            // return ;
+        }
         return (
             <div >
-                {this.props.children({isAuthenticated: this.state.isAuthenticated})}
+                {this.props.children({ isAuthenticated: this.state.isAuthenticated })}
             </div>
         )
     }
