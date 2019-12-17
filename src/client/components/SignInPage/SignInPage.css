@@ -1,0 +1,14 @@
+.main-wrapper{
+    position:absolute;
+    margin-left: 2rem;
+}
+
+.header-wrapper{
+    display: flex;
+    justify-content: space-between;
+    /* width:100vw; */
+  }
+.body-wrapper{
+    display: flex;
+    justify-content:space-around;; 
+}

@@ -1,14 +1,11 @@
-
-
 .submit-btn{
     background-color: rgb(205,231,105);
-    width:260px;
-    height:35px;
-    margin-top:40px;
-    margin-left:40px;
+    width: 100%;
+    height: 2rem;
+    margin: 1rem auto;
     color:gray;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size:18px;
+    font-size:1rem;
     box-shadow: 1px 2px #a09f9f;
     border-radius: 5px;
     text-shadow: 1px 1px rgb(15, 15, 15);
@@ -19,8 +16,9 @@
     border:2px solid rgb(252,248,248);
     background-color:  rgb(245,245,245);
     border-radius: 5px;
-    height:35px;
-    width:35px;
+    height: 2rem;
+    width: 2rem;
+    margin: 0.5rem 0.5rem;
 }
 
 .facebook-btn{
@@ -28,10 +26,9 @@
     border:2px solid rgb(252,248,248);
     background-color:  rgb(245,245,245);
     border-radius: 5px;
-    height:35px;
-    width:35px;
-    size:15px;
-
+    height: 2rem;
+    width: 2rem;
+    margin: 0.5rem 0.5rem;
 }
 .google-btn{
     background-color:rgb(91, 135, 230);
@@ -39,12 +36,11 @@
     color: white;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     text-align:center;
-    position: absolute;
-    width:260px;
-    height:35px;
-    margin-top:40px;
-    margin-left:40px;
-    font-size:15px;
+    width: 13rem;
+    min-width: 10rem;
+    height: 2rem;
+    margin: 0.5rem 0.5rem 0.5rem 0;
+    font-size: 0.8rem;
     border-radius: 5px;
 
 }
