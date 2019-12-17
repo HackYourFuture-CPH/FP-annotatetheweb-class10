@@ -1,12 +1,12 @@
-import React from "react";
-import "./Content.css";
+import React from 'react';
+import './Content.css';
 
 const Content = ({
-  title = "",
-  text = "",
+  title = '',
+  text = '',
   hyfLogo = {},
   codeartLogo = {},
-  theme = {}
+  theme = {},
 }) => {
   return (
     <div style={{ backgroundColor: theme.colors.primary }}>
@@ -15,7 +15,7 @@ const Content = ({
         style={{
           fontFamily: theme.fontFamily.title,
           fontSize: theme.fontFamily.sizeTitle,
-          textAlign: theme.textAlign
+          textAlign: theme.textAlign,
         }}
         className="content-title"
       >
@@ -28,7 +28,7 @@ const Content = ({
         style={{
           fontFamily: theme.fontFamily.title,
           fontSize: theme.fontFamily.sizeTitle,
-          textAlign: theme.textAlign
+          textAlign: theme.textAlign,
         }}
       >
         made by:
@@ -42,7 +42,7 @@ const Content = ({
           alt={codeartLogo.alt}
           style={{
             width: theme.images.width,
-            height: theme.images.height
+            height: theme.images.height,
           }}
         />
         <img
@@ -50,7 +50,7 @@ const Content = ({
           alt={hyfLogo.alt}
           style={{
             width: theme.images.width,
-            height: theme.images.height
+            height: theme.images.height,
           }}
         />
       </div>
