@@ -1,0 +1,33 @@
+.footer-btn {
+  position: absolute;
+  width: 1920px;
+  height: 92px;
+  left: 0px;
+  top: 1749px;
+}
+.footer-hyf-logo {
+  position: absolute;
+  width: 315px;
+  height: 30.95px;
+  left: 757px;
+  top: 1790.68px;
+  opacity: 2.6;
+}
+.footer-codeart-logo {
+  position: absolute;
+  width: 160px;
+  height: 26.09px;
+  left: 1088px;
+  top: 1796.84px;
+  opacity: 2.6;
+}
+.rectangle-btn {
+  position: absolute;
+  width: 1920px;
+  height: 100px;
+  left: 0px;
+  top: 1749px;
+
+  background: rgb(42, 42, 43);
+  opacity: inherit;
+}
