@@ -1,27 +1,21 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Pacifico&display=swap");
 
 .header {
-  position: absolute;
-  width: 1767px;
-  height: 105px;
-  left: 77px;
-  top: 50px;
+  weight: 13rem;
+  left: -15px;
+  top: 15px;
 }
 
 .logo {
-  position: absolute;
-  width: 120rem;
-  height: 105px;
-  left: -20px;
+  width: 12rem;
+  height: px;
+  left: -220px;
   top: -35px;
-
   font-family: Pacifico;
   font-style: normal;
   font-weight: normal;
-  font-size: 60px;
+  font-size: 20px;
   line-height: 105px;
-
   color: #2d2e36;
-
   text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
 }

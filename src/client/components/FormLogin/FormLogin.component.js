@@ -10,11 +10,12 @@ class FormLogin extends Component{
     
     render(){
         return(
-            <div className='wrapper'>
-                 <Header />
-                 <Image/>
-                 <FormField/>
+            <div className='header-wrapper'>
+               <Header title="Annotate the web"/>
             </div>
+        
+            
+            
            
             
 

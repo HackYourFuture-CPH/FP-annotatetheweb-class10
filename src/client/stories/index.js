@@ -12,3 +12,4 @@ import { SidebarMenu } from '../components/SidebarMenu/SidebarMenu.story';
 import {FormLogin} from '../components/FormLogin/FormLogin.story';
 import {Image} from '../components/SignInImage/SignInImage.story';
 import {Header} from '../components/Header/Header.story';
+import {FormLoginRegister} from '../components/FormloginRegister/FormLoginRegister.story';
