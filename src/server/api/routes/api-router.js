@@ -8,6 +8,7 @@ const modulesRouter = require("./modules.router");
 const userRouter = require("./users.router");
 const annotationsRouter = require("./annotations.router");
 const screenshotsRouter = require("./screenshots.router");
+const annotationsRouter = require("./annotations.router");
 
 // swagger-ui-express
 const swaggerUi = require("swagger-ui-express");
@@ -21,5 +22,6 @@ router.use(`/modules`, modulesRouter);
 router.use(`/users`, userRouter);
 router.use(`/annotations`, annotationsRouter);
 router.use(`/screenshots`, screenshotsRouter);
+router.use(`/annotations`,annotationsRouter);
 
 module.exports = router;
