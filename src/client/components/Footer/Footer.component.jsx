@@ -1,28 +1,24 @@
 import React from "react";
 import "./Footer.css";
+import hyf_logo_black_background from "../../assets/images/hyf_logo_black_background.png";
+import codeart_logo_black_background from "../../assets/images/codeart_logo_black_background.png";
 
 const Footer = () => {
   return (
     <footer className="footer-btn">
       <div className="rectangle-btn"></div>
-      <div className="content-btn">
-        Created by:
         <a
           href="https://www.hackyourfuture.dk"
           target="_blank"
-          className="content-logos"
         >
-          HACK YOUR FUTURE
+          <img className="footer-hyf-logo" src={hyf_logo_black_background} />
         </a>
-        and
         <a
           href="https://www.codeart.dk"
-          target="_blank"
-          className="content-logos"
-        >
-          Code: art
-        </a>
-      </div>
+          target="_blank">
+         <img className="footer-codeart-logo"src={codeart_logo_black_background} />
+         </a>
+      
     </footer>
   );
 };
