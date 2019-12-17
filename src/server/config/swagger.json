@@ -2,10 +2,50 @@
   "swagger": "2.0",
   "info": {
     "version": "1.0",
-    "title": "Final project",
+    "title": "AnnotateTheWeb.API",
     "description": "API documentation for the final project",
     "contact": {}
   },
   "host": "",
-  "basePath": "/api"
+  "basePath": "/api",
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "paths": {
+    "/screenshots/{key}": {
+      "get": {
+        "tags": [
+          "Screenshot"
+        ],
+        "summary": "Checks the status of a taken screenshot and returns information about the screenshot if it's ready.",
+        "operationId": "Screenshot_CheckStatusOnScreenshot",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/xml",
+          "text/xml"
+        ],
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "description": "The unique key for the screenshot",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {}
 }
