@@ -16,6 +16,9 @@ class FormLogin extends Component{
                <Header title="Annotate the web"/>
                <FormLoginRegister formLoginRegister='form-login-register' text='Do not have account yet?' register='Register' classRegister='register-class' linewrapper='line-wrapper'/>
             </div>
+            <div className='body-wrapper'>
+            <Image classImage='image'/>
+            </div>
             </div>
         
             

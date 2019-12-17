@@ -5,7 +5,7 @@ const image = require('./loginImage.jpg');
 console.log(image);
 
 
-const Image = ({classImage}) => {
+const Image = ({classImage, image}) => {
   return (
    <div>
       <img className={classImage} src={image}/>

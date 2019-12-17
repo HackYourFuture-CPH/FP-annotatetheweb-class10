@@ -4,5 +4,5 @@ import Image from "./SignInImage.component";
 
 
 storiesOf("Image", module).add("Image", () => {
-  return <Image classImage='image'/>;
+  return <Image classImage='image' image='loginImage.jpg'/>;
 });
