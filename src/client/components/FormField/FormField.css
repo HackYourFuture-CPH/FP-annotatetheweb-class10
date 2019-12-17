@@ -1,0 +1,32 @@
+.boxclass{
+    font-weight: bold;
+    margin-left:20px;
+    margin-top:20px;
+    font-family:'Open Sans', sans-serif;
+    margin-bottom:10px;
+}
+.email-addres-box {
+    border-radius: 12px;
+    margin-left:15px;
+    height:35px;
+    width:350px;
+    border:2px solid rgb(252,248,248);
+    background-color: rgb(245,245,245);
+}
+.password-box{
+    border-radius: 12px;
+    margin-left:15px;
+    height:35px;
+    width:350px;
+    border:2px solid rgb(252,248,248);
+    background-color: rgb(245,245,245);
+
+
+}
+/*Responsive*/
+
+.boxclass .email-addres-box .password-box{
+    display: grid;  
+    grid-template-columns: 100px 100px 100px;  
+    grid-template-rows: 50px 50px;
+}

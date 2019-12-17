@@ -1,0 +1,12 @@
+.wrapper{
+    background-color: red;
+  display: flex;
+  flex-direction: rows;
+  flex:4;
+}
+.image{
+    background-color:blue;
+    display: flex;
+    flex-direction: column;
+    flex:1;
+}

@@ -33,6 +33,11 @@ module.exports = {
   resolve: {
     extensions: ["*", ".js", ".jsx"]
   },
+  resolve: {
+    alias: {        
+        'react-router-dom': path.resolve('./node_modules/react-router-dom')
+    }
+},
   devServer: {
     publicPath: "/",
     historyApiFallback: true,
