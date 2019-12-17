@@ -34,7 +34,7 @@ const getAnnotationsById = async id => {
       )
       .where({ id: id });
     if (annotation.length === 0) {
-      throw new error(`encorrect entry with the id of ${id}`, 404);
+      throw new error(`incorrect entry with the id of ${id}`, 404);
     }
     return annotations;
   } catch (error) {
