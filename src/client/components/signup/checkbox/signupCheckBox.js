@@ -4,7 +4,8 @@ const CheckBox = ({
   onChange,
   checkboxClass,
   linkClass,
-  textNoLink,
+  textNoLinkFirst,
+  textNoLinkLast,
   textTermsOfServices,
   textNotificationsSettings
 }) => {
@@ -16,11 +17,11 @@ const CheckBox = ({
           onChange(event.target.checked);
         }}
       />
-      <div className={checkboxClass}>{textNoLink}</div>
+      <div className={checkboxClass}>{textNoLinkFirst}</div>
       <a href="#" className={linkClass}>
         {textTermsOfServices}
       </a>
-      <div className={checkboxClass}>{textNoLink}</div>
+      <div className={checkboxClass}>{textNoLinkLast}</div>
       <a href="#" className={linkClass}>
         {textNotificationsSettings}
       </a>

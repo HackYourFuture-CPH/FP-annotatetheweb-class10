@@ -7,9 +7,9 @@ storiesOf("Form components", module).add("check box", () => (
     onChange={value => console.log(value)}
     checkboxClass="check-box"
     linkClass="link-class"
-    textNoLink="Creating an account means youre okey with our "
+    textNoLinkFirst="Creating an account means youre okey with our "
     textTermsOfServices="Terms of Service, Privacy Policy "
-    textNoLink="and our default "
+    textNoLinkLast="and our default "
     textNotificationsSettings="Notifications settings"
   />
 ));
