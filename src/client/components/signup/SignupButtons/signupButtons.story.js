@@ -1,6 +1,6 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import SignupButtons from "./SignupButtons";
+import SignupButtons from "./SignupButtons.component";
 import "@fortawesome/free-brands-svg-icons";
 import {
   faGoogle,
@@ -15,7 +15,7 @@ storiesOf("Form components", module)
       click={() => console.log("signed up with google!")}
       signupButton="signup-google-btn"
       logo={faGoogle}
-      text="signup-btn-txt"
+      text= "signup-google-txt"
       align="google-logo-align"
     />
   ))

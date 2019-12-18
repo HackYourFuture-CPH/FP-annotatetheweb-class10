@@ -1,13 +1,8 @@
 .signup-title {
-  position: absolute;
-  width: 592px;
-  height: 93px;
-  left: 1126px;
-  top: 284px;
-  font-family: Open Sans;
-  font-style: normal;
-  font-weight: 800;
-  font-size: 35px;
-  line-height: 48px;
-  color: #000000;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-weight: bold 500px;
+  color: black;
+  font-size: medium;
+  margin-bottom: 1rem;
 }

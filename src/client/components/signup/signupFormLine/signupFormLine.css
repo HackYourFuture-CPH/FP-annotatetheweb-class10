@@ -12,13 +12,13 @@
   height: 1px;
   position: relative;
   vertical-align: middle;
-  width: 250px;
+  width: 50%;
 }
 .signup-form-line:before {
-  right: 0.5em;
+  right: 0.5rem;
   margin-left: -50%;
 }
 .signup-form-line:after {
-  left: 0.5em;
+  left: 0.5rem;
   margin-right: -50%;
 }

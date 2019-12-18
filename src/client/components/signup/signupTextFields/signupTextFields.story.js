@@ -1,14 +1,14 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import SignupTextFields from "./signupTextFields";
+import SignupTextFields from "./signupTextFields.component";
 
 storiesOf("Form Components", module)
   .add("email address field", () => (
     <SignupTextFields
       title="Email Address"
-      box="email-label"
+      box="email-label" 
       inputType="email"
-      inputClass="email-address-box"
+      inputClass="email-address-box" 
       changeHandler={e => {
         e.target.value;
       }}
@@ -20,7 +20,7 @@ storiesOf("Form Components", module)
       title="Password"
       box="password-label"
       inputType="password"
-      textHolder= "+6 Character"
+      textHolder= "6 + Characters"
       inputClass="password-box"
       changeHandler={e => {
         e.target.value;

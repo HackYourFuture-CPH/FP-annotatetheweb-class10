@@ -1,7 +1,6 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
-import SignupButotns from "./SignupButtons";
-import SignupButtons from "./SignupButtons";
+import SignupButtons from "./SignupButtons.component";
 it("click on button- function onClick is called", () => {
   let title = "Create Account";
   const onClick = jest.fn();

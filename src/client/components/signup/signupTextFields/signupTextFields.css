@@ -1,93 +1,64 @@
 .password-label {
-  position: absolute;
-  width: 274px;
-  height: 30px;
-  left: 1055px;
-  top: 410px;
-  font-family: Open Sans;
-  font-style: normal;
   font-weight: bold;
-  font-size: 25px;
-  line-height: 34px;
-  color: #2d2e36;
+  margin-top: 1.25rem;
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+  font-family: "Open Sans", sans-serif;
+  margin-bottom: 0.3rem;
 }
 .password-box {
-  position: absolute;
-  width: 310px;
-  font-size: 18px;
-  height: 49px;
-  left: 1050px;
-  top: 450px;
-  font-family: Open Sans;
-  font-size: 16px;
-  background: #f0f0f0;
-  border-radius: 10px;
+  border-radius: 8px;
+  height: 2.3rem;
+  padding: 0.2rem;
+  width: 100%;
+  border: 1px solid rgb(252, 248, 248);
+  background-color: rgb(224, 221, 221);
 }
 .email-address-box {
-  position: absolute;
-  width: 645px;
-  height: 49px;
-  left: 1132px;
-  top: 558px;
-  font-family: open Sans;
-  font-size: 18px;
-  background: #f0f0f0;
-  border-radius: 10px;
+  border-radius: 8px;
+  height: 2.3rem;
+  padding: 0.2rem;
+  width: 100%;
+  border: 1px solid rgb(252, 248, 248);
+  background-color: rgb(224, 221, 221);
 }
 .username-label {
-  position: absolute;
-  width: 274px;
-  height: 30px;
-  left: 1055px;
-  top: 410px;
-  font-family: Open Sans;
-  font-style: normal;
   font-weight: bold;
-  font-size: 25px;
-  line-height: 34px;
-  color: #2d2e36;
+  margin-top: 1.25rem;
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+  font-family: "Open Sans", sans-serif;
+  margin-bottom: 0.3rem;
 }
 .fullname-label {
-  position: absolute;
-  width: 274px;
-  height: 30px;
-  left: 1055px;
-  top: 410px;
-  font-family: Open Sans;
-  font-style: normal;
   font-weight: bold;
-  font-size: 25px;
-  line-height: 34px;
-  color: #2d2e36;
+  margin-top: 1.25rem;
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+  font-family: "Open Sans", sans-serif;
+  margin-bottom: 0.3rem;
 }
 .fullname-box {
-  position: absolute;
-  width: 310px;
-  height: 49px;
-  left: 1050px;
-  top: 450px;
-  background: #f0f0f0;
-  border-radius: 10px;
+  border-radius: 8px;
+  height: 2.3rem;
+  padding: 0.2rem;
+  width: 50%;
+  border: 1px solid rgb(252, 248, 248);
+  background-color: rgb(224, 221, 221);
 }
 .username-box {
-  position: absolute;
-  width: 310px;
-  height: 49px;
-  left: 1050px;
-  top: 450px;
-  background: #f0f0f0;
-  border-radius: 10px;
+  border-radius: 8px;
+  height: 2.3rem;
+  padding: 0.2rem;
+  width: 50%;
+  border: 1px solid rgb(252, 248, 248);
+  background-color: rgb(224, 221, 221);
 }
 .email-label {
-  position: absolute;
-  width: 274px;
-  height: 30px;
-  left: 1139px;
-  top: 517px;
-  font-family: Open Sans;
-  font-style: normal;
   font-weight: bold;
-  font-size: 25px;
-  line-height: 34px;
-  color: #2d2e36;
+  margin-top: 1.25rem;
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+  font-family: "Open Sans", sans-serif;
+  margin-bottom: 0.3rem;
 }

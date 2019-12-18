@@ -1,6 +1,6 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import CheckBox from "./signupCheckBox";
+import CheckBox from "./signupCheckBox.component";
 
 storiesOf("Form components", module).add("check box", () => (
   <CheckBox
