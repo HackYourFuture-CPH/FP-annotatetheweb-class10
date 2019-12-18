@@ -10,7 +10,7 @@ import UserPage from './components/Pages/User/UserPage';
 class App extends Component {
   render() {
     return (
-        <Router>
+      <Router>
         <Switch>
           <Route exact path="/">
             <Home />

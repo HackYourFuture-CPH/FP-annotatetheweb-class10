@@ -1,21 +1,21 @@
 import React from 'react';
-import RegisterButton from '../RegisterButton/RegisterButton.component'
+import RegisterButton from '../RegisterButton/RegisterButton.component';
 import './NavBar.css';
 
-const NavBar = ({navElements, href }) => {
-  const navList = navElements.map(item => {
+const NavBar = ({ navElements, href }) => {
+  const navList = navElements.map((item) => {
     return (
-        <li className="nav-style" key={item.id}>
+      <li className="nav-style" key={item.id}>
         <a className="nav-link" href={href} key={item.id}>
           {item.title}
-          </a>
-        </li>
+        </a>
+      </li>
     );
   });
   return (
     <div className="nav-bar">
       <ul className="nav-elements nav-style">{navList}</ul>
-      <RegisterButton title="Register"/>
+      <RegisterButton title="Register" />
     </div>
   );
 };

@@ -1,5 +1,3 @@
-
-
 const knex = require('../../config/db');
 const Error = require('../lib/utils/http-error');
 
@@ -13,13 +11,13 @@ const getAnnotations = async () => {
       'annotations.area',
       'annotations.updated_at',
       'annotations.created_at',
-      'annotations.deleted_at'
+      'annotations.deleted_at',
     );
   } catch (error) {
     return error.message;
   }
 };
-const getAnnotationsById = async id => {
+const getAnnotationsById = async (id) => {
   try {
     const annotations = await knex('annotations')
       .select(
@@ -30,7 +28,7 @@ const getAnnotationsById = async id => {
         'area',
         'updated_at',
         'created_at',
-        'deleted_at'
+        'deleted_at',
       )
       .where({ id });
     if (annotations.length === 0) {
@@ -44,5 +42,5 @@ const getAnnotationsById = async id => {
 
 module.exports = {
   getAnnotations,
-  getAnnotationsById
+  getAnnotationsById,
 };

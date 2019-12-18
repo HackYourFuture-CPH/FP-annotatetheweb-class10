@@ -7,8 +7,8 @@ storiesOf('NavBar', module).add('with title ', () => (
     navElements={[
       { title: 'Annotate', id: 1 },
       { title: 'About', id: 2 },
-      { title: 'Login', id: 3 }
+      { title: 'Login', id: 3 },
     ]}
-    href ="#" 
+    href="#"
   />
 ));
