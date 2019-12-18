@@ -29,10 +29,11 @@ router.get("/:key", (req, res, next) => {
 router.post("/", (req, res, next) => {
   screenshotsController
     .createScreenshot(req.body)
-    .then(result => res.json(result))
+    .then(() => {
+      res.json(screenshotsController.getScreenshotKey());
+    })
     .catch(error => {
       console.log(error);
-
       res
         .status(400)
         .send("Bad request")

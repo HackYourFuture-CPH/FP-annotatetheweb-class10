@@ -6,7 +6,6 @@
     "description": "API documentation for the final project",
     "contact": {}
   },
-  "host": "",
   "basePath": "/api",
   "schemes": ["http", "https"],
   "paths": {
@@ -41,7 +40,7 @@
         }
       }
     },
-    "/screenshots": {
+    "/screenshots/": {
       "post": {
         "summary": "Create new screenshot",
         "consumes": ["application/json"],
@@ -53,23 +52,16 @@
             "required": true,
             "schema": {
               "type": "object",
-              "required": ["url", "key", "height", "width", "fk_project_id"],
+              "required": ["url", "height", "width", "fk_project_id"],
               "properties": {
                 "url": {
                   "type": "string"
                 },
-                "key": {
-                  "type": "string"
-                },
                 "height": {
-                  "type": "integer",
-                  "format": "int32",
-                  "minimum": 0
+                  "type": "number"
                 },
                 "width": {
-                  "type": "integer",
-                  "format": "int32",
-                  "minimum": 0
+                  "type": "number"
                 },
                 "fk_project_id": {
                   "type": "integer"
@@ -80,11 +72,13 @@
         ],
         "responses": {
           "200": {
-            "description": "successful operation"
+            "description": "{\"key\":\"[unique key]\"}",
+            "schema": {
+              "type": "object"
+            }
           }
         }
       }
-    },
-    "definitions": {}
+    }
   }
 }

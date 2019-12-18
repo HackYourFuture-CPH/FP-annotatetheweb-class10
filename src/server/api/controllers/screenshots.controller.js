@@ -19,6 +19,15 @@ const getScreenshotByKey = key => {
     .select("url", "width", "height");
 };
 
+let keyValue = "";
+function setScreenshotKey(key) {
+  keyValue = key;
+}
+
+function getScreenshotKey() {
+  return keyValue;
+}
+
 const createScreenshot = async body => {
   const urlToScreenshot = "https://google.com";
 
@@ -35,8 +44,8 @@ const createScreenshot = async body => {
     }
   )
     .then(async function(res) {
-      const keyValue = await res.json();
-      return keyValue;
+      setScreenshotKey(await res.json());
+      return getScreenshotKey();
     })
 
     .then(async function(keyValue) {
@@ -60,5 +69,6 @@ const createScreenshot = async body => {
 module.exports = {
   getScreenshots,
   getScreenshotByKey,
-  createScreenshot
+  createScreenshot,
+  getScreenshotKey
 };
