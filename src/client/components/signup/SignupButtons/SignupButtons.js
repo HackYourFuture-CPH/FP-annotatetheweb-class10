@@ -13,7 +13,7 @@ const SignupButtons = ({
   click
 }) => {
   return (
-    <button onclick={click} className={signupButton}>
+    <button onClick={click} className={signupButton}>
       <FontAwesomeIcon icon={logo} className={text} className={align} />
       <h3 className={signupBtnTxt} icon={logo}>
         {title}

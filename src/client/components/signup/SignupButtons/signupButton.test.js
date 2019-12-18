@@ -3,12 +3,9 @@ import { render, fireEvent } from "@testing-library/react";
 import SignupButotns from "./SignupButtons";
 import SignupButtons from "./SignupButtons";
 it("click on button- function onClick is called", () => {
-  let title = [
-    {title : "create Account"},
-    {title: "signup with Google"}
-  ];
-  const handleClick = jest.fn();
-    const { getByText } = render(<SignupButtons onClick={handleClick} title= {title} />);
+  let title = "Create Account";
+  const onClick = jest.fn();
+    const { getByText } = render(<SignupButtons click={onClick} title= {title} />);
     fireEvent.click(getByText(title));
-    expect(handleClick).toHaveTextContent("1");
+    expect(onClick).toHaveBeenCalledTimes(1);
 });
