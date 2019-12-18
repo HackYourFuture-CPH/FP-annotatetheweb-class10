@@ -1,6 +1,6 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import imageLogin from '../../assets/images/imageLogin';
+import imageLogin from '../../assets/images/imageLogin.jpg';
 import Image from "./SignInImage.component";
 
 
