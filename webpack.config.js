@@ -1,8 +1,8 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
-const webpack = require('webpack');
-const dotenv = require('dotenv');
+const webpack = require("webpack");
+const dotenv = require("dotenv");
 
 const outputDirectory = "dist";
 
@@ -56,7 +56,11 @@ module.exports = () => {
         template: "./public/index.html",
         favicon: "./public/favicon.ico"
       }),
-      new webpack.DefinePlugin({ 'process.env.FIREBASE_API_KEY': JSON.stringify(`${env.FIREBASE_API_KEY}`) })
+      new webpack.DefinePlugin({
+        "process.env.FIREBASE_API_KEY": JSON.stringify(
+          `${env.FIREBASE_API_KEY}`
+        )
+      })
     ]
-  }
+  };
 };
