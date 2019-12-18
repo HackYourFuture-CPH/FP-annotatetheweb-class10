@@ -10,7 +10,7 @@ const FormButton = ( {title, buttons, logo, align, click} )  => {
              <button className={buttons} onClick={click}>
                 <FontAwesomeIcon 
                  icon={logo} 
-                 className={align} 
+                 className={align}
                  />{title}
              </button>
           )

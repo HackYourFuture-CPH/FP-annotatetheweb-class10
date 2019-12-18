@@ -5,12 +5,27 @@ import FormField from './FormField.component';
 
 
 storiesOf('FormField',module)
+.add('Full name field',() =>     <FormField   
+                                  title='Full Name' 
+                                  text='emaill' 
+                                  box='nameboxclass' 
+                                  inputType='text' 
+                                  inputClass='name-box' 
+                                  changeHandler={e=>{e.target.value}}
+                                  />)
+.add('User name field',() =>     <FormField   
+                                  title='User Name' 
+                                  text='emaill' 
+                                  box='nameboxclass' 
+                                  inputType='text'  
+                                  inputClass='name-box' 
+                                  changeHandler={e=>{e.target.value}}
+                                  />)
 .add('email address field' ,() => <FormField  
                                    title='Email Address' 
                                    text='emaill' 
                                    box='boxclass' 
                                    inputType='email' 
-                                   textHolder='enter email here' 
                                    inputClass='email-addres-box' 
                                    changeHandler={e=>{e.target.value}}
                                    />)
@@ -20,10 +35,12 @@ storiesOf('FormField',module)
                                   text='emaill' 
                                   box='boxclass' 
                                   inputType='password' 
-                                  textHolder='enter password' 
+                                  textHolder='6+ characters' 
                                   inputClass='password-box' 
                                   changeHandler={e=>{e.target.value}}
                                   />)
+
+                                  
 
 
 

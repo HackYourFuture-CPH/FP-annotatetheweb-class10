@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import './FormSignIn.css';
+import './FormSignUp.css';
 import FormButton from '../FormButton/FormButton.component';
 import FormField from '../FormField/FormField.component';
 import FormTitle from '../FormTitle/FormTitle.component';
@@ -10,36 +10,55 @@ import {
   faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
 
-class FormSignIn extends Component{
+class FormSignUp extends Component{
     render(){
-        return(
-            <div className="login-wrapper">
-            <div className="login-part">
-              <FormTitle />
-    ​
+      return(
+          <div className='signup-wrapper'>
+            <div className="signup-part">
+              <FormTitle formTitle='form-title' text='Sign up to Annotate the web'/>
               <div className="social-media-button-wrapper">
-                 <FormButton
-                  title="Log In With Google"
-                  buttons="google-btn"
-                  logo={faGoogle}
-                  align="logo-align"
-                  click={() => console.log ('clicked')}
-                />
+               <FormButton 
+               title='Sign up with Google' 
+               buttons='google-btn' 
+               logo={faGoogle} 
+               align='logo-align' 
+               click={()=>console.log('clicked')}/>
+
                 <FormButton
                   title=""
                   buttons="twitter-btn"
                   logo={faTwitter}
                   click={() => console.log ('clicked')}
                 />
+                
                 <FormButton
                   title=""
                   buttons="facebook-btn"
                   logo={faFacebookSquare}
                   click={() => console.log ('clicked')}
                 />
+                
               </div>
-              <FormLine />
-              <FormField
+                <FormLine />
+              <div className='name-wrapper'>
+                <FormField   
+                  title='Full Name' 
+                  text='emaill' 
+                  box='nameboxclass' 
+                  inputType='text'    
+                  inputClass='name-box' 
+                  changeHandler={e=>{e.target.value}}
+               />
+               <FormField   
+                 title='User Name' 
+                 text='emaill' 
+                 box='nameboxclass' 
+                 inputType='text'  
+                 inputClass='name-box' 
+                 changeHandler={e=>{e.target.value}}
+                />
+             </div> 
+             <FormField
                 title="Email Address"
                 text="login-input-label"
                 box="boxclass"
@@ -59,21 +78,17 @@ class FormSignIn extends Component{
                   e.target.value;
                 }}
               />
-              <div class="login-button-wrapper">
-                <FormButton
-                  title="Log In"
-                  buttons="submit-btn"
-                  click={() => console.log ('submitted')}
-                  logo={null}
-                />
+              <div class="signup-button-wrapper">
+              <FormButton 
+              title='Create Account' 
+              buttons='submit-btn' 
+              click={()=>console.log('submitted')} />
               </div>
-    ​
-            </div>
-    ​
-          </div>
-        )
 
+                </div>  
+          </div>
+      )
     }
     
 }
-export default FormSignIn;
+export default FormSignUp;

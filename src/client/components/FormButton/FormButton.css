@@ -11,6 +11,19 @@
     text-shadow: 1px 1px rgb(15, 15, 15);
     font-weight: 140px;
 }
+.signup-btn{
+    background-color: rgb(205,231,105);
+    width: 100%;
+    height: 2rem;
+    margin: 1rem auto;
+    color:gray;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size:1rem;
+    box-shadow: 1px 2px #a09f9f;
+    border-radius: 5px;
+    text-shadow: 1px 1px rgb(15, 15, 15);
+    font-weight: 140px;
+}
 .twitter-btn{
     color:gray;
     border:2px solid rgb(252,248,248);

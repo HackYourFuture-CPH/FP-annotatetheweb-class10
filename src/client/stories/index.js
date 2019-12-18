@@ -14,3 +14,4 @@ import {Image} from '../components/SignInImage/SignInImage.story';
 import {Header} from '../components/Header/Header.story';
 import {FormLoginRegister} from '../components/FormloginRegister/FormLoginRegister.story';
 import {FormSignIn} from '../components/LoginComponent/LoginComponent.story';
+import {FormSignUp} from '../components/FormSignUp/FormSignUp.story';

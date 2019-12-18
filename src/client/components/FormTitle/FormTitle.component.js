@@ -1,6 +1,6 @@
 import React from 'react';
 import './FormTitle.css';
 
-const FormTitle = () => <div className='form-title'>Login to Annotate the web</div>
+const FormTitle = ({formTitle, text}) => <div className={formTitle}>{text}</div>
 
 export default FormTitle;
