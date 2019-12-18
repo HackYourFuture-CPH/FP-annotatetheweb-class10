@@ -1,15 +1,24 @@
 "use strict";
-
+// router setup
 const express = require("express");
 const router = express.Router({ mergeParams: true });
 
+// controllers
 const annotationsController = require("../controllers/annotations.controller");
 
-router.get("/", (req, res, next) => {
+// ENDPOINT: /api/annotations/ :POST
+router.post("/", (req, res, next) => {
   annotationsController
-    .getAnnotations(req)
+    .createAnnotation(req.body)
     .then(result => res.json(result))
-    .catch(next);
+    .catch(error => {
+      console.log(error);
+
+      res
+        .status(400)
+        .send("Bad request")
+        .end();
+    });
 });
 
 router.get("/:id", (req, res, next) => {
