@@ -6,7 +6,6 @@ const CheckBox = ({
   linkClass,
   textNoLink,
   textTermsOfServices,
-  textNoLink,
   textNotificationsSettings
 }) => {
   return (
