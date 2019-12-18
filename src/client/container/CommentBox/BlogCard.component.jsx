@@ -7,53 +7,56 @@ import './BlogCardcss.css';
 
 //BlogCard class component
 class BlogCard extends Component {
-  
+
     state = {
     inputValue: [],
-    showDropdown: false      
+    showDropdown: false
   };
   //Input event handler
-  handleInputChange=(event) =>{      
+  handleInputChange=(event) =>{
     if(event.keyCode===13){
-      const newId=this.state.inputValue.length+1;
+      const newId= this.getIdForComment();
       const newComment ={
         comment:event.target.value,
-        id: newId 
+        id: newId
       }
-      this.setState({inputValue: this.state.inputValue.concat(newComment)});        
+      this.setState({inputValue: this.state.inputValue.concat(newComment)});
     }
   }
   //button click event handler
   onClickHandle=(id) =>{
     if(this.state.showDropdown){
-      this.setState({showDropdown: false}); 
+      this.setState({showDropdown: false});
     }
     else{
       this.setState({showDropdown: true});
-    }            
-  }        
+    }
+  }
+  getIdForComment=() =>{
+    return this.state.inputValue.length+1;
+  }
   render(){
     const titleArray=[{id:1,title:'...'},{id:2,title:'pin'},{id:3,title:'mark as done'},{id:4, title:'send to Trolle'}]
     return(
       <React.Fragment>
       <div className="work-panel">
         <div className="blog-card">
-          <div className="menu-right">                              
+          <div className="menu-right">
             <DotButton title={'...'} onClickHandle={this.onClickHandle} />
-            {this.state.showDropdown && <DropDown titleArray={titleArray} onClickHandle={this.onClickHandle} /> }       
+            {this.state.showDropdown && <DropDown titleArray={titleArray} onClickHandle={this.onClickHandle} /> }
           </div>
           <Input name="blogCardLabel" title="make blog as cards" placeholder="add comment..."
-            type="input" 
+            type="input"
             handleInputChange={this.handleInputChange}
-          />         
+          />
         </div>
-         <CommentList inputValue ={this.state.inputValue}/> 
-         
-      </div>      
+         <CommentList inputValue ={this.state.inputValue}/>
+
+      </div>
       </React.Fragment>
     );
   }
-  
+
 };
 
 export default BlogCard;
