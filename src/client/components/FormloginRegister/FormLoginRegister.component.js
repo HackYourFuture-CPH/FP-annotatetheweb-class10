@@ -6,7 +6,7 @@ const FormLoginRegister = ({formLoginRegister, text, register, classRegister, li
     return(
     <div className={linewrapper}>
           <div className={formLoginRegister}>
-              {text} <a href='' className={classRegister}>{register}  </a>
+              {text} <a href='' className={classRegister}>{register}</a>
            </div>
            
      </div>

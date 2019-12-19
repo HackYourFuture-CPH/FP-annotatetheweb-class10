@@ -1,0 +1,64 @@
+.password-label {
+  font-weight: bold;
+  margin-top: 1.25rem;
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+  font-family: "Open Sans", sans-serif;
+  margin-bottom: 0.3rem;
+}
+.password-box {
+  border-radius: 8px;
+  height: 2.3rem;
+  padding: 0.2rem;
+  width: 100%;
+  border: 1px solid rgb(252, 248, 248);
+  background-color: rgb(245, 245, 245);
+}
+.email-address-box {
+  border-radius: 8px;
+  height: 2.3rem;
+  padding: 0.2rem;
+  width: 100%;
+  border: 1px solid rgb(252, 248, 248);
+  background-color: rgb(245, 245, 245);
+}
+.username-label {
+  font-weight: bold;
+  margin-top: 1.25rem;
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+  font-family: "Open Sans", sans-serif;
+  margin-bottom: 0.3rem;
+}
+.fullname-label {
+  font-weight: bold;
+  margin-top: 1.25rem;
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+  font-family: "Open Sans", sans-serif;
+  margin-bottom: 0.3rem;
+}
+.fullname-box {
+  border-radius: 8px;
+  height: 2.3rem;
+  padding: 0.2rem;
+  width: 50%;
+  border: 1px solid rgb(252, 248, 248);
+  background-color: rgb(245, 245, 245);
+}
+.username-box {
+  border-radius: 8px;
+  height: 2.3rem;
+  padding: 0.2rem;
+  width: 50%;
+  border: 1px solid rgb(252, 248, 248);
+  background-color: rgb(245, 245, 245);
+}
+.email-label {
+  font-weight: bold;
+  margin-top: 1.25rem;
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+  font-family: "Open Sans", sans-serif;
+  margin-bottom: 0.3rem;
+}

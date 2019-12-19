@@ -19,21 +19,21 @@
     height: 2rem;
      width: 100%; 
     border: 2px solid rgb(252, 248, 248);
-    background-color:rgb(245,245,245);
+    background-color:rgb(218, 218, 218);
 }
 .email-addres-box {
-  border-radius: 12px;
+  border-radius: 8px;
   height: 2rem;
   width: 100%;
-  border: 2px solid rgb(252, 248, 248);
-  background-color: rgb(218, 218, 218);
+  border: 2px solid rgb(245,245,245);
+  background-color: rgb(245,245,245);
 }
 .password-box {
-  border-radius: 12px;
+  border-radius: 8px;
   height: 2rem;
   width: 100%;
-  border: 2px solid rgb(252, 248, 248);
-  background-color: rgb(218, 218, 218);
+  border: 2px solid rgb(245,245,245);
+  background-color: rgb(245,245,245);
 }
 .boxclass {
   padding-left: 0.5rem;
@@ -47,7 +47,7 @@
   grid-template-rows: 50px 50px;
 }
 
-.email-addres-box {
+/* .email-addres-box {
     border-radius: 12px;
     margin-left:15px;
     height:35px;
@@ -64,7 +64,7 @@
     background-color: rgb(245,245,245);
 
 
-}
+} */
 /*Responsive*/
 
 .boxclass .email-addres-box .password-box{
