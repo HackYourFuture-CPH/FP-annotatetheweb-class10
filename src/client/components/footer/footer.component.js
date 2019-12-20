@@ -6,7 +6,7 @@ import codeart_logo_black_background from "../../assets/images/codeart_logo_blac
 const Footer = () => {
   return (
     <footer className="footer-btn">
-      <div className="rectangle-btn"></div>
+      <div className="footer-links-wrapper">
       <a href="https://www.hackyourfuture.dk" target="_blank">
         <img className="footer-hyf-logo" src={hyf_logo_black_background} />
       </a> 
@@ -14,7 +14,8 @@ const Footer = () => {
         <img className="footer-codeart-logo" src={codeart_logo_black_background}
         />
       </a>
-    </footer>
+      </div>
+      </footer>
   );
 };
 export default Footer;
