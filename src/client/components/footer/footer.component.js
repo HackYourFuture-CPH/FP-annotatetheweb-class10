@@ -3,7 +3,7 @@ import "./Footer.css";
 import hyf_logo_black_background from "../../assets/images/hyf_logo_black_background.png";
 import codeart_logo_black_background from "../../assets/images/codeart_logo_black_background.png";
 
-const Footer = () => {
+const Footer =  ({footerBtn})=> {
   return (
     <footer className="footer-btn">
       <div className="footer-links-wrapper">
