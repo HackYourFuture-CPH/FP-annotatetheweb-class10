@@ -10,8 +10,5 @@ const getUsers = ({limit, offset, orderBy = "user_id", order} = {}) => {
 module.exports = {
   getUsers
 }
-<<<<<<< HEAD
-=======
 
 
->>>>>>> da5ad3bdae26d6b96dc11cabef36eefb31dfa41c
