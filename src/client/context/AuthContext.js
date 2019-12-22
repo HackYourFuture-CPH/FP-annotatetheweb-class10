@@ -11,18 +11,21 @@ export class Provider extends React.Component {
   componentDidMount() {
     firebase.auth().onAuthStateChanged(user => {
       {
+        // eslint-disable-next-line no-console
         user && console.log("User", user.email);
       }
       if (user) {
+        // eslint-disable-next-line no-console
         console.log("signed in");
         this.setState({ isLoading: false, isAuthenticated: true });
       } else {
+        // eslint-disable-next-line no-console
         console.log("not signed in");
         this.setState({ isLoading: false, isAuthenticated: false });
       }
     });
   }
-  
+
   render() {
     return (
       <AuthContext.Provider

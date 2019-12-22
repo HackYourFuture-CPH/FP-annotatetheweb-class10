@@ -22,6 +22,7 @@ class Home extends Component {
       .then(this.setState({ email: "", password: "" }))
       .then(alert("New user is created"))
       .catch(error => {
+        // eslint-disable-next-line no-console
         console.log(error.message);
       });
   };
@@ -31,6 +32,7 @@ class Home extends Component {
     doSignInWithEmailAndPassword(this.state.email, this.state.password)
       .then(this.setState({ email: "", password: "" }))
       .catch(error => {
+        // eslint-disable-next-line no-console
         console.log(error.message);
       });
   };
