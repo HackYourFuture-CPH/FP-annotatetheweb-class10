@@ -1,4 +1,5 @@
 {
+
     "swagger": "2.0",
     "info": {
         "version": "1.0",
@@ -44,6 +45,47 @@
                 }
             }
         },
+      "/screenshots/": {
+      "post": {
+        "summary": "Create new screenshot",
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Create screenshot",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": ["url", "height", "width", "fk_project_id"],
+              "properties": {
+                "url": {
+                  "type": "string"
+                },
+                "height": {
+                  "type": "number"
+                },
+                "width": {
+                  "type": "number"
+                },
+                "fk_project_id": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "{\"key\":\"[unique key]\"}",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    }
+  }
         "/annotations": {
             "post": {
                 "tags": [
@@ -92,4 +134,3 @@
         },
         "definitions": {}
     }
-}
