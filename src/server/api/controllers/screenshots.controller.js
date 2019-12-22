@@ -29,10 +29,8 @@ function getScreenshotKey() {
 }
 
 const createScreenshot = async body => {
-  const urlToScreenshot = "https://google.com";
-
   await fetch(
-    `https://api.annotatetheweb.com/screenshot/1.0/RequestScreenshot?url=${urlToScreenshot}`,
+    `https://api.annotatetheweb.com/screenshot/1.0/RequestScreenshot?url=${body.url}`,
     {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       mode: "cors", // no-cors, cors, *same-origin
