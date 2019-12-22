@@ -44,7 +44,7 @@
                 }
             }
         },
-        "/annotations": {
+        "/annotations/": {
             "post": {
                 "tags": [
                     "Annotations"
