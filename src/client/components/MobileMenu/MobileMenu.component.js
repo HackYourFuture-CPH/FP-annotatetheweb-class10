@@ -1,29 +1,31 @@
-import React from "react";
-import "./MobileMenu.css";
+import React from 'react';
+import './MobileMenu.css';
 
 const MobileMenu = () => {
   return (
     <div ClassName="mobilemenu-menuwrap">
       <p className="mobilemenu-title">Annotate the web</p>
-      <input type="checkbox" className="mobilemenu-toggler"></input>
+      <input type="checkbox" className="mobilemenu-toggler" />
       <div className="mobilemenu-hamburgur">
-        <div className="mobilemenu-lines"></div>
+        <div className="mobilemenu-lines" />
       </div>
       <div className="mobilemenu-menu">
         <div>
           <div>
             <ul>
               <li>
-                <a href="#">Annotate</a>
+                <a href="/annotate">Annotate</a>
               </li>
               <li>
-                <a href="#">About</a>
+                <a href="/about">About</a>
               </li>
               <li>
-                <a href="#">Login</a>
+                <a href="/login">Login</a>
               </li>
             </ul>
-            <button className="mobilemenu-button">Register</button>
+            <button type="button" className="mobilemenu-button">
+              Register
+            </button>
           </div>
         </div>
       </div>
