@@ -1,9 +1,10 @@
-import React from "react";
-import "./Header.css";
-const Header = props => {
+import React from 'react';
+import './Header.css';
+
+const Header = ({ title }) => {
   return (
     <div className="header">
-      <h1 className="logo">{props.title}</h1>
+      <h1 className="logo">{title}</h1>
     </div>
   );
 };
