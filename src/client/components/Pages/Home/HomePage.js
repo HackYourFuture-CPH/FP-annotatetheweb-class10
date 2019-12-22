@@ -101,7 +101,5 @@ class Home extends Component {
         }}
       </Consumer>
     );
-  }
-}
 
 export default Home;

@@ -6,18 +6,12 @@
     "description": "API documentation for the final project",
     "contact": {}
   },
-  "host": "",
   "basePath": "/api",
-  "schemes": [
-    "http",
-    "https"
-  ],
+  "schemes": ["http", "https"],
   "paths": {
     "/screenshots/{key}": {
       "get": {
-        "tags": [
-          "Screenshot"
-        ],
+        "tags": ["Screenshot"],
         "summary": "Checks the status of a taken screenshot and returns information about the screenshot if it's ready.",
         "operationId": "Screenshot_CheckStatusOnScreenshot",
         "consumes": [],
@@ -45,7 +39,46 @@
           }
         }
       }
+    },
+    "/screenshots/": {
+      "post": {
+        "summary": "Create new screenshot",
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Create screenshot",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": ["url", "height", "width", "fk_project_id"],
+              "properties": {
+                "url": {
+                  "type": "string"
+                },
+                "height": {
+                  "type": "number"
+                },
+                "width": {
+                  "type": "number"
+                },
+                "fk_project_id": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "{\"key\":\"[unique key]\"}",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
     }
-  },
-  "definitions": {}
+  }
 }
