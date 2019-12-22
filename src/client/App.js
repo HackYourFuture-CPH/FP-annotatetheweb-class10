@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './components/Pages/Home/HomePage';
 import RegisterPage from './components/Pages/Register/RegisterPage';
 import LoginPage from './components/Pages/Login/LoginPage';
@@ -8,7 +8,7 @@ import ScreenshotsPage from './components/Pages/Screenshots/ScreenshotsPage';
 import UserPage from './components/Pages/User/UserPage';
 
 class App extends Component {
-  render () {
+  render() {
     return (
       <Router>
         <Switch>
@@ -30,7 +30,6 @@ class App extends Component {
           <Route exact path="/user">
             <UserPage />
           </Route>
-
         </Switch>
       </Router>
     );
