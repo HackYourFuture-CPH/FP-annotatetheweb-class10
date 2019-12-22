@@ -1,5 +1,5 @@
-import React from "react";
-import "./ProfileSummary.css";
+import React from 'react';
+import './ProfileSummary.css';
 
 const ProfileSummary = ({ profileImage, profileName }) => {
   return (

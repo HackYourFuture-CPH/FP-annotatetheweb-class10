@@ -1,22 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Pacifico&display=swap');
 
 .header {
-  /* weight: 13rem;
-  left: -10px;
-  top: 15px; */
   padding-left: 1rem;
 }
 
 .logo {
   width: 14rem;
-  /* height: px;
-  left: -2500px;
-  top: -35px; */
   font-family: Pacifico;
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
-  /* line-height: 105px; */
   padding-left: 2rem;
 }
 

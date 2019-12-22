@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
 import Header from '../Header/Header.Component';
-import FormLoginRegister
-  from './FormLoginRegister/FormLoginRegister.component';
+import FormLoginRegister from './FormLoginRegister/FormLoginRegister.component';
 import imageLogin from '../../assets/images/imageLogin.jpg';
-import Image from './LoginImage/LoginImage.component';
 import FormLogin from './FormLogin/FormLogin.component';
 import './LoginPage.css';
 import './FormLoginRegister/FormLoginRegister.css';
@@ -24,7 +22,7 @@ class LoginPage extends Component {
         </div>
         <div className="body-wrapper">
           <div className="image-wrapper">
-            <Image classImage="login-page-image" loginImage={imageLogin} />
+            <img src={imageLogin} className="login-page-image" />
           </div>
           <FormLogin />
 
