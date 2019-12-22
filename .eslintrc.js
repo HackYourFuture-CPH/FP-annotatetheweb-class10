@@ -21,5 +21,8 @@ module.exports = {
     'no-use-before-define': 0,
     'consistent-return': 0,
     'jsx-a11y/label-has-associated-control': 0,
+    'import/no-unresolved': 0,
+    'import/extensions': 0,
+    'import/order': 0
   },
 };
