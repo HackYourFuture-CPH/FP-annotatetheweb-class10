@@ -15,11 +15,7 @@ class BlogCard extends Component {
   //Input event handler
   handleInputChange=(event) =>{
     if(event.keyCode===13){
-      const newId= this.getIdForComment();
-      const newComment ={
-        comment:event.target.value,
-        id: newId
-      }
+      const newComment = comment:event.target.value;
       this.setState({inputValue: this.state.inputValue.concat(newComment)});
     }
   }
@@ -32,9 +28,7 @@ class BlogCard extends Component {
       this.setState({showDropdown: true});
     }
   }
-  getIdForComment=() =>{
-    return this.state.inputValue.length+1;
-  }
+  
   render(){
     const titleArray=[{id:1,title:'...'},{id:2,title:'pin'},{id:3,title:'mark as done'},{id:4, title:'send to Trolle'}]
     return(
