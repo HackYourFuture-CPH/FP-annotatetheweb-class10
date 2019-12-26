@@ -5,8 +5,8 @@ const CommentList = props => {
 
     return(
         <div className="comment-list">
-            {props.inputValue.map(item =>
-                <List title={item.comment}/>    
+            {props.inputValue.map(comment =>
+                <List title={comment}/>    
             )}
         </div>
     )
