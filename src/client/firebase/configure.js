@@ -18,5 +18,9 @@ if (!firebase.apps.length) {
   app = firebase.initializeApp(firebaseConfig);
 }
 
-export default app;
+
 export const auth = firebase.auth();
+export const facebookProvider = new firebase.auth.FacebookAuthProvider();
+export const googleProvider = new firebase.auth.GoogleAuthProvider();
+export const twitterProvider = new firebase.auth.TwitterAuthProvider();
+export default app;
