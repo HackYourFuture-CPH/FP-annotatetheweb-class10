@@ -20,19 +20,19 @@ class FormLogin extends Component {
               buttons="google-btn"
               logo={faGoogle}
               align="logo-align"
-              click={() => console.log ('clicked')}
+              click={this.props.onGoogleSignIn}
             />
             <FormButton
               title=""
               buttons="twitter-btn"
               logo={faTwitter}
-              click={() => console.log ('clicked')}
+              click={this.props.onTwitterSignIn}
             />
             <FormButton
               title=""
               buttons="facebook-btn"
               logo={faFacebookSquare}
-              click={() => console.log ('clicked')}
+              click={this.props.onFacebookSignIn}
             />
           </div>
           <FormLine />
@@ -43,9 +43,7 @@ class FormLogin extends Component {
             inputType="email"
             //   textHolder="enter email here"
             inputClass="email-addres-box"
-            changeHandler={e => {
-              e.target.value;
-            }}
+            changeHandler={this.props.handleChange}
           />
           <FormField
             title="Password"
@@ -54,16 +52,14 @@ class FormLogin extends Component {
             inputType="password"
             //   textHolder="enter password"
             inputClass="password-box"
-            changeHandler={e => {
-              e.target.value;
-            }}
+            changeHandler={this.props.handleChange}
           />
           <div class="login-button-wrapper">
             <FormButton
               title="Log In"
               buttons="submit-btn"
-              click={() => console.log ('submitted')}
-              logo={null}
+              click={this.props.login}
+              logo=""
             />
           </div>
           ​
