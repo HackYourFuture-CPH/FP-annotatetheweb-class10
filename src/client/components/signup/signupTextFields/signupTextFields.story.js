@@ -6,12 +6,10 @@ storiesOf('Form Components', module)
   .add('email address field', () => (
     <SignupTextFields
       title="Email Address"
-      box="email-label" 
+      box="email-label"
       inputType="email"
-      inputClass="email-address-box" 
-      changeHandler={e => {
-        e.target.value;
-      }}
+      inputClass="email-address-box"
+      // changeHandler={() => {}}
     />
   ))
 
@@ -20,11 +18,9 @@ storiesOf('Form Components', module)
       title="Password"
       box="password-label"
       inputType="password"
-      textHolder= "6 + Characters"
+      textHolder="6 + Characters"
       inputClass="password-box"
-      changeHandler={e => {
-        e.target.value;
-      }}
+      // changeHandler={() => {}}
     />
   ))
   .add('Full Name field', () => (
@@ -33,9 +29,7 @@ storiesOf('Form Components', module)
       box="fullname-label"
       inputType="text"
       inputClass="fullname-box"
-      changeHandler={e => {
-        e.target.value;
-      }}
+      // changeHandler={() => {}}
     />
   ))
   .add('Username field', () => (
@@ -44,10 +38,6 @@ storiesOf('Form Components', module)
       box="username-label"
       inputType="text"
       inputClass="username-box"
-      changeHandler={e => {
-        e.target.value;
-      }}
+      // changeHandler={() => {}}
     />
   ));
-
-  

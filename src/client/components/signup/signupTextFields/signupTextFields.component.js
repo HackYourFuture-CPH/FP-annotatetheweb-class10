@@ -8,7 +8,7 @@ const SignupTextFields = ({
   inputType,
   textHolder,
   inputClass,
-  changeHandler
+  changeHandler,
 }) => {
   return (
     <label className={text}>

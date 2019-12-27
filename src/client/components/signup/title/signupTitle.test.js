@@ -7,6 +7,6 @@ test('test the title', () => {
   const className = jest.fn();
   const { getByText } = render(<SignupTitle className={className} />);
   expect(getByText('Sign up to Annotate the web')).toHaveTextContent(
-    'Sign up to Annotate the web'
+    'Sign up to Annotate the web',
   );
 });

@@ -11,8 +11,8 @@ exports.seed = function(knex) {
           key: '1l2w5s',
           height: '50',
           width: '50',
-          fk_project_id: 1
-        }
+          fk_project_id: 1,
+        },
       ]);
     });
 };

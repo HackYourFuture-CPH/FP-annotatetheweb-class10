@@ -5,7 +5,7 @@ import DotButton from './DotButton.component';
 
 test('if button has correct text', () => {
   const title = '...';
-  const { getByText, findByText } = render(<DotButton title={title} />);
+  const { getByText } = render(<DotButton title={title} />);
 
   expect(getByText(title)).toHaveTextContent(title);
 });
@@ -13,7 +13,9 @@ test('if button has correct text', () => {
 test('button is clicked and onClick prop is called', () => {
   const title = '...';
   const onClick = jest.fn();
-  const { getByText } = render(<DotButton title={title} onClickHandle={onClick} />);
+  const { getByText } = render(
+    <DotButton title={title} onClickHandle={onClick} />,
+  );
 
   fireEvent.click(getByText(title));
   expect(onClick).toHaveBeenCalledTimes(1);

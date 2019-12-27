@@ -28,10 +28,10 @@ export async function signOut() {
 }
 
 // Password reset
-export const doPasswordReset = email => auth.sendPasswordResetEmail(email);
+export const doPasswordReset = (email) => auth.sendPasswordResetEmail(email);
 
 // Password Change
-export const doPasswordUpdate = async password => {
+export const doPasswordUpdate = async (password) => {
   if (auth.currentUser) {
     await auth.currentUser.updatePassword(password);
   }

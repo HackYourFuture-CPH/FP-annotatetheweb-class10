@@ -1,5 +1,3 @@
-
-
 // router setup
 const express = require('express');
 
@@ -14,7 +12,7 @@ router.get('/', (req, res, next) => {
 
   screenshotsController
     .getScreenshots(limit, offset, orderBy, order)
-    .then(result => res.json(result))
+    .then((result) => res.json(result))
     .catch(next);
 });
 
@@ -22,18 +20,18 @@ router.get('/', (req, res, next) => {
 router.get('/:key', (req, res, next) => {
   screenshotsController
     .getScreenshotByKey(req.params.key)
-    .then(result => res.json(result))
+    .then((result) => res.json(result))
     .catch(next);
 });
 
 // ENDPOINT: /api/screenshots/ :POST
-router.post('/', (req, res, next) => {
+router.post('/', (req, res) => {
   screenshotsController
     .createScreenshot(req.body)
     .then(() => {
       res.json(screenshotsController.getScreenshotKey());
     })
-    .catch(error => {
+    .catch((error) => {
       console.log(error);
       res
         .status(400)

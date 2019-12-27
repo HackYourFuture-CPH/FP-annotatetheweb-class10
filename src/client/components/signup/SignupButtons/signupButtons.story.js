@@ -4,9 +4,8 @@ import SignupButtons from './SignupButtons.component';
 import {
   faGoogle,
   faTwitter,
-  faFacebook
+  faFacebook,
 } from '@fortawesome/free-brands-svg-icons';
-
 
 storiesOf('Form components', module)
   .add('signup Google Button', () => (
@@ -15,7 +14,7 @@ storiesOf('Form components', module)
       click={() => console.log('signed up with google!')}
       signupButton="signup-google-btn"
       logo={faGoogle}
-      text= "signup-google-txt"
+      text="signup-google-txt"
       align="google-logo-align"
     />
   ))

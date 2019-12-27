@@ -10,11 +10,11 @@ const SignupButtons = ({
   align,
   signupBtnTxt,
   signupButton,
-  click
+  click,
 }) => {
   return (
-    <button onClick={click} className={signupButton}>
-      <FontAwesomeIcon icon={logo} className={text, align}/>
+    <button type="button" onClick={click} className={signupButton}>
+      <FontAwesomeIcon icon={logo} className={(text, align)} />
       <h3 className={signupBtnTxt} icon={logo}>
         {title}
       </h3>

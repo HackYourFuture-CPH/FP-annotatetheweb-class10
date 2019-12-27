@@ -2,7 +2,7 @@
     min-width: 300px;
     max-width: 40%;
   }
-  
+
   .signup-button-wrapper {
     width: 90%;
     margin: 0 auto;
@@ -12,9 +12,9 @@
       display:flex;
       justify-content: space-between;
       width:100%
-     
+
   }
-  
+
   .social-media-button-wrapper {
     display: flex;
     justify-content: space-between;

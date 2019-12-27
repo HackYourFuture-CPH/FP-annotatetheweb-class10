@@ -17,7 +17,7 @@
 .name-box{
     border-radius: 12px;
     height: 2rem;
-     width: 100%; 
+     width: 100%;
     border: 2px solid rgb(252, 248, 248);
     background-color:rgb(218, 218, 218);
 }
@@ -68,7 +68,7 @@
 /*Responsive*/
 
 .boxclass .email-addres-box .password-box{
-    display: grid;  
-    grid-template-columns: 100px 100px 100px;  
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
     grid-template-rows: 50px 50px;
 }

@@ -5,7 +5,7 @@ exports.seed = function(knex) {
     .then(function() {
       // Inserts seed entries
       return knex('projects').insert([
-        { project_id: 1, name: 'hyf_annotatetheweb', fk_user_id: 1 }
+        { project_id: 1, name: 'hyf_annotatetheweb', fk_user_id: 1 },
       ]);
     });
 };

@@ -23,6 +23,9 @@ module.exports = {
     'jsx-a11y/label-has-associated-control': 0,
     'import/no-unresolved': 0,
     'import/extensions': 0,
-    'import/order': 0
+    'import/order': 0,
+    'react/destructuring-assignment': 0,
+    'react/state-in-constructor': 0,
+    'react/no-access-state-in-setstate': 0,
   },
 };

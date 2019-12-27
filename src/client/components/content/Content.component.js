@@ -13,13 +13,13 @@ const Content = ({
       <h2
         data-testid="title"
         style={{
-  fontFamily: theme.fontFamily.title,
+          fontFamily: theme.fontFamily.title,
           fontSize: theme.fontFamily.sizeTitle,
           textAlign: theme.textAlign,
         }}
         className="content-title"
       >
-           {title}
+        {title}
       </h2>
       <span data-testid="text" className="content-text">
         {text}

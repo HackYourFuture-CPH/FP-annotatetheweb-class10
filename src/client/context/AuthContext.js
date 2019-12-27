@@ -5,23 +5,19 @@ const AuthContext = React.createContext();
 
 export class Provider extends React.Component {
   state = {
-    isAuthenticated: false
+    isAuthenticated: false,
   };
 
   componentDidMount() {
-    firebase.auth().onAuthStateChanged(user => {
-      {
-        // eslint-disable-next-line no-console
-        user && console.log('User', user.email);
-      }
+    firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         // eslint-disable-next-line no-console
         console.log('signed in');
-        this.setState({ isLoading: false, isAuthenticated: true });
+        this.setState({ isAuthenticated: true });
       } else {
         // eslint-disable-next-line no-console
         console.log('not signed in');
-        this.setState({ isLoading: false, isAuthenticated: false });
+        this.setState({ isAuthenticated: false });
       }
     });
   }
@@ -37,4 +33,4 @@ export class Provider extends React.Component {
   }
 }
 
-export const {Consumer} = AuthContext;
+export const { Consumer } = AuthContext;
