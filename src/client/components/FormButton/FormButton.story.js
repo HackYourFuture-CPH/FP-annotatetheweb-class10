@@ -2,10 +2,10 @@ import React from 'react';
 import {storiesOf} from '@storybook/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import {faGoogle} from '@fortawesome/free-brands-svg-icons';
-import { fab,
+import {faGoogle, fab,
          faFacebookSquare, 
          faTwitter } from '@fortawesome/free-brands-svg-icons';
+
 import FormButton from './FormButton.component';
 
 storiesOf('FormButton',module)

@@ -1,5 +1,5 @@
-import React from "react";
-import * as firebase from "firebase/app";
+import React from 'react';
+import * as firebase from 'firebase/app';
 
 const AuthContext = React.createContext();
 
@@ -12,15 +12,15 @@ export class Provider extends React.Component {
     firebase.auth().onAuthStateChanged(user => {
       {
         // eslint-disable-next-line no-console
-        user && console.log("User", user.email);
+        user && console.log('User', user.email);
       }
       if (user) {
         // eslint-disable-next-line no-console
-        console.log("signed in");
+        console.log('signed in');
         this.setState({ isLoading: false, isAuthenticated: true });
       } else {
         // eslint-disable-next-line no-console
-        console.log("not signed in");
+        console.log('not signed in');
         this.setState({ isLoading: false, isAuthenticated: false });
       }
     });
@@ -37,4 +37,4 @@ export class Provider extends React.Component {
   }
 }
 
-export const Consumer = AuthContext.Consumer;
+export const {Consumer} = AuthContext;

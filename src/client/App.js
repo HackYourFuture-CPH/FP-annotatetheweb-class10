@@ -1,14 +1,14 @@
-import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import firebase from 'firebase/app';
 
-import Home from "./components/Pages/Home/HomePage";
-import RegisterPage from "./components/Pages/Register/RegisterPage";
-import LoginPage from "./components/Pages/Login/LoginPage";
-import ProjectsPage from "./components/Pages/Projects/ProjectsPage";
-import ScreenshotsPage from "./components/Pages/Screenshots/ScreenshotsPage";
-import UserPage from "./components/Pages/User/UserPage";
-import { Provider } from "./context/AuthContext";
+import Home from './components/Pages/Home/HomePage';
+import RegisterPage from './components/Pages/Register/RegisterPage';
+import LoginPage from './components/Pages/Login/LoginPage';
+import ProjectsPage from './components/Pages/Projects/ProjectsPage';
+import ScreenshotsPage from './components/Pages/Screenshots/ScreenshotsPage';
+import UserPage from './components/Pages/User/UserPage';
+import { Provider } from './context/AuthContext';
 
 class App extends Component {
   render() {

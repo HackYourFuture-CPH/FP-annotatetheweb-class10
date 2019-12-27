@@ -4,8 +4,8 @@ import FormButton from '../FormButton/FormButton.component';
 import FormField from '../FormField/FormField.component';
 import FormTitle from '../FormTitle/FormTitle.component';
 import FormLine from '../FormLine/FormLine.component';
-import {faGoogle} from '@fortawesome/free-brands-svg-icons';
-import {faFacebookSquare, faTwitter} from '@fortawesome/free-brands-svg-icons';
+import {faGoogle,faFacebookSquare, faTwitter} from '@fortawesome/free-brands-svg-icons';
+
 
 class FormLogin extends Component {
   render () {
@@ -58,7 +58,7 @@ class FormLogin extends Component {
               e.target.value;
             }}
           />
-          <div class="login-button-wrapper">
+          <div className="login-button-wrapper">
             <FormButton
               title="Log In"
               buttons="submit-btn"

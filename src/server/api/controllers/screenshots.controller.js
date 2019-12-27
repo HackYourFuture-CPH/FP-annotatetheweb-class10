@@ -1,25 +1,25 @@
-"use strict";
 
-const fetch = require("cross-fetch");
-const knex = require("../../config/db");
-const { paginate } = require("../lib/utils/pagination");
+
+const fetch = require('cross-fetch');
+const knex = require('../../config/db');
+const { paginate } = require('../lib/utils/pagination');
 
 const getScreenshots = ({
   limit,
   offset,
-  orderBy = "screenshot_id",
+  orderBy = 'screenshot_id',
   order
 } = {}) => {
-  return paginate(knex("screenshots"), { limit, offset, orderBy, order });
+  return paginate(knex('screenshots'), { limit, offset, orderBy, order });
 };
 
 const getScreenshotByKey = key => {
-  return knex("screenshots")
-    .where({ key: key })
-    .select("url", "width", "height");
+  return knex('screenshots')
+    .where({ key })
+    .select('url', 'width', 'height');
 };
 
-let keyValue = "";
+let keyValue = '';
 function setScreenshotKey(key) {
   keyValue = key;
 }
@@ -32,11 +32,11 @@ const createScreenshot = async body => {
   await fetch(
     `https://api.annotatetheweb.com/screenshot/1.0/RequestScreenshot?url=${body.url}`,
     {
-      method: "POST", // *GET, POST, PUT, DELETE, etc.
-      mode: "cors", // no-cors, cors, *same-origin
+      method: 'POST', // *GET, POST, PUT, DELETE, etc.
+      mode: 'cors', // no-cors, cors, *same-origin
       headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json"
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({})
     }
@@ -47,7 +47,7 @@ const createScreenshot = async body => {
     })
 
     .then(async function(keyValue) {
-      const [screenshotId] = await knex("screenshots").insert({
+      const [screenshotId] = await knex('screenshots').insert({
         url: body.url,
         key: keyValue.key,
         height: body.height,

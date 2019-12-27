@@ -1,5 +1,5 @@
-import React from "react";
-import "./signupFormLine.css";
+import React from 'react';
+import './signupFormLine.css';
 
 const SignupFormLine = () => {
   return <div className="signup-form-line">Or</div>;

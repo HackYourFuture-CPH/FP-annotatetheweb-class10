@@ -1,7 +1,7 @@
-import React from "react";
-import { storiesOf } from "@storybook/react";
-import List from "./List.component";
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import List from './List.component';
 
-storiesOf("List", module)
-  .add("with text", () => <List title={"List"} ></List>);
+storiesOf('List', module)
+  .add('with text', () => <List title="List"  />);
   export default List;

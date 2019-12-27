@@ -1,8 +1,8 @@
-import React from "react";
-import { storiesOf } from "@storybook/react";
-import CheckBox from "./signupCheckBox.component";
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import CheckBox from './signupCheckBox.component';
 
-storiesOf("Form components", module).add("check box", () => (
+storiesOf('Form components', module).add('check box', () => (
   <CheckBox
     onChange={value => console.log(value)}
     checkboxClass="check-box"

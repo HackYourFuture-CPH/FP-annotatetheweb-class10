@@ -1,5 +1,6 @@
-import React from "react";
-import "./signupCheckBox.css";
+import React from 'react';
+import './signupCheckBox.css';
+
 const CheckBox = ({
   onChange,
   checkboxClass,

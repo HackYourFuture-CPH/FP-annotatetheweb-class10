@@ -1,9 +1,9 @@
-import React from "react";
-import { storiesOf } from "@storybook/react";
-import SignupTextFields from "./signupTextFields.component";
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import SignupTextFields from './signupTextFields.component';
 
-storiesOf("Form Components", module)
-  .add("email address field", () => (
+storiesOf('Form Components', module)
+  .add('email address field', () => (
     <SignupTextFields
       title="Email Address"
       box="email-label" 
@@ -15,7 +15,7 @@ storiesOf("Form Components", module)
     />
   ))
 
-  .add("password field", () => (
+  .add('password field', () => (
     <SignupTextFields
       title="Password"
       box="password-label"
@@ -27,7 +27,7 @@ storiesOf("Form Components", module)
       }}
     />
   ))
-  .add("Full Name field", () => (
+  .add('Full Name field', () => (
     <SignupTextFields
       title="Full Name"
       box="fullname-label"
@@ -38,7 +38,7 @@ storiesOf("Form Components", module)
       }}
     />
   ))
-  .add("Username field", () => (
+  .add('Username field', () => (
     <SignupTextFields
       title="Username"
       box="username-label"

@@ -1,9 +1,10 @@
 const knex = require('../../config/db');
 const Error = require('../lib/utils/http-error');
 
-const knex = require("../../config/db");
+const knex = require('../../config/db');
+
 const createAnnotation = async body => {
-    const [annotationId] = await knex("annotations").insert({
+    const [annotationId] = await knex('annotations').insert({
         title: body.title,
         area: JSON.stringify(body.area),
         description: body.description,
@@ -15,7 +16,7 @@ const createAnnotation = async body => {
     };
 };
 
-const error = require("../lib/utils/http-error");
+const error = require('../lib/utils/http-error');
 
 const getAnnotations = async req => {
     try {

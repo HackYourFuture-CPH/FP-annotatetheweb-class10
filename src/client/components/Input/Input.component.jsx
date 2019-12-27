@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
 const Input = props => {
 
     return(
         <div className="input-box">
-            <label for={props.name} className="blog-card-label">
+            <label htmlFor={props.name} className="blog-card-label">
                 {props.title}
             </label>
             <input

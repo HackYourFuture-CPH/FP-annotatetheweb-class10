@@ -4,11 +4,11 @@ import FormButton from '../FormButton/FormButton.component';
 import FormField from '../FormField/FormField.component';
 import FormTitle from '../FormTitle/FormTitle.component';
 import FormLine from '../FormLine/FormLine.component';
-import {faGoogle} from '@fortawesome/free-brands-svg-icons';
-import {
+import {faGoogle,
   faFacebookSquare,
   faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
+
 
 class FormSignUp extends Component{
     render(){
@@ -78,7 +78,7 @@ class FormSignUp extends Component{
                   e.target.value;
                 }}
               />
-              <div class="signup-button-wrapper">
+              <div className="signup-button-wrapper">
               <FormButton 
               title='Create Account' 
               buttons='submit-btn' 

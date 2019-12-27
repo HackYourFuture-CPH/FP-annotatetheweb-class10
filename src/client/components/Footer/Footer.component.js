@@ -1,7 +1,7 @@
-import React from "react";
-import "./Footer.css";
-import hyf_logo_black_background from "../../assets/images/hyf_logo_black_background.png";
-import codeart_logo_black_background from "../../assets/images/codeart_logo_black_background.png";
+import React from 'react';
+import './Footer.css';
+import hyf_logo_black_background from '../../assets/images/hyf_logo_black_background.png';
+import codeart_logo_black_background from '../../assets/images/codeart_logo_black_background.png';
 
 const Footer = ({ footerBtn }) => {
   return (

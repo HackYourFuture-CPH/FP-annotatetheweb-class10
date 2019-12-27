@@ -1,7 +1,7 @@
-import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "@fortawesome/free-brands-svg-icons";
-import "./signupButtons.css";
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import '@fortawesome/free-brands-svg-icons';
+import './signupButtons.css';
 
 const SignupButtons = ({
   title,
