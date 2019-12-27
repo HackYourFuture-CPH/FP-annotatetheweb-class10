@@ -1,5 +1,6 @@
-import React from "react";
-import "./signupCheckBox.css";
+import React from 'react';
+import './signupCheckBox.css';
+
 const CheckBox = ({
   onChange,
   checkboxClass,
@@ -7,22 +8,22 @@ const CheckBox = ({
   textNoLinkFirst,
   textNoLinkLast,
   textTermsOfServices,
-  textNotificationsSettings
+  textNotificationsSettings,
 }) => {
   return (
     <label>
       <input
         type="checkbox"
-        onChange={event => {
+        onChange={(event) => {
           onChange(event.target.checked);
         }}
       />
       <div className={checkboxClass}>{textNoLinkFirst}</div>
-      <a href="#" className={linkClass}>
+      <a href="#some" className={linkClass}>
         {textTermsOfServices}
       </a>
       <div className={checkboxClass}>{textNoLinkLast}</div>
-      <a href="#" className={linkClass}>
+      <a href="#some" className={linkClass}>
         {textNotificationsSettings}
       </a>
     </label>
