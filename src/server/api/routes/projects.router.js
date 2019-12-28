@@ -26,12 +26,20 @@ router.get ('/:project_id', (req, res, next) => {
     .catch (next);
 });
 
-// ENDPOINT /api/projects/user/:user_id
-router.get('/user/:user_id', (req, res, next) => {
+// ENDPOINT: /api/projects/user/:fk_user_id
+router.get('/user/:fk_user_id', (req, res, next) => {
     projectsController
-    .getProjectByUserId (req.params.user_id)
+    .getProjectByUserId (req.params.fk_user_id)
     .then(result => res.json(result))
     .catch (next);
+})
+
+// ENDPOINT: /api/projects/:project_id :PUT - update project
+router.put('/:project_id', (req, res, next) => {
+    projectsController
+    .updateProject(req.params.project_id, req.body)
+    .then((result) => res.json({ success: result === 1 }))
+    .catch(next);
 })
 
 module.exports = router;
