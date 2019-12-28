@@ -23,7 +23,7 @@ const getProjectByUserId = (fk_user_id) => {
 };
 
 const updateProject = (project_id, body) => {
-    console.log(body.name);
+  console.log(body.name);
   return knex('projects')
     .where({ project_id: project_id })
     .update({
@@ -39,7 +39,12 @@ const createProject = (body) => {
     fk_user_id: body.fk_user_id,
     created_at: new Date(),
   });
+};
 
+const deleteProject = (project_id) => {
+  return knex('projects')
+    .where({ project_id: project_id })
+    .del();
 };
 
 module.exports = {
@@ -48,4 +53,5 @@ module.exports = {
   getProjectByUserId,
   updateProject,
   createProject,
+  deleteProject
 };

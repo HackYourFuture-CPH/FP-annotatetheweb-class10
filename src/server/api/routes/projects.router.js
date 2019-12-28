@@ -50,4 +50,11 @@ router.post('/', (req, res, next) => {
     .catch(next);
 });
 
+// ENDPOINT: api/projects/delete/:project_id - delete project with matching project_id
+router.delete('/:project_id', (req, res, next) => {
+    projectsController
+    .deleteProject(req.params.project_id)
+    .then()
+})
+
 module.exports = router;
