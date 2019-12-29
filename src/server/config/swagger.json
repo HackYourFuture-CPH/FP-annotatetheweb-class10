@@ -81,43 +81,82 @@
           }
         }
       }
-    }
-  },
-  "/annotations/": {
-    "post": {
-      "tags": ["Annotations"],
-      "summary": "Create new annotation",
-      "consumes": ["application/json"],
-      "parameters": [
-        {
-          "name": "body",
-          "in": "body",
-          "description": "Create annotation",
-          "required": true,
-          "schema": {
-            "type": "object",
-            "required": ["title", "description", "area", "fk_screenshot_id"],
-            "properties": {
-              "title": {
-                "type": "string"
-              },
-              "description": {
-                "type": "string"
-              },
-              "area": {
-                "type": "object",
-                "format": "object"
-              },
-              "fk_screenshot_id": {
-                "type": "integer"
+    },
+    "/annotations/": {
+      "post": {
+        "tags": ["Annotations"],
+        "summary": "Create new annotation",
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Create annotation",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": ["title", "description", "area", "fk_screenshot_id"],
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "area": {
+                  "type": "object",
+                  "format": "object"
+                },
+                "fk_screenshot_id": {
+                  "type": "integer"
+                }
               }
             }
           }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
         }
-      ],
-      "responses": {
-        "200": {
-          "description": "successful operation"
+      }
+    },
+    "/annotations/{key}": {
+      "patch": {
+        "tags": ["Annotations"],
+        "summary": "update existing annotation",
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "description": "The unique key for the annotation",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Update annotation",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": ["title", "description"],
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
         }
       }
     }
