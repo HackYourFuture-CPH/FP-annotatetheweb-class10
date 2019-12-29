@@ -1,5 +1,5 @@
-import React from "react";
-import List from "../../components/List/List.component";
+import React from 'react';
+import List from '../../components/List/List.component';
 
 const CommentList = props => {
 
