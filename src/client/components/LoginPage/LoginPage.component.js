@@ -101,13 +101,13 @@ onTwitterSignIn = () => {
       <div className="main-wrapper-login-page">
         <div className="header-wrapper">
           <Header title="Annotate the web" />
-          <FormLoginRegister
+          {!this.state.user?<FormLoginRegister
             formLoginRegister="form-login-register"
             text="Do not have account yet?"
             register="Register"
             classRegister="register-class"
             linewrapper="register-right-up-corner"
-          />
+          />:null}
         </div>
         <div className="body-wrapper">
           <div className="image-wrapper">
