@@ -15,7 +15,7 @@ router.get('/annotation/:fk_annotations_id', (req, res, next) => {
     .catch(next);
 });
 
-// ENDPOINT: /api/comments/ :PUT update comment for an annotation
+// ENDPOINT: /api/comments/:comment_id :PUT update comment for an annotation
 router.put('/:comment_id', (req, res, next) => {
   commentsController
     .updateComment(req.params.comment_id, req.body)
