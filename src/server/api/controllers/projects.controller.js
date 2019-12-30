@@ -22,6 +22,7 @@ const getProjectByUserId = (fk_user_id) => {
     .select('*');
 };
 
+// Update a project
 const updateProject = (project_id, body) => {
   console.log(body.name);
   return knex('projects')
@@ -32,15 +33,16 @@ const updateProject = (project_id, body) => {
     });
 };
 
+// Create a new project
 const createProject = (body) => {
   console.log(body);
   return knex('projects').insert({
     name: body.name,
-    fk_user_id: body.fk_user_id,
-    created_at: new Date(),
+    fk_user_id: body.fk_user_id
   });
 };
 
+// Delete a project
 const deleteProject = (project_id) => {
   return knex('projects')
     .where({ project_id: project_id })
@@ -53,5 +55,5 @@ module.exports = {
   getProjectByUserId,
   updateProject,
   createProject,
-  deleteProject
+  deleteProject,
 };

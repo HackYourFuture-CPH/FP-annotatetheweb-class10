@@ -5,6 +5,15 @@ const getUsers = ({ limit, offset, orderBy = 'user_id', order } = {}) => {
   return paginate(knex('users'), { limit, offset, orderBy, order });
 };
 
+const createUser = (body) => {
+  console.log(body);
+  return knex('users').insert({
+    name: body.name,
+    fk_role_id: body.fk_role_id
+  });
+};
+
 module.exports = {
   getUsers,
+  createUser
 };

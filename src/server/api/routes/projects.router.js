@@ -7,26 +7,24 @@ const router = express.Router({ mergeParams: true });
 // controllers
 const projectsController = require('../controllers/projects.controller');
 
-// ENDPOINT: /api/projects/ :GET to get all projects
+// ENDPOINT: :GET /api/projects/ - Get all projects
 router.get('/', (req, res, next) => {
   let { limit, offset, orderBy, order } = req.query;
-
   projectsController
     .getProjects(limit, offset, orderBy, order)
     .then((result) => res.json(result))
     .catch(next);
 });
 
-// ENDPOINT: /api/projects/:id get user by id
+// ENDPOINT: :GET /api/projects/:id - Get user by id
 router.get('/:project_id', (req, res, next) => {
-  console.log(req.params);
   projectsController
     .getProjectById(req.params.project_id)
     .then((result) => res.json(result))
     .catch(next);
 });
 
-// ENDPOINT: /api/projects/user/:fk_user_id
+// ENDPOINT: :GET /api/projects/user/:fk_user_id - Get projects that belong to a specific user_id
 router.get('/user/:fk_user_id', (req, res, next) => {
   projectsController
     .getProjectByUserId(req.params.fk_user_id)
@@ -34,7 +32,7 @@ router.get('/user/:fk_user_id', (req, res, next) => {
     .catch(next);
 });
 
-// ENDPOINT: /api/projects/:project_id :PUT - update project
+// ENDPOINT: :PUT /api/projects/:project_id - Update project
 router.put('/:project_id', (req, res, next) => {
   projectsController
     .updateProject(req.params.project_id, req.body)
@@ -42,19 +40,20 @@ router.put('/:project_id', (req, res, next) => {
     .catch(next);
 });
 
-// ENDPOINT: api/projects/ :POST - create new project
+// ENDPOINT: :POST api/projects/ - Create new project
 router.post('/', (req, res, next) => {
   projectsController
     .createProject(req.body)
-    .then((result) => res.json({ success: result === 1 }))
+    .then((result) => res.json({ successful: true, project_id: result}))
     .catch(next);
 });
 
-// ENDPOINT: api/projects/delete/:project_id - delete project with matching project_id
+// ENDPOINT: :DELETE api/projects/delete/:project_id - Delete project with matching project_id
 router.delete('/:project_id', (req, res, next) => {
     projectsController
     .deleteProject(req.params.project_id)
-    .then()
+    .then((result) => res.json({ success: result === 1 }))
+    .catch(next);
 })
 
 module.exports = router;
