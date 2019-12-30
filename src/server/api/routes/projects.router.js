@@ -7,14 +7,14 @@ const router = express.Router({ mergeParams: true });
 // controllers
 const projectsController = require('../controllers/projects.controller');
 
-// ENDPOINT: :GET /api/projects/ - Get all projects
-router.get('/', (req, res, next) => {
-  let { limit, offset, orderBy, order } = req.query;
-  projectsController
-    .getProjects(limit, offset, orderBy, order)
-    .then((result) => res.json(result))
-    .catch(next);
-});
+// // ENDPOINT: :GET /api/projects/ - Get all projects
+// router.get('/', (req, res, next) => {
+//   let { limit, offset, orderBy, order } = req.query;
+//   projectsController
+//     .getProjects(limit, offset, orderBy, order)
+//     .then((result) => res.json(result))
+//     .catch(next);
+// });
 
 // ENDPOINT: :GET /api/projects/:id - Get user by id
 router.get('/:project_id', (req, res, next) => {

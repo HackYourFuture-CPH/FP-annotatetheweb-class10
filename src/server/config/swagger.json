@@ -81,43 +81,138 @@
           }
         }
       }
-    }
-  },
-  "/annotations/": {
-    "post": {
-      "tags": ["Annotations"],
-      "summary": "Create new annotation",
-      "consumes": ["application/json"],
-      "parameters": [
-        {
-          "name": "body",
-          "in": "body",
-          "description": "Create annotation",
-          "required": true,
-          "schema": {
-            "type": "object",
-            "required": ["title", "description", "area", "fk_screenshot_id"],
-            "properties": {
-              "title": {
-                "type": "string"
-              },
-              "description": {
-                "type": "string"
-              },
-              "area": {
-                "type": "object",
-                "format": "object"
-              },
-              "fk_screenshot_id": {
-                "type": "integer"
+    },
+    "/annotations/": {
+      "post": {
+        "tags": ["Annotations"],
+        "summary": "Create new annotation",
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Create annotation",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": ["title", "description", "area", "fk_screenshot_id"],
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "area": {
+                  "type": "object",
+                  "format": "object"
+                },
+                "fk_screenshot_id": {
+                  "type": "integer"
+                }
               }
             }
           }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
         }
-      ],
-      "responses": {
-        "200": {
-          "description": "successful operation"
+      }
+    },
+    "/projects/{project_id}": {
+      "get": {
+        "tags": ["Projects"],
+        "summary": "Get a project by project_id",
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "name": "project_id",
+            "in": "path",
+            "description": "The unique project_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+    "/projects/{project_id}": {
+      "put": {
+        "tags": ["Projects"],
+        "summary": "Update a project", 
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "name": "project_id",
+            "in": "path",
+            "description": "The unique project_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+    "/projects/": {
+      "post": {
+        "tags": ["Annotations"],
+        "summary": "Create new project",
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Create new project",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": ["name", "fk_user_id"],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "fk_user_id": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+    "/projects/{project_id}": {
+      "delete": {
+        "tags": ["Projects"],
+        "summary": "Delete a specific project",
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "name": "project_id",
+            "in": "path",
+            "description": "The unique project_id",
+            "required": true,
+            "type": "string"
+          }
+        ], 
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
         }
       }
     }
