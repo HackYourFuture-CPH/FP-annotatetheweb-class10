@@ -165,7 +165,7 @@
     },
     "/projects/": {
       "post": {
-        "tags": ["Annotations"],
+        "tags": ["Projects"],
         "summary": "Create new project",
         "consumes": ["application/json"],
         "parameters": [
