@@ -82,6 +82,7 @@
         }
       }
     },
+
     "/annotations/": {
       "post": {
         "tags": ["Annotations"],
@@ -121,6 +122,7 @@
         }
       }
     },
+
     "/projects/{project_id}": {
       "get": {
         "tags": ["Projects"],
@@ -132,7 +134,12 @@
             "in": "path",
             "description": "The unique project_id",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            }
           }
         ],
         "responses": {
@@ -142,7 +149,8 @@
         }
       }
     },
-    "/projects/{project_id}": {
+
+    "/projects/update/{project_id}": {
       "put": {
         "tags": ["Projects"],
         "summary": "Update a project", 
@@ -195,7 +203,7 @@
         }
       }
     },
-    "/projects/{project_id}": {
+    "/projects/delete/{project_id}": {
       "delete": {
         "tags": ["Projects"],
         "summary": "Delete a specific project",

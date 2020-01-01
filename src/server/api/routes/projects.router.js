@@ -7,15 +7,6 @@ const router = express.Router({ mergeParams: true });
 // controllers
 const projectsController = require('../controllers/projects.controller');
 
-// // ENDPOINT: :GET /api/projects/ - Get all projects
-// router.get('/', (req, res, next) => {
-//   let { limit, offset, orderBy, order } = req.query;
-//   projectsController
-//     .getProjects(limit, offset, orderBy, order)
-//     .then((result) => res.json(result))
-//     .catch(next);
-// });
-
 // ENDPOINT: :GET /api/projects/:id - Get user by id
 router.get('/:project_id', (req, res, next) => {
   projectsController
@@ -32,8 +23,8 @@ router.get('/user/:fk_user_id', (req, res, next) => {
     .catch(next);
 });
 
-// ENDPOINT: :PUT /api/projects/:project_id - Update project
-router.put('/:project_id', (req, res, next) => {
+// ENDPOINT: :PUT /api/projects/update/:project_id - Update project
+router.put('/update/:project_id', (req, res, next) => {
   projectsController
     .updateProject(req.params.project_id, req.body)
     .then((result) =>res.json({ success: result === 1 }))
@@ -49,7 +40,7 @@ router.post('/', (req, res, next) => {
 });
 
 // ENDPOINT: :DELETE api/projects/delete/:project_id - Delete project with matching project_id
-router.delete('/:project_id', (req, res, next) => {
+router.delete('/delete/:project_id', (req, res, next) => {
     projectsController
     .deleteProject(req.params.project_id)
     .then((result) => res.json({ success: result === 1 }))
