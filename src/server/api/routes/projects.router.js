@@ -27,7 +27,7 @@ router.get('/user/:fk_user_id', (req, res, next) => {
 router.put('/update/:project_id', (req, res, next) => {
   projectsController
     .updateProject(req.params.project_id, req.body)
-    .then((result) =>res.json({ success: result === 1 }))
+    .then((result) => res.json({ success: result === 1 }))
     .catch(next);
 });
 
@@ -35,16 +35,16 @@ router.put('/update/:project_id', (req, res, next) => {
 router.post('/', (req, res, next) => {
   projectsController
     .createProject(req.body)
-    .then((result) => res.json({ successful: true, project_id: result}))
+    .then((result) => res.json({ successful: true, project_id: result }))
     .catch(next);
 });
 
 // ENDPOINT: :DELETE api/projects/delete/:project_id - Delete project with matching project_id
 router.delete('/delete/:project_id', (req, res, next) => {
-    projectsController
+  projectsController
     .deleteProject(req.params.project_id)
     .then((result) => res.json({ success: result === 1 }))
     .catch(next);
-})
+});
 
 module.exports = router;

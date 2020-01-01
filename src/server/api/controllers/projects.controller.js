@@ -38,7 +38,7 @@ const createProject = (body) => {
   console.log(body);
   return knex('projects').insert({
     name: body.name,
-    fk_user_id: body.fk_user_id
+    fk_user_id: body.fk_user_id,
   });
 };
 
