@@ -1,0 +1,64 @@
+.signup-google-btn {
+  background-color: rgb(91, 135, 230);
+  font-family: sans-serif;
+  color: white;
+  text-align: center;
+  width: 15rem;
+  min-width: 10rem;
+  height: 2.9rem;
+  margin: 0.5rem;
+  font-size: 0.75rem;
+  border-radius: 0.3rem;
+}
+.signup-btn-txt {
+  width: 5rem;
+  height: 2rem;
+  font-family: Open Sans;
+  font-weight: bold;
+  font-size: 2rem;
+  line-height: 1.5rem;
+  color: #080808;
+  border: 0.2rem solid #201f1f;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.create-account-btn {
+  background-color: rgb(205, 231, 105);
+  height: 2.9rem;
+  width: 17rem;
+  margin: 0.5rem auto;
+  color: gray;
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  box-shadow: 1px 2px #a09f9f;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.google-logo-align {
+  float: left;
+  margin: 0.5rem;
+  padding: 0.3rem;
+  font-size: 1.5rem;
+  color: #f0f0f0;
+}
+.twitter-btn {
+  color: #8a8989;
+  border: 2px solid rgb(252, 248, 248);
+  background-color: rgb(245, 245, 245);
+  border-radius: 5px;
+  height: 3rem;
+  width: 3rem;
+  padding: 0.9rem;
+  border: 2px #494848;
+  margin: 0.5rem 0.5rem;
+}
+.facebook-btn {
+  color: #8a8989;
+  border: 2px solid rgb(252, 248, 248);
+  background-color: rgb(245, 245, 245);
+  border-radius: 5px;
+  height: 3rem;
+  width: 3rem;
+  padding: 0.9rem;
+  border: 2px #494848;
+  margin: 0.5rem 0.5rem;
+}

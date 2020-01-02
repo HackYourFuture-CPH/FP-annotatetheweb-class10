@@ -1,45 +1,48 @@
-import React from "react";
-import "./Content.css";
+import React from 'react';
+import './Content.css';
 
 const Content = ({
-  title = "",
-  text = "",
+  title = '',
+  text = '',
   hyfLogo = {},
   codeartLogo = {},
-  theme = {}
+  theme = {},
 }) => {
   return (
     <div style={{ backgroundColor: theme.colors.primary }}>
       <h2
+        data-testid="title"
         style={{
           fontFamily: theme.fontFamily.title,
           fontSize: theme.fontFamily.sizeTitle,
-          textAlign: theme.textAlign
+          textAlign: theme.textAlign,
         }}
-        className="contentTitle"
+        className="content-title"
       >
         {title}
       </h2>
-      <span className="contentText">{text}</span>
+      <span data-testid="text" className="content-text">
+        {text}
+      </span>
       <h2
         style={{
           fontFamily: theme.fontFamily.title,
           fontSize: theme.fontFamily.sizeTitle,
-          textAlign: theme.textAlign
+          textAlign: theme.textAlign,
         }}
       >
         made by:
       </h2>
       <div
         style={{ background: theme.colors.primary }}
-        className="contentFooter"
+        className="content-footer"
       >
         <img
           src={codeartLogo.src}
           alt={codeartLogo.alt}
           style={{
             width: theme.images.width,
-            height: theme.images.height
+            height: theme.images.height,
           }}
         />
         <img
@@ -47,7 +50,7 @@ const Content = ({
           alt={hyfLogo.alt}
           style={{
             width: theme.images.width,
-            height: theme.images.height
+            height: theme.images.height,
           }}
         />
       </div>

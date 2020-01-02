@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Pacifico&display=swap");
-
 * {
   box-sizing: border-box;
+}
+
+body {
+    margin: 0;
 }

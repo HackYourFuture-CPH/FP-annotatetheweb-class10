@@ -1,25 +1,25 @@
-import React from "react";
-import { storiesOf } from "@storybook/react";
-import { themeContent } from "../theme";
-import Content from "./Content.component";
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import { themeContent } from '../theme';
+import Content from './Content.component';
 
-import hyf from "../../assets/images/hyf.png";
-import codeart from "../../assets/images/codeart.png";
+import hyf from '../../assets/images/hyf.png';
+import codeart from '../../assets/images/codeart.png';
 
 const hyfLogo = {
   src: hyf,
-  alt: "hyf logo"
+  alt: 'hyf logo',
 };
 
 const codeartLogo = {
   src: codeart,
-  alt: "code:art logo"
+  alt: 'code:art logo',
 };
 
-storiesOf("Content", module).add("Content", () => (
+storiesOf('Content', module).add('Content', () => (
   <div>
     <Content
-      title="about project"
+      title="About project"
       text="This tool will help you to annotate any webpage that you want, collaborate with others and share your comments."
       hyfLogo={hyfLogo}
       codeartLogo={codeartLogo}
