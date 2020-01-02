@@ -122,5 +122,64 @@
       }
     }
   },
+
+  "/comments/{comment_id}": {
+    "put": {
+      "tags": ["Comments"],
+      "summary": "Update a comment",
+      "consumes": ["application/json"],
+      "parameters": [
+        {
+          "name": "comment_id",
+          "in": "path",
+          "description": "The unique comment_id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "description": "Update comment for an annotation",
+          "required": true,
+          "schema": {
+            "type": "object",
+            "required": ["description"],
+            "properties": {
+              "description": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "successful operation"
+        }
+      }
+    }
+  },
+  "/comments/annotation/{annotation_id}": {
+    "get": {
+      "tags": ["Comments"],
+      "summary": "Get all comments for a specific annotation",
+      "consumes": ["application/json"],
+      "parameters": [
+        {
+          "name": "annotation_id",
+          "in": "path",
+          "description": "The unique annotation_id",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "successful operation"
+        }
+      }
+    }
+  }
+},
   "definitions": {}
 }
