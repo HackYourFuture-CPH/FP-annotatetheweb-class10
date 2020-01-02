@@ -1,0 +1,59 @@
+.boxclass{
+    font-weight: bold;
+    margin-top: 1.25rem;
+    margin-bottom: 0.3rem;
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 0.3rem;
+}
+.email-addres-box .password-box {
+  border-radius: 08px;
+  height: 2rem;
+  width: 100%;
+  border: 2px solid rgb(252, 248, 248);
+  background-color: rgb(245, 245, 245);
+}
+ .password-box {
+  border-radius: 12px;
+  height: 2rem;
+  width: 100%;
+  border: 2px solid rgb(252, 248, 248);
+  background-color: rgb(245, 245, 245);
+}
+​
+.boxclass {
+  padding-left: 0.5rem;
+}
+​
+/*Responsive*/
+​
+.boxclass .email-addres-box .password-box {
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: 50px 50px;
+}
+
+/* .email-addres-box {
+    border-radius: 12px;
+    margin-left:15px;
+    height:35px;
+    width:350px;
+    border:2px solid rgb(252,248,248);
+    background-color: rgb(245,245,245);
+}
+.password-box{
+    border-radius: 12px;
+    margin-left:15px;
+    height:35px;
+    width:350px;
+    border:2px solid rgb(252,248,248);
+    background-color: rgb(233, 177, 177);
+
+
+} */
+/*Responsive*/
+
+.boxclass .email-addres-box .password-box{
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 50px 50px;
+}

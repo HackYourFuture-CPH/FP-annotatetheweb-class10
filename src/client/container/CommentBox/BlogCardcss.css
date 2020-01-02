@@ -1,0 +1,127 @@
+/*class for div whole container */
+
+.work-panel {
+    position: absolute;
+    width: 498px;
+    height: 239px;
+    left: 222px;
+    top: 107px;
+}
+
+.blog-card {
+    width: 280px;
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 10px;
+    border-style: solid;
+    border-width: thick;
+    border-color: hsl(71, 53%, 77%);
+    margin-bottom: 20px;
+}
+
+
+/*class for div consists of the lable and input */
+
+.input-box {
+    width: 50%;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    position: absolute;
+    z-index: 2;
+}
+
+.blog-card-label {
+    font-family: serif;
+    font-size: 12px;
+    margin-bottom: 20px;
+    margin-top: 0px;
+}
+
+
+/*class for input */
+
+.blog-card-control {
+    width: 240px;
+    height: 18px;
+    border-radius: 10px;
+    background-color: whitesmoke;
+    font-family: sans-serif;
+    font-size: 10px;
+}
+
+
+/* class for div of consists of dot button list*/
+
+.btn-right {
+    font-size: 16px;
+    width: 30px;
+    height: 100px;
+    margin-bottom: 2px;
+    margin-top: 2px;
+    text-align: center;
+}
+
+button.btn-right {
+    width: 0px;
+    height: 0px;
+    border: none;
+    background-color: white;
+    outline: none;
+    cursor: pointer;
+    margin-top: 8px;
+    margin-right: 20px;
+}
+
+
+/*class for div consists .btn-right and .dropdown-contentcontent*/
+
+.menu-right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+/* display property for .dropdown-content */
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 80px;
+    height: 100px;
+    overflow: auto;
+    z-index: -3;
+}
+
+
+/*class for for each list items*/
+
+.list-component {
+    list-style-type: none;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.list-component:hover {
+    background-color: #f1f1f1;
+}
+
+.button {
+    border: none;
+    background-color: whitesmoke;
+    outline: none;
+    cursor: pointer;
+    font-size: 10px;
+}
+
+.comment-list {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}

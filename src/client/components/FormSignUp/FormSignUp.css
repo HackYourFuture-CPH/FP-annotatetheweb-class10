@@ -1,0 +1,23 @@
+.signup-wrapper {
+    min-width: 300px;
+    max-width: 40%;
+  }
+
+  .signup-button-wrapper {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 1.5rem;
+  }
+  .name-wrapper{
+      display:flex;
+      justify-content: space-between;
+      width:100%
+
+  }
+
+  .social-media-button-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 1rem;
+  }

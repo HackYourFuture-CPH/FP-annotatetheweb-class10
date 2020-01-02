@@ -1,0 +1,12 @@
+.check-box {
+  display: inline-block;
+  font-family: open Sans;
+  font-size: 16px;
+  color: rgb(95, 95, 95);
+}
+.link-class {
+  display: inline-block;
+  font-family: open Sans;
+  font-size: 16px;
+  color: rgb(128, 191, 241);
+}

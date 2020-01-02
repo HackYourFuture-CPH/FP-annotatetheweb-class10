@@ -1,0 +1,29 @@
+.footer-btn {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background: rgb(42, 42, 43);
+  max-height: 10vh;
+  color: #99999e;
+}
+.footer-links-wrapper {
+  display: flex;
+  padding-left: 25%;
+}
+
+.footer-text {
+  padding-top: 9px;
+}
+
+.footer-hyf-logo {
+  width: 8rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.footer-codeart-logo {
+  width: 5rem;
+  margin-left: 1rem;
+}
