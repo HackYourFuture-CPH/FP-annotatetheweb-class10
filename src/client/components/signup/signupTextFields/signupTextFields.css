@@ -1,6 +1,6 @@
 .password-label {
   font-weight: bold;
-  margin-top: 1.25rem;
+  margin-top: 0.7rem;
   font-size: 1rem;
   margin-bottom: 0.3rem;
   font-family: "Open Sans", sans-serif;
@@ -8,7 +8,7 @@
 }
 .password-box {
   border-radius: 8px;
-  height: 2.3rem;
+  height: 2rem;
   padding: 0.2rem;
   width: 100%;
   border: 1px solid rgb(252, 248, 248);
@@ -16,7 +16,7 @@
 }
 .email-address-box {
   border-radius: 8px;
-  height: 2.3rem;
+  height: 2rem;
   padding: 0.2rem;
   width: 100%;
   border: 1px solid rgb(252, 248, 248);
@@ -24,7 +24,7 @@
 }
 .username-label {
   font-weight: bold;
-  margin-top: 1.25rem;
+  margin-top: 0.7rem;
   font-size: 1rem;
   margin-bottom: 0.3rem;
   font-family: "Open Sans", sans-serif;
@@ -32,7 +32,7 @@
 }
 .fullname-label {
   font-weight: bold;
-  margin-top: 1.25rem;
+  margin-top: 0.7rem;
   font-size: 1rem;
   margin-bottom: 0.3rem;
   font-family: "Open Sans", sans-serif;
@@ -40,23 +40,23 @@
 }
 .fullname-box {
   border-radius: 8px;
-  height: 2.3rem;
+  height: 2rem;
+  width: 100%;
   padding: 0.2rem;
-  width: 50%;
   border: 1px solid rgb(252, 248, 248);
   background-color: rgb(224, 221, 221);
 }
 .username-box {
   border-radius: 8px;
-  height: 2.3rem;
+  height: 2rem;
   padding: 0.2rem;
-  width: 50%;
+  width: 100%;
   border: 1px solid rgb(252, 248, 248);
   background-color: rgb(224, 221, 221);
 }
 .email-label {
   font-weight: bold;
-  margin-top: 1.25rem;
+  margin-top: 0.7rem;
   font-size: 1rem;
   margin-bottom: 0.3rem;
   font-family: "Open Sans", sans-serif;

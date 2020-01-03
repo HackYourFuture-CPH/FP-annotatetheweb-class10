@@ -1,0 +1,32 @@
+.register-wrapper {
+  width: 100%;
+}
+.register-part {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 400px;
+}
+.half-field-username {
+  display: inline-block;
+  width: 48%;
+  margin-left: 0.3rem;
+  position: relative;
+}
+.half-field-fullname {
+  display: inline-block;
+  width: 48%;
+  margin-right: 0.3rem;
+  position: relative;
+}
+.signup-button-wrapper {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 0.5rem;
+}
+.social-media-button {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 0.5rem;
+}
