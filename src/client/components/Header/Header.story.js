@@ -1,7 +1,7 @@
-import React from "react";
-import { storiesOf } from "@storybook/react";
-import Header from "./Header.Component";
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import Header from './Header.Component';
 
-storiesOf("Header", module).add("Header", () => {
-  return <Header title="Annotate the web"></Header>;
+storiesOf('Header', module).add('Header', () => {
+  return <Header title="Annotate the web" />;
 });

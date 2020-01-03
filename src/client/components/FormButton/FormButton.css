@@ -1,0 +1,74 @@
+.submit-btn {
+  background-color: rgb(205, 231, 105);
+  width: 100%;
+  height: 2rem;
+  margin: 1rem auto;
+  color: gray;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1rem;
+  box-shadow: 1px 2px #a09f9f;
+  border-radius: 5px;
+  text-shadow: 1px 1px rgb(15, 15, 15);
+  font-weight: 140px;
+}
+.signup-btn {
+  background-color: rgb(205, 231, 105);
+  width: 100%;
+  height: 2rem;
+  margin: 1rem auto;
+  color: gray;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1rem;
+  box-shadow: 1px 2px #a09f9f;
+  border-radius: 5px;
+  text-shadow: 1px 1px rgb(15, 15, 15);
+  font-weight: 140px;
+}
+.twitter-btn {
+  color: gray;
+  border: 2px solid rgb(252, 248, 248);
+  background-color: rgb(245, 245, 245);
+  border-radius: 5px;
+  height: 2rem;
+  width: 2rem;
+  margin: 0.5rem 0.5rem;
+}
+
+.facebook-btn {
+  color: gray;
+  border: 2px solid rgb(252, 248, 248);
+  background-color: rgb(245, 245, 245);
+  border-radius: 5px;
+  height: 2rem;
+  width: 2rem;
+  margin: 0.5rem 0.5rem;
+}
+.google-btn {
+  background-color: rgb(91, 135, 230);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+  text-align: center;
+  width: 13rem;
+  min-width: 10rem;
+  height: 2rem;
+  margin: 0.5rem 0.5rem 0.5rem 0;
+  font-size: 0.8rem;
+  border-radius: 5px;
+}
+/*Google icon alignment*/
+.logo-align {
+  float: left;
+  position: relative;
+  margin-left: 7px;
+}
+
+/*media queries*/
+@media screen and (max-width: 768px) {
+  .submit-btn .google-btn .facebook-btn .twitter-btn {
+    display: block;
+    width: auto;
+    float: none;
+  }
+}

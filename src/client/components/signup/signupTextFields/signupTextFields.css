@@ -12,7 +12,7 @@
   padding: 0.2rem;
   width: 100%;
   border: 1px solid rgb(252, 248, 248);
-  background-color: rgb(224, 221, 221);
+  background-color: rgb(245, 245, 245);
 }
 .email-address-box {
   border-radius: 8px;
@@ -20,7 +20,7 @@
   padding: 0.2rem;
   width: 100%;
   border: 1px solid rgb(252, 248, 248);
-  background-color: rgb(224, 221, 221);
+  background-color: rgb(245, 245, 245);
 }
 .username-label {
   font-weight: bold;
@@ -44,7 +44,7 @@
   width: 100%;
   padding: 0.2rem;
   border: 1px solid rgb(252, 248, 248);
-  background-color: rgb(224, 221, 221);
+  background-color: rgb(245, 245, 245);
 }
 .username-box {
   border-radius: 8px;
@@ -52,7 +52,7 @@
   padding: 0.2rem;
   width: 100%;
   border: 1px solid rgb(252, 248, 248);
-  background-color: rgb(224, 221, 221);
+  background-color: rgb(245, 245, 245);
 }
 .email-label {
   font-weight: bold;

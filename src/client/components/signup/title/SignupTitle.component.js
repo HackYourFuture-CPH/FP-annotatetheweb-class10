@@ -1,5 +1,5 @@
 import React from "react";
-import "./SignupTitle.css";
+import "./signupTitle.css";
 
 const SignupTitle = () => {
   return <div className="signup-title">Sign up to Annotate the web</div>;

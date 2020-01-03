@@ -1,5 +1,5 @@
-import React from "react";
-import "./signupTextFields.css";
+import React from 'react';
+import './signupTextFields.css';
 
 const SignupTextFields = ({
   text,
@@ -8,7 +8,7 @@ const SignupTextFields = ({
   inputType,
   textHolder,
   inputClass,
-  changeHandler
+  changeHandler,
 }) => {
   return (
     <label className={text}>

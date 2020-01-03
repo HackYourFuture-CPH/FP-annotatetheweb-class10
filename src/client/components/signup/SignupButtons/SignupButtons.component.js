@@ -1,7 +1,7 @@
-import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "@fortawesome/free-brands-svg-icons";
-import "./signupButtons.css";
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import '@fortawesome/free-brands-svg-icons';
+import './signupButtons.css';
 
 const SignupButtons = ({
   title,
@@ -10,11 +10,11 @@ const SignupButtons = ({
   align,
   signupBtnTxt,
   signupButton,
-  click
+  click,
 }) => {
   return (
-    <button onClick={click} className={signupButton}>
-      <FontAwesomeIcon icon={logo} className={text, align}/>
+    <button type="button" onClick={click} className={signupButton}>
+      <FontAwesomeIcon icon={logo} className={(text, align)} />
       <h3 className={signupBtnTxt} icon={logo}>
         {title}
       </h3>

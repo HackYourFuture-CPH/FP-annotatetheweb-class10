@@ -1,53 +1,43 @@
-import React from "react";
-import { storiesOf } from "@storybook/react";
-import SignupTextFields from "./signupTextFields.component";
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import SignupTextFields from './signupTextFields.component';
 
-storiesOf("Form Components", module)
-  .add("email address field", () => (
+storiesOf('Form Components', module)
+  .add('email address field', () => (
     <SignupTextFields
       title="Email Address"
-      box="email-label" 
+      box="email-label"
       inputType="email"
-      inputClass="email-address-box" 
-      changeHandler={e => {
-        e.target.value;
-      }}
+      inputClass="email-address-box"
+      // changeHandler={() => {}}
     />
   ))
 
-  .add("password field", () => (
+  .add('password field', () => (
     <SignupTextFields
       title="Password"
       box="password-label"
       inputType="password"
-      textHolder= "6 + Characters"
+      textHolder="6 + Characters"
       inputClass="password-box"
-      changeHandler={e => {
-        e.target.value;
-      }}
+      // changeHandler={() => {}}
     />
   ))
-  .add("Full Name field", () => (
+  .add('Full Name field', () => (
     <SignupTextFields
       title="Full Name"
       box="fullname-label"
       inputType="text"
       inputClass="fullname-box"
-      changeHandler={e => {
-        e.target.value;
-      }}
+      // changeHandler={() => {}}
     />
   ))
-  .add("Username field", () => (
+  .add('Username field', () => (
     <SignupTextFields
       title="Username"
       box="username-label"
       inputType="text"
       inputClass="username-box"
-      changeHandler={e => {
-        e.target.value;
-      }}
+      // changeHandler={() => {}}
     />
   ));
-
-  

@@ -1,0 +1,28 @@
+.form-line {
+    overflow: hidden;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  
+  .form-line:before,
+  .form-line:after {
+    background-color:rgb(187, 185, 185);
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width:50%;
+  }
+  
+  .form-line:before {
+    right: 0.5em;
+    margin-left: -50%;
+  }
+  
+  .form-line:after {
+    left: 0.5em;
+    margin-right: -50%;
+  }
+
+

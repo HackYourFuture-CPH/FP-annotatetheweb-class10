@@ -11,4 +11,4 @@ test('click on the ToggleButton must pass in a value (true or false) in a functi
   fireEvent.click(checkbox);
   expect(checkbox.checked).toBe(false);
   expect(handleChange).toHaveBeenCalledTimes(2);
-})
+});
