@@ -10,7 +10,7 @@ import {
   faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
 
-function FormLogin() {
+const FormLogin=(props) => {
   return (
     <div className="login-wrapper">
       <div className="login-part">
@@ -21,19 +21,19 @@ function FormLogin() {
             buttons="google-btn"
             logo={faGoogle}
             align="logo-align"
-            click={this.props.onGoogleSignIn}
+            click={props.onGoogleSignIn}
           />
           <FormButton
             title=""
             buttons="twitter-btn"
             logo={faTwitter}
-            click={this.props.onTwitterSignIn}
+            click={props.onTwitterSignIn}
           />
           <FormButton
             title=""
             buttons="facebook-btn"
             logo={faFacebookSquare}
-            click={this.props.onFacebookSignIn}
+            click={props.onFacebookSignIn}
           />
         </div>
         <FormLine />
@@ -44,7 +44,7 @@ function FormLogin() {
           inputType="email"
           //   textHolder="enter email here"
           inputClass="email-addres-box"
-          changeHandler={this.props.handleChange}
+          changeHandler={props.handleChange}
         />
         <FormField
           title="Password"
@@ -53,13 +53,13 @@ function FormLogin() {
           inputType="password"
           //   textHolder="enter password"
           inputClass="password-box"
-          changeHandler={this.props.handleChange}
+          changeHandler={props.handleChange}
         />
         <div className="login-button-wrapper">
           <FormButton
             title="Log In"
             buttons="submit-btn"
-            click={this.props.login}
+            click={props.login}
             logo=""
           />
         </div>
