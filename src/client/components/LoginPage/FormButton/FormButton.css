@@ -51,7 +51,18 @@
     margin-left: 7px;
 
 }
-
+.logout-btn{
+    border: none;
+    background-color: whitesmoke;
+    outline: none;
+    font-size: 16px;
+    height: 2.9rem;
+    justify-self: center;
+    margin-right: 20%;
+}
+button{
+    cursor: pointer;
+}
 
 /*media queries*/
 @media screen and (max-width: 768px) {
