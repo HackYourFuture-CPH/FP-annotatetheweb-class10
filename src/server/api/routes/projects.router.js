@@ -7,7 +7,7 @@ const router = express.Router({ mergeParams: true });
 // controllers
 const projectsController = require('../controllers/projects.controller');
 
-// ENDPOINT: :GET /api/projects/:id - Get user by id
+// ENDPOINT: :GET /api/projects/:id - Get a project by id
 router.get('/:project_id', (req, res, next) => {
   projectsController
     .getProjectById(req.params.project_id)

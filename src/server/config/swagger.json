@@ -162,6 +162,21 @@
             "description": "The unique project_id",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "Project name",
+            "in": "path",
+            "description": "Update a project",
+            "required": "true",
+            "schema": {
+              "type": "object",
+              "required": ["name"],
+              "properties": {
+                "name": {
+                  "type": "string"
+                }
+              }
+            }
           }
         ],
         "responses": {
