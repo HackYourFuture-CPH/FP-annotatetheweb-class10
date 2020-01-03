@@ -16,7 +16,7 @@ const getProjectById = (project_id) => {
 };
 
 // Return projects for a specific userId
-const getProjectByUserId = (fk_user_id) => {
+const getProjectsByUserId = (fk_user_id) => {
   return knex('projects')
     .where({ fk_user_id: fk_user_id })
     .select('*');
@@ -50,7 +50,7 @@ const deleteProject = (project_id) => {
 module.exports = {
   getProjects,
   getProjectById,
-  getProjectByUserId,
+  getProjectsByUserId,
   updateProject,
   createProject,
   deleteProject,

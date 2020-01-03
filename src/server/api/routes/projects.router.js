@@ -18,7 +18,7 @@ router.get('/:project_id', (req, res, next) => {
 // ENDPOINT: :GET /api/projects/user/:fk_user_id - Get projects that belong to a specific user_id
 router.get('/user/:fk_user_id', (req, res, next) => {
   projectsController
-    .getProjectByUserId(req.params.fk_user_id)
+    .getProjectsByUserId(req.params.fk_user_id)
     .then((result) => res.json(result))
     .catch(next);
 });
