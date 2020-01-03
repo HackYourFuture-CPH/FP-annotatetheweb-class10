@@ -23,8 +23,8 @@ router.get('/user/:fk_user_id', (req, res, next) => {
     .catch(next);
 });
 
-// ENDPOINT: :PUT /api/projects/update/:project_id - Update project
-router.put('/update/:project_id', (req, res, next) => {
+// ENDPOINT: :PUT /api/projects/:project_id - Update project
+router.put('/:project_id', (req, res, next) => {
   projectsController
     .updateProject(req.params.project_id, req.body)
     .then((result) => res.json({ success: result === 1 }))
@@ -39,8 +39,8 @@ router.post('/', (req, res, next) => {
     .catch(next);
 });
 
-// ENDPOINT: :DELETE api/projects/delete/:project_id - Delete project with matching project_id
-router.delete('/delete/:project_id', (req, res, next) => {
+// ENDPOINT: :DELETE api/projects/:project_id - Delete project with matching project_id
+router.delete('/:project_id', (req, res, next) => {
   projectsController
     .deleteProject(req.params.project_id)
     .then((result) => res.json({ success: result === 1 }))

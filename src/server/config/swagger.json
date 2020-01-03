@@ -147,10 +147,7 @@
             "description": "successful operation"
           }
         }
-      }
-    },
-
-    "/projects/update/{project_id}": {
+      },
       "put": {
         "tags": ["Projects"],
         "summary": "Update a project",
@@ -184,8 +181,28 @@
             "description": "successful operation"
           }
         }
+      },
+      "delete": {
+        "tags": ["Projects"],
+        "summary": "Delete a specific project",
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "name": "project_id",
+            "in": "path",
+            "description": "The unique project_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
       }
     },
+
     "/projects/": {
       "post": {
         "tags": ["Projects"],
@@ -209,27 +226,6 @@
                 }
               }
             }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation"
-          }
-        }
-      }
-    },
-    "/projects/delete/{project_id}": {
-      "delete": {
-        "tags": ["Projects"],
-        "summary": "Delete a specific project",
-        "consumes": ["application/json"],
-        "parameters": [
-          {
-            "name": "project_id",
-            "in": "path",
-            "description": "The unique project_id",
-            "required": true,
-            "type": "string"
           }
         ],
         "responses": {
