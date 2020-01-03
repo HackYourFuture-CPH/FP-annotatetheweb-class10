@@ -34,4 +34,12 @@ router.get('/:id', (req, res, next) => {
     .then((result) => res.json(result))
     .catch(next);
 });
+
+router.delete('/delete/:annotation_id',(req,res,next)=>{
+annotationsController
+.deleteAnnotations(req.params.annotation_id)
+.then((result) => res.json({success: result === 1}))
+.catch(next);
+});
+
 module.exports = router;

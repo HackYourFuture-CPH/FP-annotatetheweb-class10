@@ -83,6 +83,37 @@
       }
     }
   },
+  "/annotations/{id}": {
+    "get": {
+      "tags": ["Annotation"],
+      "summary": "Check the status of Annotation and return it's value when it is ready",
+      "operationId":"Annotation_CheckStatusOnAnnotation",
+      "consumes": [],
+      "produces": [
+        "application/json",
+        "text/json",
+        "application/xml",
+        "text/xml"
+      ],
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "The unique id for the annotaion",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  },
   "/annotations/": {
     "post": {
       "tags": ["Annotations"],
@@ -119,6 +150,27 @@
         "200": {
           "description": "successful operation"
         }
+      }
+    }
+  },
+  "/annotations/delete/{annotation_id}":{
+    "delete" : {
+      "tags" :["annotations"],
+      "summery": "Delete specific annotation",
+      "consumes":["application/json"],
+      "parameters":[
+        {
+          "name": "annotation_id",
+          "in":"path",
+          "description":" Unique annotation_id",
+          "required":true,
+          "type":"string"
+        }
+      ],
+      "responces":{
+        "200":{
+          "description":"successful operation"
+        } 
       }
     }
   },
