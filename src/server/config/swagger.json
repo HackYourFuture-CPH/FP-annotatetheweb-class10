@@ -162,7 +162,7 @@
           },
           {
             "name": "Project name",
-            "in": "path",
+            "in": "body",
             "description": "Update a project",
             "required": "true",
             "schema": {
