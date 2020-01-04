@@ -19,10 +19,15 @@
   display: flex;
   flex-direction: row;
   float:right;
-  margin:30px 10px 0 10px;
+  margin:10px 10px 0 10px;
 }
 .nav-link {
-  color: #2D2E36;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  
+    font-weight: bold;
+    font-weight:bold 500px;
+    color:black;
+    font-size: medium;
 }
 .nav-link:link {
     text-decoration: none;
