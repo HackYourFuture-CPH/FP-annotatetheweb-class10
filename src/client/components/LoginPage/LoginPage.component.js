@@ -127,8 +127,7 @@ onTwitterSignIn = () => {
           logo=""
         />}
 
-        </div>
-        <FormLogin />
+        </div>        
       </div>
     );
   }
