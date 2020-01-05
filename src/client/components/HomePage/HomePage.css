@@ -1,25 +1,34 @@
+.main-wrapper-home-page{
+    width:100%;
+}
 .homeheader-wrapper {
     display: flex;
     justify-content: space-between;
+    margin-left:4rem;
+    margin-right: 4rem;
   }
-  /* .homeBody-wrapper {
-    display: flex;
-    justify-content: space-between;
-    margin-left: -15px;
-  } */
   
   .image-wrapper {
     width: 100%;
-    margin: 0 auto;
-    padding-top: 1.5rem;
-    /* width: 50%;*/
-    margin-top: -25px;
+    margin-left:2rem;
+    margin-right: 2rem;
+    /* margin: 0 auto;
+    padding-top: 1.5rem; */
   }
-  
   .home-page-image {
-    width: 100%;
+    width: 90%;
     height: 85vh;
   }
+  
+  .urlToggleBtn-wrapper
+  {
+    display: flex;
+    justify-content: space-between;
+    /* margin-left:10rem; */
+  
+  }
+  
+  
   
   .register-right-up-corner {
     padding-right: 2rem;

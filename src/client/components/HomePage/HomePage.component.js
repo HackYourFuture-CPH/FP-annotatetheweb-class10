@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../Header/Header.Component';
 import NavBar from '../NavBar/NavBar.component';
-import HomePageImage from '../HomePageImage/HomePageImage.component';
+//import HomePageImage from '../HomePageImage/HomePageImage.component';
 import imageHomePage from '../../assets/images/imageHomePage.jpg';
 import UrlInput from '../UrlInput/UrlInput.component';
 import ToggleButton from '../ToggleButton/ToggleButton.component';
@@ -25,17 +25,27 @@ function HomePage() {
         />
       </div>
       <div className='image-wrapper'>
-       <img alt="login" src={imageHomePage} className="home-page-image" />  
-    </div>
-    
-    <div className='urlToggleBtn-wrapper'>
-        <UrlInput
+        <div>
+         <img alt="login" src={imageHomePage} className="home-page-image" />   
+         <div className='urlToggleBtn-wrapper'>
+         <UrlInput
          placeholder="Insert URL to annotate..."
          onEnter={() => {
         /* Do something */
-      }}/>
+      }}
+    /> 
+      <ToggleButton
+      // eslint-disable-next-line no-console
+      onChange={(val) => console.log(val)}
+      activeText="Desktop"
+      inactiveText="Mobile"
+     /> 
+         </div>
       </div>
       </div>
+    </div>
+ 
+      
 
     
     
