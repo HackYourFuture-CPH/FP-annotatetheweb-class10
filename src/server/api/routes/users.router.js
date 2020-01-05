@@ -16,4 +16,12 @@ router.get('/', (req, res, next) => {
     .catch(next);
 });
 
+// ENDPOINT: /api/users/:user_id :GET user by user_id
+router.get('/:user_id', (req, res, next) => {
+  usersController
+  .getUserById(req.params.user_id)
+  .then((result) => res.json(result))
+  .catch(next);
+})
+
 module.exports = router;
