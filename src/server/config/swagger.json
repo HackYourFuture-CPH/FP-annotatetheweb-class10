@@ -41,7 +41,7 @@
         }
       }
     },
-
+​
     "/screenshots/": {
       "post": {
         "summary": "Create new screenshot",
@@ -81,11 +81,10 @@
           }
         }
       }
-    }
   },
-  "/annotations/{id}": {
+  "/Annotations/{id}": {
     "get": {
-      "tags": ["Annotation"],
+      "tags": ["Annotations"],
       "summary": "Check the status of Annotation and return it's value when it is ready",
       "operationId":"Annotation_CheckStatusOnAnnotation",
       "consumes": [],
@@ -155,7 +154,7 @@
   },
   "/annotations/delete/{annotation_id}":{
     "delete" : {
-      "tags" :["annotations"],
+      "tags" :["Annotations"],
       "summery": "Delete specific annotation",
       "consumes":["application/json"],
       "parameters":[
@@ -167,12 +166,13 @@
           "type":"string"
         }
       ],
-      "responces":{
+      "responses":{
         "200":{
           "description":"successful operation"
-        } 
+        }
       }
     }
+  }
   },
   "definitions": {}
 }
