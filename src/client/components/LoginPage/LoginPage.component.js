@@ -7,6 +7,7 @@ import './LoginPage.css';
 import './FormLoginRegister/FormLoginRegister.css';
 import FormButton from './FormButton/FormButton.component';
 //import app from '../../firebase/configure';
+import Loading from '../Loading/Loading.component';
 import {auth, facebookProvider, googleProvider, twitterProvider} from '../../firebase/configure';
 
 class LoginPage extends Component {
@@ -45,7 +46,9 @@ class LoginPage extends Component {
   }
 
   login = (e) => {
-    this.setState({isLoading: true});
+    if(this.state.password && this.state.email){
+      this.setState({isLoading: true});
+    }    
     auth.signInWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{
       this.setState({isLoading: false});
     }).catch((error) => {
@@ -97,11 +100,12 @@ onTwitterSignIn = () => {
    })
 }
   render () {
+    const { user, isLoading } = this.state;
     return (
       <div className="main-wrapper-login-page">
         <div className="header-wrapper">
           <Header title="Annotate the web" />
-          {!this.state.user?<FormLoginRegister
+          {!user && !isLoading?<FormLoginRegister
             formLoginRegister="form-login-register"
             text="Do not have account yet?"
             register="Register"
@@ -113,20 +117,21 @@ onTwitterSignIn = () => {
           <div className="image-wrapper">
             <img src={imageLogin} className="login-page-image" />
           </div>
-          {!this.state.user?<FormLogin
+          {isLoading?<Loading />:null}
+          {!isLoading && !user?<FormLogin
             handleChange = {this.handleChange}
             login = {this.login}
             signup = {this.signup}
             onGoogleSignIn = {this.onGoogleSignIn}
             onFacebookSignIn = {this.onFacebookSignIn}
             onTwitterSignIn = {this.onTwitterSignIn} 
-          />:<FormButton
+          />:null}
+          {user?<FormButton
           title="Log Out"
           buttons="logout-btn"
           click={this.logout}
           logo=""
-        />}
-
+        />:null}
         </div>        
       </div>
     );
