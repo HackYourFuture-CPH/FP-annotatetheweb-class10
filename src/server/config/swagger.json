@@ -121,6 +121,44 @@
         }
       }
     },
+    "/comments/": {
+      "post": {
+        "tags": ["Comments"],
+        "summary": "Create new comment for an annotation",
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Create comment",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": ["description", "fk_annotations_id", "fk_comments_id", "fk_user_id"],
+              "properties": {
+                "description": {
+                  "type": "string"
+                },
+                "fk_annotations_id": {
+                  "type": "integer"
+                },
+                "fk_comments_id": {
+                  "type": "integer"
+                },
+                "fk_user_id": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
     "/comments/{comment_id}": {
       "put": {
         "tags": ["Comments"],
@@ -148,6 +186,25 @@
                 }
               }
             }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Comments"],
+        "summary": "Delete a comment",
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "name": "comment_id",
+            "in": "path",
+            "description": "The unique comment_id",
+            "required": true,
+            "type": "string"
           }
         ],
         "responses": {
