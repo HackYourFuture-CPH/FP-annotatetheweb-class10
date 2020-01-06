@@ -1,0 +1,11 @@
+.loading-div{
+    border: none;
+    background-color: whitesmoke;
+    outline: none;
+    font-size: 20px;
+    width: 20%;
+    height: 2.9rem;
+    justify-self: center;
+    margin-right: 10%;
+    text-align: center;
+  }
