@@ -1,45 +1,57 @@
+body{
+    margin:0;
+    padding:0;
+    width:100%;
+}
+
+
 .main-wrapper-home-page{
     width:100%;
+    
 }
 .homeheader-wrapper {
     display: flex;
     justify-content: space-between;
     margin-left:4rem;
     margin-right: 4rem;
-  }
-  
+    margin-top:-1rem;
+  } 
   .image-wrapper {
-    width: 100%;
+    width: 95%;
     margin-left:2rem;
     margin-right: 2rem;
     /* margin: 0 auto;
     padding-top: 1.5rem; */
   }
-  .home-page-image {
-    width: 90%;
+   .home-page-image {
+    width: 140%;
     height: 85vh;
-  }
+    margin-top:-1rem;
+  } 
   
   .urlToggleBtn-wrapper
   {
     display: flex;
-    justify-content: space-between;
-    /* margin-left:10rem; */
+    align-items: center; 
+    justify-content: space-evenly; 
+    margin-bottom:160rem;
+
+    /* margin-left:10rem; 
+    margin-right:-5rem;
+    margin-top:-7rem; */
   
   }
-  
-  
-  
-  .register-right-up-corner {
-    padding-right: 2rem;
+  .url-Input{
+      margin-top:-12rem;
+      margin-left:2rem;
+      margin-right:-4rem;
   }
-  
-  .form-login-register {
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 1rem;
-    line-height: 22px;
-    padding: 1rem 0.5rem 0.5rem 0.5rem;
+  .toggle-btn{
+    margin-top:-12rem;
+    margin-right:-20rem;
+  }
+.content-wrapper{
+    margin-top:-2rem; 
+
   }
   
