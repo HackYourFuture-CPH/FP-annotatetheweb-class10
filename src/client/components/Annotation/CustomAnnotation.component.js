@@ -7,7 +7,6 @@ class CustomAnnotation extends Component {
     annotations: [],
     annotation: {},
     data: {},
-    image: this.props.screenshot,
   };
 
   onChange = (annotation, text) => {
@@ -19,6 +18,7 @@ class CustomAnnotation extends Component {
         id: Math.random() * 1000,
       },
     });
+    console.log(this.state.data);
   };
 
   onSubmit = () => {
@@ -30,16 +30,15 @@ class CustomAnnotation extends Component {
         data: this.state.data,
       }),
     });
+    console.log(this.state.data);
   };
 
   render() {
-    console.log(this.state.annotations);
-    const { image } = this.state;
     return (
       <div className="App">
         <Annotation
-          src={image.src}
-          alt="Two pebbles anthropomorphized holding hands"
+          src={this.props.screenshot.src}
+          alt={this.props.screenshot.alt}
           annotations={this.state.annotations}
           type={this.state.type}
           value={this.state.annotation}
@@ -49,6 +48,8 @@ class CustomAnnotation extends Component {
             <ContainerWrapper
               onChange={this.onChange}
               annotation={this.state.annotation}
+              description={this.description}
+              title={this.title}
               onSubmit={this.onSubmit}
             />
           )}
