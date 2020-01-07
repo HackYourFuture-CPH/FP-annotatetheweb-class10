@@ -4,7 +4,7 @@ import CustomAnnotation from './CustomAnnotation.component';
 
 import background from '../../assets/images/background.jpg';
 
-background={
+const backgroundImage = {
   src: background,
   alt: 'sample screenshot',
 }
@@ -12,7 +12,7 @@ background={
 storiesOf('Annotation', module).add('Annotation', () => (
   <div>
     <CustomAnnotation
-     screenshot={background}
+     screenshot={backgroundImage}
     />
   </div>
 ));
