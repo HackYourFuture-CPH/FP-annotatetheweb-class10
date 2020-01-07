@@ -22,7 +22,7 @@ const createUser = (body) => {
 };
 
 // Delete user by id
-const deleteUser = (user_id) => {
+const deleteUserById = (user_id) => {
   return knex('users')
     .where({ user_id: user_id })
     .del();
@@ -32,5 +32,5 @@ module.exports = {
   getUsers,
   getUserById,
   createUser,
-  deleteUser,
+  deleteUserById,
 };

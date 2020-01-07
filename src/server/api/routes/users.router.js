@@ -35,7 +35,7 @@ router.post('/', (req, res, next) => {
 // ENDPOINT: /api/users/:user_id :DELETE to delete a user by id
 router.delete('/:user_id', (req, res, next) => {
   usersController
-    .deleteUser(req.params.user_id)
+    .deleteUserById(req.params.user_id)
     .then((result) => res.json({ success: result === 1 }))
     .catch(next);
 });
