@@ -162,6 +162,9 @@
             "type": "string",
             "properties": {
               "name": "string"
+            }
+          }
+        ]
       },
       "put": {
         "tags": ["Projects"],
@@ -237,7 +240,11 @@
                 },
                 "fk_role_id": {
                   "type": "number"
-        }
+                }
+              }
+            }
+          }
+        ]
       },
       "delete": {
         "tags": ["Projects"],
@@ -280,7 +287,11 @@
                 },
                 "fk_user_id": {
                   "type": "number"
-        }
+                }
+              }
+            }
+          }
+        ]
       }
     },
     "/annotations/{key}": {
@@ -323,6 +334,5 @@
       }
     }
   },
-  
   "definitions": {}
 }
