@@ -10,6 +10,7 @@
     border-radius: 5px;
     text-shadow: 1px 1px rgb(15, 15, 15);
     font-weight: 140px;
+    cursor: pointer;
 }
 .twitter-btn{
     color:gray;
@@ -19,6 +20,7 @@
     height: 2rem;
     width: 2rem;
     margin: 0.5rem 0.5rem;
+    cursor: pointer;
 }
 
 .facebook-btn{
@@ -29,6 +31,7 @@
     height: 2rem;
     width: 2rem;
     margin: 0.5rem 0.5rem;
+    cursor: pointer;
 }
 .google-btn{
     background-color:rgb(91, 135, 230);
@@ -42,7 +45,7 @@
     margin: 0.5rem 0.5rem 0.5rem 0;
     font-size: 0.8rem;
     border-radius: 5px;
-
+    cursor: pointer;
 }
 /*Google icon alignment*/
 .logo-align{
@@ -59,10 +62,9 @@
     height: 2.9rem;
     justify-self: center;
     margin-right: 20%;
-}
-button{
     cursor: pointer;
 }
+
 
 /*media queries*/
 @media screen and (max-width: 768px) {
