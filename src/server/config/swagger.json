@@ -121,6 +121,33 @@
         }
       }
     },
+
+    "/projects/{project_id}": {
+      "get": {
+        "tags": ["Projects"],
+        "summary": "Get a project by project_id",
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "name": "project_id",
+            "in": "path",
+            "description": "The unique project_id",
+            "required": true,
+            "type": "string",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
     "/users/{user_id}": {
       "get": {
         "tags": ["Users"],
@@ -135,6 +162,32 @@
             "type": "string",
             "properties": {
               "name": "string"
+      },
+      "put": {
+        "tags": ["Projects"],
+        "summary": "Update a project",
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "name": "project_id",
+            "in": "path",
+            "description": "The unique project_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "Project name",
+            "in": "body",
+            "description": "Update a project",
+            "required": "true",
+            "schema": {
+              "type": "object",
+              "required": ["name"],
+              "properties": {
+                "name": {
+                  "type": "string"
+                }
+              }
             }
           }
         ],
@@ -184,6 +237,79 @@
                 },
                 "fk_role_id": {
                   "type": "number"
+        }
+      },
+      "delete": {
+        "tags": ["Projects"],
+        "summary": "Delete a specific project",
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "name": "project_id",
+            "in": "path",
+            "description": "The unique project_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+
+    "/projects/": {
+      "post": {
+        "tags": ["Projects"],
+        "summary": "Create new project",
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Create new project",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": ["name", "fk_user_id"],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "fk_user_id": {
+                  "type": "number"
+        }
+      }
+    },
+    "/annotations/{key}": {
+      "patch": {
+        "tags": ["Annotations"],
+        "summary": "update existing annotation",
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "description": "The unique key for the annotation",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Update annotation",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": ["title", "description"],
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
                 }
               }
             }
