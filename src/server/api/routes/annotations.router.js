@@ -34,7 +34,7 @@ router.get('/:id', (req, res, next) => {
     .then((result) => res.json(result))
     .catch(next);
 });
-// ENDPOINT: /api/annotations/ :PATCH
+// ENDPOINT: /api/annotations/:id :PATCH
 router.patch("/:id", (req, res, next) => {
   annotationsController
     .editAnnotation(req.params.id, req.body)
