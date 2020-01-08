@@ -33,7 +33,7 @@ const getAnnotations = async () => {
 const getAnnotationsById = async (annotation_id) => {
   try {
     const annotations = await knex('annotations')
-      .where({ annotation_id: annotation_id })
+      .where({ annotation_id })
       .select('*');
     if (annotations.length === 0) {
       throw new Error(`incorrect entry with the id of ${annotation_id}`, 404);
