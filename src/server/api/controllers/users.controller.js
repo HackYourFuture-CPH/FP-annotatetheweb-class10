@@ -24,7 +24,7 @@ const createUser = (body) => {
 // Delete user by id
 const deleteUserById = (user_id) => {
   return knex('users')
-    .where({ user_id: user_id })
+    .where({ user_id })
     .del();
 };
 
