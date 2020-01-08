@@ -82,7 +82,6 @@
         }
       }
     },
-
     "/annotations/": {
       "post": {
         "tags": ["Annotations"],
@@ -223,6 +222,36 @@
                 },
                 "fk_user_id": {
                   "type": "number"
+        }
+      }
+    },
+    "/annotations/{key}": {
+      "patch": {
+        "tags": ["Annotations"],
+        "summary": "update existing annotation",
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "description": "The unique key for the annotation",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Update annotation",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": ["title", "description"],
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
                 }
               }
             }
