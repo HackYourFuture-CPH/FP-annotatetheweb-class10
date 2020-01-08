@@ -146,6 +146,22 @@
             "description": "successful operation"
           }
         }
+      }
+    },
+    "/users/{user_id}": {
+      "get": {
+        "tags": ["Users"],
+        "summary": "Get a user by user_id",
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "description": "The unique user_id",
+            "required": true,
+            "type": "string",
+            "properties": {
+              "name": "string"
       },
       "put": {
         "tags": ["Projects"],
@@ -179,6 +195,48 @@
           "200": {
             "description": "successful operation"
           }
+        }
+      },
+      "delete": {
+        "tags": ["Users"],
+        "summary": "Delete a specific user",
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "description": "The unique user_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+    "/users/": {
+      "post": {
+        "tags": ["Users"],
+        "summary": "Create a new user",
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Create new user",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": ["name", "fk_role_id"],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "fk_role_id": {
+                  "type": "number"
         }
       },
       "delete": {
@@ -265,5 +323,6 @@
       }
     }
   },
+  
   "definitions": {}
 }

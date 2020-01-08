@@ -16,11 +16,28 @@ router.get('/', (req, res, next) => {
     .catch(next);
 });
 
+// ENDPOINT: /api/users/:user_id :GET to get user by user_id
+router.get('/:user_id', (req, res, next) => {
+  usersController
+    .getUserById(req.params.user_id)
+    .then((result) => res.json(result))
+    .catch(next);
+});
+
+// ENDPOINT: /api/users/ :POST to create new user
 router.post('/', (req, res, next) => {
   usersController
     .createUser(req.body)
+    .then((result) => res.json(result))
+    .catch(next);
+});
+
+// ENDPOINT: /api/users/:user_id :DELETE to delete a user by id
+router.delete('/:user_id', (req, res, next) => {
+  usersController
+    .deleteUserById(req.params.user_id)
     .then((result) => res.json({ success: result === 1 }))
     .catch(next);
-})
+});
 
 module.exports = router;
