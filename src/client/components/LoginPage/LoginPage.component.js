@@ -23,7 +23,7 @@ function LoginPage() {
         <div className="image-wrapper">
           <img alt="login" src={imageLogin} className="login-page-image" />
         </div>
-        <FormLogin displayController="login-part-display-controller" titleClass="form-title"/>
+        <FormLogin displayController="login-part-display-controller"/>
         
       </div>
       <FormLoginRegister

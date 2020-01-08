@@ -44,6 +44,7 @@
   display: none;
 }
 
+/* Media querries */
 @media (min-width: 481px) and (max-width: 767px) {
   .register-right-up-corner {
     display: none;
