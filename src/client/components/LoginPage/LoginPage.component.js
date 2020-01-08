@@ -6,19 +6,18 @@ import FormLogin from './FormLogin/FormLogin.component';
 import './LoginPage.css';
 import './FormLoginRegister/FormLoginRegister.css';
 import FormButton from './FormButton/FormButton.component';
-//import app from '../../firebase/configure';
 import Loading from '../Loading/Loading.component';
 import {auth, facebookProvider, googleProvider, twitterProvider} from '../../firebase/configure';
 
 class LoginPage extends Component {
   constructor() {
     super();
-    this.state = ({
+    this.state = {
       user: null,
       email: '',
       password: '',
       isLoading: false
-    });
+    };
     this.authListener = this.authListener.bind(this);
   }
 
@@ -49,7 +48,7 @@ class LoginPage extends Component {
     if(this.state.password && this.state.email){
       this.setState({isLoading: true});
     }    
-    auth.signInWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{
+    auth.signInWithEmailAndPassword(this.state.email, this.state.password).then(()=>{
       this.setState({isLoading: false});
     }).catch((error) => {
         console.log(error);
@@ -58,9 +57,9 @@ class LoginPage extends Component {
   logout = () => {
     auth.signOut();
   }
-  signup = (e) => {
-    auth.createUserWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{
-    }).then((u)=>{console.log(u)})
+  signup = async (e) => {
+    await auth.createUserWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{console.log(u)
+    })
     .catch((error) => {
         console.log(error);
       })
@@ -71,10 +70,7 @@ class LoginPage extends Component {
    .then((result, error) => {
     if(error){
       console.log(error)
-    }
-    else{
-
-    }
+    }    
    })
   };
  onFacebookSignIn = () => {
@@ -82,10 +78,7 @@ class LoginPage extends Component {
    .then((result, error) => {
     if(error){
       console.log(error)
-    }
-    else{
-
-    }
+    }    
    })
  }
 onTwitterSignIn = () => {
@@ -93,10 +86,7 @@ onTwitterSignIn = () => {
    .then((result, error) => {
     if(error){
       console.log(error)
-    }
-    else{
-
-    }
+    }    
    })
 }
   render () {
@@ -118,20 +108,20 @@ onTwitterSignIn = () => {
             <img src={imageLogin} className="login-page-image" />
           </div>
           {isLoading?<Loading />:null}
-          {!isLoading && !user?<FormLogin
+          {!isLoading && !user &&<FormLogin
             handleChange = {this.handleChange}
             login = {this.login}
             signup = {this.signup}
             onGoogleSignIn = {this.onGoogleSignIn}
             onFacebookSignIn = {this.onFacebookSignIn}
             onTwitterSignIn = {this.onTwitterSignIn} 
-          />:null}
-          {user?<FormButton
+          />}
+          {user && <FormButton
           title="Log Out"
           buttons="logout-btn"
           click={this.logout}
           logo=""
-        />:null}
+        />}
         </div>        
       </div>
     );
