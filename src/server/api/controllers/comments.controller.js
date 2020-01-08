@@ -9,10 +9,10 @@ const createComment = async ({
   fk_user_id,
 }) => {
   await knex('comments').insert({
-    description: description,
-    fk_annotations_id: fk_annotations_id,
-    fk_comments_id: fk_comments_id,
-    fk_user_id: fk_user_id,
+    description,
+    fk_annotations_id,
+    fk_comments_id,
+    fk_user_id,
   });
 
   return {
@@ -22,13 +22,13 @@ const createComment = async ({
 
 const getCommentsForAnnotation = (fk_annotations_id) => {
   return knex('comments')
-    .where({ fk_annotations_id: fk_annotations_id })
+    .where({ fk_annotations_id })
     .select('*');
 };
 
 const updateCommentById = (comment_id, body) => {
   return knex('comments')
-    .where({ comment_id: comment_id })
+    .where({ comment_id })
     .update({
       description: body.description,
       updated_at: new Date(),
@@ -37,7 +37,7 @@ const updateCommentById = (comment_id, body) => {
 
 const deleteCommentById = (comment_id) => {
   return knex('comments')
-    .where({ comment_id: comment_id })
+    .where({ comment_id })
     .del();
 };
 
