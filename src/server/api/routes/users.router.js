@@ -16,4 +16,11 @@ router.get('/', (req, res, next) => {
     .catch(next);
 });
 
+router.post('/', (req, res, next) => {
+  usersController
+    .createUser(req.body)
+    .then((result) => res.json({ success: result === 1 }))
+    .catch(next);
+})
+
 module.exports = router;
