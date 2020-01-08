@@ -6,7 +6,7 @@
   width: 15rem;
   min-width: 10rem;
   height: 2.9rem;
-  /* margin: 0.5rem; */
+  margin: 0.5rem;
   font-size: 0.75rem;
   border-radius: 0.3rem;
 }
@@ -24,7 +24,7 @@
 .create-account-btn {
   background-color: rgb(205, 231, 105);
   height: 2.9rem;
-  width: 100%;
+  width: 17rem;
   margin: 0.5rem auto;
   color: gray;
   font-family: sans-serif;
@@ -49,6 +49,7 @@
   width: 3rem;
   padding: 0.9rem;
   border: 2px #494848;
+  margin: 0.5rem 0.5rem;
 }
 .facebook-btn {
   color: #8a8989;
@@ -59,4 +60,5 @@
   width: 3rem;
   padding: 0.9rem;
   border: 2px #494848;
+  margin: 0.5rem 0.5rem;
 }
