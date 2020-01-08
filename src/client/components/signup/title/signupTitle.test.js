@@ -1,7 +1,7 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
-import SignupTitle from './signupTitle';
+import React from "react";
+import { render } from "@testing-library/react";
+import "@testing-library/jest-dom/extend-expect";
+import SignupTitle from "./SignupTitle.component";
 
 test('test the title', () => {
   const className = jest.fn();
