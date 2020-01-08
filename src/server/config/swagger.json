@@ -10,40 +10,84 @@
   "basePath": "/api",
   "schemes": ["http", "https"],
   "paths": {
-    "/screenshots/{key}": {
-      "get": {
-        "tags": ["Screenshot"],
-        "summary": "Checks the status of a taken screenshot and returns information about the screenshot if it's ready.",
-        "operationId": "Screenshot_CheckStatusOnScreenshot",
-        "consumes": [],
-        "produces": [
-          "application/json",
-          "text/json",
-          "application/xml",
-          "text/xml"
-        ],
+    "/users/": {
+      "post": {
+        "tags": ["Users"],
+        "summary": "Create a new user",
+        "consumes": ["application/json"],
         "parameters": [
           {
-            "name": "key",
+            "name": "body",
+            "in": "body",
+            "description": "Create new user",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": ["name", "fk_role_id"],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "fk_role_id": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+    "/users/{user_id}": {
+      "get": {
+        "tags": ["Users"],
+        "summary": "Get a user by user_id",
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "name": "user_id",
             "in": "path",
-            "description": "The unique key for the screenshot",
+            "description": "The unique user_id",
+            "required": true,
+            "type": "string",
+            "properties": {
+              "name": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Users"],
+        "summary": "Delete a specific user",
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "description": "The unique user_id",
             "required": true,
             "type": "string"
           }
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "schema": {
-              "type": "object"
-            }
+            "description": "successful operation"
           }
         }
       }
     },
-
     "/screenshots/": {
       "post": {
+        "tags": ["Screenshots"],
         "summary": "Create new screenshot",
         "consumes": ["application/json"],
         "parameters": [
@@ -75,6 +119,37 @@
         "responses": {
           "200": {
             "description": "{\"key\":\"[unique key]\"}",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/screenshots/{key}": {
+      "get": {
+        "tags": ["Screenshots"],
+        "summary": "Get a screenshot using a unique key.",
+        "operationId": "GetScreenshot",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/xml",
+          "text/xml"
+        ],
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "description": "The unique key for the screenshot",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
             "schema": {
               "type": "object"
             }
@@ -121,7 +196,38 @@
         }
       }
     },
-
+    "/projects/": {
+      "post": {
+        "tags": ["Projects"],
+        "summary": "Create new project",
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Create new project",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": ["name", "fk_user_id"],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "fk_user_id": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
     "/projects/{project_id}": {
       "get": {
         "tags": ["Projects"],
@@ -146,22 +252,6 @@
             "description": "successful operation"
           }
         }
-      }
-    },
-    "/users/{user_id}": {
-      "get": {
-        "tags": ["Users"],
-        "summary": "Get a user by user_id",
-        "consumes": ["application/json"],
-        "parameters": [
-          {
-            "name": "user_id",
-            "in": "path",
-            "description": "The unique user_id",
-            "required": true,
-            "type": "string",
-            "properties": {
-              "name": "string"
       },
       "put": {
         "tags": ["Projects"],
@@ -198,48 +288,6 @@
         }
       },
       "delete": {
-        "tags": ["Users"],
-        "summary": "Delete a specific user",
-        "consumes": ["application/json"],
-        "parameters": [
-          {
-            "name": "user_id",
-            "in": "path",
-            "description": "The unique user_id",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation"
-          }
-        }
-      }
-    },
-    "/users/": {
-      "post": {
-        "tags": ["Users"],
-        "summary": "Create a new user",
-        "consumes": ["application/json"],
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "description": "Create new user",
-            "required": true,
-            "schema": {
-              "type": "object",
-              "required": ["name", "fk_role_id"],
-              "properties": {
-                "name": {
-                  "type": "string"
-                },
-                "fk_role_id": {
-                  "type": "number"
-        }
-      },
-      "delete": {
         "tags": ["Projects"],
         "summary": "Delete a specific project",
         "consumes": ["application/json"],
@@ -256,30 +304,6 @@
           "200": {
             "description": "successful operation"
           }
-        }
-      }
-    },
-
-    "/projects/": {
-      "post": {
-        "tags": ["Projects"],
-        "summary": "Create new project",
-        "consumes": ["application/json"],
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "description": "Create new project",
-            "required": true,
-            "schema": {
-              "type": "object",
-              "required": ["name", "fk_user_id"],
-              "properties": {
-                "name": {
-                  "type": "string"
-                },
-                "fk_user_id": {
-                  "type": "number"
         }
       }
     },
@@ -321,8 +345,124 @@
           }
         }
       }
+    },
+    "/comments/": {
+      "post": {
+        "tags": ["Comments"],
+        "summary": "Create new comment for an annotation",
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Create comment",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "description",
+                "fk_annotations_id",
+                "fk_comments_id",
+                "fk_user_id"
+              ],
+              "properties": {
+                "description": {
+                  "type": "string"
+                },
+                "fk_annotations_id": {
+                  "type": "integer"
+                },
+                "fk_comments_id": {
+                  "type": "integer"
+                },
+                "fk_user_id": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+    "/comments/{comment_id}": {
+      "put": {
+        "tags": ["Comments"],
+        "summary": "Update a comment",
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "name": "comment_id",
+            "in": "path",
+            "description": "The unique comment_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Update comment for an annotation",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": ["description"],
+              "properties": {
+                "description": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Comments"],
+        "summary": "Delete a comment",
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "name": "comment_id",
+            "in": "path",
+            "description": "The unique comment_id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+    "/comments/annotation/{annotation_id}": {
+      "get": {
+        "tags": ["Comments"],
+        "summary": "Get all comments for a specific annotation",
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "name": "annotation_id",
+            "in": "path",
+            "description": "The unique annotation_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      }
     }
   },
-  
   "definitions": {}
 }
