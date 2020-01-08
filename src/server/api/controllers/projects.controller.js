@@ -11,21 +11,21 @@ const getProjects = ({ limit, offset, orderBy = 'project_id', order } = {}) => {
 // Return project by project_id
 const getProjectById = (project_id) => {
   return knex('projects')
-    .where({ project_id: project_id })
+    .where({ project_id })
     .select('*');
 };
 
 // Return projects for a specific userId
 const getProjectsByUserId = (fk_user_id) => {
   return knex('projects')
-    .where({ fk_user_id: fk_user_id })
+    .where({ fk_user_id })
     .select('*');
 };
 
 // Update a project
 const updateProject = (project_id, body) => {
   return knex('projects')
-    .where({ project_id: project_id })
+    .where({ project_id })
     .update({
       name: body.name,
       updated_at: new Date(),
@@ -43,7 +43,7 @@ const createProject = (body) => {
 // Delete a project
 const deleteProject = (project_id) => {
   return knex('projects')
-    .where({ project_id: project_id })
+    .where({ project_id })
     .del();
 };
 
