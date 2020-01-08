@@ -50,44 +50,27 @@ class LoginPage extends Component {
     }    
     auth.signInWithEmailAndPassword(this.state.email, this.state.password).then(()=>{
       this.setState({isLoading: false});
-    }).catch((error) => {
-        console.log(error);
-      });
+    })
   }
   logout = () => {
     auth.signOut();
   }
   signup = async (e) => {
     await auth.createUserWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{console.log(u)
-    })
-    .catch((error) => {
-        console.log(error);
-      })
+    })    
   }
   onGoogleSignIn = googleUser => {    
       console.log("google authentication");
       auth.signInWithPopup(googleProvider)
-   .then((result, error) => {
-    if(error){
-      console.log(error)
-    }    
-   })
+   
   };
  onFacebookSignIn = () => {
    auth.signInWithPopup(facebookProvider)
-   .then((result, error) => {
-    if(error){
-      console.log(error)
-    }    
-   })
+   
  }
 onTwitterSignIn = () => {
   auth.signInWithPopup(twitterProvider)
-   .then((result, error) => {
-    if(error){
-      console.log(error)
-    }    
-   })
+   
 }
   render () {
     const { user, isLoading } = this.state;
