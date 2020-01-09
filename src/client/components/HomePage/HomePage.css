@@ -33,7 +33,7 @@ html, body{
     display: flex;
     align-items: center; 
     justify-content: space-evenly; 
-    margin-bottom:160rem;
+    margin-bottom:-2rem;
   
   }
   .url-Input{
@@ -47,7 +47,7 @@ html, body{
   }
 .content-wrapper{
     margin-top:-2rem; 
-
+    margin-bottom:-1rem;
   }
   .footer-wrapper{
     height:50px;
