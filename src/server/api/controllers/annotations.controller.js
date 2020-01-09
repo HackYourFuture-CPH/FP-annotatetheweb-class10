@@ -52,9 +52,19 @@ const getAnnotationsById = async (id) => {
     return error.message;
   }
 };
+const editAnnotation = async (annotationId, updatedannotation) => {
+  return knex('annotations')
+    .where({ annotation_id: annotationId })
+    .update({
+      title: updatedannotation.title,
+      description: updatedannotation.description,
+      updated_at: new Date()
+    });
+};
 
 module.exports = {
   createAnnotation,
   getAnnotations,
   getAnnotationsById,
+  editAnnotation,
 };

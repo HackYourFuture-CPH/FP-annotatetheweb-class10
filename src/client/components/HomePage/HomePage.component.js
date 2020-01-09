@@ -1,12 +1,8 @@
 import React from 'react';
 import Header from '../Header/Header.Component';
 import NavBar from '../NavBar/NavBar.component';
-import HomePageImage from '../HomePageImage/HomePageImage.component';
 import imageHomePage from '../../assets/images/imageHomePage.jpg';
 import UrlInput from '../UrlInput/UrlInput.component';
-import ToggleButton from '../ToggleButton/ToggleButton.component';
-import Content from '../content/Content.component';
-import Footer from '../Footer/Footer.component';
 import './HomePage.css';
 
 
