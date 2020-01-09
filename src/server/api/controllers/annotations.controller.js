@@ -1,6 +1,7 @@
 
 
 const knex = require('../../config/db');
+
 const Error = require('../lib/utils/http-error');
 
 const createAnnotation = async (body) => {
@@ -8,6 +9,7 @@ const createAnnotation = async (body) => {
     title: body.title,
     area: JSON.stringify(body.area),
     description: body.description,
+    // eslint-disable-next-line @typescript-eslint/camelcase
     fk_screenshot_id: body.fk_screenshot_id,
   });
 
@@ -54,9 +56,19 @@ const getAnnotationsById = async (id) => {
     return error.message;
   }
 };
+const editAnnotation = async (annotationId, updatedannotation) => {
+  return knex('annotations')
+    .where({ annotation_id: annotationId })
+    .update({
+      title: updatedannotation.title,
+      description: updatedannotation.description,
+      updated_at: new Date()
+    });
+};
 
 module.exports = {
   createAnnotation,
   getAnnotations,
   getAnnotationsById,
+  editAnnotation,
 };
