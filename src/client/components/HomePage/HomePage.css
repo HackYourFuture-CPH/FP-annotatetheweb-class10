@@ -1,13 +1,12 @@
-body{
+
+html, body{
+    height: 100%;
     margin:0;
-    padding:0;
-    width:100%;
-}
-
-
+    padding: 0;
+} */
 .main-wrapper-home-page{
-    width:100%;
-    
+   min-height:100%;
+   margin-bottom:-50px;
 }
 .homeheader-wrapper {
     display: flex;
@@ -35,10 +34,6 @@ body{
     align-items: center; 
     justify-content: space-evenly; 
     margin-bottom:160rem;
-
-    /* margin-left:10rem; 
-    margin-right:-5rem;
-    margin-top:-7rem; */
   
   }
   .url-Input{
@@ -53,5 +48,8 @@ body{
 .content-wrapper{
     margin-top:-2rem; 
 
+  }
+  .footer-wrapper{
+    height:50px;
   }
   

@@ -1,5 +1,5 @@
 .footer-btn {
-  position: fixed;
+  /* position: fixed; */
   left: 0;
   bottom: 0;
   width: 100%;
@@ -7,6 +7,7 @@
   background: rgb(42, 42, 43);
   max-height: 10vh;
   color: #99999e;
+  border:logo;
 }
 .footer-links-wrapper {
   display: flex;

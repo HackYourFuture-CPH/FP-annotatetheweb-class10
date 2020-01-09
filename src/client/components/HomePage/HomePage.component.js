@@ -1,7 +1,6 @@
 import React from 'react';
 import Header from '../Header/Header.Component';
 import NavBar from '../NavBar/NavBar.component';
-//import HomePageImage from '../HomePageImage/HomePageImage.component';
 import imageHomePage from '../../assets/images/imageHomePage.jpg';
 import UrlInput from '../UrlInput/UrlInput.component';
 import ToggleButton from '../ToggleButton/ToggleButton.component';
@@ -68,6 +67,9 @@ function HomePage() {
          theme={themeContent}
          />
       </div> 
+      <div className='footer-wrapper'>
+      <Footer />
+      </div>
   </div>
   
  
