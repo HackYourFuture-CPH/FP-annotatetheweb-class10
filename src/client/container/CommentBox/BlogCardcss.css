@@ -1,11 +1,7 @@
 /*class for div whole container */
 
 .work-panel {
-    position: absolute;
-    width: 498px;
-    height: 239px;
-    left: 222px;
-    top: 107px;
+    margin-top: 10px;
 }
 
 .blog-card {
@@ -16,22 +12,24 @@
     justify-content: space-evenly;
     margin-left: 10px;
     border-style: solid;
-    border-width: thick;
-    border-color: hsl(71, 53%, 77%);
+    border-width: 2px;
+    border-color: hsl(72, 9%, 68%);
     margin-bottom: 20px;
 }
-
+.blog-card:hover{
+    border-color: hsl(71, 53%, 77%);
+}
 
 /*class for div consists of the lable and input */
 
 .input-box {
-    width: 50%;
+    width: 100px;
     margin-left: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    position: absolute;
+    position: absolute;   
     z-index: 2;
 }
 
@@ -89,14 +87,11 @@ button.btn-right {
 /* display property for .dropdown-content */
 
 .dropdown-content {
-    display: none;
+    display: none;   
     position: absolute;
-    flex-direction: column;
-    justify-content: flex-start;
     width: 80px;
     height: 100px;
-    overflow: auto;
-    z-index: -3;
+   
 }
 
 
