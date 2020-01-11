@@ -9,16 +9,20 @@ class CustomAnnotation extends Component {
     data: {},
   };
 
-  onChange = (annotation, text) => {
-    console.log(text);
-    this.setState({
-      annotation,
-      data: {
-        content: text,
-        id: Math.random() * 1000,
-      },
-    });
-    console.log(this.state.data);
+  
+  onChange = (annotation, value = {}) => {
+    if (value.title !== undefined && value.description !== undefined) {
+      console.log(value.title);
+      this.setState({
+        annotation,
+        data: {
+          content: { title: value.title, description: value.description },
+          id: Math.random() * 1000,
+        },
+      });
+    } else {
+      this.setState({ annotation });
+    }
   };
 
   onSubmit = () => {
@@ -27,10 +31,10 @@ class CustomAnnotation extends Component {
       annotation: {},
       annotations: this.state.annotations.concat({
         geometry,
-        data: this.state.data,
+        data: { ...this.state.data },
       }),
     });
-    console.log(this.state.data);
+    console.log(this.state.annotations);
   };
 
   render() {
