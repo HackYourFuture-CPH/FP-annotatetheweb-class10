@@ -1,26 +1,55 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './Container.css';
 
-const EditorComponent = (props) => {
-  const onChangeHandler = (event) => {
-    props.onChange(props.annotation, event.target.value);
+class EditorComponent extends Component {
+  state = {
+    data: {
+      title: '',
+      description: '',
+    },
   };
-  const { onSubmit } = props;
-  return (
-    <div>
-      <input type="text" onChange={onChangeHandler} placeholder="title" />
-      <textarea
-        rows="5"
-        cols="50"
-        // onChange={onChangeHandler}
-        placeholder="description"
-      />
-      <button type="submit" onClick={onSubmit}>
-        Submit
-      </button>
-    </div>
-  );
-};
+
+  onChangeHandlerTitle = (event) => {
+    this.setState({
+      data: {
+        title: event.target.value,
+        description: this.state.data.description,
+      },
+    });
+    this.props.onChange(this.props.annotation, this.state.data);
+  };
+
+  onChangeHandlerDescription = (event) => {
+    this.setState({
+      data: {
+        title: this.state.data.title,
+        description: event.target.value,
+      },
+    });
+    this.props.onChange(this.props.annotation, this.state.data);
+  };
+
+  render() {
+    return (
+      <div>
+        <input
+          type="title"
+          onChange={this.onChangeHandlerTitle}
+          placeholder="title"
+        />
+        <textarea
+          rows="5"
+          cols="50"
+          onChange={this.onChangeHandlerDescription}
+          placeholder="description"
+        />
+        <button type="submit" onClick={this.props.onSubmit}>
+          Submit
+        </button>
+      </div>
+    );
+  }
+}
 
 function ContainerWrapper(props) {
   const { geometry } = props.annotation;
