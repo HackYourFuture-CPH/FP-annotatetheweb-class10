@@ -17,7 +17,6 @@ const swaggerUi = require('swagger-ui-express');
 router.use('/documentation', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // Application routes
-
 router.use('/users', userRouter);
 router.use('/screenshots', screenshotsRouter);
 router.use('/annotations', annotationsRouter);
