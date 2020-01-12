@@ -2,12 +2,11 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const webpack = require("webpack");
-const dotenv = require("dotenv");
+const dotenv = require('dotenv').config({ path: __dirname + '/.env' });
 
 const outputDirectory = "dist";
 
 module.exports = () => {
-  const env = dotenv.config().parsed;
   return {
     entry: ["babel-polyfill", "./src/client/index.js"],
     output: {
@@ -57,10 +56,8 @@ module.exports = () => {
         favicon: "./public/favicon.ico"
       }),
       new webpack.DefinePlugin({
-        "process.env.FIREBASE_API_KEY": JSON.stringify(
-          `${env.FIREBASE_API_KEY}`
-        )
-      })
+        "process.env": dotenv.parsed
+      }),
     ]
   };
 };
