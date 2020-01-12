@@ -6,6 +6,8 @@ const router = express.Router();
 const userRouter = require('./users.router');
 const screenshotsRouter = require('./screenshots.router');
 const annotationsRouter = require('./annotations.router');
+const projectsRouter = require('./projects.router');
+const commentsRouter = require('./comments.router');
 
 // swagger-ui-express
 const swaggerDocument = require('../../config/swagger.json');
@@ -18,5 +20,8 @@ router.use('/documentation', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 router.use('/users', userRouter);
 router.use('/screenshots', screenshotsRouter);
 router.use('/annotations', annotationsRouter);
+router.use('/projects', projectsRouter);
+router.use('/comments', commentsRouter);
+
 
 module.exports = router;
