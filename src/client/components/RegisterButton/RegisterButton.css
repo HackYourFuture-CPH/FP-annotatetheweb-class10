@@ -2,12 +2,11 @@
     border-radius: 40px;
     background-color:white;
     border: 1px solid black;
-    width: 215px;
-    height: 80px;
+    width: 10rem;
+    height: 3rem;
     color:#2D2E36;
-    font-family: "Open Sans";
-    font-size: 25px;
-    font-weight: bold;
-    letter-spacing: 1px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1rem;
+    letter-spacing: none;
     cursor: pointer;
 }
