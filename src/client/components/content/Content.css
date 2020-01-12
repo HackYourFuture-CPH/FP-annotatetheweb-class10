@@ -4,9 +4,7 @@
 .content-text {
   text-align: center;
   font-family: "Open Sans", sans-serif;
-  display: inline-block;
-  margin: 1em 1em 0 0;
-  padding: 0.1% 13%;
+  display: block;
 }
 .content-footer {
   display: flex;

@@ -227,6 +227,52 @@
           }
         }
       }
+  },
+  "/Annotations/{id}": {
+    "get": {
+      "tags": ["Annotations"],
+      "summary": "Check the status of Annotation and return it's value when it is ready",
+      "operationId":"Annotation_CheckStatusOnAnnotation",
+      "consumes": [],
+      "produces": [
+        "application/json",
+        "text/json",
+        "application/xml",
+        "text/xml"
+      ],
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "The unique id for the annotaion",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  },
+  "/annotations/": {
+    "post": {
+      "tags": ["Annotations"],
+      "summary": "Create new annotation",
+      "consumes": ["application/json"],
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "description": "Create annotation",
+          "required": true,
+          "schema": {
+            "type": "object",
+            "required": ["title", "description", "area", "fk_screenshot_id"],
     },
     "/projects/{project_id}": {
       "get": {
@@ -463,6 +509,28 @@
         }
       }
     }
+  },
+  "/annotations/delete/{annotation_id}":{
+    "delete" : {
+      "tags" :["Annotations"],
+      "summery": "Delete specific annotation",
+      "consumes":["application/json"],
+      "parameters":[
+        {
+          "name": "annotation_id",
+          "in":"path",
+          "description":" Unique annotation_id",
+          "required":true,
+          "type":"string"
+        }
+      ],
+      "responses":{
+        "200":{
+          "description":"successful operation"
+        }
+      }
+    }
+  }
   },
   "definitions": {}
 }
