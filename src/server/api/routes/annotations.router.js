@@ -31,24 +31,26 @@ router.get('/', (req, res, next) => {
 
 // ENDPOINT: /api/annotations/:annotation_id :GET
 router.get('/:annotation_id', (req, res, next) => {
+  console.log('router', req.params.annotation_id)
   annotationsController
     .getAnnotationsById(req.params.annotation_id)
     .then((result) => res.json(result))
     .catch(next);
 });
 
-router.delete('/delete/:annotation_id',(req,res,next)=>{
-annotationsController
-.deleteAnnotations(req.params.annotation_id)
-.then((result) => res.json({success: result === 1}))
-.catch(next);
+// ENDPOINT: /api/annotations/:annotation_id :DELETE
+router.delete('/:annotation_id', (req, res, next) => {
+  annotationsController
+    .deleteAnnotations(req.params.annotation_id)
+    .then((result) => res.json({ success: result === 1 }))
+    .catch(next);
 });
 
-// ENDPOINT: /api/annotations/:id :PATCH
-router.patch("/:id", (req, res, next) => {
+// ENDPOINT: /api/annotations/:annotation_id :PATCH
+router.patch('/:annotation_id', (req, res, next) => {
   annotationsController
-    .editAnnotation(req.params.id, req.body)
-    .then(result => res.json(result))
+    .editAnnotation(req.params.annotation_id, req.body)
+    .then((result) => res.json(result))
     .catch(next);
 });
 
