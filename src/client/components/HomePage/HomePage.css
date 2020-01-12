@@ -3,7 +3,7 @@ html, body{
     height: 100%;
     margin:0;
     padding: 0;
-} */
+} 
 .main-wrapper-home-page{
    min-height:100%;
    margin-bottom:-50px;
@@ -19,8 +19,6 @@ html, body{
     width: 95%;
     margin-left:2rem;
     margin-right: 2rem;
-    /* margin: 0 auto;
-    padding-top: 1.5rem; */
   }
    .home-page-image {
     width: 140%;

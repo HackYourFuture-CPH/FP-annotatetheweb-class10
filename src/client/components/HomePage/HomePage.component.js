@@ -71,16 +71,6 @@ function HomePage() {
       <Footer />
       </div>
   </div>
-  
- 
-      
-
-    
-    
-         
-     
-    
-  );
+   );
 }
-
 export default HomePage;
