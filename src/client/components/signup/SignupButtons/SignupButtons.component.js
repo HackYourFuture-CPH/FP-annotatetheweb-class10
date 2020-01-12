@@ -3,6 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '@fortawesome/free-brands-svg-icons';
 import './signupButtons.css';
 
+
+
 const SignupButtons = ({
   title,
   text,
@@ -12,9 +14,12 @@ const SignupButtons = ({
   signupButton,
   click,
 }) => {
+
+  const icon = logo && (<FontAwesomeIcon icon={logo} className={(text, align)} />);
+
   return (
     <button type="button" onClick={click} className={signupButton}>
-      <FontAwesomeIcon icon={logo} className={(text, align)} />
+      {icon}
       <h3 className={signupBtnTxt} icon={logo}>
         {title}
       </h3>
