@@ -18,3 +18,8 @@
   transform-origin: top left;
   overflow: hidden;
 }
+
+.annotation-form {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Annotation from 'react-image-annotation';
-import ContainerWrapper from './ContainerWrapper';
+import EditorWrapper from './EditorWrapper';
 
 class CustomAnnotation extends Component {
   state = {
@@ -9,14 +9,14 @@ class CustomAnnotation extends Component {
     data: {},
   };
 
-  
   onChange = (annotation, value = {}) => {
     if (value.title !== undefined && value.description !== undefined) {
       console.log(value.title);
       this.setState({
         annotation,
         data: {
-          content: { title: value.title, description: value.description },
+          title: value.title,
+          description: value.description,
           id: Math.random() * 1000,
         },
       });
@@ -34,7 +34,12 @@ class CustomAnnotation extends Component {
         data: { ...this.state.data },
       }),
     });
-    console.log(this.state.annotations);
+    console.log(this.state.annotation);
+    this.props.onSave({
+      data: this.state.annotation,
+      title: this.state.data.title,
+      description: this.state.data.description,
+    });
   };
 
   render() {
@@ -48,8 +53,28 @@ class CustomAnnotation extends Component {
           value={this.state.annotation}
           onChange={this.onChange}
           onSubmit={this.onSubmit}
+          renderContent={({ annotation }) => {
+            const { geometry } = annotation;
+            return (
+              <div
+                key={annotation.data.id}
+                style={{
+                  background: 'black',
+                  color: 'white',
+                  padding: 10,
+                  position: 'absolute',
+                  fontSize: 12,
+                  left: `${geometry.x}%`,
+                  top: `${geometry.y + geometry.height}%`,
+                }}
+              >
+                <div>Custom Content</div>
+                {annotation.data && annotation.data.text}
+              </div>
+            );
+          }}
           renderEditor={() => (
-            <ContainerWrapper
+            <EditorWrapper
               onChange={this.onChange}
               annotation={this.state.annotation}
               description={this.description}

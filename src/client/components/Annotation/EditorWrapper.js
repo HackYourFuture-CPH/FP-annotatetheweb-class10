@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Container.css';
+import './Annotation.css';
 
 class EditorComponent extends Component {
   state = {
@@ -31,7 +31,7 @@ class EditorComponent extends Component {
 
   render() {
     return (
-      <div>
+      <div className="annotation-form">
         <input
           type="title"
           onChange={this.onChangeHandlerTitle}
@@ -51,7 +51,7 @@ class EditorComponent extends Component {
   }
 }
 
-function ContainerWrapper(props) {
+function EditorWrapper(props) {
   const { geometry } = props.annotation;
   if (!geometry) return null;
   return (
@@ -72,4 +72,4 @@ function ContainerWrapper(props) {
   );
 }
 
-export default ContainerWrapper;
+export default EditorWrapper;
