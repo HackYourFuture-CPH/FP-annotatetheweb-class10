@@ -49,7 +49,7 @@ const editAnnotation = async (annotationId, updatedannotation) => {
     .update({
       title: updatedannotation.title,
       description: updatedannotation.description,
-      updated_at: new Date()
+      updated_at: new Date(),
     });
 };
 
