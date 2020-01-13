@@ -55,10 +55,10 @@ const editAnnotation = async (annotationId, updatedannotation) => {
     });
 };
 
-const deleteAnnotations = async (annotation_id)=> {
-return knex('annotations')
-.where({annotation_id})
-.del();
+const deleteAnnotations = async (annotationId) => {
+  return knex('annotations')
+    .where({ annotation_id: annotationId })
+    .del();
 };
 
 module.exports = {
