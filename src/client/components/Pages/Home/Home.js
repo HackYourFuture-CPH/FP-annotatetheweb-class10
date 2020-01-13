@@ -20,6 +20,7 @@ class Home extends Component {
     event.preventDefault();
     doCreateUserWithEmailAndPassword(this.state.email, this.state.password)
       .then(this.setState({ email: '', password: '' }))
+      // eslint-disable-next-line no-alert
       .then(alert('New user is created'))
       .catch((error) => {
         // eslint-disable-next-line no-console

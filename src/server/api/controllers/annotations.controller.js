@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 const knex = require('../../config/db');
 const Error = require('../lib/utils/http-error');
 
@@ -36,6 +37,9 @@ const getAnnotationsById = async (annotation_id) => {
       .where({ annotation_id })
       .select('*');
     if (annotations.length === 0) {
+      // eslint-disable-next-line @typescript-eslint/camelcase
+      // eslint-disable-next-line camelcase
+      // eslint-disable-next-line @typescript-eslint/camelcase
       throw new Error(`incorrect entry with the id of ${annotation_id}`, 404);
     }
     return annotations;
@@ -55,7 +59,7 @@ const editAnnotation = async (annotationId, updatedannotation) => {
 
 const deleteAnnotations = async (annotation_id)=> {
 return knex('annotations')
-.where({annotation_id:annotation_id})
+.where({annotation_id})
 .del();
 };
 

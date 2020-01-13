@@ -1,0 +1,25 @@
+ body{
+     margin:0rem;
+     padding:0rem;
+ } 
+ .left-image{
+     width:18rem;
+     height:30rem;
+ }
+ .right-image{
+    width:18rem;
+    height:30rem;
+ }
+ .center-image{
+    width:30rem;
+    height:25rem;
+    margin-bottom:14rem;
+ }
+ 
+ .image-wrapper{
+  display: flex;
+  justify-content: space-between;
+  width:20rem;
+  height:30rem;
+  align-items: center;
+  }

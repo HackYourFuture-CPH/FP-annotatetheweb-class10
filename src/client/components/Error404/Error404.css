@@ -1,0 +1,29 @@
+.error-wrapper{
+    position: relative;
+    left: -19rem;
+    top: 16rem;   
+    
+}
+.error-text1{
+    color:red;
+    font-family: Lucida Console, Courier, monospace;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2rem;
+    line-height: 2rem;
+    text-decoration:none;
+  }
+  .error-text2{
+    color:black;
+    font-family: Lucida Console, Courier, monospace;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 2rem;
+    text-decoration:none;
+  }
+  .link-wrapper{
+    margin-left: 10rem;
+    
+  }
+ 

@@ -12,7 +12,7 @@ const FormLoginRegister = ({
     <div className={linewrapper}>
       <div className={formLoginRegister}>
         {text}{' '}
-        <a href="#sone" className={classRegister}>
+        <a href="#some" className={classRegister}>
           {register}{' '}
         </a>
       </div>
