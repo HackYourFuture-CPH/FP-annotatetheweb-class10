@@ -10,9 +10,13 @@
     justify-content: flex-end;
     align-items: center;
     text-align: center;
-    margin-right: 20px;
+    width: 250px;
+    height: 150%;
+    margin-right: 40px;
+    border: solid 2px #dce4d3;
 }
-.project-page-button .button{
+
+.project-page-button{
     width: 82px;
     height: 29px;
     font-family: open sans;
@@ -23,11 +27,28 @@
     color: #2d2e36;
     background-color: white;
     margin-bottom: 10px;
+    outline: none;
+    border: none;
+    cursor: pointer;
 }
 .register-button{
     cursor: pointer;
 }
+.login-page-image {
+    margin-left: 50px;
+    width: 70%;
+    height: 85vh;
+    position: absolute;
+  }
 @media (max-width: 566px) {
+    .project-page-container{
+        display: block;        
+    }
+    .login-page-image {        
+        width: 100%;
+        height: 100%;
+        position: relative;
+      }
     .project-page-footer{
         display: none;
     }
