@@ -15,6 +15,7 @@ import Content from '../../content/Content.component';
 import Footer from '../../Footer/Footer.component';
 import hyf from '../../../assets/images/hyf.png';
 import codeart from '../../../assets/images/codeart.png';
+import MobileMenu from '../../MobileMenu/MobileMenu.component';
 import { themeContent } from '../../theme';
 import './HomePage.css';
 
@@ -38,7 +39,7 @@ class Home extends Component {
   };
 
   onRegisterClick = () => {
-    return location.href='/register';
+    return (location.href = '/register');
   };
 
   onLoginClick = () => {
@@ -56,16 +57,15 @@ class Home extends Component {
   };
 
   sendUrl = () => {
-    return location.href = '/projects'
-  }
-
+    return (location.href = '/projects');
+  };
 
   render() {
     return (
       <Consumer>
         {({ isAuthenticated }) => {
           return (
-            <div className="main-wrapper-home-page">
+            <React.Fragment>
               <div className="homeheader-wrapper">
                 <Header title="Annotate the web" />
                 {isAuthenticated ? (
@@ -88,32 +88,32 @@ class Home extends Component {
                     onClick={this.onRegisterClick}
                   />
                 )}
+                <MobileMenu />
               </div>
-              <div className="image-wrapper">
-                <div className="home-page-image">
-                  <img
-                    alt="login"
-                    src={imageHomePage}
-                    className="home-page-image"
-                  />
-                  <div className="urlToggleBtn-wrapper">
-                    <div className="url-Input">
-                      <UrlInput
-                        placeholder="Insert URL to annotate..."
-                        onEnter={this.sendUrl}
-                      />
-                    </div>
-                    <div className="toggle-btn">
-                      <ToggleButton
-                        // eslint-disable-next-line no-console
-                        onChange={(val) => console.log(val)}
-                        activeText="Desktop"
-                        inactiveText="Mobile"
-                      />
-                    </div>
+              <div className="home-page-image">
+                <img
+                  alt="login"
+                  src={imageHomePage}
+                  className="home-page-image"
+                />
+                <div className="urlToggleBtn-wrapper">
+                  <div className="url-Input">
+                    <UrlInput
+                      placeholder="Insert URL to annotate..."
+                      onEnter={this.sendUrl}
+                    />
+                  </div>
+                  <div className="toggle-btn">
+                    <ToggleButton
+                      // eslint-disable-next-line no-console
+                      onChange={(val) => console.log(val)}
+                      activeText="Desktop"
+                      inactiveText="Mobile"
+                    />
                   </div>
                 </div>
               </div>
+
               <div className="content-wrapper">
                 <Content
                   title="About project"
@@ -126,7 +126,7 @@ class Home extends Component {
               <div className="footer-wrapper">
                 <Footer />
               </div>
-            </div>
+            </React.Fragment>
           );
         }}
       </Consumer>
