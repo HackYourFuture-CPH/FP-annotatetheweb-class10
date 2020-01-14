@@ -7,6 +7,8 @@ import Button from '../../Button/Button.component';
 import Footer from '../../Footer/Footer.component';
 import samplePhoto from '../../../assets/images/profile.png';
 import BlogCard from '../../../container/CommentBox/BlogCard.component';
+import imageLogin from '../../../assets/images/imageLogin.jpg';
+
 import './ProjectPage.css';
 
 const profile = {
@@ -18,34 +20,42 @@ const headerTitle = "annotate the web";
 const ProjectPage = () => {
   return (<div className="project-page-container">
     <div>
-      <SidebarMenu />
+      <SidebarMenu />   
+      <div>
+          <img alt="login" src={imageLogin} className="login-page-image" />
+        </div>   
       <div className="project-page-rightside-container">
         <div>
           <Header title ={headerTitle}/>
         </div>
         
         <div >
-          <Button className="project-page-button" title="Login"/>
+          <Button buttonClassName="project-page-button" title="Login"/>
         </div>
         
         <div >
-          <RegisterButton title="Register"/>
+          <RegisterButton title="Register" />
         </div>
         
         <div className="profile-container">
           <ProfileSummery profileName="Kseiina Zar" profileImage={profile}/>
         </div>
+
         <div>
           <BlogCard />
         </div>
-    </div>
+        <div>
+          <BlogCard />
+        </div>
+        <div>
+          <BlogCard />
+        </div>
       </div>
       
+    </div>      
     <div className="project-page-footer">
       <Footer /> 
-    </div>
-      
-
+    </div>     
   </div>);
 };
 
