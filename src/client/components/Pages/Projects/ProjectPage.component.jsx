@@ -16,40 +16,57 @@ const profile = {
   alt: 'profile image',
 };
 const headerTitle = "annotate the web";
+function myFunction() {
+  this.classList.toggle("change");
+}
 
 const ProjectPage = () => {
   return (<div className="project-page-container">
     <div>
-      <SidebarMenu />   
+      <SidebarMenu /> 
+      <div className="mobilemenu-menuwrap">
+        <div className="header-mobile">
+          <Header title ={headerTitle}/>
+        </div>
+        <div className="container" onclick={myFunction}>
+          <div className="bar1"></div>
+          <div className="bar2"></div>
+          <div className="bar3"></div>
+        </div>
+      </div>  
       <div>
           <img alt="login" src={imageLogin} className="login-page-image" />
         </div>   
       <div className="project-page-rightside-container">
-        <div>
-          <Header title ={headerTitle}/>
+        <div className="project-page-rightside-innerContainer">
+          <div>
+            <Header title ={headerTitle}/>
+          </div>
+          
+          <div >
+            <Button buttonClassName="project-page-button" title="Login"/>
+          </div>
+          
+          <div >
+            <RegisterButton title="Register" />
+          </div>
+          
+          <div className="profile-container">
+            <ProfileSummery profileName="Kseiina Zar" profileImage={profile}/>
+          </div>
         </div>
-        
-        <div >
-          <Button buttonClassName="project-page-button" title="Login"/>
+        <div className="comment-container">
+          <div>
+            <BlogCard />
+          </div>
+          <div>
+            <BlogCard />
+          </div>
+          <div>
+            <BlogCard />
+          </div>
         </div>
-        
-        <div >
-          <RegisterButton title="Register" />
-        </div>
-        
-        <div className="profile-container">
-          <ProfileSummery profileName="Kseiina Zar" profileImage={profile}/>
-        </div>
-
-        <div>
-          <BlogCard />
-        </div>
-        <div>
-          <BlogCard />
-        </div>
-        <div>
-          <BlogCard />
-        </div>
+          
       </div>
       
     </div>      
