@@ -40,6 +40,9 @@
     height: 85vh;
     position: absolute;
   }
+  .mobilemenu-menuwrap{
+      display: none;
+  }
 @media (max-width: 566px) {
     .project-page-container{
         display: block;        
@@ -47,9 +50,52 @@
     .login-page-image {        
         width: 100%;
         height: 100%;
-        position: relative;
+        position: absolute;
+        z-index: -3;
+        margin-top: 40px;
       }
     .project-page-footer{
         display: none;
     }
+    .mobilemenu-menuwrap{
+        display: flex;
+        position: absolute;
+        justify-content: center;
+    }
+    .header-mobile{
+        float: left;
+        margin-top: 0px;
+    }
+    .container {
+        display: inline-block;
+        cursor: pointer;
+      }
+      
+      .bar1, .bar2, .bar3 {
+        width: 35px;
+        height: 5px;
+        background-color: #333;
+        margin: 6px 0;
+        transition: 0.4s;
+      }
+      
+      .change .bar1 {
+        -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+        transform: rotate(-45deg) translate(-9px, 6px);
+      }
+      
+      .change .bar2 {opacity: 0;}
+      
+      .change .bar3 {
+        -webkit-transform: rotate(45deg) translate(-8px, -8px);
+        transform: rotate(45deg) translate(-8px, -8px);
+      }
+      .project-page-rightside-innerContainer{
+          display: none;
+      }      
+      .comment-container{
+        position: absolute;
+        z-index: 4;
+        margin-top: 400px;
+      }
 }
