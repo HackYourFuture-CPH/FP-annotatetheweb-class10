@@ -23,8 +23,16 @@ function LoginPage() {
         <div className="image-wrapper">
           <img alt="login" src={imageLogin} className="login-page-image" />
         </div>
-        <FormLogin />
+        <FormLogin displayController="login-part-display-controller"/>
+        
       </div>
+      <FormLoginRegister
+          formLoginRegister="form-login-register"
+          text="Do not have account yet?"
+          register="Register"
+          classRegister="register-class"
+          linewrapper="register-mobile-version"
+        />
     </div>
   );
 }
