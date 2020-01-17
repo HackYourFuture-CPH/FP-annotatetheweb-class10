@@ -10,7 +10,7 @@
     justify-content: flex-end;
     align-items: center;
     text-align: center;
-    width: 250px;
+    width: 30%;
     height: 150%;
     margin-right: 40px;
     border: solid 2px #dce4d3;
@@ -36,7 +36,7 @@
 }
 .login-page-image {
     margin-left: 50px;
-    width: 70%;
+    width: 60%;
     height: 85vh;
     position: absolute;
   }
@@ -59,16 +59,24 @@
     }
     .mobilemenu-menuwrap{
         display: flex;
+        flex-direction: row;
+        height: 10%;
         position: absolute;
         justify-content: center;
+        background-color: white;
+        border-bottom: solid 0.05rem rgb(125, 125, 139);
+        box-shadow: 5px 5px 5px lightgray;
     }
     .header-mobile{
-        float: left;
+        margin-left: 0rem;
         margin-top: 0px;
+        margin-right: 200px;
     }
     .container {
         display: inline-block;
         cursor: pointer;
+        margin-top: 0.8rem;
+        margin-right: 3rem;
       }
       
       .bar1, .bar2, .bar3 {
