@@ -5,10 +5,13 @@
   padding-right: 10px;
 }
 .profile-container {
-  border-bottom: solid 2px #7cfc00;
-  width: 15%;
+  width: 90%;
   display: flex;
-  padding-bottom: 10px;
+  flex-direction: column;
+  justify-content: center;
+  
+  text-align: center;
+  border-bottom: solid 2px #7cfc00;
 }
 .profile-name {
   font-family: "Open Sans", sans-serif;
