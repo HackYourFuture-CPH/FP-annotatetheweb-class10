@@ -4,6 +4,7 @@ import FormButton from '../FormButton/FormButton.component';
 import FormField from '../FormField/FormField.component';
 import FormTitle from '../FormTitle/FormTitle.component';
 import FormLine from '../FormLine/FormLine.component';
+import CheckBox from '../signup/checkbox/signupCheckBox.component';
 import {
   faGoogle,
   faFacebookSquare,
@@ -12,6 +13,10 @@ import {
 
 class FormSignUp extends Component {
   render() {
+    console.log('FormSignUp', this.props);
+
+    const { onClick, onInputChange } = this.props;
+
     return (
       <div className="signup-wrapper">
         <div className="signup-part">
@@ -85,11 +90,20 @@ class FormSignUp extends Component {
             //   e.target.value;
             // }}
           />
+          <CheckBox
+            onChange={(value) => console.log(value)}
+            checkboxClass="check-box"
+            linkClass="link-class"
+            textNoLinkFirst="Creating an account means youre okey with our "
+            textTermsOfServices="Terms of Service, Privacy Policy "
+            textNoLinkLast="and our default "
+            textNotificationsSettings="Notifications settings"
+          ></CheckBox>
           <div className="signup-button-wrapper">
             <FormButton
               title="Create Account"
               buttons="submit-btn"
-              click={() => console.log('submitted')}
+              click={onClick}
             />
           </div>
         </div>
