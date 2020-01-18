@@ -6,7 +6,7 @@ const NavBar = ({ navElements, registerButtonTitle, onClick }) => {
   const navList = navElements.map((item) => {
     return (
       <li className="nav-style" key={item.id}>
-        <a className="nav-link" href={item.href} key={item.id}>
+        <a className="nav-link" href={item.href} key={item.id} target={item.target}>
           {item.title}
         </a>
       </li>

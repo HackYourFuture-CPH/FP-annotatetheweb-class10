@@ -80,7 +80,7 @@ class Home extends Component {
                   <NavBar
                     navElements={[
                       { title: 'Annotate', id: 1, href: '/' },
-                      { title: 'About', id: 2, href: '/' },
+                      { title: 'About', id: 2, href: 'http://codeart.dk/about/', target: "_blank" },
                       { title: 'Login', id: 3, href: '/login' },
                     ]}
                     registerButtonTitle="Register"
