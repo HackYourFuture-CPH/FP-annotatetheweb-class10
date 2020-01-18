@@ -83,7 +83,7 @@ onTwitterSignIn = () => {
             text="Do not have account yet?"
             register="Register"
             classRegister="register-class"
-            linewrapper="register-right-up-corner"
+            linewrapper="register-mobile-version"
           />:null}
         </div>
         <div className="body-wrapper">
@@ -98,6 +98,7 @@ onTwitterSignIn = () => {
             onGoogleSignIn = {this.onGoogleSignIn}
             onFacebookSignIn = {this.onFacebookSignIn}
             onTwitterSignIn = {this.onTwitterSignIn} 
+            displayController="login-part-display-controller"
           />}
           {user && <FormButton
           title="Log Out"
@@ -108,7 +109,8 @@ onTwitterSignIn = () => {
         </div>        
       </div>
     );
-  }
+  }      
+  
 }
 
 export default LoginPage;
