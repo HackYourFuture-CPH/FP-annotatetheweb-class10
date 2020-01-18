@@ -30,19 +30,20 @@ const getAnnotations = async () => {
   }
 };
 
-const getAnnotationsById = async (annotation_id) => {
+const getAnnotationsById = async (annotationId) => {
   try {
     const annotations = await knex('annotations')
-      .where({ annotation_id })
+      .where({ annotationId })
       .select('*');
     if (annotations.length === 0) {
-      throw new Error(`incorrect entry with the id of ${annotation_id}`, 404);
+      throw new Error(`incorrect entry with the id of ${annotationId}`, 404);
     }
     return annotations;
   } catch (error) {
     return error.message;
   }
 };
+
 const editAnnotation = async (annotationId, updatedannotation) => {
   return knex('annotations')
     .where({ annotation_id: annotationId })
