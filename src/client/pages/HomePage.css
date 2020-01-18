@@ -17,9 +17,22 @@ body {
   margin-left: 2rem;
   margin-right: 2rem;
 }
+
+.home-page-image-wrapper {
+  width: 100%;
+  height: 85vh;
+  margin-top: -1rem;
+}
+
 .home-page-image {
   width: 100%;
   height: 85vh;
+  margin-top: -1rem;
+}
+
+.home-page-image-mobile {
+  width: 100%;
+  height: 60vh;
   margin-top: -1rem;
 }
 
@@ -43,6 +56,18 @@ body {
   .mobilemenu-menuwrap {
     display: none;
   }
+
+  .home-page-image-mobile {
+    display: none;
+  }
+
+  .home-page-image {
+    display: block;
+  }
+
+  .annotate-btn {
+    display: none;
+  }
 }
 
 @media (max-width:722px) {
@@ -52,5 +77,84 @@ body {
 
   .mobilemenu-menuwrap {
     display: block;
+    position: initial;
+    /* display:none; Something is off when this is turned on, so for now I just disable it. Needs to be fixed! */
   }
+
+  .home-page-image {
+    display: none;
+  }
+
+  .home-page-image-mobile {
+    display: block;
+  }
+
+  .homeheader-wrapper {
+    margin-left: 1rem;
+    margin-right: 0;
+    display: block;
+  }
+
+  .toggle-btn {
+    margin-top: 0;
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  .url-Input {
+    width: 80%;
+    margin: 0 auto;
+    
+  }
+
+  .url-input {
+    width: 100%;
+    height: 35px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    margin-right: 0;
+  }
+
+  .urlToggleBtn-wrapper {
+    display: block;
+  }
+
+  .annotate-btn {
+    display: block; 
+    margin: 1rem auto;
+    border-radius: 40px;
+    border: unset;
+    background-color: #cde769;
+    font-family: "Open Sans";
+    padding: .8rem 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .home-page-image-wrapper {
+    height: 100%;
+    padding-bottom: 1rem;
+  }
+
+  .context-text {
+    width: 90%;
+    margin: auto;
+  }
+
+  .footer-wrapper {
+    display: none;
+  }
+
+  .content-wrapper {
+    padding-bottom: 0;
+  }
+
+  .mobilemenu-menu > div {
+    width: 100%;
+    height: 100vh;
+  } 
+
+  .mobilemenu-menu {
+    width: 100vw;
+  } 
+
 }

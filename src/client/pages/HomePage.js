@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import { Consumer } from '../context/AuthContext';
 import '../firebase';
-import {
-  doSignInWithEmailAndPassword,
-  doSignOut,
-} from '../firebase/auth';
+import { doSignInWithEmailAndPassword, doSignOut } from '../firebase/auth';
 import Header from '../components/Header/Header.Component';
 import NavBar from '../components/NavBar/NavBar.component';
 import imageHomePage from '../assets/images/HomePageImage.png';
+import imageHomePageMobile from '../assets/images/HomePageImageMobile.png';
 import UrlInput from '../components/UrlInput/UrlInput.component';
 import ToggleButton from '../components/ToggleButton/ToggleButton.component';
 import Content from '../components/content/Content.component';
@@ -26,7 +24,7 @@ class Home extends Component {
       password: '',
       desktopSize: true,
       screenshotUrl: '',
-      project_id: ''
+      project_id: '',
     };
   }
 
@@ -59,73 +57,89 @@ class Home extends Component {
   };
 
   changeScreenshotSize = (val) => {
-    this.setState({desktopSize: val})
-  }
+    this.setState({ desktopSize: val });
+  };
 
-  async postData (url = '', data = {}) {
-    const response = await fetch (url, {
+  async postData(url = '', data = {}) {
+    const response = await fetch(url, {
       method: 'POST',
       mode: 'cors',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
       redirect: 'follow',
       referrerPolicy: 'no-referrer',
-      body: JSON.stringify(data)
+      body: JSON.stringify(data),
     });
     return await response.json();
   }
 
-
-  createNewProject = (fk_user_id) => {
-    
-  }
-
-  sendUrl = (value, isAuthenticated) => {
-    // If authenticated
-    if (isAuthenticated) {
-      
-    }
-    this.postData('http://localhost:3000/api/projects/', { name: 'New Project', fk_user_id:1 })
-    .then((data) => {
-      // console.log(data.project_id[0]);
-      return data.project_id[0];
-    })
-    .then(project_id => (foo (project_id))
-    )
-      const foo = (project_id) => {
-        this.setState( {screenshotUrl: value }, () => {
-          if (this.state.desktopSize) {
-            const width = 1342;
-            const height = 1152;
-            // Url will need to be changed once the site is deployed??
-            this.postData('http://localhost:3000/api/screenshots/', { url:  this.state.screenshotUrl, height, width, fk_project_id: project_id })
-            .then((data) => {
-              console.log(data);
-            })
-            // If user wants mobile size screenshot
-          } else {
-            console.log('desktop size is ', this.state.desktopSize);
-            const width = 640;
-            const height = 960;
-            // Url will need to be changed once the site is deployed??
-            this.postData('http://localhost:3000/api/screenshots/', { url:  this.state.screenshotUrl, height, width, fk_project_id: 1})
-            .then((data) => {
-              console.log(data);
-            })
-          }
-        })
-        
+  createScreenshot = (project_id, value) => {
+    this.setState({ screenshotUrl: value }, () => {
+      // Check if desktop or mobile screenshot is requested
+      if (this.state.desktopSize) {
+        const width = 1342; // These numbers should be adjusted ??
+        const height = 1152; // These numbers should be adjusted??
+        // Url will need to be changed once the site is deployed??
+        this.postData('http://localhost:3000/api/screenshots/', {
+          url: this.state.screenshotUrl,
+          height,
+          width,
+          fk_project_id: project_id,
+        }).then((data) => {
+          // Save screenshot into context
+          console.log(data);
+        });
+        // If user wants mobile size screenshot
+      } else {
+        const width = 640; // These numbers should be adjusted ??
+        const height = 960; // These numbers should be adjusted ??
+        // Url will need to be changed once the site is deployed??
+        this.postData('http://localhost:3000/api/screenshots/', {
+          url: this.state.screenshotUrl,
+          height,
+          width,
+          fk_project_id: project_id,
+        }).then((data) => {
+          // Save screenshot into context
+          console.log(data);
+        });
       }
-      
-    
-    const screenshotUrl = this.state.screenshotUrl;
+    });
+  };
+
+  createProjectAndScreenshot = (value, user_id) => {
+    // Create new project - now there's a new project created with every screenshot.
+    // If we have time, we can implement using the different project_ids. Right now  we shall prioritize other parts of this project.
+    this.postData('http://localhost:3000/api/projects/', {
+      name: 'New Project',
+      fk_user_id: user_id,
+    })
+      .then((data) => {
+        return data.project_id[0];
+      })
+      // Create screenshot, using the newly created project_id
+      .then((project_id) => this.createScreenshot(project_id, value));
+  };
+
+  sendUrl = (value, isAuthenticated, user_id) => {
+    // If user is authenticated, use the corresponding user_id
+    if (isAuthenticated === true) {
+      this.createProjectAndScreenshot(value, user_id);
+    } else {
+      // If user is not authenticated, use user_id=1 which is 'Random user'.
+      this.createProjectAndScreenshot(value, 1);
+    }
+  };
+
+  onSubmit = () => {
+    console.log('This feature is not ready yet, try it on desktop version.');
   }
 
   render() {
     return (
       <Consumer>
-        {({ isAuthenticated }) => {
+        {({ isAuthenticated, user_id }) => {
           return (
             <React.Fragment>
               <div className="homeheader-wrapper">
@@ -143,7 +157,12 @@ class Home extends Component {
                   <NavBar
                     navElements={[
                       { title: 'Annotate', id: 1, href: '/' },
-                      { title: 'About', id: 2, href: 'http://codeart.dk/about/', target: "_blank" },
+                      {
+                        title: 'About',
+                        id: 2,
+                        href: 'http://codeart.dk/about/',
+                        target: '_blank',
+                      },
                       { title: 'Login', id: 3, href: '/login' },
                     ]}
                     registerButtonTitle="Register"
@@ -152,11 +171,16 @@ class Home extends Component {
                 )}
                 <MobileMenu />
               </div>
-              <div className="home-page-image">
+              <div className="home-page-image-wrapper">
                 <img
-                  alt="login"
+                  alt="home"
                   src={imageHomePage}
                   className="home-page-image"
+                />
+                <img
+                  alt="home"
+                  src={imageHomePageMobile}
+                  className="home-page-image-mobile"
                 />
                 <div className="urlToggleBtn-wrapper">
                   <div className="url-Input">
@@ -164,6 +188,7 @@ class Home extends Component {
                       placeholder="Insert URL to annotate..."
                       onEnter={this.sendUrl}
                       isAuthenticated={isAuthenticated}
+                      user_id={user_id}
                     />
                   </div>
                   <div className="toggle-btn">
@@ -173,6 +198,9 @@ class Home extends Component {
                       activeText="Desktop"
                       inactiveText="Mobile"
                     />
+                  </div>
+                  <div className="submit-btn-wrapper">
+                    <button className="annotate-btn" onClick={this.onSubmit}>Annotate</button>
                   </div>
                 </div>
               </div>

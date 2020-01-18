@@ -1,7 +1,7 @@
 import React from 'react';
 import './UrlInput.css';
 
-const UrlInput = ({ placeholder, onEnter, isAuthenticated }) => {
+const UrlInput = ({ placeholder, onEnter, isAuthenticated, user_id }) => {
   return (
     <input
       type="url"
@@ -9,7 +9,7 @@ const UrlInput = ({ placeholder, onEnter, isAuthenticated }) => {
       className="url-input"
       onKeyPress={(event) => {
         if (event.key === 'Enter' && typeof onEnter === 'function') {
-          onEnter(event.target.value, isAuthenticated);
+          onEnter(event.target.value, isAuthenticated, user_id );
         }
       }}
     />
