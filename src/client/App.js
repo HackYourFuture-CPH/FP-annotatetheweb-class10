@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import Home from './Pages/Home/HomePage';
-import RegisterPage from './Pages/Register/RegisterPage';
-import LoginPage from './Pages/Login/LoginPage';
-import ProjectsPage from './Pages/Projects/ProjectsPage';
-import ScreenshotsPage from './Pages/Screenshots/ScreenshotsPage';
-import UserPage from './Pages/User/UserPage';
+import Home from './pages/Home/HomePage';
+import RegisterPage from './pages/Register/RegisterPage';
+import LoginPage from './pages/Login/LoginPage';
+import ProjectsPage from './pages/Projects/ProjectsPage';
+import ScreenshotsPage from './pages/Screenshots/ScreenshotsPage';
+import UserPage from './pages/User/UserPage';
 import { Provider } from './context/AuthContext';
 
 function App() {
