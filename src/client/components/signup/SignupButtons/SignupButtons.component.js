@@ -14,7 +14,7 @@ const SignupButtons = ({
 }) => {
   return (
     <button type="button" onClick={click} className={signupButton}>
-      <FontAwesomeIcon icon={logo} className={(text, align)} />
+      {logo && <FontAwesomeIcon icon={logo} className={(text, align)} />}
       <h3 className={signupBtnTxt} icon={logo}>
         {title}
       </h3>

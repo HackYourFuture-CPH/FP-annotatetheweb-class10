@@ -14,7 +14,6 @@ storiesOf('FormButton', module)
       title="Log In"
       buttons="submit-btn"
       click={() => console.log('submitted')}
-      logo={null}
     />
   ))
   .add('signup button', () => (
