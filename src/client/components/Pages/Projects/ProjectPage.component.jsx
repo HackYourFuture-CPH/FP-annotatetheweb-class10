@@ -62,6 +62,9 @@ class ProjectPage extends Component {
               <ProfileSummery profileName="Kseiina Zar" profileImage={profile}/>
             </div>
           </div>
+          <div className ="no-comment-message">
+            For now you do not have any annotations:
+          </div>
           <div className="comment-container">
             <div>
               <BlogCard />
