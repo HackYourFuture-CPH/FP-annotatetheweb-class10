@@ -43,6 +43,13 @@
   .mobilemenu-menuwrap{
       display: none;
   }
+  .no-comment-message{
+    margin-top: 1rem;
+    width: 50%;
+    font-family: sans-serif;
+    background-color: #ffffff;
+    position: relative;
+  }
 @media (max-width: 566px) {
     .project-page-container{
         display: block;        
