@@ -81,7 +81,11 @@ class Home extends Component {
     
   }
 
-  sendUrl = (value) => {
+  sendUrl = (value, isAuthenticated) => {
+    // If authenticated
+    if (isAuthenticated) {
+      
+    }
     this.postData('http://localhost:3000/api/projects/', { name: 'New Project', fk_user_id:1 })
     .then((data) => {
       // console.log(data.project_id[0]);
@@ -159,6 +163,7 @@ class Home extends Component {
                     <UrlInput
                       placeholder="Insert URL to annotate..."
                       onEnter={this.sendUrl}
+                      isAuthenticated={isAuthenticated}
                     />
                   </div>
                   <div className="toggle-btn">
