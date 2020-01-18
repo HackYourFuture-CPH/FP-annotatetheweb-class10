@@ -24,6 +24,8 @@ class Home extends Component {
     this.state = {
       email: '',
       password: '',
+      desktopSize: true,
+      screenshotUrl: ''
     };
   }
 
@@ -55,9 +57,46 @@ class Home extends Component {
     this.setState({ [event.target.name]: event.target.value });
   };
 
-  sendUrl = () => {
-    return (location.href = '/projects');
-  };
+  changeScreenshotSize = (val) => {
+    this.setState({desktopSize: val})
+  }
+
+  async postData (url = '', data = {}) {
+    const response = await fetch (url, {
+      method: 'POST',
+      mode: 'cors',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      redirect: 'follow',
+      referrerPolicy: 'no-referrer',
+      body: JSON.stringify(data)
+    });
+    return await response.json();
+  }
+
+
+  sendUrl = (value) => {
+    console.log('sent ffrom component', value);
+    
+    
+
+    if (this.state.desktopSize) {
+      console.log('desktop size is ', this.state.desktopSize);
+      const width = 1342;
+      const height = 1152;
+      // Url will need to be changed once the site is deployed??
+      this.postData('http://localhost:3000/api/screenshots/', { url:  "https://www.google.com/", height, width, fk_project_id: 1})
+      .then((data) => {
+        console.log(data);
+      })
+    } else {
+      console.log('desktop size is ', this.state.desktopSize);
+      // desktop: width 1342px height: 1152px
+      // mobile: width: 640px height: 960px
+    }
+    
+  }
 
   render() {
     return (
@@ -105,7 +144,7 @@ class Home extends Component {
                   <div className="toggle-btn">
                     <ToggleButton
                       // eslint-disable-next-line no-console
-                      onChange={(val) => console.log(val)}
+                      onChange={(val) => this.changeScreenshotSize(val)}
                       activeText="Desktop"
                       inactiveText="Mobile"
                     />
