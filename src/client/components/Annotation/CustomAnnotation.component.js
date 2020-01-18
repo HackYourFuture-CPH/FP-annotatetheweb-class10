@@ -11,7 +11,6 @@ class CustomAnnotation extends Component {
 
   onChange = (annotation, value = {}) => {
     if (value.title !== undefined && value.description !== undefined) {
-      console.log(value.title);
       this.setState({
         annotation,
         data: {
@@ -34,7 +33,7 @@ class CustomAnnotation extends Component {
         data: { ...this.state.data },
       }),
     });
-    console.log(this.state.annotation);
+    
     this.props.onSave({
       data: this.state.annotation,
       title: this.state.data.title,
@@ -68,7 +67,7 @@ class CustomAnnotation extends Component {
                   top: `${geometry.y + geometry.height}%`,
                 }}
               >
-                <div>Custom Content</div>
+                <div>{this.state.data.title}</div>
                 {annotation.data && annotation.data.text}
               </div>
             );
