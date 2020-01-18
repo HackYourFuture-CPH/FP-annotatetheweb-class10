@@ -1,0 +1,56 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.homeheader-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 4rem;
+  margin-right: 4rem;
+  margin-top: -1rem;
+}
+.image-wrapper {
+  width: 95%;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+.home-page-image {
+  width: 100%;
+  height: 85vh;
+  margin-top: -1rem;
+}
+
+.urlToggleBtn-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.url-Input {
+  margin-top: -12rem;
+}
+.toggle-btn {
+  margin-top: -12rem;
+}
+.content-wrapper {
+  margin-top: -2rem;
+  padding-bottom: 2rem;
+}
+
+@media (min-width: 723px) {
+  .mobilemenu-menuwrap {
+    display: none;
+  }
+}
+
+@media (max-width:722px) {
+  .nav-bar{
+    display: none;
+  }
+
+  .mobilemenu-menuwrap {
+    display: block;
+  }
+}

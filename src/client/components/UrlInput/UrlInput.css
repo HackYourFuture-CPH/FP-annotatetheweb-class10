@@ -5,12 +5,13 @@
   border: unset;
   width: 100%;
   max-width: 500px;
-  height: 65px;
+  height: 45px;
   background-color: #cde769;
   font-family: "Open Sans";
   font-size: 25px;
   padding: 0 40px;
   color: rgba(110, 110, 110, 0.5);
+  margin-right: 10rem;
 }
 
 .url-input::placeholder {

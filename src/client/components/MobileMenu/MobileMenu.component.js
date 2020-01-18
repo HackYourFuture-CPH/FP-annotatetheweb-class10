@@ -3,8 +3,7 @@ import './MobileMenu.css';
 
 const MobileMenu = () => {
   return (
-    <div ClassName="mobilemenu-menuwrap">
-      <p className="mobilemenu-title">Annotate the web</p>
+    <div className="mobilemenu-menuwrap">
       <input type="checkbox" className="mobilemenu-toggler" />
       <div className="mobilemenu-hamburgur">
         <div className="mobilemenu-lines" />
