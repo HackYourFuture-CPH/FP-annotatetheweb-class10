@@ -1,0 +1,14 @@
+.register-page{
+    height: 100vh;
+    background: url('../../assets/images/left-background.jpg') no-repeat 50px -250px;
+}
+
+.register-head{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+.register-form{
+    display: flex;
+    justify-content: flex-end;
+}

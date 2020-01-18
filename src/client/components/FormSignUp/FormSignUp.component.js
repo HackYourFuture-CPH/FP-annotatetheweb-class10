@@ -15,7 +15,7 @@ class FormSignUp extends Component {
   render() {
     console.log('FormSignUp', this.props);
 
-    const { onClick, onInputChange } = this.props;
+    const { onClick, onInputChange, googleSignIn } = this.props;
 
     return (
       <div className="signup-wrapper">
@@ -30,7 +30,7 @@ class FormSignUp extends Component {
               buttons="google-btn"
               logo={faGoogle}
               align="logo-align"
-              click={() => console.log('clicked')}
+              click={googleSignIn}
             />
 
             <FormButton

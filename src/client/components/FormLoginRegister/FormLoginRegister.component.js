@@ -7,12 +7,13 @@ const FormLoginRegister = ({
   register,
   classRegister,
   linewrapper,
+  href
 }) => {
   return (
     <div className={linewrapper}>
       <div className={formLoginRegister}>
-        {text}{' '}
-        <a href="#some" className={classRegister}>
+        {text}
+        <a href={href} className={classRegister}>
           {register}
         </a>
       </div>

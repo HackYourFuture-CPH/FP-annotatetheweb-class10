@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { Consumer } from '../../context/AuthContext';
 import FormSignUp from '../../components/FormSignUp/FormSignUp.component';
-import imageRegister from '../../assets/images/left-background.jpg';
+import Header from '../../components/Header/Header.Component';
+import FormLoginRegister from '../../components/FormLoginRegister/FormLoginRegister.component';
+import './Register.css';
 
-import { doCreateUserWithEmailAndPassword } from '../../firebase/auth';
+import { doCreateUserWithEmailAndPassword, signInWithGoogle } from '../../firebase/auth';
 
 class RegisterPage extends Component {
   constructor(props) {
@@ -25,6 +27,16 @@ class RegisterPage extends Component {
       });
   };
 
+  googleSignIn = (event) => {
+    event.preventDefault();
+    signInWithGoogle()
+      .then(alert('New user is created'))
+      .catch((error) => {
+        // eslint-disable-next-line no-console
+        console.log(error.message);
+      });
+  };
+
   onInputChange = (event) => {
     this.setState({ [event.target.name]: event.target.value });
   };
@@ -34,17 +46,22 @@ class RegisterPage extends Component {
       <Consumer>
         {({ isAuthenticated }) => {
           return (
-            <div>
-              <div>
-                <img
-                  alt="register-image"
-                  src={imageRegister}
-                />
+            <div className="register-page">
+              <div className="register-head">
+              <Header title="Annotate the web" />
+              <FormLoginRegister
+                text="Already a member?"
+                register="Sign in"
+                href='/login'
+              />
               </div>
+              <div class="register-form">
               <FormSignUp
                 onClick={this.onRegisterClick}
                 onChange={this.onInputChange}
+                googleSignIn={this.googleSignIn}
               ></FormSignUp>
+              </div>
               <p>Am I signed In: {isAuthenticated ? 'yes' : 'no'}</p>
             </div>
           );
