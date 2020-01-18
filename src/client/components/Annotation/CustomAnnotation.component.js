@@ -33,7 +33,7 @@ class CustomAnnotation extends Component {
         data: { ...data },
       }),
     });
-
+    
     this.props.onSave({
       data: annotation,
       title: data.title,
