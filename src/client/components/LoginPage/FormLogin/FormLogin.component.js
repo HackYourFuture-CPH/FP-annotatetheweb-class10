@@ -10,10 +10,10 @@ import {
   faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
 
-function FormLogin({displayController}) {
+function FormLogin(props) {
   return (
     <div className="login-wrapper">
-      <div className={displayController} >
+      <div className={props.displayController} >
         <FormTitle />
         <div className="social-media-button-wrapper">
           <FormButton
