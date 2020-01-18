@@ -25,7 +25,8 @@ class Home extends Component {
       email: '',
       password: '',
       desktopSize: true,
-      screenshotUrl: ''
+      screenshotUrl: '',
+      project_id: ''
     };
   }
 
@@ -75,31 +76,46 @@ class Home extends Component {
     return await response.json();
   }
 
+
+  createNewProject = (fk_user_id) => {
+    
+  }
+
   sendUrl = (value) => {
-    this.setState({ screenshotUrl: value }, () => {
-      // If user wants desktop size screenshot
-      if (this.state.desktopSize) {
-        const width = 1342;
-        const height = 1152;
-        // Url will need to be changed once the site is deployed??
-        this.postData('http://localhost:3000/api/screenshots/', { url:  this.state.screenshotUrl, height, width, fk_project_id: 1})
-        .then((data) => {
-          console.log(data);
+    this.postData('http://localhost:3000/api/projects/', { name: 'New Project', fk_user_id:1 })
+    .then((data) => {
+      // console.log(data.project_id[0]);
+      return data.project_id[0];
+    })
+    .then(project_id => (foo (project_id))
+    )
+      const foo = (project_id) => {
+        this.setState( {screenshotUrl: value }, () => {
+          if (this.state.desktopSize) {
+            const width = 1342;
+            const height = 1152;
+            // Url will need to be changed once the site is deployed??
+            this.postData('http://localhost:3000/api/screenshots/', { url:  this.state.screenshotUrl, height, width, fk_project_id: project_id })
+            .then((data) => {
+              console.log(data);
+            })
+            // If user wants mobile size screenshot
+          } else {
+            console.log('desktop size is ', this.state.desktopSize);
+            const width = 640;
+            const height = 960;
+            // Url will need to be changed once the site is deployed??
+            this.postData('http://localhost:3000/api/screenshots/', { url:  this.state.screenshotUrl, height, width, fk_project_id: 1})
+            .then((data) => {
+              console.log(data);
+            })
+          }
         })
-        // If user wants mobile size screenshot
-      } else {
-        console.log('desktop size is ', this.state.desktopSize);
-        const width = 640;
-        const height = 960;
-        // Url will need to be changed once the site is deployed??
-        this.postData('http://localhost:3000/api/screenshots/', { url:  this.state.screenshotUrl, height, width, fk_project_id: 1})
-        .then((data) => {
-          console.log(data);
-        })
+        
       }
-    });
+      
+    
     const screenshotUrl = this.state.screenshotUrl;
-    console.log(this.state.screenshotUrl);
   }
 
   render() {
