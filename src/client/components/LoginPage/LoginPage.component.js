@@ -55,13 +55,12 @@ class LoginPage extends Component {
   logout = () => {
     auth.signOut();
   }
-  signup = async (e) => {
-    await auth.createUserWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{console.log(u)
-    })    
+  signup = (e) => {
+    auth.createUserWithEmailAndPassword(this.state.email, this.state.password);  
   }
   onGoogleSignIn = googleUser => {    
-      console.log("google authentication");
-      auth.signInWithPopup(googleProvider)
+      this.setState({isLoading: true});
+      auth.signInWithPopup(googleProvider);
    
   };
  onFacebookSignIn = () => {
@@ -83,7 +82,7 @@ onTwitterSignIn = () => {
             text="Do not have account yet?"
             register="Register"
             classRegister="register-class"
-            linewrapper="register-mobile-version"
+            linewrapper="register-right-up-corner"
           />:null}
         </div>
         <div className="body-wrapper">
