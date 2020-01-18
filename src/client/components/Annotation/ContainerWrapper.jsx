@@ -1,9 +1,7 @@
 import React from 'react';
 import CustomAnnotation from './CustomAnnotation.component';
 
-
 const onSave = (data, title, description, screenshotId) => {
-
   fetch('http://localhost:3000/api/annotations/', {
     method: 'POST',
     mode: 'cors',
@@ -23,8 +21,7 @@ const onSave = (data, title, description, screenshotId) => {
 
 function ContainerWrapper(props) {
   const backgroundImage = {
-    src:
-      props.screenshotURL,
+    src: props.screenshotURL,
     alt: 'sample screenshot',
   };
 
