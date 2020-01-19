@@ -25,7 +25,6 @@ class Home extends Component {
       desktopSize: true,
       screenshotUrl: '',
       project_id: '',
-      screenshot_key: ''
     };
   }
 
@@ -75,7 +74,7 @@ class Home extends Component {
     return await response.json();
   }
 
-  createScreenshot = (project_id, value) => {
+  createScreenshot = (project_id, value, setScreenshotKey) => {
     this.setState({ screenshotUrl: value }, () => {
       // Check if desktop or mobile screenshot is requested
       if (this.state.desktopSize) {
@@ -89,7 +88,8 @@ class Home extends Component {
           fk_project_id: project_id,
         }).then((data) => {
           // Save screenshot into context
-          this.setState({ screenshot_key: data.key });
+          console.log(data.key);
+          setScreenshotKey(data.key);
         });
         // If user wants mobile size screenshot
       } else {
@@ -103,14 +103,16 @@ class Home extends Component {
           fk_project_id: project_id,
         }).then((data) => {
           // Save screenshot into context
+          console.log(data.key);
           this.setState({ screenshot_key: data.key });
+          setScreenshotKey(data.key);
           
         });
       }
     });
   };
 
-  createProjectAndScreenshot = (value, user_id) => {
+  createProjectAndScreenshot = (value, user_id, setScreenshotKey) => {
     // Create new project - now there's a new project created with every screenshot.
     // If we have time, we can implement using the different project_ids. Right now  we shall prioritize other parts of this project.
     this.postData('http://localhost:3000/api/projects/', {
@@ -121,16 +123,17 @@ class Home extends Component {
         return data.project_id[0];
       })
       // Create screenshot, using the newly created project_id
-      .then((project_id) => this.createScreenshot(project_id, value));
+      .then((project_id) => this.createScreenshot(project_id, value, setScreenshotKey));
   };
 
-  sendUrl = (value, isAuthenticated, user_id, screenshot_key) => {
+  sendUrl = (value, isAuthenticated, user_id, screenshot_key, setScreenshotKey) => {
+    console.log('from context', screenshot_key);
     // If user is authenticated, use the corresponding user_id
     if (isAuthenticated === true) {
-      this.createProjectAndScreenshot(value, user_id);
+      this.createProjectAndScreenshot(value, user_id, setScreenshotKey);
     } else {
       // If user is not authenticated, use user_id=1 which is 'Random user'.
-      this.createProjectAndScreenshot(value, 1);
+      this.createProjectAndScreenshot(value, 1, setScreenshotKey);
     }
   };
 
@@ -141,7 +144,7 @@ class Home extends Component {
   render() {
     return (
       <Consumer>
-        {({ isAuthenticated, user_id, screenshot_key, changeScreenshotKey }) => {
+        {({ isAuthenticated, user_id, screenshot_key, setScreenshotKey }) => {
           return (
             <React.Fragment>
               <div className="homeheader-wrapper">
@@ -188,10 +191,8 @@ class Home extends Component {
                   <div className="url-Input">
                     <UrlInput
                       placeholder="Insert URL to annotate..."
-                      onEnter={this.sendUrl}
-                      isAuthenticated={isAuthenticated}
-                      user_id={user_id}
-                      screenshot_key={screenshot_key}
+                      onEnter={(value) => this.sendUrl(value, isAuthenticated, user_id, screenshot_key, setScreenshotKey)}
+                      
                     />
                   </div>
                   <div className="toggle-btn">
