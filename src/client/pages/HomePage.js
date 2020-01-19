@@ -25,6 +25,7 @@ class Home extends Component {
       desktopSize: true,
       screenshotUrl: '',
       project_id: '',
+      screenshot_key: ''
     };
   }
 
@@ -88,7 +89,8 @@ class Home extends Component {
           fk_project_id: project_id,
         }).then((data) => {
           // Save screenshot into context
-          console.log(data);
+          console.log(data.key);
+          this.setState({ screenshot_key: data.key });
         });
         // If user wants mobile size screenshot
       } else {
@@ -102,7 +104,9 @@ class Home extends Component {
           fk_project_id: project_id,
         }).then((data) => {
           // Save screenshot into context
-          console.log(data);
+          console.log(data.key);
+          this.setState({ screenshot_key: data.key });
+          
         });
       }
     });
@@ -122,7 +126,9 @@ class Home extends Component {
       .then((project_id) => this.createScreenshot(project_id, value));
   };
 
-  sendUrl = (value, isAuthenticated, user_id) => {
+  sendUrl = (value, isAuthenticated, user_id, screenshot_key) => {
+    console.log(this.state.screenshot_key);
+    console.log('from context', screenshot_key);
     // If user is authenticated, use the corresponding user_id
     if (isAuthenticated === true) {
       this.createProjectAndScreenshot(value, user_id);
@@ -139,7 +145,7 @@ class Home extends Component {
   render() {
     return (
       <Consumer>
-        {({ isAuthenticated, user_id }) => {
+        {({ isAuthenticated, user_id, screenshot_key, changeScreenshotKey }) => {
           return (
             <React.Fragment>
               <div className="homeheader-wrapper">
@@ -189,6 +195,7 @@ class Home extends Component {
                       onEnter={this.sendUrl}
                       isAuthenticated={isAuthenticated}
                       user_id={user_id}
+                      screenshot_key={screenshot_key}
                     />
                   </div>
                   <div className="toggle-btn">

@@ -3,13 +3,11 @@ import * as firebase from 'firebase/app';
 
 const AuthContext = React.createContext();
 
-// const UserContext = React.createContext(); 
-
 export class Provider extends React.Component {
   state = {
     isAuthenticated: false,
-    user_id: '4',
-    project_id:'1'
+    user_id: '4', 
+    screenshot_key: 'Im key from contextt'
   };
 
   componentDidMount() {
@@ -29,11 +27,9 @@ export class Provider extends React.Component {
   render() {
     return (
       <AuthContext.Provider
-        value={{ isAuthenticated: this.state.isAuthenticated, user_id: this.state.user_id, project_id: this.state.project_id }}
+        value={{ isAuthenticated: this.state.isAuthenticated, user_id: this.state.user_id, screenshot_key: this.state.screenshot_key }}
       >
-        {/* <UserContext.Provider value= {{ user_name: this.state.user_name }} > */}
         {this.props.children}
-        {/* </UserContext.Provider> */}
       </AuthContext.Provider>
     );
   }
