@@ -5,12 +5,16 @@ import Header from '../../components/Header/Header.Component';
 import FormLoginRegister from '../../components/FormLoginRegister/FormLoginRegister.component';
 import './Register.css';
 
-import { doCreateUserWithEmailAndPassword, signInWithGoogle } from '../../firebase/auth';
+import {
+  doCreateUserWithEmailAndPassword,
+  signInWithFacebook,
+} from '../../firebase/auth';
 
 class RegisterPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      user_name: '',
       email: '',
       password: '',
     };
@@ -29,16 +33,26 @@ class RegisterPage extends Component {
 
   googleSignIn = (event) => {
     event.preventDefault();
-    signInWithGoogle()
-      .then(alert('New user is created'))
+    // signInWithGoogle()
+    //   .then(alert('New user is created'))
+    //   .catch((error) => {
+    //     // eslint-disable-next-line no-console
+    //     console.log(error.message);
+    //   });
+  };
+
+  signInWithFacebook = (event) => {
+    event.preventDefault();
+    signInWithFacebook()
+      .then(alert('New user is crated'))
       .catch((error) => {
         // eslint-disable-next-line no-console
         console.log(error.message);
       });
   };
 
-  onInputChange = (event) => {
-    this.setState({ [event.target.name]: event.target.value });
+  onInputChange = ({ user_name, email, password}) => {
+    this.setState({ user_name, email, password });
   };
 
   render() {
@@ -48,19 +62,20 @@ class RegisterPage extends Component {
           return (
             <div className="register-page">
               <div className="register-head">
-              <Header title="Annotate the web" />
-              <FormLoginRegister
-                text="Already a member?"
-                register="Sign in"
-                href='/login'
-              />
+                <Header title="Annotate the web" />
+                <FormLoginRegister
+                  text="Already a member?"
+                  register="Sign in"
+                  href="/login"
+                />
               </div>
-              <div class="register-form">
-              <FormSignUp
-                onClick={this.onRegisterClick}
-                onChange={this.onInputChange}
-                googleSignIn={this.googleSignIn}
-              ></FormSignUp>
+              <div className="register-form">
+                <FormSignUp
+                  onClick={this.onRegisterClick}
+                  changeHandler={this.onInputChange}
+                  googleSignIn={this.googleSignIn}
+                  signInWithFacebook={signInWithFacebook}
+                ></FormSignUp>
               </div>
               <p>Am I signed In: {isAuthenticated ? 'yes' : 'no'}</p>
             </div>

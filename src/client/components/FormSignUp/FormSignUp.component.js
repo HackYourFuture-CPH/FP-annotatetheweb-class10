@@ -12,18 +12,40 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 
 class FormSignUp extends Component {
-  render() {
-    console.log('FormSignUp', this.props);
+  constructor(props) {
+    super(props);
+    this.state = {
+      user_name: '',
+      email: '',
+      password: '',
+    };
+  }
 
-    const { onClick, onInputChange, googleSignIn } = this.props;
+  onChange = (event) => {
+    this.setState({ [event.target.name]: event.target.value }, () =>
+      this.props.changeHandler(this.state),
+    );
+  };
+
+  onClick = (event) => {
+    this.props.onClick(event);
+    this.setState({ user_name: '', email: '', password: '' });
+  };
+
+  render() {
+    console.log('state', this.state);
+
+    const { googleSignIn, signInWithFacebook } = this.props;
 
     return (
       <div className="signup-wrapper">
         <div className="signup-part">
-          <FormTitle
-            formTitle="form-title"
-            text="Sign up to Annotate the web"
-          />
+          <div>
+            <FormTitle
+              formTitle="form-title"
+              text="Sign up to Annotate the web"
+            />
+          </div>
           <div className="social-media-button-wrapper">
             <FormButton
               title="Sign up with Google"
@@ -44,20 +66,18 @@ class FormSignUp extends Component {
               title=""
               buttons="facebook-btn"
               logo={faFacebookSquare}
-              click={() => console.log('clicked')}
+              click={signInWithFacebook}
             />
           </div>
           <FormLine />
           <div className="name-wrapper">
             <FormField
+              name="user_name"
               title="Full Name"
-              text="emaill"
               box="nameboxclass"
               inputType="text"
               inputClass="name-box"
-              // changeHandler={(e) => {
-              //   e.target.value;
-              // }}
+              changeHandler={this.onChange}
             />
             <FormField
               title="User Name"
@@ -65,30 +85,26 @@ class FormSignUp extends Component {
               box="nameboxclass"
               inputType="text"
               inputClass="name-box"
-              // changeHandler={(e) => {
-              //   e.target.value;
-              // }}
+              changeHandler={this.onChange}
             />
           </div>
           <FormField
+            name="email"
             title="Email Address"
             text="login-input-label"
             box="boxclass"
             inputType="email"
             inputClass="email-addres-box"
-            // changeHandler={(e) => {
-            //   e.target.value;
-            // }}
+            changeHandler={this.onChange}
           />
           <FormField
+            name="password"
             title="Password"
             text="login-input-label"
             box="boxclass"
             inputType="password"
             inputClass="password-box"
-            // changeHandler={(e) => {
-            //   e.target.value;
-            // }}
+            changeHandler={this.onChange}
           />
           <CheckBox
             onChange={(value) => console.log(value)}
@@ -103,7 +119,7 @@ class FormSignUp extends Component {
             <FormButton
               title="Create Account"
               buttons="submit-btn"
-              click={onClick}
+              click={this.onClick}
             />
           </div>
         </div>

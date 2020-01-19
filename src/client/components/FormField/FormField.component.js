@@ -9,11 +9,13 @@ const FormField = ({
   textHolder,
   inputClass,
   changeHandler,
+  name
 }) => {
   return (
     <label className={text}>
       <div className={box}>{title}</div>
       <input
+        name={name}
         type={inputType}
         placeholder={textHolder}
         onChange={changeHandler}
