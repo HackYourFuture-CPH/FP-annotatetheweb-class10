@@ -18,6 +18,7 @@ class FormSignUp extends Component {
       user_name: '',
       email: '',
       password: '',
+      acceptedTermsAndPolicy: false,
     };
   }
 
@@ -28,8 +29,19 @@ class FormSignUp extends Component {
   };
 
   onClick = (event) => {
-    this.props.onClick(event);
-    this.setState({ user_name: '', email: '', password: '' });
+    if (this.state.acceptedTermsAndPolicy) {
+      this.props.onClick(event);
+      this.setState({
+        user_name: '',
+        email: '',
+        password: '',
+        acceptedTermsAndPolicy: false,
+      });
+    }
+  };
+
+  changeAcceptedTermsAndPolicy = (event) => {
+    this.setState({ acceptedTermsAndPolicy: event });
   };
 
   render() {
@@ -107,7 +119,7 @@ class FormSignUp extends Component {
             changeHandler={this.onChange}
           />
           <CheckBox
-            onChange={(value) => console.log(value)}
+            onChange={this.changeAcceptedTermsAndPolicy}
             checkboxClass="check-box"
             linkClass="link-class"
             textNoLinkFirst="Creating an account means youre okey with our "
