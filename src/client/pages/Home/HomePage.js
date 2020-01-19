@@ -106,7 +106,6 @@ class Home extends Component {
           console.log(data.key);
           this.setState({ screenshot_key: data.key });
           setScreenshotKey(data.key);
-          
         });
       }
     });
@@ -123,10 +122,18 @@ class Home extends Component {
         return data.project_id[0];
       })
       // Create screenshot, using the newly created project_id
-      .then((project_id) => this.createScreenshot(project_id, value, setScreenshotKey));
+      .then((project_id) =>
+        this.createScreenshot(project_id, value, setScreenshotKey),
+      );
   };
 
-  sendUrl = (value, isAuthenticated, user_id, screenshot_key, setScreenshotKey) => {
+  sendUrl = (
+    value,
+    isAuthenticated,
+    user_id,
+    screenshot_key,
+    setScreenshotKey,
+  ) => {
     console.log('from context', screenshot_key);
     // If user is authenticated, use the corresponding user_id
     if (isAuthenticated === true) {
@@ -139,7 +146,7 @@ class Home extends Component {
 
   onSubmit = () => {
     console.log('This feature is not ready yet, try it on desktop version.');
-  }
+  };
 
   render() {
     return (
@@ -191,8 +198,15 @@ class Home extends Component {
                   <div className="url-Input">
                     <UrlInput
                       placeholder="Insert URL to annotate..."
-                      onEnter={(value) => this.sendUrl(value, isAuthenticated, user_id, screenshot_key, setScreenshotKey)}
-                      
+                      onEnter={(value) =>
+                        this.sendUrl(
+                          value,
+                          isAuthenticated,
+                          user_id,
+                          screenshot_key,
+                          setScreenshotKey,
+                        )
+                      }
                     />
                   </div>
                   <div className="toggle-btn">
@@ -204,7 +218,9 @@ class Home extends Component {
                     />
                   </div>
                   <div className="submit-btn-wrapper">
-                    <button className="annotate-btn" onClick={this.onSubmit}>Annotate</button>
+                    <button className="annotate-btn" onClick={this.onSubmit}>
+                      Annotate
+                    </button>
                   </div>
                 </div>
               </div>

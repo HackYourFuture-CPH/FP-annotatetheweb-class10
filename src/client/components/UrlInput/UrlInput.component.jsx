@@ -9,7 +9,7 @@ const UrlInput = ({ placeholder, onEnter }) => {
       className="url-input"
       onKeyPress={(event) => {
         if (event.key === 'Enter' && typeof onEnter === 'function') {
-          onEnter(event.target.value );
+          onEnter(event.target.value);
         }
       }}
     />
