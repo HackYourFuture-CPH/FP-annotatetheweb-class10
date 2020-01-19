@@ -1,5 +1,3 @@
-'use strict';
-
 const knex = require('../../config/db');
 const { paginate } = require('../lib/utils/pagination');
 
