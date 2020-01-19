@@ -30,7 +30,7 @@ class LoginPage extends Component {
       this.setState({isLoading: true});
       console.log(user);
       if (user) {
-        this.setState({ user });        
+        this.setState({ user });
         localStorage.setItem('user', user.uid);
       } else {
         this.setState({ user: null });
@@ -39,7 +39,7 @@ class LoginPage extends Component {
       this.setState({isLoading: false});
     });
   }
-  
+
   handleChange =(e) => {
     this.setState({ [e.target.type]: e.target.value });
   }
@@ -47,7 +47,7 @@ class LoginPage extends Component {
   login = (e) => {
     if(this.state.password && this.state.email){
       this.setState({isLoading: true});
-    }    
+    }
     auth.signInWithEmailAndPassword(this.state.email, this.state.password).then(()=>{
       this.setState({isLoading: false});
     })
@@ -56,20 +56,20 @@ class LoginPage extends Component {
     auth.signOut();
   }
   signup = (e) => {
-    auth.createUserWithEmailAndPassword(this.state.email, this.state.password);  
+    auth.createUserWithEmailAndPassword(this.state.email, this.state.password);
   }
-  onGoogleSignIn = googleUser => {    
+  onGoogleSignIn = googleUser => {
       this.setState({isLoading: true});
       auth.signInWithPopup(googleProvider);
-   
+
   };
  onFacebookSignIn = () => {
    auth.signInWithPopup(facebookProvider)
-   
+
  }
 onTwitterSignIn = () => {
   auth.signInWithPopup(twitterProvider)
-   
+
 }
   render () {
     const { user, isLoading } = this.state;
@@ -96,7 +96,7 @@ onTwitterSignIn = () => {
             signup = {this.signup}
             onGoogleSignIn = {this.onGoogleSignIn}
             onFacebookSignIn = {this.onFacebookSignIn}
-            onTwitterSignIn = {this.onTwitterSignIn} 
+            onTwitterSignIn = {this.onTwitterSignIn}
             displayController="login-part-display-controller"
           />}
           {user && <FormButton
@@ -105,11 +105,11 @@ onTwitterSignIn = () => {
           click={this.logout}
           logo=""
         />}
-        </div>        
+        </div>
       </div>
     );
-  }      
-  
+  }
+
 }
 
 export default LoginPage;
