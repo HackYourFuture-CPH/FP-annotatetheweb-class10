@@ -57,10 +57,8 @@ module.exports = () => {
         favicon: "./public/favicon.ico"
       }),
       new webpack.DefinePlugin({
-        "process.env.FIREBASE_API_KEY": JSON.stringify(
-          `${env.FIREBASE_API_KEY}`
-        )
-      })
+        "process.env": JSON.stringify(dotenv.parsed)
+      }),
     ]
   };
 };
