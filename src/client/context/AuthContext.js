@@ -7,7 +7,7 @@ export class Provider extends React.Component {
   state = {
     isAuthenticated: false,
     user_id: '4', 
-    screenshot_key: 'Im key from contextt'
+    screenshot_key: ''
   };
 
   componentDidMount() {

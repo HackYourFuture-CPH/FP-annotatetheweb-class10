@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
-import { Consumer } from '../context/AuthContext';
-import '../firebase';
-import { doSignInWithEmailAndPassword, doSignOut } from '../firebase/auth';
-import Header from '../components/Header/Header.Component';
-import NavBar from '../components/NavBar/NavBar.component';
-import imageHomePage from '../assets/images/HomePageImage.png';
-import imageHomePageMobile from '../assets/images/HomePageImageMobile.png';
-import UrlInput from '../components/UrlInput/UrlInput.component';
-import ToggleButton from '../components/ToggleButton/ToggleButton.component';
-import Content from '../components/content/Content.component';
-import Footer from '../components/Footer/Footer.component';
-import hyf from '../assets/images/hyf.png';
-import codeart from '../assets/images/codeart.png';
-import MobileMenu from '../components/MobileMenu/MobileMenu.component';
-import { themeContent } from '../components/theme';
+import { Consumer } from '../../context/AuthContext';
+import '../../firebase';
+import { doSignInWithEmailAndPassword, doSignOut } from '../../firebase/auth';
+import Header from '../../components/Header/Header.Component';
+import NavBar from '../../components/NavBar/NavBar.component';
+import imageHomePage from '../../assets/images/HomePageImage.png';
+import imageHomePageMobile from '../../assets/images/HomePageImageMobile.png';
+import UrlInput from '../../components/UrlInput/UrlInput.component';
+import ToggleButton from '../../components/ToggleButton/ToggleButton.component';
+import Content from '../../components/content/Content.component';
+import Footer from '../../components/Footer/Footer.component';
+import hyf from '../../assets/images/hyf.png';
+import codeart from '../../assets/images/codeart.png';
+import MobileMenu from '../../components/MobileMenu/MobileMenu.component';
+import { themeContent } from '../../components/theme';
 import './HomePage.css';
 
 class Home extends Component {
@@ -89,7 +89,6 @@ class Home extends Component {
           fk_project_id: project_id,
         }).then((data) => {
           // Save screenshot into context
-          console.log(data.key);
           this.setState({ screenshot_key: data.key });
         });
         // If user wants mobile size screenshot
@@ -104,7 +103,6 @@ class Home extends Component {
           fk_project_id: project_id,
         }).then((data) => {
           // Save screenshot into context
-          console.log(data.key);
           this.setState({ screenshot_key: data.key });
           
         });
@@ -127,8 +125,6 @@ class Home extends Component {
   };
 
   sendUrl = (value, isAuthenticated, user_id, screenshot_key) => {
-    console.log(this.state.screenshot_key);
-    console.log('from context', screenshot_key);
     // If user is authenticated, use the corresponding user_id
     if (isAuthenticated === true) {
       this.createProjectAndScreenshot(value, user_id);
