@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import Header from '../Header/Header.Component';
-import FormLoginRegister from './FormLoginRegister/FormLoginRegister.component';
+import FormLoginRegister from '../FormLoginRegister/FormLoginRegister.component';
 import imageLogin from '../../assets/images/imageLogin.jpg';
-import FormLogin from './FormLogin/FormLogin.component';
+import FormLogin from '../FormLogin/FormLogin.component';
 import './LoginPage.css';
 import './FormLoginRegister/FormLoginRegister.css';
 import FormButton from './FormButton/FormButton.component';
