@@ -14,21 +14,27 @@ class RegisterPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      name: '',
       user_name: '',
       email: '',
       password: '',
     };
   }
 
-  onRegisterClick = (event) => {
-    event.preventDefault();
-    doCreateUserWithEmailAndPassword(this.state.email, this.state.password)
+  onRegisterClick = (event, errorMessage) => {
+    if(!errorMessage){
+      event.preventDefault();
+      doCreateUserWithEmailAndPassword(this.state.email, this.state.password)
       .then(this.setState({ email: '', password: '' }))
       .then(alert('New user is created'))
       .catch((error) => {
         // eslint-disable-next-line no-console
         console.log(error.message);
       });
+    }
+    else{
+      console.log(errorMessage);
+    }
   };
 
   googleSignIn = (event) => {

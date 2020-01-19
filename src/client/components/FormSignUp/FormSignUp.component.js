@@ -30,13 +30,17 @@ class FormSignUp extends Component {
 
   onClick = (event) => {
     if (this.state.acceptedTermsAndPolicy) {
-      this.props.onClick(event);
+      this.props.onClick(event, null);
       this.setState({
+        name: '',
         user_name: '',
         email: '',
         password: '',
         acceptedTermsAndPolicy: false,
       });
+    }
+    else{
+      this.props.onClick(null, 'You need to agree with terms and and policy');
     }
   };
 
@@ -84,7 +88,7 @@ class FormSignUp extends Component {
           <FormLine />
           <div className="name-wrapper">
             <FormField
-              name="user_name"
+              name="name"
               title="Full Name"
               box="nameboxclass"
               inputType="text"
@@ -92,6 +96,7 @@ class FormSignUp extends Component {
               changeHandler={this.onChange}
             />
             <FormField
+              name="user_name"
               title="User Name"
               text="emaill"
               box="nameboxclass"
