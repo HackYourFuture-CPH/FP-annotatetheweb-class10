@@ -8,7 +8,7 @@ import Footer from '../../components/Footer/Footer.component';
 import samplePhoto from '../../assets/images/profile.png';
 import BlogCard from '../../container/CommentBox/BlogCard.component';
 import imageLogin from '../../assets/images/imageLogin.jpg';
-import './ProjectPage.css';
+import './ProjectsPage.css';
 
 
 class ProjectPage extends Component {
