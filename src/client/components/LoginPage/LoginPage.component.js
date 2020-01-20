@@ -1,10 +1,10 @@
 import React from 'react';
 import Header from '../Header/Header.Component';
-import FormLoginRegister from '../FormLoginRegister/FormLoginRegister.component';
+import FormLoginRegister from './FormLoginRegister/FormLoginRegister.component';
 import imageLogin from '../../assets/images/imageLogin.jpg';
-import FormLogin from '../FormLogin/FormLogin.component';
+import FormLogin from './FormLogin/FormLogin.component';
 import './LoginPage.css';
-// import './FormLoginRegister/FormLoginRegister.css';
+import './FormLoginRegister/FormLoginRegister.css';
 
 function LoginPage() {
   return (
@@ -23,16 +23,8 @@ function LoginPage() {
         <div className="image-wrapper">
           <img alt="login" src={imageLogin} className="login-page-image" />
         </div>
-        <FormLogin displayController="login-part-display-controller"/>
-        
+        <FormLogin />
       </div>
-      <FormLoginRegister
-          formLoginRegister="form-login-register"
-          text="Do not have account yet?"
-          register="Register"
-          classRegister="register-class"
-          linewrapper="register-mobile-version"
-        />
     </div>
   );
 }

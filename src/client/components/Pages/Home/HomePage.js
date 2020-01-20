@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { Consumer } from '../../context/AuthContext';
-import '../../firebase';
+import { Consumer } from '../../../context/AuthContext';
+import '../../../firebase';
 import {
   doCreateUserWithEmailAndPassword,
   doSignInWithEmailAndPassword,
   doSignOut,
-} from '../../firebase/auth';
+} from '../../../firebase/auth';
 
 class Home extends Component {
   constructor(props) {

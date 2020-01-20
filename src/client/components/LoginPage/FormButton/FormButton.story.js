@@ -1,5 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+
 import {
   faGoogle,
   faFacebookSquare,
@@ -17,25 +18,9 @@ storiesOf('FormButton', module)
       logo={null}
     />
   ))
-  .add('signup button', () => (
-    <FormButton
-      title="Create Account"
-      buttons="submit-btn"
-      click={() => console.log('submitted')}
-    />
-  ))
-  .add('google log in button', () => (
+  .add('google button', () => (
     <FormButton
       title="Log In With Google"
-      buttons="google-btn"
-      logo={faGoogle}
-      align="logo-align"
-      click={() => console.log('clicked')}
-    />
-  ))
-  .add('google sign up button', () => (
-    <FormButton
-      title="Sign up with Google"
       buttons="google-btn"
       logo={faGoogle}
       align="logo-align"

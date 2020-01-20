@@ -8,20 +8,13 @@
   },
   "host": "",
   "basePath": "/api",
-  "schemes": [
-    "http",
-    "https"
-  ],
+  "schemes": ["http", "https"],
   "paths": {
     "/users/": {
       "post": {
-        "tags": [
-          "Users"
-        ],
+        "tags": ["Users"],
         "summary": "Create a new user",
-        "consumes": [
-          "application/json"
-        ],
+        "consumes": ["application/json"],
         "parameters": [
           {
             "name": "body",
@@ -30,10 +23,7 @@
             "required": true,
             "schema": {
               "type": "object",
-              "required": [
-                "name",
-                "fk_role_id"
-              ],
+              "required": ["name", "fk_role_id"],
               "properties": {
                 "name": {
                   "type": "string"
@@ -54,13 +44,9 @@
     },
     "/users/{user_id}": {
       "get": {
-        "tags": [
-          "Users"
-        ],
+        "tags": ["Users"],
         "summary": "Get a user by user_id",
-        "consumes": [
-          "application/json"
-        ],
+        "consumes": ["application/json"],
         "parameters": [
           {
             "name": "user_id",
@@ -80,13 +66,9 @@
         }
       },
       "delete": {
-        "tags": [
-          "Users"
-        ],
+        "tags": ["Users"],
         "summary": "Delete a specific user",
-        "consumes": [
-          "application/json"
-        ],
+        "consumes": ["application/json"],
         "parameters": [
           {
             "name": "user_id",
@@ -105,13 +87,9 @@
     },
     "/screenshots/": {
       "post": {
-        "tags": [
-          "Screenshots"
-        ],
+        "tags": ["Screenshots"],
         "summary": "Create new screenshot",
-        "consumes": [
-          "application/json"
-        ],
+        "consumes": ["application/json"],
         "parameters": [
           {
             "name": "body",
@@ -120,12 +98,7 @@
             "required": true,
             "schema": {
               "type": "object",
-              "required": [
-                "url",
-                "height",
-                "width",
-                "fk_project_id"
-              ],
+              "required": ["url", "height", "width", "fk_project_id"],
               "properties": {
                 "url": {
                   "type": "string"
@@ -155,9 +128,7 @@
     },
     "/screenshots/{key}": {
       "get": {
-        "tags": [
-          "Screenshots"
-        ],
+        "tags": ["Screenshots"],
         "summary": "Get a screenshot using a unique key.",
         "operationId": "GetScreenshot",
         "consumes": [],
@@ -186,147 +157,11 @@
         }
       }
     },
-    "/projects/": {
-      "post": {
-        "tags": [
-          "Projects"
-        ],
-        "summary": "Create new project",
-        "consumes": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "description": "Create new project",
-            "required": true,
-            "schema": {
-              "type": "object",
-              "required": [
-                "name",
-                "fk_user_id"
-              ],
-              "properties": {
-                "name": {
-                  "type": "string"
-                },
-                "fk_user_id": {
-                  "type": "number"
-                }
-              }
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation"
-          }
-        }
-      }
-    },
-    "/projects/{project_id}": {
-      "get": {
-        "tags": [
-          "Projects"
-        ],
-        "summary": "Get a project by project_id",
-        "consumes": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "project_id",
-            "in": "path",
-            "description": "The unique project_id",
-            "required": true,
-            "type": "string",
-            "properties": {
-              "name": {
-                "type": "string"
-              }
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation"
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Projects"
-        ],
-        "summary": "Update a project",
-        "consumes": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "project_id",
-            "in": "path",
-            "description": "The unique project_id",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "Project name",
-            "in": "body",
-            "description": "Update a project",
-            "required": "true",
-            "schema": {
-              "type": "object",
-              "required": [
-                "name"
-              ],
-              "properties": {
-                "name": {
-                  "type": "string"
-                }
-              }
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation"
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Projects"
-        ],
-        "summary": "Delete a specific project",
-        "consumes": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "project_id",
-            "in": "path",
-            "description": "The unique project_id",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation"
-          }
-        }
-      }
-    },
     "/annotations/": {
       "post": {
-        "tags": [
-          "Annotations"
-        ],
+        "tags": ["Annotations"],
         "summary": "Create new annotation",
-        "consumes": [
-          "application/json"
-        ],
+        "consumes": ["application/json"],
         "parameters": [
           {
             "name": "body",
@@ -335,12 +170,7 @@
             "required": true,
             "schema": {
               "type": "object",
-              "required": [
-                "title",
-                "description",
-                "area",
-                "fk_screenshot_id"
-              ],
+              "required": ["title", "description", "area", "fk_screenshot_id"],
               "properties": {
                 "title": {
                   "type": "string"
@@ -366,25 +196,106 @@
         }
       }
     },
-    "/annotations/{annotation_id}": {
-      "get": {
-        "tags": [
-          "Annotations"
-        ],
-        "summary": "Check the status of Annotation and return it's value when it is ready",
-        "operationId": "Annotation_CheckStatusOnAnnotation",
-        "consumes": [],
-        "produces": [
-          "application/json",
-          "text/json",
-          "application/xml",
-          "text/xml"
-        ],
+    "/projects/": {
+      "post": {
+        "tags": ["Projects"],
+        "summary": "Create new project",
+        "consumes": ["application/json"],
         "parameters": [
           {
-            "name": "annotation_id",
+            "name": "body",
+            "in": "body",
+            "description": "Create new project",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": ["name", "fk_user_id"],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "fk_user_id": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+    "/projects/{project_id}": {
+      "get": {
+        "tags": ["Projects"],
+        "summary": "Get a project by project_id",
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "name": "project_id",
             "in": "path",
-            "description": "The unique id for the annotaion",
+            "description": "The unique project_id",
+            "required": true,
+            "type": "string",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      },
+      "put": {
+        "tags": ["Projects"],
+        "summary": "Update a project",
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "name": "project_id",
+            "in": "path",
+            "description": "The unique project_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "Project name",
+            "in": "body",
+            "description": "Update a project",
+            "required": "true",
+            "schema": {
+              "type": "object",
+              "required": ["name"],
+              "properties": {
+                "name": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Projects"],
+        "summary": "Delete a specific project",
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "name": "project_id",
+            "in": "path",
+            "description": "The unique project_id",
             "required": true,
             "type": "string"
           }
@@ -394,20 +305,18 @@
             "description": "successful operation"
           }
         }
-      },
+      }
+    },
+    "/annotations/{key}": {
       "patch": {
-        "tags": [
-          "Annotations"
-        ],
+        "tags": ["Annotations"],
         "summary": "update existing annotation",
-        "consumes": [
-          "application/json"
-        ],
+        "consumes": ["application/json"],
         "parameters": [
           {
-            "name": "annotation_id",
+            "name": "key",
             "in": "path",
-            "description": "The unique annotation_id for the annotation",
+            "description": "The unique key for the annotation",
             "required": true,
             "type": "integer"
           },
@@ -418,10 +327,7 @@
             "required": true,
             "schema": {
               "type": "object",
-              "required": [
-                "title",
-                "description"
-              ],
+              "required": ["title", "description"],
               "properties": {
                 "title": {
                   "type": "string"
@@ -438,36 +344,13 @@
             "description": "successful operation"
           }
         }
-      },
-      "delete": {
-        "tags" :["Annotations"],
-        "summery": "Delete specific annotation",
-        "consumes":["application/json"],
-        "parameters":[
-          {
-            "name": "annotation_id",
-            "in":"path",
-            "description":" Unique annotation_id",
-            "required":true,
-            "type":"string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation"
-          }
-        }
       }
     },
     "/comments/": {
       "post": {
-        "tags": [
-          "Comments"
-        ],
+        "tags": ["Comments"],
         "summary": "Create new comment for an annotation",
-        "consumes": [
-          "application/json"
-        ],
+        "consumes": ["application/json"],
         "parameters": [
           {
             "name": "body",
@@ -508,13 +391,9 @@
     },
     "/comments/{comment_id}": {
       "put": {
-        "tags": [
-          "Comments"
-        ],
+        "tags": ["Comments"],
         "summary": "Update a comment",
-        "consumes": [
-          "application/json"
-        ],
+        "consumes": ["application/json"],
         "parameters": [
           {
             "name": "comment_id",
@@ -530,9 +409,7 @@
             "required": true,
             "schema": {
               "type": "object",
-              "required": [
-                "description"
-              ],
+              "required": ["description"],
               "properties": {
                 "description": {
                   "type": "string"
@@ -548,13 +425,9 @@
         }
       },
       "delete": {
-        "tags": [
-          "Comments"
-        ],
+        "tags": ["Comments"],
         "summary": "Delete a comment",
-        "consumes": [
-          "application/json"
-        ],
+        "consumes": ["application/json"],
         "parameters": [
           {
             "name": "comment_id",
@@ -571,13 +444,9 @@
     },
     "/comments/annotation/{annotation_id}": {
       "get": {
-        "tags": [
-          "Comments"
-        ],
+        "tags": ["Comments"],
         "summary": "Get all comments for a specific annotation",
-        "consumes": [
-          "application/json"
-        ],
+        "consumes": ["application/json"],
         "parameters": [
           {
             "name": "annotation_id",
@@ -597,4 +466,3 @@
   },
   "definitions": {}
 }
-

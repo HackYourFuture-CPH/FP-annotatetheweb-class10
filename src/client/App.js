@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import Home from './pages/Home/HomePage';
-import RegisterPage from './pages/Register/RegisterPage';
-import LoginPage from './pages/Login/LoginPage';
-import ProjectsPage from './pages/Projects/ProjectsPage';
-import ScreenshotsPage from './pages/Screenshots/ScreenshotsPage';
-import UserPage from './pages/User/UserPage';
+import Home from './components/Pages/Home/HomePage';
+import RegisterPage from './components/Pages/Register/RegisterPage';
+import LoginPage from './components/Pages/Login/LoginPage';
+import ProjectPage from './components/Pages/Projects/ProjectPage.component';
+import ScreenshotsPage from './components/Pages/Screenshots/ScreenshotsPage';
+import UserPage from './components/Pages/User/UserPage';
 import { Provider } from './context/AuthContext';
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
             <LoginPage />
           </Route>
           <Route exact path="/projects">
-            <ProjectsPage />
+            <ProjectPage />
           </Route>
           <Route exact path="/screenshots">
             <ScreenshotsPage />

@@ -10,7 +10,7 @@
 }
 .footer-links-wrapper {
   display: flex;
-  justify-content: center;
+  padding-left: 25%;
 }
 
 .footer-text {
