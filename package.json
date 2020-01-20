@@ -91,10 +91,5 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ],
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run code:clean"
-    }
-  }
+  ]
 }
