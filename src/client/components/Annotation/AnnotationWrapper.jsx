@@ -26,14 +26,12 @@ function ContainerWrapper(props) {
   };
 
   return (
-    <div>
-      <CustomAnnotation
-        screenshot={backgroundImage}
-        onSave={({ data, title, description }) =>
-          onSave(data, title, description, props.screenshotId)
-        }
-      />
-    </div>
+    <CustomAnnotation
+      screenshot={backgroundImage}
+      onSave={({ data, title, description }) =>
+        onSave(data, title, description, props.screenshotId)
+      }
+    />
   );
 }
 

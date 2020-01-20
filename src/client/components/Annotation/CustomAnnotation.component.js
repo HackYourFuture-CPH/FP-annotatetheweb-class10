@@ -25,19 +25,19 @@ class CustomAnnotation extends Component {
   };
 
   onSubmit = () => {
-    const { geometry } = this.state.annotation;
+    const { annotation, annotations, data } = this.state;
     this.setState({
       annotation: {},
-      annotations: this.state.annotations.concat({
-        geometry,
-        data: { ...this.state.data },
+      annotations: annotations.concat({
+        geometry: annotation.geometry,
+        data: { ...data },
       }),
     });
-    
+
     this.props.onSave({
-      data: this.state.annotation,
-      title: this.state.data.title,
-      description: this.state.data.description,
+      data: annotation,
+      title: data.title,
+      description: data.description,
     });
   };
 
