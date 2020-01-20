@@ -1,12 +1,16 @@
 .register-page{
     height: 100vh;
     background: url('../../assets/images/left-background.jpg') no-repeat 50px -250px;
+    padding: 20px 50px 0 0
 }
 
 .register-head{
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
+    font-size: 16px;
+    font-family: 'Open Sans';
+    
 }
 .register-form{
     display: flex;

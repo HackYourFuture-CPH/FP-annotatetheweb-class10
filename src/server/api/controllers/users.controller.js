@@ -18,6 +18,7 @@ const createUser = (body) => {
   return knex('users').insert({
     name: body.name,
     fk_role_id: body.fk_role_id,
+    user_name: body.user_name
   });
 };
 
