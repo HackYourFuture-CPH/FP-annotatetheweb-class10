@@ -19,7 +19,7 @@ const onSave = (data, title, description, screenshotId) => {
   });
 };
 
-function ContainerWrapper(props) {
+function AnnotationWrapper(props) {
   const backgroundImage = {
     src: props.screenshotURL,
     alt: 'sample screenshot',
@@ -35,4 +35,4 @@ function ContainerWrapper(props) {
   );
 }
 
-export default ContainerWrapper;
+export default AnnotationWrapper;
