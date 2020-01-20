@@ -1,4 +1,5 @@
-import { auth } from './configure';
+import { auth } from './configure'; 
+import firebase from 'firebase/app';
 
 // Sign Up
 export const doCreateUserWithEmailAndPassword = (email, password) =>
@@ -45,5 +46,21 @@ export async function signInWithFacebook() {
   } catch ({ message }) {
     // eslint-disable-next-line no-console
     console.log(`Facebook Login Error: ${message}`);
+  }
+}
+
+export async function signInWithGoogle() {
+  try {    
+    const provider = new firebase.auth.GoogleAuthProvider();
+    const result = await firebase.auth().signInWithPopup(provider);
+    var token = result.credential.accessToken;
+    var user = result.user;
+    return user;
+  } catch(error) {    
+    //var errorCode = error.code;
+    //var errorMessage = error.message;
+    //var email = error.email;
+    //var credential = error.credential;
+    throw error;
   }
 }

@@ -7,7 +7,9 @@ import './Register.css';
 
 import {
   doCreateUserWithEmailAndPassword,
+  signInWithGoogle,
   signInWithFacebook,
+
 } from '../../firebase/auth';
 
 class RegisterPage extends Component {
@@ -21,30 +23,54 @@ class RegisterPage extends Component {
     };
   }
 
+  fillUsersTable = (name, user_name) => {
+    fetch('http://localhost:3000/api/users/', {
+      method: 'POST',
+      mode: 'cors',
+      cache: 'no-cache',
+      credentials: 'same-origin',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name,
+        user_name,
+        fk_role_id: 1,
+      }),
+    });
+  };
+
   onRegisterClick = (event, errorMessage) => {
-    if(!errorMessage){
+    if (!errorMessage) {
       event.preventDefault();
       doCreateUserWithEmailAndPassword(this.state.email, this.state.password)
-      .then(this.setState({ email: '', password: '' }))
-      .then(alert('New user is created'))
-      .catch((error) => {
-        // eslint-disable-next-line no-console
-        console.log(error.message);
-      });
-    }
-    else{
+        .then(alert('New user is created'))
+        .catch((error) => {
+          // eslint-disable-next-line no-console
+          console.log(error.message);
+        });
+
+      const { name, user_name } = this.state;
+      this.fillUsersTable(name, user_name);
+
+      this.setState({ email: '', password: '', name: '', user_name: '' });
+    } else {
+      //need popup or something similar
       console.log(errorMessage);
     }
   };
 
-  googleSignIn = (event) => {
-    event.preventDefault();
-    // signInWithGoogle()
-    //   .then(alert('New user is created'))
-    //   .catch((error) => {
-    //     // eslint-disable-next-line no-console
-    //     console.log(error.message);
-    //   });
+
+  signInWithGoogle = () => {
+    signInWithGoogle()
+      .then((user) => {
+        console.log('New user is created with google', user);
+        this.fillUsersTable(user.displayName, user.displayName);
+      })
+      .catch((error) => {
+        // eslint-disable-next-line no-console
+        console.log('e',error);
+      });
   };
 
   signInWithFacebook = (event) => {
@@ -57,8 +83,8 @@ class RegisterPage extends Component {
       });
   };
 
-  onInputChange = ({ user_name, email, password}) => {
-    this.setState({ user_name, email, password });
+  onInputChange = ({ name, user_name, email, password}) => {
+    this.setState({ name, user_name, email, password });
   };
 
   render() {
@@ -70,7 +96,7 @@ class RegisterPage extends Component {
               <div className="register-head">
                 <Header title="Annotate the web" />
                 <FormLoginRegister
-                  text="Already a member?"
+                  text="Already a member? "
                   register="Sign in"
                   href="/login"
                 />
@@ -79,7 +105,7 @@ class RegisterPage extends Component {
                 <FormSignUp
                   onClick={this.onRegisterClick}
                   changeHandler={this.onInputChange}
-                  googleSignIn={this.googleSignIn}
+                  signInWithGoogle={this.signInWithGoogle}
                   signInWithFacebook={signInWithFacebook}
                 ></FormSignUp>
               </div>

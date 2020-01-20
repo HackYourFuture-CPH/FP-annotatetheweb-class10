@@ -16,6 +16,7 @@ class FormSignUp extends Component {
     super(props);
     this.state = {
       user_name: '',
+      name: '',
       email: '',
       password: '',
       acceptedTermsAndPolicy: false,
@@ -51,7 +52,7 @@ class FormSignUp extends Component {
   render() {
     console.log('state', this.state);
 
-    const { googleSignIn, signInWithFacebook } = this.props;
+    const { signInWithGoogle, signInWithFacebook } = this.props;
 
     return (
       <div className="signup-wrapper">
@@ -68,7 +69,7 @@ class FormSignUp extends Component {
               buttons="google-btn"
               logo={faGoogle}
               align="logo-align"
-              click={googleSignIn}
+              click={signInWithGoogle}
             />
 
             <FormButton
