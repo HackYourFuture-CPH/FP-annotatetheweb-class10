@@ -1,4 +1,4 @@
-import { auth } from './configure'; 
+import { auth } from './configure';
 import firebase from 'firebase/app';
 
 // Sign Up
@@ -40,14 +40,14 @@ export const doPasswordUpdate = async (password) => {
 
 // Sign In with facebook
 export async function signInWithFacebook() {
-  try {    
+  try {
     const provider = new firebase.auth.FacebookAuthProvider();
     const result = await firebase.auth().signInWithPopup(provider);
     const token = result.credential.accessToken;
     const user = result.user;
-    console.log(user)
+    console.log(user);
     return user;
-  } catch(error) {    
+  } catch (error) {
     //var errorCode = error.code;
     //var errorMessage = error.message;
     //var email = error.email;
@@ -58,13 +58,13 @@ export async function signInWithFacebook() {
 
 // Sign In with google
 export async function signInWithGoogle() {
-  try {    
+  try {
     const provider = new firebase.auth.GoogleAuthProvider();
     const result = await firebase.auth().signInWithPopup(provider);
     const token = result.credential.accessToken;
     const user = result.user;
     return user;
-  } catch(error) {    
+  } catch (error) {
     //var errorCode = error.code;
     //var errorMessage = error.message;
     //var email = error.email;
@@ -75,13 +75,13 @@ export async function signInWithGoogle() {
 
 // Sign In with twitter
 export async function signInWithTwitter() {
-  try {    
+  try {
     const provider = new firebase.auth.TwitterAuthProvider();
     const result = await firebase.auth().signInWithPopup(provider);
     var token = result.credential.accessToken;
     var user = result.user;
     return user;
-  } catch(error) {    
+  } catch (error) {
     //var errorCode = error.code;
     //var errorMessage = error.message;
     //var email = error.email;

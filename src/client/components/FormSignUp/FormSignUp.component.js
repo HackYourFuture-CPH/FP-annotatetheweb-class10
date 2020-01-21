@@ -39,8 +39,7 @@ class FormSignUp extends Component {
         password: '',
         acceptedTermsAndPolicy: false,
       });
-    }
-    else{
+    } else {
       this.props.onClick(null, 'You need to agree with terms and and policy');
     }
   };
@@ -50,7 +49,11 @@ class FormSignUp extends Component {
   };
 
   render() {
-    const { signInWithGoogle, signInWithFacebook, signInWithTwitter } = this.props;
+    const {
+      signInWithGoogle,
+      signInWithFacebook,
+      signInWithTwitter,
+    } = this.props;
 
     return (
       <div className="signup-wrapper">

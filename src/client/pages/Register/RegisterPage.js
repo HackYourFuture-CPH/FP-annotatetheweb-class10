@@ -9,7 +9,7 @@ import {
   doCreateUserWithEmailAndPassword,
   signInWithGoogle,
   signInWithFacebook,
-  signInWithTwitter
+  signInWithTwitter,
 } from '../../firebase/auth';
 
 class RegisterPage extends Component {
@@ -60,7 +60,6 @@ class RegisterPage extends Component {
     }
   };
 
-
   signInWithGoogle = () => {
     signInWithGoogle()
       .then((user) => {
@@ -74,7 +73,6 @@ class RegisterPage extends Component {
   };
 
   signInWithFacebook = () => {
-
     signInWithFacebook()
       .then((user) => {
         console.log('User logged in, using facebook');
@@ -98,7 +96,7 @@ class RegisterPage extends Component {
       });
   };
 
-  onInputChange = ({ name, user_name, email, password}) => {
+  onInputChange = ({ name, user_name, email, password }) => {
     this.setState({ name, user_name, email, password });
   };
 

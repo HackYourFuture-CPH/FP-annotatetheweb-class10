@@ -18,7 +18,7 @@ const createUser = async (body) => {
   let isUserExist = await knex('users')
     .select('user_id')
     .where('name', body.name);
-    
+
   if (isUserExist.length === 0) {
     return await knex('users').insert({
       name: body.name,
