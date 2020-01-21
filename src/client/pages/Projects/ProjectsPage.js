@@ -9,19 +9,14 @@ import samplePhoto from '../../assets/images/profile.png';
 import BlogCard from '../../container/CommentBox/BlogCard.component';
 import imageLogin from '../../assets/images/imageLogin.jpg';
 import './ProjectsPage.css';
+import MenuButton from '../../components/MenuButton/MenuButton.component';
+import MessageParagraph from '../../components/MessageParagraph/MessageParagraph.component';
 
 
 class ProjectPage extends Component {
 
   
-   myFunction=(x)=> {
-    x.classList.toggle("change");
-  }
-  onclickHandler=()=>{
-   
-  }
-  
-  render(){
+    render(){
     const profile = {
       src: samplePhoto,
       alt: 'profile image',
@@ -35,11 +30,7 @@ class ProjectPage extends Component {
           <div className="header-mobile">
             <Header title ={headerTitle}/>
           </div>
-          <div className="container" onclick={this.onclickHandler}>
-            <div className="bar1"></div>
-            <div className="bar2"></div>
-            <div className="bar3"></div>
-          </div>
+          <MenuButton />
         </div>  
         <div>
             <img alt="login" src={imageLogin} className="login-page-image" />
@@ -62,9 +53,7 @@ class ProjectPage extends Component {
               <ProfileSummery profileName="Kseiina Zar" profileImage={profile}/>
             </div>
           </div>
-          <div className ="no-comment-message">
-            For now you do not have any annotations:
-          </div>
+          <MessageParagraph className ="no-comment-message" message="For now you do not have any annotations:"/>
           <div className="comment-container">
             <div>
               <BlogCard />
