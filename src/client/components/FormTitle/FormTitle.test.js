@@ -4,9 +4,9 @@ import '@testing-library/jest-dom/extend-expect';
 import FormTitle from './FormTitle.component';
 
 test('it will test the title', () => {
-  const clasName = jest.fn();
-  const { getByText } = render(<FormTitle className={clasName} />);
-  expect(getByText('Login to Annotate the web')).toHaveTextContent(
+  const text = 'Login to Annotate the web';
+  const { getByText } = render(<FormTitle text={text} />);
+  expect(getByText(text)).toHaveTextContent(
     'Login to Annotate the web',
   );
 });
