@@ -64,33 +64,39 @@ class FormSignUp extends Component {
               text="Sign up to Annotate the web"
             />
           </div>
-          <div className="social-media-button-wrapper">
-            <FormButton
-              title="Sign up with Google"
-              buttons="google-btn"
-              logo={faGoogle}
-              align="logo-align"
-              click={signInWithGoogle}
-            />
+          <div>
+            <div className="social-media-button-wrapper">
+              <FormButton
+                title="Sign up with Google"
+                buttons="google-btn"
+                logo={faGoogle}
+                align="logo-align"
+                click={signInWithGoogle}
+              />
 
-            <FormButton
-              title=""
-              buttons="twitter-btn"
-              logo={faTwitter}
-              click={signInWithTwitter}
-            />
+              <FormButton
+                title=""
+                buttons="twitter-btn"
+                logo={faTwitter}
+                click={signInWithTwitter}
+              />
 
-            <FormButton
-              title=""
-              buttons="facebook-btn"
-              logo={faFacebookSquare}
-              click={signInWithFacebook}
-            />
+              <FormButton
+                title=""
+                buttons="facebook-btn"
+                logo={faFacebookSquare}
+                click={signInWithFacebook}
+              />
+            </div>
           </div>
-          <FormLine />
+          <div>
+            <FormLine />
+          </div>
           <div className="name-wrapper">
             <FormField
+              text="name"
               name="name"
+              textHolder=""
               title="Full Name"
               box="nameboxclass"
               inputType="text"
@@ -98,9 +104,12 @@ class FormSignUp extends Component {
               changeHandler={this.onChange}
             />
             <FormField
+              autoComplete="off"
+              autocomplete="off"
               name="user_name"
               title="User Name"
-              text="emaill"
+              text="name"
+              textHolder=""
               box="nameboxclass"
               inputType="text"
               inputClass="name-box"
@@ -110,7 +119,7 @@ class FormSignUp extends Component {
           <FormField
             name="email"
             title="Email Address"
-            text="login-input-label"
+            text="name"
             box="boxclass"
             inputType="email"
             inputClass="email-addres-box"
@@ -119,7 +128,7 @@ class FormSignUp extends Component {
           <FormField
             name="password"
             title="Password"
-            text="login-input-label"
+            text="name"
             box="boxclass"
             inputType="password"
             inputClass="password-box"

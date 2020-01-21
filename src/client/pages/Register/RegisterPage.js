@@ -109,13 +109,8 @@ class RegisterPage extends Component {
               <div className="register-page">
                 <div className="register-head">
                   <Header title="Annotate the web" />
-                  <FormLoginRegister
-                    text="Already a member? "
-                    register="Sign in"
-                    href="/login"
-                  />
                 </div>
-                <div className="register-form">
+                <div className="register-content">
                   <FormSignUp
                     onClick={this.onRegisterClick}
                     changeHandler={this.onInputChange}
@@ -123,8 +118,14 @@ class RegisterPage extends Component {
                     signInWithFacebook={this.signInWithFacebook}
                     signInWithTwitter={this.signInWithTwitter}
                   ></FormSignUp>
+                  <FormLoginRegister
+                    text="Already a member? "
+                    register="Sign in"
+                    href="/login"
+                    linewrapper='register-link-to-login-page'
+                  />
                 </div>
-                <p>Am I signed In: {isAuthenticated ? 'yes' : 'no'}</p>
+                
               </div>
             </div>
           );

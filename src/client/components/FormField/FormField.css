@@ -1,39 +1,42 @@
-.nameboxclass{
+.nameboxclass {
   margin-left: 0.4rem;
   font-weight: bold;
   margin-top: 1.25rem;
   margin-bottom: 0.3rem;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   margin-bottom: 0.3rem;
 }
-.boxclass{
-    margin-left: 0.55rem;
-    font-weight: bold;
-    margin-top: 1.25rem;
-    margin-bottom: 0.3rem;
-    font-family: 'Open Sans', sans-serif;
-    margin-bottom: 0.3rem;
+.boxclass {
+  font-weight: bold;
+  margin-top: 1.25rem;
+  margin-bottom: 0.3rem;
+  font-family: "Open Sans", sans-serif;
+  margin-bottom: 0.3rem;
 }
-.name-box{
-    border-radius: 12px;
-    height: 2rem;
-     width: 100%;
-    border: 2px solid rgb(252, 248, 248);
-    background-color:rgb(218, 218, 218);
+.name-box {
+  border-radius: 5px;
+  height: 2rem;
+  padding: 0 12px;
+  border: none;
+  background-color: rgb(245, 245, 245);
+  width: 95%;
 }
 .email-addres-box {
-  border-radius: 8px;
-  height: 2rem;
+  border-radius: 5px;
   width: 100%;
-  border: 2px solid rgb(245,245,245);
-  background-color: rgb(245,245,245);
+  height: 2rem;
+  padding: 0 12px;
+  border: none;
+  background-color: rgb(245, 245, 245);
 }
 .password-box {
-  border-radius: 8px;
-  height: 2rem;
+  border-radius: 5px;
   width: 100%;
-  border: 2px solid rgb(245,245,245);
-  background-color: rgb(245,245,245);
+  height: 2rem;
+  padding: 0 12px;
+  border: none;
+  background-color: rgb(245, 245, 245);
+  margin-bottom: 15px;
 }
 .boxclass {
   padding-left: 0.5rem;
@@ -66,9 +69,3 @@
 
 } */
 /*Responsive*/
-
-.boxclass .email-addres-box .password-box{
-    display: grid;
-    grid-template-columns: 100px 100px 100px;
-    grid-template-rows: 50px 50px;
-}

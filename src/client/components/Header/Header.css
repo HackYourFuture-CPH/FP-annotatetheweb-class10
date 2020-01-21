@@ -11,3 +11,10 @@
   color: #2d2e36;
   text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
 }
+
+@media (max-width: 767px) {
+  .logo{
+    font-size: 20px;
+    padding-left: 0;  
+  }
+}
