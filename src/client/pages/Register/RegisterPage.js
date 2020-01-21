@@ -1,4 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component, Redirect } from 'react';
+import { withRouter } from 'react-router-dom';
+
 import { Consumer } from '../../context/AuthContext';
 import FormSignUp from '../../components/FormSignUp/FormSignUp.component';
 import Header from '../../components/Header/Header.Component';
@@ -54,6 +56,7 @@ class RegisterPage extends Component {
       this.fillUsersTable(name, user_name);
 
       this.setState({ email: '', password: '', name: '', user_name: '' });
+      this.props.history.push('/');
     } else {
       //need popup or something similar
       console.log(errorMessage);
@@ -65,6 +68,7 @@ class RegisterPage extends Component {
       .then((user) => {
         console.log('User logged in, using google');
         this.fillUsersTable(user.displayName, user.displayName);
+        this.props.history.push('/');
       })
       .catch((error) => {
         // eslint-disable-next-line no-console
@@ -77,6 +81,7 @@ class RegisterPage extends Component {
       .then((user) => {
         console.log('User logged in, using facebook');
         this.fillUsersTable(user.displayName, user.displayName);
+        this.props.history.push('/');
       })
       .catch((error) => {
         // eslint-disable-next-line no-console
@@ -89,6 +94,7 @@ class RegisterPage extends Component {
       .then((user) => {
         console.log('User logged in, using twitter');
         this.fillUsersTable(user.displayName, user.displayName);
+        this.props.history.push('/');
       })
       .catch((error) => {
         // eslint-disable-next-line no-console
@@ -122,10 +128,9 @@ class RegisterPage extends Component {
                     text="Already a member? "
                     register="Sign in"
                     href="/login"
-                    linewrapper='register-link-to-login-page'
+                    linewrapper="register-link-to-login-page"
                   />
                 </div>
-                
               </div>
             </div>
           );
@@ -134,4 +139,4 @@ class RegisterPage extends Component {
     );
   }
 }
-export default RegisterPage;
+export default withRouter(RegisterPage);
