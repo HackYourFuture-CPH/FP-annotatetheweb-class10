@@ -105,25 +105,27 @@ class RegisterPage extends Component {
       <Consumer>
         {({ isAuthenticated }) => {
           return (
-            <div className="register-page">
-              <div className="register-head">
-                <Header title="Annotate the web" />
-                <FormLoginRegister
-                  text="Already a member? "
-                  register="Sign in"
-                  href="/login"
-                />
+            <div className="register-wrapper">
+              <div className="register-page">
+                <div className="register-head">
+                  <Header title="Annotate the web" />
+                  <FormLoginRegister
+                    text="Already a member? "
+                    register="Sign in"
+                    href="/login"
+                  />
+                </div>
+                <div className="register-form">
+                  <FormSignUp
+                    onClick={this.onRegisterClick}
+                    changeHandler={this.onInputChange}
+                    signInWithGoogle={this.signInWithGoogle}
+                    signInWithFacebook={this.signInWithFacebook}
+                    signInWithTwitter={this.signInWithTwitter}
+                  ></FormSignUp>
+                </div>
+                <p>Am I signed In: {isAuthenticated ? 'yes' : 'no'}</p>
               </div>
-              <div className="register-form">
-                <FormSignUp
-                  onClick={this.onRegisterClick}
-                  changeHandler={this.onInputChange}
-                  signInWithGoogle={this.signInWithGoogle}
-                  signInWithFacebook={this.signInWithFacebook}
-                  signInWithTwitter={this.signInWithTwitter}
-                ></FormSignUp>
-              </div>
-              <p>Am I signed In: {isAuthenticated ? 'yes' : 'no'}</p>
             </div>
           );
         }}

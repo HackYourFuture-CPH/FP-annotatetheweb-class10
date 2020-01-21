@@ -1,7 +1,10 @@
+.register-wrapper {
+    max-width: 1060px;
+    margin: 0 auto;
+}
 .register-page{
     height: 100vh;
     background: url('../../assets/images/left-background.jpg') no-repeat 50px -250px;
-    padding: 20px 50px 0 0
 }
 
 .register-head{
@@ -15,4 +18,8 @@
 .register-form{
     display: flex;
     justify-content: flex-end;
+}
+
+.signup-wrapper {
+    max-width: 400px;
 }
