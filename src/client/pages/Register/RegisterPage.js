@@ -9,7 +9,7 @@ import {
   doCreateUserWithEmailAndPassword,
   signInWithGoogle,
   signInWithFacebook,
-
+  signInWithTwitter
 } from '../../firebase/auth';
 
 class RegisterPage extends Component {
@@ -64,22 +64,37 @@ class RegisterPage extends Component {
   signInWithGoogle = () => {
     signInWithGoogle()
       .then((user) => {
-        console.log('New user is created with google', user);
+        console.log('User logged in, using google');
         this.fillUsersTable(user.displayName, user.displayName);
       })
       .catch((error) => {
         // eslint-disable-next-line no-console
-        console.log('e',error);
+        console.log(error);
       });
   };
 
-  signInWithFacebook = (event) => {
-    event.preventDefault();
+  signInWithFacebook = () => {
+
     signInWithFacebook()
-      .then(alert('New user is crated'))
+      .then((user) => {
+        console.log('User logged in, using facebook');
+        this.fillUsersTable(user.displayName, user.displayName);
+      })
       .catch((error) => {
         // eslint-disable-next-line no-console
-        console.log(error.message);
+        console.log(error);
+      });
+  };
+
+  signInWithTwitter = () => {
+    signInWithTwitter()
+      .then((user) => {
+        console.log('User logged in, using twitter');
+        this.fillUsersTable(user.displayName, user.displayName);
+      })
+      .catch((error) => {
+        // eslint-disable-next-line no-console
+        console.log(error);
       });
   };
 
@@ -106,7 +121,8 @@ class RegisterPage extends Component {
                   onClick={this.onRegisterClick}
                   changeHandler={this.onInputChange}
                   signInWithGoogle={this.signInWithGoogle}
-                  signInWithFacebook={signInWithFacebook}
+                  signInWithFacebook={this.signInWithFacebook}
+                  signInWithTwitter={this.signInWithTwitter}
                 ></FormSignUp>
               </div>
               <p>Am I signed In: {isAuthenticated ? 'yes' : 'no'}</p>

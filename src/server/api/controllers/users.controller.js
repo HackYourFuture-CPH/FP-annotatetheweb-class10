@@ -14,12 +14,20 @@ const getUserById = (user_id) => {
 };
 
 // Create new user
-const createUser = (body) => {
-  return knex('users').insert({
-    name: body.name,
-    fk_role_id: body.fk_role_id,
-    user_name: body.user_name
-  });
+const createUser = async (body) => {
+  let isUserExist = await knex('users')
+    .select('user_id')
+    .where('name', body.name);
+    
+  if (isUserExist.length === 0) {
+    return await knex('users').insert({
+      name: body.name,
+      fk_role_id: body.fk_role_id,
+      user_name: body.user_name,
+    });
+  } else {
+    return { message: 'User has already created.' };
+  }
 };
 
 // Delete user by id

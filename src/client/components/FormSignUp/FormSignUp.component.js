@@ -50,9 +50,7 @@ class FormSignUp extends Component {
   };
 
   render() {
-    console.log('state', this.state);
-
-    const { signInWithGoogle, signInWithFacebook } = this.props;
+    const { signInWithGoogle, signInWithFacebook, signInWithTwitter } = this.props;
 
     return (
       <div className="signup-wrapper">
@@ -76,7 +74,7 @@ class FormSignUp extends Component {
               title=""
               buttons="twitter-btn"
               logo={faTwitter}
-              click={() => console.log('clicked')}
+              click={signInWithTwitter}
             />
 
             <FormButton

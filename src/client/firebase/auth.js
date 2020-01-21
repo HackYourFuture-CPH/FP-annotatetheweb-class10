@@ -40,18 +40,43 @@ export const doPasswordUpdate = async (password) => {
 
 // Sign In with facebook
 export async function signInWithFacebook() {
-  try {
-    // eslint-disable-next-line no-console
-    console.log('facebook');
-  } catch ({ message }) {
-    // eslint-disable-next-line no-console
-    console.log(`Facebook Login Error: ${message}`);
+  try {    
+    const provider = new firebase.auth.FacebookAuthProvider();
+    const result = await firebase.auth().signInWithPopup(provider);
+    const token = result.credential.accessToken;
+    const user = result.user;
+    console.log(user)
+    return user;
+  } catch(error) {    
+    //var errorCode = error.code;
+    //var errorMessage = error.message;
+    //var email = error.email;
+    //var credential = error.credential;
+    throw error;
   }
 }
 
+// Sign In with google
 export async function signInWithGoogle() {
   try {    
     const provider = new firebase.auth.GoogleAuthProvider();
+    const result = await firebase.auth().signInWithPopup(provider);
+    const token = result.credential.accessToken;
+    const user = result.user;
+    return user;
+  } catch(error) {    
+    //var errorCode = error.code;
+    //var errorMessage = error.message;
+    //var email = error.email;
+    //var credential = error.credential;
+    throw error;
+  }
+}
+
+// Sign In with twitter
+export async function signInWithTwitter() {
+  try {    
+    const provider = new firebase.auth.TwitterAuthProvider();
     const result = await firebase.auth().signInWithPopup(provider);
     var token = result.credential.accessToken;
     var user = result.user;
