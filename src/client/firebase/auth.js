@@ -1,4 +1,5 @@
 import { auth } from './configure';
+import firebase from 'firebase/app';
 
 // Sign Up
 export const doCreateUserWithEmailAndPassword = (email, password) =>
@@ -40,10 +41,35 @@ export const doPasswordUpdate = async (password) => {
 // Sign In with facebook
 export async function signInWithFacebook() {
   try {
-    // eslint-disable-next-line no-console
-    console.log('facebook');
-  } catch ({ message }) {
-    // eslint-disable-next-line no-console
-    console.log(`Facebook Login Error: ${message}`);
+    const provider = new firebase.auth.FacebookAuthProvider();
+    const result = await firebase.auth().signInWithPopup(provider);
+    const { user } = result;
+    return user;
+  } catch (error) {
+    return error;
+  }
+}
+
+// Sign In with google
+export async function signInWithGoogle() {
+  try {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    const result = await firebase.auth().signInWithPopup(provider);
+    const { user } = result;
+    return user;
+  } catch (error) {
+    return error;
+  }
+}
+
+// Sign In with twitter
+export async function signInWithTwitter() {
+  try {
+    const provider = new firebase.auth.TwitterAuthProvider();
+    const result = await firebase.auth().signInWithPopup(provider);
+    const { user } = result;
+    return user;
+  } catch (error) {
+    return error;
   }
 }

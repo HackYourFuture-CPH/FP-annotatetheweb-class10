@@ -1,0 +1,82 @@
+.register-wrapper {
+    max-width: 1060px;
+    margin: 0 auto;
+}
+.register-page{
+    height: 100vh;
+    padding-top: 20px;
+    background: url('../../assets/images/left-background.jpg') no-repeat 50px -250px;
+    
+}
+
+.register-head{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    font-size: 16px;
+    font-family: 'Open Sans';
+    padding: 0 20px;    
+}
+.register-content{
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 20px;
+    position: relative;
+}
+
+.signup-wrapper {
+    max-width: 400px;
+    background-color: white;
+}
+.social-media-button-wrapper,
+.name-wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.social-media-button-wrapper .google-btn{
+    flex: 10;
+    border: none;
+    cursor: pointer;
+}
+
+.social-media-button-wrapper .facebook-btn,
+.social-media-button-wrapper .twitter-btn{
+    flex: 1;
+    border: none;
+    cursor: pointer;
+}
+
+.register-link-to-login-page{
+    position: absolute;
+    top: -80px;
+    right: 20px;
+}
+
+
+@media (max-width: 767px) {
+    .register-page{
+        background: none;
+    }
+
+    .register-content{
+        justify-content: center;
+        padding: 0;
+    }
+
+    .signup-wrapper {
+        padding: 0 20px;
+        max-width: 400px;
+    }
+
+    .register-link-to-login-page{
+        position: absolute;
+        top: unset;
+        bottom: -30px;
+        right: unset;
+        left: 30px;
+        margin-bottom: 10px;
+    }
+    
+}
+

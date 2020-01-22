@@ -29,6 +29,7 @@ router.post('/', (req, res, next) => {
   usersController
     .createUser(req.body)
     .then((result) => res.json(result))
+    .catch((error) => console.log(error))
     .catch(next);
 });
 
