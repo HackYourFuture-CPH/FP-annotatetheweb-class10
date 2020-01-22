@@ -14,8 +14,12 @@ import MessageParagraph from '../../components/MessageParagraph/MessageParagraph
 
 
 class ProjectPage extends Component {
-
-  
+  constructor() {
+      super();
+      this.state = {
+        user: null
+      };
+    }
     render(){
     const profile = {
       src: samplePhoto,
@@ -25,33 +29,38 @@ class ProjectPage extends Component {
     return (
     <div className="project-page-container">
       <div>
-        <SidebarMenu /> 
+        <SidebarMenu />
         <div className="mobilemenu-menuwrap">
           <div className="header-mobile">
             <Header title ={headerTitle}/>
           </div>
           <MenuButton />
-        </div>  
+        </div>
         <div>
             <img alt="login" src={imageLogin} className="login-page-image" />
-          </div>   
+        </div>
+
         <div className="project-page-rightside-container">
           <div className="project-page-rightside-innerContainer">
             <div>
               <Header title ={headerTitle}/>
             </div>
-            
-            <div >
-              <Button buttonClassName="project-page-button" title="Login"/>
-            </div>
-            
-            <div >
-              <RegisterButton title="Register" />
-            </div>
-            
+
+
+            {!this.state.user?(
+              <div>
+                <div >
+                  <Button buttonClassName="project-page-button" title="Login"/>
+                </div>
+                <div >
+                  <RegisterButton title="Register" />
+                </div>
+              </div>
+            ):
             <div className="profile-container">
               <ProfileSummery profileName="Kseiina Zar" profileImage={profile}/>
             </div>
+            }            
           </div>
           <MessageParagraph className ="no-comment-message" message="For now you do not have any annotations:"/>
           <div className="comment-container">
@@ -65,16 +74,16 @@ class ProjectPage extends Component {
               <BlogCard />
             </div>
           </div>
-            
+
         </div>
-        
-      </div>      
+
+      </div>
       <div className="project-page-footer">
-        <Footer /> 
-      </div>     
+        <Footer />
+      </div>
     </div>);
   }
-  
+
 };
 
 export default ProjectPage;
