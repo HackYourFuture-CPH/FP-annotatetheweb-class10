@@ -1,13 +1,13 @@
 /*class for div whole container */
 
 .work-panel {
-    width: 50%;
+    width: 40%;
     margin-top: 10px;
 }
 
 .blog-card {
-    width: 200px;
-    height: 90px;
+    width: 150px;
+    height: 70px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -24,14 +24,15 @@
 /*class for div consists of the lable and input */
 
 .input-box {
-    width: 50%;
+    width: 10%;
+    height: 0.5%;
     margin-left: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
     position: absolute;
-    z-index: 2;
+    z-index: 3;
 }
 
 .blog-card-label {
@@ -45,7 +46,7 @@
 /*class for input */
 
 .blog-card-control {
-    width: 160px;
+    width: 100px;
     height: 18px;
     border-radius: 10px;
     background-color: whitesmoke;
@@ -123,4 +124,17 @@ button.btn-right {
     margin-top: 20px;
     margin-bottom: 20px;
     margin-left: 20px;
+}
+@media (max-width: 566px) {
+  .input-box {
+      width: 80%;
+      height: 0.5%;
+      margin-left: 0.5px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+      position: absolute;
+      z-index: 3;
+  }
 }
