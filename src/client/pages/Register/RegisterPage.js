@@ -1,4 +1,4 @@
-import React, { Component, Redirect } from 'react';
+import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 
 import { Consumer } from '../../context/AuthContext';
@@ -19,13 +19,14 @@ class RegisterPage extends Component {
     super(props);
     this.state = {
       name: '',
-      user_name: '',
+      userName: '',
       email: '',
       password: '',
     };
   }
 
-  fillUsersTable = (name, user_name) => {
+  fillUsersTable = (name, userName) => {
+    console.log(userName);
     fetch('/api/users/', {
       method: 'POST',
       mode: 'cors',
@@ -36,7 +37,7 @@ class RegisterPage extends Component {
       },
       body: JSON.stringify({
         name,
-        user_name,
+        user_name: userName,
         fk_role_id: 1,
       }),
     });
@@ -52,13 +53,14 @@ class RegisterPage extends Component {
           console.log(error.message);
         });
 
-      const { name, user_name } = this.state;
-      this.fillUsersTable(name, user_name);
+      const { name, userName } = this.state;
+      console.log(userName);
+      this.fillUsersTable(name, userName);
 
-      this.setState({ email: '', password: '', name: '', user_name: '' });
+      this.setState({ email: '', password: '', name: '', userName: '' });
       this.props.history.push('/');
     } else {
-      //need popup or something similar
+      // eslint-disable-next-line no-console
       console.log(errorMessage);
     }
   };
@@ -66,7 +68,7 @@ class RegisterPage extends Component {
   signInWithGoogle = () => {
     signInWithGoogle()
       .then((user) => {
-        console.log('User logged in, using google');
+        console.log('User logged in, using google', user);
         this.fillUsersTable(user.displayName, user.displayName);
         this.props.history.push('/');
       })
@@ -102,14 +104,14 @@ class RegisterPage extends Component {
       });
   };
 
-  onInputChange = ({ name, user_name, email, password }) => {
-    this.setState({ name, user_name, email, password });
+  onInputChange = ({ name, userName, email, password }) => {
+    this.setState({ name, userName, email, password });
   };
 
   render() {
     return (
       <Consumer>
-        {({ isAuthenticated }) => {
+        {() => {
           return (
             <div className="register-wrapper">
               <div className="register-page">
@@ -123,7 +125,7 @@ class RegisterPage extends Component {
                     signInWithGoogle={this.signInWithGoogle}
                     signInWithFacebook={this.signInWithFacebook}
                     signInWithTwitter={this.signInWithTwitter}
-                  ></FormSignUp>
+                  />
                   <FormLoginRegister
                     text="Already a member? "
                     register="Sign in"

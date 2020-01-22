@@ -15,7 +15,7 @@ class FormSignUp extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      user_name: '',
+      userName: '',
       name: '',
       email: '',
       password: '',
@@ -34,7 +34,7 @@ class FormSignUp extends Component {
       this.props.onClick(event, null);
       this.setState({
         name: '',
-        user_name: '',
+        userName: '',
         email: '',
         password: '',
         acceptedTermsAndPolicy: false,
@@ -105,7 +105,7 @@ class FormSignUp extends Component {
             />
             <FormField
               autoComplete="off"
-              name="user_name"
+              name="userName"
               title="User Name"
               text="name"
               textHolder=""

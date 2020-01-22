@@ -43,11 +43,10 @@ export async function signInWithFacebook() {
   try {
     const provider = new firebase.auth.FacebookAuthProvider();
     const result = await firebase.auth().signInWithPopup(provider);
-    const user = result.user;
-    console.log(user);
+    const { user } = result;
     return user;
   } catch (error) {
-    throw error;
+    return error;
   }
 }
 
@@ -56,10 +55,10 @@ export async function signInWithGoogle() {
   try {
     const provider = new firebase.auth.GoogleAuthProvider();
     const result = await firebase.auth().signInWithPopup(provider);
-    const user = result.user;
+    const { user } = result;
     return user;
   } catch (error) {
-    throw error;
+    return error;
   }
 }
 
@@ -68,9 +67,9 @@ export async function signInWithTwitter() {
   try {
     const provider = new firebase.auth.TwitterAuthProvider();
     const result = await firebase.auth().signInWithPopup(provider);
-    var user = result.user;
+    const { user } = result;
     return user;
   } catch (error) {
-    throw error;
+    return error;
   }
 }
