@@ -9,6 +9,11 @@ class CustomAnnotation extends Component {
     data: {},
   };
 
+  componentDidMount() {
+    const annotations = JSON.parse(localStorage.getItem('annotations')) || [];
+    this.setState({ annotations });
+  }
+
   onChange = (annotation, value = {}) => {
     if (value.title !== undefined && value.description !== undefined) {
       this.setState({
@@ -32,13 +37,21 @@ class CustomAnnotation extends Component {
         geometry: annotation.geometry,
         data: { ...data },
       }),
-    });
+    },
+    () => {
+      localStorage.setItem(
+        'annotations',
+        JSON.stringify(this.state.annotations),
+      );
+    },
+    );
 
     this.props.onSave({
       data: annotation.geometry,
       title: data.title,
       description: data.description,
     });
+    localStorage.setItem('annotations', JSON.stringify(this.state.annotations));
   };
 
   render() {
