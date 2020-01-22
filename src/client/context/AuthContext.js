@@ -10,9 +10,7 @@ export class Provider extends React.Component {
     screenshot_key: 'initial context value',
   };
 
-  setScreenshotKey = (key) => {
-    this.setState({ screenshot_key: key });
-  };
+
 
   componentDidMount() {
     firebase.auth().onAuthStateChanged((user) => {
@@ -27,6 +25,10 @@ export class Provider extends React.Component {
       }
     });
   }
+
+  setScreenshotKey = (key) => {
+    this.setState({ screenshot_key: key });
+  };
 
   render() {
     return (

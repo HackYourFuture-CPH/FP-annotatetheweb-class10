@@ -12,8 +12,6 @@ const SignupButtons = ({
   signupButton,
   click,
 }) => {
-  const icon = logo && (<FontAwesomeIcon icon={logo} className={(text, align)} />);
-  
   return (
     <button type="button" onClick={click} className={signupButton}>
       {logo && <FontAwesomeIcon icon={logo} className={(text, align)} />}

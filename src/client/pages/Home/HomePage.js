@@ -18,18 +18,7 @@ import { themeContent } from '../../components/theme';
 import './HomePage.css';
 
 class Home extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      email: '',
-      password: '',
-      desktopSize: true,
-      screenshotUrl: '',
-      project_id: '',
-    };
-  }
-
-  hyfLogo = {
+ hyfLogo = {
     src: hyf,
     alt: 'hyf logo',
   };
@@ -39,8 +28,18 @@ class Home extends Component {
     alt: 'code:art logo',
   };
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: '',
+      password: '',
+      desktopSize: true,
+      screenshotUrl: '',
+    };
+  }
+
   onRegisterClick = () => {
-    return (location.href = '/register');
+    this.props.history.push('/register');
   };
 
   onLoginClick = () => {
@@ -61,19 +60,7 @@ class Home extends Component {
     this.setState({ desktopSize: val });
   };
 
-  async postData(url = '', data = {}) {
-    const response = await fetch(url, {
-      method: 'POST',
-      mode: 'cors',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      redirect: 'follow',
-      referrerPolicy: 'no-referrer',
-      body: JSON.stringify(data),
-    });
-    return await response.json();
-  }
+  
 
   createScreenshot = (project_id, value, setScreenshotKey) => {
     this.setState({ screenshotUrl: value }, () => {
@@ -89,7 +76,7 @@ class Home extends Component {
           fk_project_id: project_id,
         }).then((data) => {
           // Save screenshot into context
-          console.log(data.key); // This will be removed before merging, left here for testing. 
+          console.log(data.key); // This will be removed before merging, left here for testing.
           setScreenshotKey(data.key);
           // this.props.history.push('/projects'); // this will be enabled before merging.
         });
@@ -117,7 +104,7 @@ class Home extends Component {
     // Create new project - now there's a new project created with every screenshot.
     // If we have time, we can implement using the different project_ids. Right now  we shall prioritize other parts of this project.
     this.postData('/api/projects/', {
-      name: 'New Project',
+      name: value,
       fk_user_id: user_id,
     })
       .then((data) => {
@@ -150,12 +137,26 @@ class Home extends Component {
     console.log('This feature is not ready yet, try it on desktop version.');
   };
 
+  async postData (url = '', data = {}) {
+    const response = await fetch(url, {
+      method: 'POST',
+      mode: 'cors',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      redirect: 'follow',
+      referrerPolicy: 'no-referrer',
+      body: JSON.stringify(data),
+    });
+    return response.json();
+  }
+
   render() {
     return (
       <Consumer>
         {({ isAuthenticated, user_id, screenshot_key, setScreenshotKey }) => {
           return (
-            <React.Fragment>
+            <>
               <div className="homeheader-wrapper">
                 <Header title="Annotate the web" />
                 {isAuthenticated ? (
@@ -239,7 +240,7 @@ class Home extends Component {
               <div className="footer-wrapper">
                 <Footer />
               </div>
-            </React.Fragment>
+            </>
           );
         }}
       </Consumer>

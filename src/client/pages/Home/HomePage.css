@@ -3,7 +3,6 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  
 }
 
 .homeheader-wrapper {
@@ -72,8 +71,8 @@ body {
   }
 }
 
-@media (max-width:722px) {
-  .nav-bar{
+@media (max-width: 722px) {
+  .nav-bar {
     display: none;
   }
 
@@ -106,7 +105,6 @@ body {
   .url-Input {
     width: 80%;
     margin: 0 auto;
-    
   }
 
   .url-input {
@@ -122,13 +120,13 @@ body {
   }
 
   .annotate-btn {
-    display: block; 
+    display: block;
     margin: 1rem auto;
     border-radius: 40px;
     border: unset;
     background-color: #cde769;
-    font-family: "Open Sans";
-    padding: .8rem 2rem;
+    font-family: 'Open Sans';
+    padding: 0.8rem 2rem;
     margin-bottom: 2rem;
   }
 
@@ -153,10 +151,9 @@ body {
   .mobilemenu-menu > div {
     width: 100%;
     height: 100vh;
-  } 
+  }
 
   .mobilemenu-menu {
     width: 100vw;
-  } 
-
+  }
 }
