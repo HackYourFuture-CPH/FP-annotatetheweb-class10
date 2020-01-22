@@ -1,7 +1,6 @@
-'use strict';
-
 // router setup
 const express = require('express');
+
 const router = express.Router({ mergeParams: true });
 
 // controllers

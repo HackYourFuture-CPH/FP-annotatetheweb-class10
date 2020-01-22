@@ -14,6 +14,7 @@ module.exports = {
     'react/prop-types': 1,
     'import/prefer-default-export': 0,
     '@typescript-eslint/camelcase': 1,
+    'camelcase': 1,
     'func-names': 0,
     '@typescript-eslint/no-var-requires': 0,
     'no-restricted-globals': 0,

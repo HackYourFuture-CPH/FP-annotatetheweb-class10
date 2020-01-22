@@ -11,3 +11,4 @@ storiesOf('FormLoginRegister', module).add('register', () => (
     linewrapper="line-wrapper"
   />
 ));
+

@@ -1,15 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Pacifico&display=swap');
 
-.header {
-  padding-left: 1rem;
-}
-
 .logo {
   font-family: Pacifico;
   font-size: 40px;
-  padding-left: 2rem;  
-  color: #2d2e36;
   text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+  color: #2d2e36;
+  padding-left: 2rem;  
+  margin-top: 40px;
 }
 
 @media (max-width: 767px) {
@@ -17,4 +14,3 @@
     font-size: 20px;
     padding-left: 0;  
   }
-}
