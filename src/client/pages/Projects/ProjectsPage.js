@@ -21,15 +21,14 @@ class ProjectPage extends Component {
         annotations: null
       };
     }
-    const userAnnotation = ()=>{
+  userAnnotation = ()=>{
       fetch( 'http://localhost:3000/api/annotations/')
         .then(res =>res.json())
         .then(json => {
           userAnnotations = json;
           this.setState({annotations: userAnnotations });
-        };
       })
-    }    
+    }
     render(){
     const profile = {
       src: samplePhoto,
