@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-
-import { Consumer } from '../../context/AuthContext';
 import FormSignUp from '../../components/FormSignUp/FormSignUp.component';
 import Header from '../../components/Header/Header.Component';
 import FormLoginRegister from '../../components/FormLoginRegister/FormLoginRegister.component';
@@ -26,7 +24,6 @@ class RegisterPage extends Component {
   }
 
   fillUsersTable = (name, userName) => {
-    console.log(userName);
     fetch('/api/users/', {
       method: 'POST',
       mode: 'cors',
@@ -54,7 +51,6 @@ class RegisterPage extends Component {
         });
 
       const { name, userName } = this.state;
-      console.log(userName);
       this.fillUsersTable(name, userName);
 
       this.setState({ email: '', password: '', name: '', userName: '' });
@@ -109,9 +105,6 @@ class RegisterPage extends Component {
   };
 
   render() {
-    return (
-      <Consumer>
-        {() => {
           return (
             <div className="register-wrapper">
               <div className="register-page">
@@ -136,9 +129,6 @@ class RegisterPage extends Component {
               </div>
             </div>
           );
-        }}
-      </Consumer>
-    );
   }
 }
 export default withRouter(RegisterPage);
