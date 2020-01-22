@@ -3,13 +3,11 @@ import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import RegisterButton from './RegisterButton.component';
 
-test('if button has correct text', () => {
-  const title = 'Button text';
-  const onClick = jest.fn();
-  const { getByText } = render(
-    <RegisterButton title={title} onClick={onClick} />,
-  );
+test('if button was clicked', () => {
+  const handleClick = jest.fn();
+  const { container } = render(<RegisterButton onClick={handleClick} />);
 
-  fireEvent.click(getByText(title));
-  expect(onClick).toHaveBeenCalledTimes(1);
+  const button = container.firstChild.firstChild;
+  fireEvent.click(button);
+  expect(handleClick).toHaveBeenCalledTimes(1);
 });

@@ -30,32 +30,34 @@ const getAnnotations = async () => {
   }
 };
 
-const getAnnotationsById = async (annotation_id) => {
+const getAnnotationsById = async (annotationId) => {
   try {
-    const annotations = await knex('annotations')
-      .where({ annotation_id })
-      .select('*');
+    const annotations = await knex('annotations');
+
     if (annotations.length === 0) {
-      throw new Error(`incorrect entry with the id of ${annotation_id}`, 404);
+      throw new Error(`incorrect entry with the id of ${annotationId}`, 404);
     }
-    return annotations;
+    return knex('annotations')
+      .where({ annotation_id: annotationId })
+      .select('title', 'description', 'area', 'fk_screenshot_id');
   } catch (error) {
     return error.message;
   }
 };
+
 const editAnnotation = async (annotationId, updatedannotation) => {
-  return knex("annotations")
+  return knex('annotations')
     .where({ annotation_id: annotationId })
     .update({
       title: updatedannotation.title,
       description: updatedannotation.description,
-      updated_at: new Date()
+      updated_at: new Date(),
     });
 };
 
 const deleteAnnotations = async (annotation_id)=> {
 return knex('annotations')
-.where({annotation_id:annotation_id})
+.where({annotation_id})
 .del();
 };
 
