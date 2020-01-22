@@ -1,3 +1,4 @@
+/* eslint-disable react/button-has-type */
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { Consumer } from '../../context/AuthContext';
@@ -137,7 +138,8 @@ class Home extends Component {
     console.log('This feature is not ready yet, try it on desktop version.');
   };
 
-  async postData (url = '', data = {}) {
+   // eslint-disable-next-line class-methods-use-this
+   async postData (url = '', data = {}) {
     const response = await fetch(url, {
       method: 'POST',
       mode: 'cors',
