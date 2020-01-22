@@ -44,7 +44,7 @@ const getAnnotationsById = async (annotation_id) => {
   }
 };
 const editAnnotation = async (annotationId, updatedannotation) => {
-  return knex("annotations")
+  return knex('annotations')
     .where({ annotation_id: annotationId })
     .update({
       title: updatedannotation.title,
@@ -55,7 +55,7 @@ const editAnnotation = async (annotationId, updatedannotation) => {
 
 const deleteAnnotations = async (annotation_id)=> {
 return knex('annotations')
-.where({annotation_id:annotation_id})
+.where({annotation_id})
 .del();
 };
 

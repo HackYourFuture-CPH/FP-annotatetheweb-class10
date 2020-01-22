@@ -8,7 +8,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const HttpError = require('./api/lib/utils/http-error');
 
-const buildPath = path.join(__dirname, '../../dist');
+const buildPath = path.join(__dirname, '../../dist')
 
 const apiRouter = require('./api/routes/api-router');
 
