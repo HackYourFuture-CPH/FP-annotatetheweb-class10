@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Pacifico&display=swap');
 
 .header {
-  padding-left: 1rem;
+  padding-left: 0.5px;
+  justify-content: center;
 }
 
 .logo {
