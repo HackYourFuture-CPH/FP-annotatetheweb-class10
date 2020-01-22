@@ -35,7 +35,7 @@ class CustomAnnotation extends Component {
     });
 
     this.props.onSave({
-      data: annotation,
+      data: annotation.geometry,
       title: data.title,
       description: data.description,
     });
@@ -67,7 +67,7 @@ class CustomAnnotation extends Component {
                   top: `${geometry.y + geometry.height}%`,
                 }}
               >
-                <div>{this.state.data.title}</div>
+                <div>{annotation.data.title}</div>
                 {annotation.data && annotation.data.text}
               </div>
             );
