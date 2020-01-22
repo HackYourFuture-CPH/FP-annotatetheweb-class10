@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import { Consumer } from '../../context/AuthContext';
 import '../../firebase';
 import { doSignInWithEmailAndPassword, doSignOut } from '../../firebase/auth';
@@ -81,31 +82,32 @@ class Home extends Component {
         const width = 1342; // These numbers should be adjusted ??
         const height = 1152; // These numbers should be adjusted??
         // Url will need to be changed once the site is deployed??
-        this.postData('http://localhost:3000/api/screenshots/', {
+        this.postData('/api/screenshots/', {
           url: this.state.screenshotUrl,
           height,
           width,
           fk_project_id: project_id,
         }).then((data) => {
           // Save screenshot into context
-          console.log(data.key);
+          console.log(data.key); // This will be removed before merging, left here for testing. 
           setScreenshotKey(data.key);
+          // this.props.history.push('/projects'); // this will be enabled before merging.
         });
         // If user wants mobile size screenshot
       } else {
         const width = 640; // These numbers should be adjusted ??
         const height = 960; // These numbers should be adjusted ??
         // Url will need to be changed once the site is deployed??
-        this.postData('http://localhost:3000/api/screenshots/', {
+        this.postData('/api/screenshots/', {
           url: this.state.screenshotUrl,
           height,
           width,
           fk_project_id: project_id,
         }).then((data) => {
           // Save screenshot into context
-          console.log(data.key);
-          this.setState({ screenshot_key: data.key });
+          console.log(data.key); // This will be removed before merging, left here for testing.
           setScreenshotKey(data.key);
+          // this.props.history.push('/projects'); // this will be enabled before merging.
         });
       }
     });
@@ -114,7 +116,7 @@ class Home extends Component {
   createProjectAndScreenshot = (value, user_id, setScreenshotKey) => {
     // Create new project - now there's a new project created with every screenshot.
     // If we have time, we can implement using the different project_ids. Right now  we shall prioritize other parts of this project.
-    this.postData('http://localhost:3000/api/projects/', {
+    this.postData('/api/projects/', {
       name: 'New Project',
       fk_user_id: user_id,
     })
@@ -244,4 +246,4 @@ class Home extends Component {
     );
   }
 }
-export default Home;
+export default withRouter(Home);
