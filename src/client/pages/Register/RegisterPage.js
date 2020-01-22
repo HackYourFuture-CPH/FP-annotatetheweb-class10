@@ -26,7 +26,7 @@ class RegisterPage extends Component {
   }
 
   fillUsersTable = (name, user_name) => {
-    fetch('http://localhost:3000/api/users/', {
+    fetch('/api/users/', {
       method: 'POST',
       mode: 'cors',
       cache: 'no-cache',

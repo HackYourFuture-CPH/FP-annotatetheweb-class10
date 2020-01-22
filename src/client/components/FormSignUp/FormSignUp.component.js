@@ -105,7 +105,6 @@ class FormSignUp extends Component {
             />
             <FormField
               autoComplete="off"
-              autocomplete="off"
               name="user_name"
               title="User Name"
               text="name"
@@ -142,7 +141,7 @@ class FormSignUp extends Component {
             textTermsOfServices="Terms of Service, Privacy Policy "
             textNoLinkLast="and our default "
             textNotificationsSettings="Notifications settings"
-          ></CheckBox>
+          />
           <div className="signup-button-wrapper">
             <FormButton
               title="Create Account"
