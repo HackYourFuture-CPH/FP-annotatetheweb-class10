@@ -10,9 +10,9 @@
     justify-content: flex-end;
     align-items: center;
     text-align: center;
-    width: 30%;
+    width: 20%;
     height: 150%;
-    margin-right: 40px;
+    margin-right: 20px;
     border: solid 2px #dce4d3;
 }
 
@@ -52,9 +52,9 @@
   }
 @media (max-width: 566px) {
     .project-page-container{
-        display: block;        
+        display: block;
     }
-    .login-page-image {        
+    .login-page-image {
         width: 100%;
         height: 100%;
         position: absolute;
@@ -85,7 +85,7 @@
         margin-top: 0.8rem;
         margin-right: 3rem;
       }
-      
+
       .bar1, .bar2, .bar3 {
         width: 35px;
         height: 5px;
@@ -93,24 +93,27 @@
         margin: 6px 0;
         transition: 0.4s;
       }
-      
+
       .change .bar1 {
         -webkit-transform: rotate(-45deg) translate(-9px, 6px);
         transform: rotate(-45deg) translate(-9px, 6px);
       }
-      
+
       .change .bar2 {opacity: 0;}
-      
+
       .change .bar3 {
         -webkit-transform: rotate(45deg) translate(-8px, -8px);
         transform: rotate(45deg) translate(-8px, -8px);
       }
       .project-page-rightside-innerContainer{
           display: none;
-      }      
+      }
       .comment-container{
         position: absolute;
         z-index: 4;
         margin-top: 400px;
+      }
+      .no-comment-message{
+        margin-top: 100px;
       }
 }
