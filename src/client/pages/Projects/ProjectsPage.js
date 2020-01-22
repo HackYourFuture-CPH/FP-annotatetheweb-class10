@@ -6,8 +6,6 @@ import RegisterButton from '../../components/RegisterButton/RegisterButton.compo
 import Button from '../../components/Button/Button.component';
 import Footer from '../../components/Footer/Footer.component';
 import samplePhoto from '../../assets/images/profile.png';
-import BlogCard from '../../container/CommentBox/BlogCard.component';
-import imageLogin from '../../assets/images/imageLogin.jpg';
 import './ProjectsPage.css';
 import MenuButton from '../../components/MenuButton/MenuButton.component';
 import MessageParagraph from '../../components/MessageParagraph/MessageParagraph.component';
@@ -47,7 +45,7 @@ class ProjectPage extends Component {
           <MenuButton />
         </div>
         <div>
-            <img alt="screenshot image of given url" src={imageLogin} className="screenshot-image" />
+            <img alt="screenshot image of given url" src={screenshotImage} className="screenshot-image" />
         </div>
 
         <div className="project-page-rightside-container">
