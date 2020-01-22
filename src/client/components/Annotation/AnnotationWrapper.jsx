@@ -16,6 +16,8 @@ const onSave = (data, title, description, screenshotId) => {
       area: data,
       fk_screenshot_id: screenshotId,
     }),
+  }).catch((error) => {
+    throw error;
   });
 };
 
