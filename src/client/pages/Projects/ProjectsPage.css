@@ -1,24 +1,20 @@
 .project-page-container{
-    
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
 }
 .project-page-rightside-container{
-    display: flex;
-    float: right;
-    flex-direction: column;
     align-self: flex-end;
+    display: flex;    
+    flex-direction: column;    
     justify-content: flex-start;
     align-items: center;
     text-align: center;
-    width: 20%;
     max-width: 300px;
-    height: 100vh;
+    height: 100%;
     margin-right: 20px;
-    border: solid 2px #dce4d3;
     box-shadow: -2px 0px 10px 1px #AAAAAA;
-    border-bottom: none;
 }
 
 .project-page-button{
