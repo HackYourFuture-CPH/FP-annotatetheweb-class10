@@ -67,7 +67,7 @@ class ProjectPage extends Component {
               <BlogCardList annotations={this.state.annotations}/>
             </div>:
               <MessageParagraph className ="no-comment-message"
-                message="For now you do not have any annotations:"/>
+                message="For now you do not have any annotations:)"/>
             }
           </div>
         </div>
