@@ -13,14 +13,12 @@
     text-align: center;
     max-width: 300px;
     height: 100%;
-    margin-right: 20px;
+    
     box-shadow: -2px 0px 10px 1px #AAAAAA;
 }
 
-.project-page-button{
-    width: 82px;
-    height: 29px;
-    font-family: open sans;
+.project-page-button{   
+    font-family: 'open sans';
     font-style: normal;
     font-weight: bold;
     font-size: 16px;
@@ -55,6 +53,11 @@ width: 50%;
 font-family: sans-serif;
 background-color: #ffffff;
 position: relative;
+}
+.login-block{
+    border-bottom: 2x solid #CDE769;
+    margin-bottom: 30px;
+    padding: 10px;
 }
 @media (max-width: 566px) {
     .project-page-container{
