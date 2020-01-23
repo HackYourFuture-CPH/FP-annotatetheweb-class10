@@ -1,4 +1,5 @@
 .project-page-container{
+    
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -7,13 +8,16 @@
     display: flex;
     float: right;
     flex-direction: column;
-    justify-content: flex-end;
+    align-self: flex-end;
+    justify-content: flex-start;
     align-items: center;
     text-align: center;
     width: 20%;
-    height: all;
+    max-width: 300px;
+    height: 100vh;
     margin-right: 20px;
     border: solid 2px #dce4d3;
+    box-shadow: -2px 0px 10px 1px #AAAAAA;
     border-bottom: none;
 }
 
@@ -35,22 +39,27 @@
 .register-button{
     cursor: pointer;
 }
+.screenshot-image-container{
+    justify-content: center;
+    align-self: center;
+    align-self: center;
+}
 .screenshot-image {
     margin-left: 50px;
     width: 60%;
     height: 85vh;
     position: absolute;
-  }
-  .mobilemenu-menuwrap{
-      display: none;
-  }
-  .no-comment-message{
-    margin-top: 1rem;
-    width: 50%;
-    font-family: sans-serif;
-    background-color: #ffffff;
-    position: relative;
-  }
+}
+.mobilemenu-menuwrap{
+    display: none;
+}
+.no-comment-message{
+margin-top: 1rem;
+width: 50%;
+font-family: sans-serif;
+background-color: #ffffff;
+position: relative;
+}
 @media (max-width: 566px) {
     .project-page-container{
         display: block;
@@ -87,15 +96,15 @@
         margin-right: 3rem;
       }
 
-      .project-page-rightside-innerContainer{
-          display: none;
-      }
-      .comment-container{
-        position: absolute;
-        z-index: 4;
-        margin-top: 400px;
-      }
-      .no-comment-message{
-        margin-top: 100px;
-      }
+    .project-page-rightside-innerContainer{
+        display: none;
+    }
+    .comment-container{
+    position: absolute;
+    z-index: 4;
+    margin-top: 400px;
+    }
+    .no-comment-message{
+    margin-top: 100px;
+    }
 }
