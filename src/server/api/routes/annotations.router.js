@@ -31,7 +31,6 @@ router.get('/', (req, res, next) => {
 
 // ENDPOINT: /api/annotations/:annotation_id :GET
 router.get('/:annotation_id', (req, res, next) => {
-  console.log('router', req.params.annotation_id)
   annotationsController
     .getAnnotationsById(req.params.annotation_id)
     .then((result) => res.json(result))

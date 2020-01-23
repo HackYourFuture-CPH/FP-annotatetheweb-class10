@@ -1,19 +1,22 @@
+<<<<<<< HEAD
 /* eslint-disable camelcase */
 
 
+=======
+>>>>>>> origin/develop
 const knex = require('../../config/db');
 
 const createComment = async ({
   description,
-  fk_annotations_id,
-  fk_comments_id,
-  fk_user_id,
+  fkAnnotationsId,
+  fkCommentsId,
+  fkUserId,
 }) => {
   await knex('comments').insert({
     description,
-    fk_annotations_id,
-    fk_comments_id,
-    fk_user_id,
+    fkAnnotationsId,
+    fkCommentsId,
+    fkUserId,
   });
 
   return {
@@ -21,24 +24,24 @@ const createComment = async ({
   };
 };
 
-const getCommentsForAnnotation = (fk_annotations_id) => {
+const getCommentsForAnnotation = (fkAnnotationsId) => {
   return knex('comments')
-    .where({ fk_annotations_id })
+    .where({ fkAnnotationsId })
     .select('*');
 };
 
-const updateCommentById = (comment_id, body) => {
+const updateCommentById = (commentId, body) => {
   return knex('comments')
-    .where({ comment_id })
+    .where({ commentId })
     .update({
       description: body.description,
       updated_at: new Date(),
     });
 };
 
-const deleteCommentById = (comment_id) => {
+const deleteCommentById = (commentId) => {
   return knex('comments')
-    .where({ comment_id })
+    .where({ commentId })
     .del();
 };
 

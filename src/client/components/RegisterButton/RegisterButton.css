@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .register-button{
     border-radius: 40px;
     background-color:white;
@@ -12,4 +13,23 @@
     letter-spacing: 1px;
     cursor: pointer;
     font-weight:bold 500px;
+=======
+.register-button {
+  border-radius: 40px;
+  background-color: white;
+  border: 1px solid black;
+  width: 10rem;
+  height: 3rem;
+  color: #2d2e36;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1rem;
+  letter-spacing: none;
+  cursor: pointer;
+  position: absolute;
+  top: 0.4rem;
+}
+
+.register-button-wrapper {
+  position: relative;
+>>>>>>> origin/develop
 }

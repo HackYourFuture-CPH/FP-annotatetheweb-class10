@@ -26,7 +26,7 @@
   width: 30px;
   height: 30px;
   padding: 1rem;
-  background: white;
+  background: red;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -91,6 +91,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: white;
 }
 .mobilemenu-menu > div {
   width: 200vw;

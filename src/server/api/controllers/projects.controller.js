@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 /* eslint-disable camelcase */
 
 
+=======
+>>>>>>> origin/develop
 const knex = require('../../config/db');
 const { paginate } = require('../lib/utils/pagination');
 
@@ -10,23 +13,23 @@ const getProjects = ({ limit, offset, orderBy = 'project_id', order } = {}) => {
 };
 
 // Return project by project_id
-const getProjectById = (project_id) => {
+const getProjectById = (projectId) => {
   return knex('projects')
-    .where({ project_id })
+    .where({ projectId })
     .select('*');
 };
 
 // Return projects for a specific userId
-const getProjectsByUserId = (fk_user_id) => {
+const getProjectsByUserId = (fkUserId) => {
   return knex('projects')
-    .where({ fk_user_id })
+    .where({ fkUserId })
     .select('*');
 };
 
 // Update a project
-const updateProject = (project_id, body) => {
+const updateProject = (projectId, body) => {
   return knex('projects')
-    .where({ project_id })
+    .where({ projectId })
     .update({
       name: body.name,
       updated_at: new Date(),
@@ -42,9 +45,9 @@ const createProject = (body) => {
 };
 
 // Delete a project
-const deleteProject = (project_id) => {
+const deleteProject = (projectId) => {
   return knex('projects')
-    .where({ project_id })
+    .where({ projectId })
     .del();
 };
 

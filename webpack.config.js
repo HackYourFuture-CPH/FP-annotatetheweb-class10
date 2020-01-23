@@ -27,7 +27,7 @@ module.exports = () => {
           use: ["style-loader", "css-loader", "sass-loader"]
         },
         {
-          test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+          test: /\.(png|woff|woff2|eot|ttf|svg|jpg)$/,
           loader: "url-loader?limit=100000"
         }
       ]
@@ -56,7 +56,7 @@ module.exports = () => {
         favicon: "./public/favicon.ico"
       }),
       new webpack.DefinePlugin({
-        "process.env": dotenv.parsed
+        "process.env": JSON.stringify(dotenv.parsed)
       }),
     ]
   };
