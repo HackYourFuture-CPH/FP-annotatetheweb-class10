@@ -10,6 +10,7 @@ import './ProjectsPage.css';
 import MenuButton from '../../components/MenuButton/MenuButton.component';
 import MessageParagraph from '../../components/MessageParagraph/MessageParagraph.component';
 import BlogCardList from '../../components/ListOfBlogCard/ListOfBlogCard.component';
+import { Consumer } from '../../context/AuthContext';
 
 class ProjectPage extends Component {
   constructor() {
@@ -25,12 +26,11 @@ class ProjectPage extends Component {
       src: samplePhoto,
       alt: 'profile image',
     };
-    const headerTitle = "annotate the web";
+    const headerTitle = "Annotate the web";
     const screenshotImage= this.props;
     return (
       <div>
         <div className="project-page-container">
-      <div>
         <SidebarMenu />
         <div className="mobilemenu-menuwrap">
           <div className="header-mobile">
@@ -75,7 +75,6 @@ class ProjectPage extends Component {
           <Footer />
         </div>
       </div>
-    </div>
   );}
 };
 
