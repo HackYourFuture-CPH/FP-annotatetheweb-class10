@@ -10,23 +10,25 @@ class EditorComponent extends Component {
   };
 
   onChangeHandlerTitle = (event) => {
+    const data = {
+      title: event.target.value,
+      description: this.state.data.description,
+    };
     this.setState({
-      data: {
-        title: event.target.value,
-        description: this.state.data.description,
-      },
+      data,
     });
-    this.props.onChange(this.props.annotation, this.state.data);
+    this.props.onChange(this.props.annotation, data);
   };
 
   onChangeHandlerDescription = (event) => {
+    const data = {
+      title: this.state.data.title,
+      description: event.target.value,
+    };
     this.setState({
-      data: {
-        title: this.state.data.title,
-        description: event.target.value,
-      },
+      data,
     });
-    this.props.onChange(this.props.annotation, this.state.data);
+    this.props.onChange(this.props.annotation, data);
   };
 
   render() {
