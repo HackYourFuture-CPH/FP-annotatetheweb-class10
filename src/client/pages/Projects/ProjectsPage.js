@@ -48,7 +48,7 @@ class ProjectPage extends Component {
               <Header title ={headerTitle}/>
             </div>
             {!this.state.user?
-              <div>
+              <div className="login-block">
                 <div >
                   <Button buttonClassName="project-page-button" title="Login"/>
                 </div>
