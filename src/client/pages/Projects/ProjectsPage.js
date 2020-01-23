@@ -13,21 +13,14 @@ import BlogCardList from '../../components/ListOfBlogCard/ListOfBlogCard.compone
 
 class ProjectPage extends Component {
   constructor() {
-      super();
-      this.state = {
-        user: null,
-        annotations: null
-      };
-    }
-  userAnnotation = ()=>{
-      fetch( 'http://localhost:3000/api/annotations/')
-        .then(res =>res.json())
-        .then(json => {
-          userAnnotations = json;
-          this.setState({annotations: userAnnotations });
-      })
-    }
-    render(){
+    super();
+    this.state = {
+      user: null,
+      annotations: null
+    };
+  }
+  
+  render(){
     const profile = {
       src: samplePhoto,
       alt: 'profile image',
@@ -35,7 +28,8 @@ class ProjectPage extends Component {
     const headerTitle = "annotate the web";
     const screenshotImage= this.props;
     return (
-    <div className="project-page-container">
+      <div>
+        <div className="project-page-container">
       <div>
         <SidebarMenu />
         <div className="mobilemenu-menuwrap">
@@ -44,7 +38,7 @@ class ProjectPage extends Component {
           </div>
           <MenuButton />
         </div>
-        <div>
+        <div className ="screenshot-image-container">
             <img alt="screenshot image of given url" src={screenshotImage} className="screenshot-image" />
         </div>
 
@@ -63,25 +57,26 @@ class ProjectPage extends Component {
                 </div>
               </div>
             :
-            <div className="profile-container">
-              <ProfileSummery profileName="Kseiina Zar" profileImage={profile}/>
+              <div className="profile-container">
+                <ProfileSummery profileName="Kseiina Zar" profileImage={profile}/>
+              </div>
+              }
             </div>
+            {this.state.annotations?
+            <div className="comment-container">
+              <BlogCardList annotations={this.state.annotations}/>
+            </div>:
+              <MessageParagraph className ="no-comment-message"
+                message="For now you do not have any annotations:"/>
             }
           </div>
-          {this.state.annotations?
-          <div className="comment-container">
-            <BlogCardList annotations={this.state.annotations}/>
-          </div>:
-            <MessageParagraph className ="no-comment-message"
-              message="For now you do not have any annotations:"/>
-          }
+        </div>
+        <div className="project-page-footer">
+          <Footer />
         </div>
       </div>
-      <div className="project-page-footer">
-        <Footer />
-      </div>
-    </div>);
-  }
+    </div>
+  );}
 };
 
 export default ProjectPage;
