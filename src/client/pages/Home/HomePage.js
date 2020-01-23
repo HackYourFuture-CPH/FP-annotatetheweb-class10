@@ -17,6 +17,16 @@ import codeart from '../../assets/images/codeart.png';
 import MobileMenu from '../../components/MobileMenu/MobileMenu.component';
 import { themeContent } from '../../components/theme';
 import './HomePage.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect,
+  useHistory,
+  useLocation
+} from "react-router-dom";
+
 
 class Home extends Component {
  hyfLogo = {
@@ -36,6 +46,7 @@ class Home extends Component {
       password: '',
       desktopSize: true,
       screenshotUrl: '',
+      isSubmitted: false
     };
   }
 
@@ -54,14 +65,17 @@ class Home extends Component {
   };
 
   onInputChange = (event) => {
-    this.setState({ [event.target.name]: event.target.value });
+    if (event.keyCode === 13) {
+      this.setState({ isSubmitted: true });
+    }
+    else{
+      this.setState({ [event.target.name]: event.target.value });
+    }    
   };
 
   changeScreenshotSize = (val) => {
     this.setState({ desktopSize: val });
-  };
-
-  
+  };  
 
   createScreenshot = (project_id, value, setScreenshotKey) => {
     this.setState({ screenshotUrl: value }, () => {
@@ -80,6 +94,7 @@ class Home extends Component {
           console.log(data.key); // This will be removed before merging, left here for testing.
           setScreenshotKey(data.key);
           // this.props.history.push('/projects'); // this will be enabled before merging.
+
         });
         // If user wants mobile size screenshot
       } else {
