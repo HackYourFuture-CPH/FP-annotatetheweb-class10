@@ -55,7 +55,7 @@ background-color: #ffffff;
 position: relative;
 }
 .login-block{
-    border-bottom: 2x solid #CDE769;
+    border-bottom: solid 2px #CDE769;
     margin-bottom: 30px;
     padding: 10px;
 }
