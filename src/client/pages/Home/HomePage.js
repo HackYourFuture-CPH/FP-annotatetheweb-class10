@@ -45,8 +45,7 @@ class Home extends Component {
       email: '',
       password: '',
       desktopSize: true,
-      screenshotUrl: '',
-      isSubmitted: false
+      screenshotUrl: ''
     };
   }
 
@@ -64,13 +63,8 @@ class Home extends Component {
       });
   };
 
-  onInputChange = (event) => {
-    if (event.keyCode === 13) {
-      this.setState({ isSubmitted: true });
-    }
-    else{
-      this.setState({ [event.target.name]: event.target.value });
-    }    
+  onInputChange = (event) => {    
+      this.setState({ [event.target.name]: event.target.value });    
   };
 
   changeScreenshotSize = (val) => {
