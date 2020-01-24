@@ -17,15 +17,6 @@ import codeart from '../../assets/images/codeart.png';
 import MobileMenu from '../../components/MobileMenu/MobileMenu.component';
 import { themeContent } from '../../components/theme';
 import './HomePage.css';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  Redirect,
-  useHistory,
-  useLocation
-} from "react-router-dom";
 
 
 class Home extends Component {
@@ -45,7 +36,8 @@ class Home extends Component {
       email: '',
       password: '',
       desktopSize: true,
-      screenshotUrl: ''
+      screenshotUrl: '',
+      screenshotImage: ''
     };
   }
 
@@ -87,8 +79,8 @@ class Home extends Component {
           // Save screenshot into context
           console.log(data.key); // This will be removed before merging, left here for testing.
           setScreenshotKey(data.key);
-          // this.props.history.push('/projects'); // this will be enabled before merging.
-
+            this.props.history.push('/projects'); // this will be enabled before merging.
+          this.setState({screenshotKey: data.key})
         });
         // If user wants mobile size screenshot
       } else {
@@ -104,7 +96,7 @@ class Home extends Component {
           // Save screenshot into context
           console.log(data.key); // This will be removed before merging, left here for testing.
           setScreenshotKey(data.key);
-          // this.props.history.push('/projects'); // this will be enabled before merging.
+          this.props.history.push('/projects'); // this will be enabled before merging.
         });
       }
     });
@@ -125,7 +117,7 @@ class Home extends Component {
         this.createScreenshot(project_id, value, setScreenshotKey),
       );
   };
-
+    
   sendUrl = (
     value,
     isAuthenticated,
@@ -140,9 +132,10 @@ class Home extends Component {
     } else {
       // If user is not authenticated, use user_id=1 which is 'Random user'.
       this.createProjectAndScreenshot(value, 1, setScreenshotKey);
-    }
+    }    
   };
-
+    
+    
   onSubmit = () => {
     console.log('This feature is not ready yet, try it on desktop version.');
   };
