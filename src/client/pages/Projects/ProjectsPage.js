@@ -11,15 +11,59 @@ import MenuButton from '../../components/MenuButton/MenuButton.component';
 import MessageParagraph from '../../components/MessageParagraph/MessageParagraph.component';
 import BlogCardList from '../../components/ListOfBlogCard/ListOfBlogCard.component';
 import { Consumer } from '../../context/AuthContext';
+import Loading from '../../components/Loading/Loading.component';
+//import AnnotationWrapper from '../../components/Annotation/AnnotationWrapper';
+import HomePageImage from '../../assets/images/HomePageImage.png';
+//import AuthContext from '../../context/AuthContext';
+import CustomAnnotation from '../../components/Annotation/CustomAnnotation.component';
 
 class ProjectPage extends Component {
+  //static contextType = AuthContext;
   constructor() {
     super();
     this.state = {
       user: null,
-      annotations: null
+      annotations: null,
+      //screenshot_key: this.context,
+      screenshotImage: '',
+     
     };
   }
+  componentDidMount = ()=>{
+    //console.log('didmount function',this.context);
+    setInterval(() => {
+      const screenshotImage =  this.getSnapshotImage('j0vaxc');
+      if(screenshotImage)
+        this.setState({screenshotImage});
+    }, 1000);
+  }
+  getSnapshotImage = (key) =>{
+    fetch( `https://annotatetheweb.z16.web.core.windows.net/${key}/screenshot.jpg`)
+      .then(res =>res.json())
+      .then(json => {
+        console.log(json.url);
+        this.setState({screenshotImage: json.url });
+    })
+  }
+  onSave = (data, title, description, screenshotId) => {
+    fetch('http://localhost:3000/api/annotations/', {
+      method: 'POST',
+      mode: 'cors',
+      cache: 'no-cache',
+      credentials: 'same-origin',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        title,
+        description,
+        area: data,
+        fk_screenshot_id: screenshotId,
+      }),
+    }).catch((error) => {
+      throw error;
+    });
+  };
   
   render(){
     const profile = {
@@ -27,8 +71,17 @@ class ProjectPage extends Component {
       alt: 'profile image',
     };
     const headerTitle = "Annotate the web";
-    const screenshotImage= this.props;
+    const backgroundImage = {
+      src: HomePageImage,
+      alt: 'sample screenshot',
+    };
+    //const screenshotImage= this.props;
     return (
+      <div>
+      <div>
+          {this.state.screenshotImage&&<Loading />}
+        </div>
+      {!this.state.screenshotImage&&    
       <div>
         <div className="project-page-container">
         <SidebarMenu />
@@ -39,7 +92,12 @@ class ProjectPage extends Component {
           <MenuButton />
         </div>
         <div className ="screenshot-image-container">
-            <img alt="screenshot image of given url" src={screenshotImage} className="screenshot-image" />
+          <CustomAnnotation
+            screenshot={backgroundImage}
+            onSave={({ data, title, description }) =>
+              onSave(data, title, description, props.screenshotId)
+            }
+          />
         </div>
 
         <div className="project-page-rightside-container">
@@ -75,7 +133,10 @@ class ProjectPage extends Component {
           <Footer />
         </div>
       </div>
-  );}
+  }
+      </div>  
+    );
+  }   
 };
 
 export default ProjectPage;
