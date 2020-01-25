@@ -141,12 +141,16 @@ body {
     margin: auto;
   }
 
-  .footer-wrapper {
+  /* .footer-wrapper {
     display: none;
-  }
+  } */
 
   .content-wrapper {
     padding-bottom: 0;
+  }
+  
+  .content-text{
+    margin: 0 10px;
   }
 
   .mobilemenu-menu > div {
