@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './ErrorPage.css';
-import Header from '../Header/Header.Component';
-import errorImage from '../../assets/images/ErrorImage.jpg';
-import HomePageError from '../ErrorComponent/Error.component';
+import Header from '../../components/Header/Header.Component';
+import ErrorImage from '../../assets/images/ErrorImage.jpg';
+import HomePageError from '../../components/ErrorComponent/Error.component';
 import HomePage from '../Home/HomePage';
 
 const ErrorPage = () =>{
@@ -16,7 +16,7 @@ const ErrorPage = () =>{
       </div>
       <div className="wrapper-image">
         <img
-          src={errorImage}
+          src={ErrorImage}
           alt="desk light and teapot"
           className="error-image-wrapper"
         />
