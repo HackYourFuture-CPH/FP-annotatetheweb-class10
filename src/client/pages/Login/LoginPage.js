@@ -38,6 +38,7 @@ class LoginPage extends Component {
       .then(() => {
         this.setState({ isLoading: false });
       });
+    this.getUserId(this.state.email)
   };
 
   logout = () => {
@@ -60,6 +61,20 @@ class LoginPage extends Component {
   onTwitterSignIn = () => {
     auth.signInWithPopup(twitterProvider);
   };
+
+  getUserId = (email) => {
+    fetch(`/api/users/email/${email}`, {
+      method: 'GET',
+      mode: 'cors',
+      cache: 'no-cache',
+      credentials: 'same-origin',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+    .then((result) => result.json())
+    .then((data) => console.log(data[0].user_id));
+  }
 
   render() {
     const { user, isLoading } = this.state;
