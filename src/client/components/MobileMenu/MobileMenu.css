@@ -12,34 +12,17 @@
   position: absolute;
   top: 0;
   right: 0;
-  z-index: 2;
+  z-index: 3;
   width: 40px;
   height: 26px;
   opacity: 0;
   
 }
 .mobilemenu-hamburgur {
-  /* position: absolute;
-  top: 0;
-  right: 50px; */
-  z-index: 10002;
-  width: 40px;
-  /* height: 30px; */
-  /* padding: 1rem; */
-  /* background: red; */
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
-}
-/* .mobilemenu-lines {
   position: relative;
-  width: 100%;
-  height: 2px;
-  background-color: black;
-  display: flex;
-  justify-content: center;
-  transition: all 0.4s ease;
-} */
+  z-index: 2;
+  width: 40px;
+}
 .mobilemenu-hamburgur::before,
 .mobilemenu-hamburgur::after,
 .mobilemenu-hamburgur span {
@@ -56,18 +39,22 @@
 }
 
 /* Toggler animate */
-.mobilemenu-toggler:checked + .mobilemenu-hamburgur > div {
-  transform: rotate(135deg);
+.mobilemenu-toggler:checked + .mobilemenu-hamburgur > span {
+  transform: rotate(180deg);
+  margin-top: 18px;
 }
 /* Turn line to X */
-.mobilemenu-toggler:checked + .mobilemenu-hamburgur > div::before,
-.mobilemenu-toggler:checked + .mobilemenu-hamburgur > div::after {
-  top: 0;
-  transform: rotate(90deg);
+.mobilemenu-toggler:checked + .mobilemenu-hamburgur::after {
+  transform: rotate(139deg);
+  margin-top: -33px;
 }
-.mobilemenu-toggler:checked:hover + .mobilemenu-hamburgur > div {
+.mobilemenu-toggler:checked + .mobilemenu-hamburgur::before {
+  transform: rotate(41deg);
+  margin-top: 10px;
+}
+/* .mobilemenu-toggler:checked:hover + .mobilemenu-hamburgur {
   transform: rotate(225deg);
-}
+} */
 .mobilemenu-toggler:checked ~ .mobilemenu-menu {
   visibility: visible;
 }
