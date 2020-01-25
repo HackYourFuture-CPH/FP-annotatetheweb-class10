@@ -120,13 +120,14 @@ body {
   }
 
   .annotate-btn {
+    min-height: 35px;
     display: block;
     margin: 1rem auto;
     border-radius: 40px;
     border: unset;
     background-color: #cde769;
     font-family: 'Open Sans';
-    padding: 0.8rem 2rem;
+    padding: 0 2rem;
     margin-bottom: 2rem;
   }
 
