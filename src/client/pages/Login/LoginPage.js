@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Consumer } from '../../context/AuthContext';
+import { withRouter } from 'react-router-dom';
 import Header from '../../components/Header/Header.Component';
 import FormLoginRegister from '../../components/FormLoginRegister/FormLoginRegister.component';
 import imageLogin from '../../assets/images/imageLogin.jpg';
@@ -42,17 +43,40 @@ class LoginPage extends Component {
     this.getUserId(this.state.email, saveUserId);
   };
 
-  onGoogleSignIn = () => {
-    this.setState({ isLoading: true });
-    auth.signInWithPopup(googleProvider);
+  onGoogleSignIn = async (saveUserId) => {
+    try {
+      this.setState({ isLoading: true });
+      const result = await auth.signInWithPopup(googleProvider);
+      const { user } = result;
+      const email = user.email;
+      this.getUserId(email, saveUserId);
+    } catch (error) {
+      return error;
+    }
   };
 
-  onFacebookSignIn = () => {
-    auth.signInWithPopup(facebookProvider);
+  onFacebookSignIn = async (saveUserId) => {
+    try {
+      this.setState({ isLoading: true });
+      const result = await auth.signInWithPopup(facebookProvider);
+      const { user } = result;
+      const email = user.email;
+      this.getUserId(email, saveUserId);
+    } catch (error) {
+      return error;
+    }
   };
 
-  onTwitterSignIn = () => {
-    auth.signInWithPopup(twitterProvider);
+  onTwitterSignIn = async (saveUserId) => {
+    try {
+      this.setState({ isLoading: true });
+      const result = await auth.signInWithPopup(twitterProvider);
+      const { user } = result;
+      const email = user.email;
+      this.getUserId(email, saveUserId);
+    } catch (error) {
+      return error;
+    }
   };
 
   getUserId = (email, saveUserId) => {
@@ -69,18 +93,28 @@ class LoginPage extends Component {
       .then((data) => {
         // Save user_id into context
         saveUserId(data[0].user_id);
+        let user_id = data[0].user_id;
+        localStorage.setItem('user_id', JSON.stringify(user_id));
+        // this.props.history.push('/');
       });
   };
+
+  showUserId = (user_id) => {
+    console.log(user_id);
+  }
+
+
 
   render() {
     const { user, isLoading } = this.state;
     return (
       <Consumer>
-        {({ saveUserId }) => {
+        {({ saveUserId, user_id }) => {
           return (
             <div className="main-wrapper-login-page">
               <div className="header-wrapper">
                 <Header title="Annotate the web" />
+                <button onClick={() => this.showUserId(user_id)}>user_id</button>
                 {!user && !isLoading ? (
                   <FormLoginRegister
                     formLoginRegister="form-login-register"
@@ -104,9 +138,9 @@ class LoginPage extends Component {
                   <FormLogin
                     handleChange={this.handleChange}
                     login={() => this.login(saveUserId)}
-                    onGoogleSignIn={this.onGoogleSignIn}
-                    onFacebookSignIn={this.onFacebookSignIn}
-                    onTwitterSignIn={this.onTwitterSignIn}
+                    onGoogleSignIn={() => this.onGoogleSignIn(saveUserId)}
+                    onFacebookSignIn={() => this.onFacebookSignIn(saveUserId)}
+                    onTwitterSignIn={() => this.onTwitterSignIn(saveUserId)}
                     displayController="login-part-display-controller"
                     showUserIdInContext={this.showId}
                   />
@@ -128,4 +162,4 @@ class LoginPage extends Component {
   }
 }
 
-export default LoginPage;
+export default withRouter(LoginPage);
