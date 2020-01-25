@@ -33,17 +33,13 @@
 .register-button{
     cursor: pointer;
 }
-.screenshot-image-container{
-    justify-content: center;
-    align-self: center;
-    align-self: center;
-}
-.screenshot-image {
+.screenshot-image-container, .annotation-container{    
+    width: 72%;
     margin-left: 50px;
-    width: 60%;
     height: 85vh;
     position: absolute;
 }
+
 .mobilemenu-menuwrap{
     display: none;
 }
