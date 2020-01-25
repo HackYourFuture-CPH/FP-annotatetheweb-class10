@@ -6,18 +6,18 @@
 }
 .project-page-rightside-container{
     align-self: flex-end;
-    display: flex;    
-    flex-direction: column;    
+    display: flex;
+    flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     text-align: center;
     max-width: 300px;
     height: 100%;
-    
+
     box-shadow: -2px 0px 10px 1px #AAAAAA;
 }
 
-.project-page-button{   
+.project-page-button{
     font-family: 'open sans';
     font-style: normal;
     font-weight: bold;
@@ -33,8 +33,8 @@
 .register-button{
     cursor: pointer;
 }
-.screenshot-image-container, .annotation-container{    
-    width: 72%;
+.screenshot-image-container, .annotation-container{
+    width: 60%;
     margin-left: 50px;
     height: 85vh;
     position: absolute;
