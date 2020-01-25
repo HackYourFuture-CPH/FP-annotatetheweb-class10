@@ -23,9 +23,8 @@
   top: 0;
   right: 50px;
   z-index: 10002;
-  display: inline;
-  /* width: 30px;
-  height: 30px; */
+  width: 40px;
+  /* height: 30px; */
   /* padding: 1rem; */
   /* background: red; */
   /* display: flex;
@@ -41,17 +40,16 @@
   justify-content: center;
   transition: all 0.4s ease;
 } */
-.mobilemenu-hamburgur:before,
-.mobilemenu-hamburgur:after,
+.mobilemenu-hamburgur::before,
+.mobilemenu-hamburgur::after,
 .mobilemenu-hamburgur span {
   content: "";
-  position: absolute;
   display: block;
   z-index: 1;
-  width: 40px;
-  height: 2px;
-  background: black;
-  margin-bottom: 5px;
+  height: 4px;
+  background-color: #595959;
+  margin-bottom: 7px;
+  border-radius: 2px;
 }
 .mobilemenu-lines::after {
   top: 7px;
