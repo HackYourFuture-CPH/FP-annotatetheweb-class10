@@ -52,7 +52,7 @@ class BlogCard extends Component {
             </div>
             <Input
               name="blogCardLabel"
-              title="make blog as cards"
+              title={this.props.title}
               placeholder="add comment..."
               type="input"
               handleInputChange={this.handleInputChange}
