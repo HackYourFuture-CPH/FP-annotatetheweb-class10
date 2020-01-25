@@ -28,11 +28,7 @@ export class Provider extends React.Component {
     return (
       <AuthContext.Provider
         value={{
-          isAuthenticated: this.state.isAuthenticated,
-          user_id: this.state.user_id,
-          screenshot_key: this.state.screenshot_key,
-          setScreenshotKey: this.setScreenshotKey,
-          saveUserId: this.saveUserId
+          isAuthenticated: this.state.isAuthenticated
         }}
       >
         {this.props.children}
