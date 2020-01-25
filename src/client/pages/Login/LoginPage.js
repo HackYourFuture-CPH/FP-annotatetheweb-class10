@@ -31,7 +31,7 @@ class LoginPage extends Component {
     this.setState({ [e.target.type]: e.target.value });
   };
 
-  login = (saveUserId) => {
+  login = () => {
     if (this.state.password && this.state.email) {
       this.setState({ isLoading: true });
     }
@@ -40,46 +40,46 @@ class LoginPage extends Component {
       .then(() => {
         this.setState({ isLoading: false });
       });
-    this.getUserId(this.state.email, saveUserId);
+    this.getUserId(this.state.email);
   };
 
-  onGoogleSignIn = async (saveUserId) => {
+  onGoogleSignIn = async () => {
     try {
       this.setState({ isLoading: true });
       const result = await auth.signInWithPopup(googleProvider);
       const { user } = result;
       const email = user.email;
-      this.getUserId(email, saveUserId);
+      this.getUserId(email);
     } catch (error) {
       return error;
     }
   };
 
-  onFacebookSignIn = async (saveUserId) => {
+  onFacebookSignIn = async () => {
     try {
       this.setState({ isLoading: true });
       const result = await auth.signInWithPopup(facebookProvider);
       const { user } = result;
       const email = user.email;
-      this.getUserId(email, saveUserId);
+      this.getUserId(email);
     } catch (error) {
       return error;
     }
   };
 
-  onTwitterSignIn = async (saveUserId) => {
+  onTwitterSignIn = async () => {
     try {
       this.setState({ isLoading: true });
       const result = await auth.signInWithPopup(twitterProvider);
       const { user } = result;
       const email = user.email;
-      this.getUserId(email, saveUserId);
+      this.getUserId(email);
     } catch (error) {
       return error;
     }
   };
 
-  getUserId = (email, saveUserId) => {
+  getUserId = (email) => {
     fetch(`/api/users/email/${email}`, {
       method: 'GET',
       mode: 'cors',
@@ -91,73 +91,54 @@ class LoginPage extends Component {
     })
       .then((result) => result.json())
       .then((data) => {
-        // Save user_id into context
-        saveUserId(data[0].user_id);
+        // Save user into local storage
         let user_id = data[0].user_id;
         localStorage.setItem('user_id', JSON.stringify(user_id));
-        // this.props.history.push('/');
+        this.props.history.push('/');
       });
   };
-
-  showUserId = (user_id) => {
-    console.log(user_id);
-  }
-
-
 
   render() {
     const { user, isLoading } = this.state;
     return (
-      <Consumer>
-        {({ saveUserId, user_id }) => {
-          return (
-            <div className="main-wrapper-login-page">
-              <div className="header-wrapper">
-                <Header title="Annotate the web" />
-                <button onClick={() => this.showUserId(user_id)}>user_id</button>
-                {!user && !isLoading ? (
-                  <FormLoginRegister
-                    formLoginRegister="form-login-register"
-                    text="Do not have account yet?"
-                    register="Register"
-                    classRegister="register-class"
-                    linewrapper="register-right-up-corner"
-                  />
-                ) : null}
-              </div>
-              <div className="body-wrapper">
-                <div className="image-wrapper">
-                  <img
-                    src={imageLogin}
-                    alt="login"
-                    className="login-page-image"
-                  />
-                </div>
-                {isLoading ? <Loading /> : null}
-                {!isLoading && !user && (
-                  <FormLogin
-                    handleChange={this.handleChange}
-                    login={() => this.login(saveUserId)}
-                    onGoogleSignIn={() => this.onGoogleSignIn(saveUserId)}
-                    onFacebookSignIn={() => this.onFacebookSignIn(saveUserId)}
-                    onTwitterSignIn={() => this.onTwitterSignIn(saveUserId)}
-                    displayController="login-part-display-controller"
-                    showUserIdInContext={this.showId}
-                  />
-                )}
-                {user && (
-                  <FormButton
-                    title="Log Out"
-                    buttons="logout-btn"
-                    click={this.logout}
-                    logo=""
-                  />
-                )}
-              </div>
-            </div>
-          );
-        }}
-      </Consumer>
+      <div className="main-wrapper-login-page">
+        <div className="header-wrapper">
+          <Header title="Annotate the web" />
+          {!user && !isLoading ? (
+            <FormLoginRegister
+              formLoginRegister="form-login-register"
+              text="Do not have account yet?"
+              register="Register"
+              classRegister="register-class"
+              linewrapper="register-right-up-corner"
+            />
+          ) : null}
+        </div>
+        <div className="body-wrapper">
+          <div className="image-wrapper">
+            <img src={imageLogin} alt="login" className="login-page-image" />
+          </div>
+          {isLoading ? <Loading /> : null}
+          {!isLoading && !user && (
+            <FormLogin
+              handleChange={this.handleChange}
+              login={this.login}
+              onGoogleSignIn={this.onGoogleSignIn}
+              onFacebookSignIn={this.onFacebookSignIn}
+              onTwitterSignIn={this.onTwitterSignIn}
+              displayController="login-part-display-controller"
+            />
+          )}
+          {user && (
+            <FormButton
+              title="Log Out"
+              buttons="logout-btn"
+              click={this.logout}
+              logo=""
+            />
+          )}
+        </div>
+      </div>
     );
   }
 }

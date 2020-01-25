@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { Consumer } from '../../context/AuthContext';
 import '../../firebase';
-import { doSignInWithEmailAndPassword, doSignOut } from '../../firebase/auth';
+import { doSignOut } from '../../firebase/auth';
 import Header from '../../components/Header/Header.Component';
 import NavBar from '../../components/NavBar/NavBar.component';
 import imageHomePage from '../../assets/images/HomePageImage.png';
@@ -43,16 +43,6 @@ class Home extends Component {
     this.props.history.push('/register');
   };
 
-  onLoginClick = () => {
-    event.preventDefault();
-    doSignInWithEmailAndPassword(this.state.email, this.state.password)
-      .then(this.setState({ email: '', password: '' }))
-      .catch((error) => {
-        // eslint-disable-next-line no-console
-        console.log(error.message);
-      });
-  };
-
   onInputChange = (event) => {
     this.setState({ [event.target.name]: event.target.value });
   };
@@ -63,47 +53,50 @@ class Home extends Component {
 
   
 
-  createScreenshot = (project_id, value, setScreenshotKey) => {
+  createScreenshot = (project_id, value) => {
     this.setState({ screenshotUrl: value }, () => {
       // Check if desktop or mobile screenshot is requested
       if (this.state.desktopSize) {
         const width = 1342; // These numbers should be adjusted ??
         const height = 1152; // These numbers should be adjusted??
-        // Url will need to be changed once the site is deployed??
         this.postData('/api/screenshots/', {
           url: this.state.screenshotUrl,
           height,
           width,
           fk_project_id: project_id,
         }).then((data) => {
-          // Save screenshot into context
-          console.log(data.key); // This will be removed before merging, left here for testing.
-          setScreenshotKey(data.key);
-          // this.props.history.push('/projects'); // this will be enabled before merging.
+          // Save screenshot into local storage
+          let screenshot_key = data.key;
+          localStorage.setItem('screenshot_key', JSON.stringify(screenshot_key));
+          this.props.history.push('/projects');
         });
         // If user wants mobile size screenshot
       } else {
         const width = 640; // These numbers should be adjusted ??
         const height = 960; // These numbers should be adjusted ??
-        // Url will need to be changed once the site is deployed??
         this.postData('/api/screenshots/', {
           url: this.state.screenshotUrl,
           height,
           width,
           fk_project_id: project_id,
         }).then((data) => {
-          // Save screenshot into context
-          console.log(data.key); // This will be removed before merging, left here for testing.
-          setScreenshotKey(data.key);
-          // this.props.history.push('/projects'); // this will be enabled before merging.
+          // Save screenshot into local storage
+          let screenshot_key = data.key;
+          localStorage.setItem('screenshot_key', JSON.stringify(screenshot_key));
+          this.props.history.push('/projects');
         });
       }
     });
   };
 
-  createProjectAndScreenshot = (value, user_id, setScreenshotKey) => {
+  createProjectAndScreenshot = (value) => {
     // Create new project - now there's a new project created with every screenshot.
-    // If we have time, we can implement using the different project_ids. Right now  we shall prioritize other parts of this project.
+    // Get user_id from local storage
+    let user_id = localStorage.getItem('user_id');
+    if (!user_id) {
+      user_id = 1;
+    }
+
     this.postData('/api/projects/', {
       name: value,
       fk_user_id: user_id,
@@ -113,30 +106,35 @@ class Home extends Component {
       })
       // Create screenshot, using the newly created project_id
       .then((project_id) =>
-        this.createScreenshot(project_id, value, setScreenshotKey),
+        this.createScreenshot(project_id, value),
       );
   };
 
   sendUrl = (
     value,
-    isAuthenticated,
-    user_id,
-    screenshot_key,
-    setScreenshotKey,
+    isAuthenticated
   ) => {
-    console.log('from context', screenshot_key);
     // If user is authenticated, use the corresponding user_id
     if (isAuthenticated === true) {
-      this.createProjectAndScreenshot(value, user_id, setScreenshotKey);
+      this.createProjectAndScreenshot(value);
     } else {
       // If user is not authenticated, use user_id=1 which is 'Random user'.
-      this.createProjectAndScreenshot(value, 1, setScreenshotKey);
+      this.createProjectAndScreenshot(value);
     }
   };
 
   onSubmit = () => {
     console.log('This feature is not ready yet, try it on desktop version.');
   };
+
+  onLogOut = () => {
+    const user_id = 1;
+    const screenshot_key = '';
+    localStorage.setItem('user_id', JSON.stringify(user_id));
+    localStorage.setItem('screenshot_key', JSON.stringify(screenshot_key));
+    
+    doSignOut();
+  }
 
    // eslint-disable-next-line class-methods-use-this
    async postData (url = '', data = {}) {
@@ -153,10 +151,14 @@ class Home extends Component {
     return response.json();
   }
 
+  showUserId = (user_id) => {
+    console.log(user_id);
+  }
+
   render() {
     return (
       <Consumer>
-        {({ isAuthenticated, user_id, screenshot_key, setScreenshotKey }) => {
+        {({ isAuthenticated }) => {
           return (
             <>
               <div className="homeheader-wrapper">
@@ -168,7 +170,7 @@ class Home extends Component {
                       { title: 'About', id: 2, href: '/' },
                     ]}
                     registerButtonTitle="Log out"
-                    onClick={doSignOut}
+                    onClick={this.onLogOut}
                   />
                 ) : (
                   <NavBar
@@ -206,10 +208,7 @@ class Home extends Component {
                       onEnter={(value) =>
                         this.sendUrl(
                           value,
-                          isAuthenticated,
-                          user_id,
-                          screenshot_key,
-                          setScreenshotKey,
+                          isAuthenticated
                         )
                       }
                     />

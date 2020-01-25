@@ -52,11 +52,12 @@ class RegisterPage extends Component {
         });
 
       const { name, userName, email } = this.state;
+      this.getUserId(email);
       console.log(name, userName, email);
       this.fillUsersTable(name, userName, email);
 
       this.setState({ email: '', password: '', name: '', userName: '' });
-      // this.props.history.push('/');
+      this.props.history.push('/');
     } else {
       // eslint-disable-next-line no-console
       console.log(errorMessage);
@@ -67,8 +68,9 @@ class RegisterPage extends Component {
     signInWithGoogle()
       .then((user) => {
         console.log('User logged in, using google', user);
-        this.fillUsersTable(user.displayName, user.displayName);
-        // this.props.history.push('/');
+        this.fillUsersTable(user.displayName, user.displayName, user.email);
+        this.getUserId(user.email);
+        this.props.history.push('/');
       })
       .catch((error) => {
         // eslint-disable-next-line no-console
@@ -80,8 +82,9 @@ class RegisterPage extends Component {
     signInWithFacebook()
       .then((user) => {
         console.log('User logged in, using facebook');
-        this.fillUsersTable(user.displayName, user.displayName);
-        // this.props.history.push('/');
+        this.fillUsersTable(user.displayName, user.displayName, user.email);
+        this.getUserId(user.email);
+        this.props.history.push('/');
       })
       .catch((error) => {
         // eslint-disable-next-line no-console
@@ -93,8 +96,9 @@ class RegisterPage extends Component {
     signInWithTwitter()
       .then((user) => {
         console.log('User logged in, using twitter');
-        this.fillUsersTable(user.displayName, user.displayName);
-        // this.props.history.push('/');
+        this.fillUsersTable(user.displayName, user.displayName, user.email);
+        this.getUserId(user.email);
+        this.props.history.push('/');
       })
       .catch((error) => {
         // eslint-disable-next-line no-console
@@ -104,6 +108,24 @@ class RegisterPage extends Component {
 
   onInputChange = ({ name, userName, email, password }) => {
     this.setState({ name, userName, email, password });
+  };
+
+  getUserId = (email) => {
+    fetch(`/api/users/email/${email}`, {
+      method: 'GET',
+      mode: 'cors',
+      cache: 'no-cache',
+      credentials: 'same-origin',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((result) => result.json())
+      .then((data) => {
+        // Save user into local storage
+        let user_id = data[0].user_id;
+        localStorage.setItem('user_id', JSON.stringify(user_id));
+      });
   };
 
   render() {
