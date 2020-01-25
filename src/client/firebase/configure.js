@@ -2,8 +2,8 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 
 export const firebaseConfig = {
-  apiKey: process.env.FIREBASE_API_KEY,
-  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+  apiKey: 'AIzaSyAROMf-XVOoPXN_idZbYigkdn0eABbQbjA',
+  authDomain: 'fp-annotatetheweb-class10.firebaseapp.com',
   databaseURL: process.env.FIREBASE_DATABASE_URL,
   projectId: process.env.FIREBASE_PROJECT_ID,
   storageBucket: process.env.FIREBASE_STORAGE_BUCKET,

@@ -36,6 +36,7 @@ class Home extends Component {
       password: '',
       desktopSize: true,
       screenshotUrl: '',
+      urlValue: ''
     };
   }
 
@@ -132,8 +133,16 @@ class Home extends Component {
     }
   };
 
-  onSubmit = () => {
-    console.log('This feature is not ready yet, try it on desktop version.');
+  onSubmit = (value) => {
+    const { isAuthenticated, user_id, screenshot_key, setScreenshotKey } = value;
+
+    this.sendUrl(
+      this.state.urlValue,
+      isAuthenticated,
+      user_id,
+      screenshot_key,
+      setScreenshotKey,
+    )
   };
 
    // eslint-disable-next-line class-methods-use-this
@@ -149,6 +158,10 @@ class Home extends Component {
       body: JSON.stringify(data),
     });
     return response.json();
+  }
+
+  inputChange = (event) =>  {
+    this.setState({ urlValue: event.target.value });
   }
 
   render() {
@@ -210,6 +223,7 @@ class Home extends Component {
                           setScreenshotKey,
                         )
                       }
+                      onChange={this.inputChange}
                     />
                   </div>
                   <div className="toggle-btn">
@@ -221,7 +235,9 @@ class Home extends Component {
                     />
                   </div>
                   <div className="submit-btn-wrapper">
-                    <button className="annotate-btn" onClick={this.onSubmit}>
+                    <button className="annotate-btn" 
+                    onClick={() => this.onSubmit({ isAuthenticated, user_id, screenshot_key, setScreenshotKey })}
+                        >
                       Annotate
                     </button>
                   </div>

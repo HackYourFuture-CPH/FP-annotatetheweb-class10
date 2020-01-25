@@ -1,7 +1,7 @@
 import React from 'react';
 import './UrlInput.css';
 
-const UrlInput = ({ placeholder, onEnter }) => {
+const UrlInput = ({ placeholder, onEnter, onChange }) => {
   return (
     <input
       type="url"
@@ -12,6 +12,7 @@ const UrlInput = ({ placeholder, onEnter }) => {
           onEnter(event.target.value);
         }
       }}
+      onChange={(value) => onChange(value)}
     />
   );
 };
