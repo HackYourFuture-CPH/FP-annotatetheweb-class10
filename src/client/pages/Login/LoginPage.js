@@ -47,7 +47,7 @@ class LoginPage extends Component {
       this.setState({ isLoading: true });
       const result = await auth.signInWithPopup(googleProvider);
       const { user } = result;
-      const email = user.email;
+      const { email } = user;
       this.getUserId(email);
     } catch (error) {
       return error;
@@ -59,7 +59,7 @@ class LoginPage extends Component {
       this.setState({ isLoading: true });
       const result = await auth.signInWithPopup(facebookProvider);
       const { user } = result;
-      const email = user.email;
+      const { email } = user;
       this.getUserId(email);
     } catch (error) {
       return error;
@@ -71,7 +71,7 @@ class LoginPage extends Component {
       this.setState({ isLoading: true });
       const result = await auth.signInWithPopup(twitterProvider);
       const { user } = result;
-      const email = user.email;
+      const { email } = user;
       this.getUserId(email);
     } catch (error) {
       return error;
@@ -91,7 +91,7 @@ class LoginPage extends Component {
       .then((result) => result.json())
       .then((data) => {
         // Save user into local storage
-        let user_id = data[0].user_id;
+        const { user_id } = data[0];
         localStorage.setItem('user_id', JSON.stringify(user_id));
         // this.props.history.push('/'); // We get a warning with this: Can't perform a React state update on an unmounted component(...) 
         location.href = '/';

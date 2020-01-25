@@ -4,7 +4,6 @@ import FormSignUp from '../../components/FormSignUp/FormSignUp.component';
 import Header from '../../components/Header/Header.Component';
 import FormLoginRegister from '../../components/FormLoginRegister/FormLoginRegister.component';
 import './Register.css';
-
 import {
   doCreateUserWithEmailAndPassword,
   signInWithGoogle,
@@ -122,7 +121,7 @@ class RegisterPage extends Component {
       .then((result) => result.json())
       .then((data) => {
         // Save user into local storage
-        let user_id = data[0].user_id;
+        const { user_id } = data[0];
         localStorage.setItem('user_id', JSON.stringify(user_id));
       });
   };

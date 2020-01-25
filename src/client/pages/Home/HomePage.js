@@ -32,8 +32,6 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: '',
-      password: '',
       desktopSize: true,
       screenshotUrl: '',
     };
@@ -64,7 +62,7 @@ class Home extends Component {
           fk_project_id: project_id,
         }).then((data) => {
           // Save screenshot into local storage
-          let screenshot_key = data.key;
+          const screenshot_key = data.key;
           localStorage.setItem(
             'screenshot_key',
             JSON.stringify(screenshot_key),
@@ -82,7 +80,7 @@ class Home extends Component {
           fk_project_id: project_id,
         }).then((data) => {
           // Save screenshot into local storage
-          let screenshot_key = data.key;
+          const screenshot_key = data.key;
           localStorage.setItem(
             'screenshot_key',
             JSON.stringify(screenshot_key),
