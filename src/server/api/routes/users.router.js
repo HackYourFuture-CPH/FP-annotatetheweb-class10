@@ -41,4 +41,11 @@ router.delete('/:user_id', (req, res, next) => {
     .catch(next);
 });
 
+router.get('/email/:email', (req, res, next) => {
+  usersController
+  .getUserIdByEmail(req.params.email)
+  .then((result) => res.json(result))
+  .catch(next)
+})
+
 module.exports = router;

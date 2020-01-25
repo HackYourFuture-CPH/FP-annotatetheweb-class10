@@ -37,9 +37,17 @@ const deleteUserById = (userId) => {
     .del();
 };
 
+// Get user_id by email
+const getUserIdByEmail = (email) => {
+  return knex('users')
+  .where({email})
+  .select('user_id')
+}
+
 module.exports = {
   getUsers,
   getUserById,
   createUser,
   deleteUserById,
+  getUserIdByEmail
 };
