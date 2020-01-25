@@ -10,7 +10,8 @@ const MobileMenu = ({ onClick }) => {
     <div className='mobilemenu-menuwrap'>
       <input type='checkbox' className='mobilemenu-toggler' />
       <div className='mobilemenu-hamburgur'>
-        <div className='mobilemenu-lines' />
+        <span></span>
+        {/* <div className='mobilemenu-lines' /> */}
       </div>
       <div className='mobilemenu-menu'>
         <div>

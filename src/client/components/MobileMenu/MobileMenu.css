@@ -21,17 +21,18 @@
 .mobilemenu-hamburgur {
   position: absolute;
   top: 0;
-  right: 0;
-  z-index: 1;
-  width: 30px;
-  height: 30px;
-  padding: 1rem;
-  background: red;
-  display: flex;
+  right: 50px;
+  z-index: 10002;
+  display: inline;
+  /* width: 30px;
+  height: 30px; */
+  /* padding: 1rem; */
+  /* background: red; */
+  /* display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
 }
-.mobilemenu-lines {
+/* .mobilemenu-lines {
   position: relative;
   width: 100%;
   height: 2px;
@@ -39,16 +40,18 @@
   display: flex;
   justify-content: center;
   transition: all 0.4s ease;
-}
-.mobilemenu-lines::before,
-.mobilemenu-lines::after {
+} */
+.mobilemenu-hamburgur:before,
+.mobilemenu-hamburgur:after,
+.mobilemenu-hamburgur span {
   content: "";
   position: absolute;
+  display: block;
   z-index: 1;
-  top: -7px;
-  width: 100%;
+  width: 40px;
   height: 2px;
-  background: inherit;
+  background: black;
+  margin-bottom: 5px;
 }
 .mobilemenu-lines::after {
   top: 7px;
