@@ -6,7 +6,8 @@
   text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
   color: #2d2e36;
   padding-left: 2rem;  
-  margin-top: 40px;
+  margin: 40px 0 0;
+  padding-bottom: 16px;
 }
 
 @media (max-width: 767px) {

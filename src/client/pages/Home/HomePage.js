@@ -186,7 +186,7 @@ class Home extends Component {
                     onClick={this.onRegisterClick}
                   />
                 )}
-                <MobileMenu />
+                <MobileMenu onClick={this.onRegisterClick}/>
               </div>
               <div className="home-page-image-wrapper">
                 <img
