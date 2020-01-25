@@ -7,7 +7,7 @@ import LoginPage from './pages/Login/LoginPage';
 import ProjectsPage from './pages/Projects/ProjectsPage';
 import ScreenshotsPage from './pages/Screenshots/ScreenshotsPage';
 import UserPage from './pages/User/UserPage';
-import ErrorPage from './pages/ErrorPage';
+import ErrorPage from './pages/ErrorPage/ErrorPage';
 import { Provider } from './context/AuthContext';
 
 function App() {
