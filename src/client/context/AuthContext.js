@@ -10,8 +10,6 @@ export class Provider extends React.Component {
     screenshot_key: 'initial context value',
   };
 
-
-
   componentDidMount() {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
@@ -24,14 +22,6 @@ export class Provider extends React.Component {
         this.setState({ isAuthenticated: false });
       }
     });
-  }
-
-  setScreenshotKey = (key) => {
-    this.setState({ screenshot_key: key });
-  };
-
-  saveUserId = (user_id) => {
-    this.setState({ user_id })
   }
 
   render() {
