@@ -10,7 +10,6 @@ body {
   justify-content: space-between;
   margin-left: 4rem;
   margin-right: 4rem;
-  /* margin-top: -1rem; */
   position: relative;
   z-index: 2;
 }
@@ -81,9 +80,6 @@ body {
   }
 
   .mobilemenu-menuwrap {
-    /* display: block;
-    position: initial; */
-    /* display:none; Something is off when this is turned on, so for now I just disable it. Needs to be fixed! */
   }
 
   .home-page-image {
@@ -95,7 +91,7 @@ body {
   }
 
   .homeheader-wrapper {
-    margin-left: 1rem;
+    margin-left: 30px;
     margin-right: 0;
     display: block;
   }
@@ -144,10 +140,6 @@ body {
     width: 90%;
     margin: auto;
   }
-
-  /* .footer-wrapper {
-    display: none;
-  } */
 
   .content-wrapper {
     padding-bottom: 0;
