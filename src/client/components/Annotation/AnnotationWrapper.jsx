@@ -1,5 +1,6 @@
 import React from 'react';
 import CustomAnnotation from './CustomAnnotation.component';
+import Consumer from '../../context/AuthContext';
 
 const onSave = (data, title, description, screenshotId) => {
   fetch('http://localhost:3000/api/annotations/', {
@@ -31,8 +32,13 @@ function AnnotationWrapper(props) {
     <CustomAnnotation
       screenshot={backgroundImage}
       onSave={({ data, title, description }) =>
-        onSave(data, title, description, props.screenshotId)
-      }
+        onSave(data, title, description, props.screenshotId)}
+        onChange ={props.onChange}
+        onSubmit={props.onSubmit}
+        type={props.type}
+        annotations={props.annotations}
+        annotation={props.annotation}
+        data={props.data}
     />
   );
 }
