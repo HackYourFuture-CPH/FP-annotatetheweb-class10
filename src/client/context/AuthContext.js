@@ -30,6 +30,10 @@ export class Provider extends React.Component {
     this.setState({ screenshot_key: key });
   };
 
+  saveUserId = (user_id) => {
+    this.setState({ user_id })
+  }
+
   render() {
     return (
       <AuthContext.Provider
@@ -38,6 +42,7 @@ export class Provider extends React.Component {
           user_id: this.state.user_id,
           screenshot_key: this.state.screenshot_key,
           setScreenshotKey: this.setScreenshotKey,
+          saveUserId: this.saveUserId
         }}
       >
         {this.props.children}
