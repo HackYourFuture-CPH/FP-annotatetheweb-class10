@@ -23,7 +23,7 @@ class RegisterPage extends Component {
     };
   }
 
-  fillUsersTable = (name, userName) => {
+  fillUsersTable = (name, userName, email) => {
     fetch('/api/users/', {
       method: 'POST',
       mode: 'cors',
@@ -35,6 +35,7 @@ class RegisterPage extends Component {
       body: JSON.stringify({
         name,
         user_name: userName,
+        email,
         fk_role_id: 1,
       }),
     });
@@ -50,11 +51,12 @@ class RegisterPage extends Component {
           console.log(error.message);
         });
 
-      const { name, userName } = this.state;
-      this.fillUsersTable(name, userName);
+      const { name, userName, email } = this.state;
+      console.log(name, userName, email);
+      this.fillUsersTable(name, userName, email);
 
       this.setState({ email: '', password: '', name: '', userName: '' });
-      this.props.history.push('/');
+      // this.props.history.push('/');
     } else {
       // eslint-disable-next-line no-console
       console.log(errorMessage);
@@ -66,7 +68,7 @@ class RegisterPage extends Component {
       .then((user) => {
         console.log('User logged in, using google', user);
         this.fillUsersTable(user.displayName, user.displayName);
-        this.props.history.push('/');
+        // this.props.history.push('/');
       })
       .catch((error) => {
         // eslint-disable-next-line no-console
@@ -79,7 +81,7 @@ class RegisterPage extends Component {
       .then((user) => {
         console.log('User logged in, using facebook');
         this.fillUsersTable(user.displayName, user.displayName);
-        this.props.history.push('/');
+        // this.props.history.push('/');
       })
       .catch((error) => {
         // eslint-disable-next-line no-console
@@ -92,7 +94,7 @@ class RegisterPage extends Component {
       .then((user) => {
         console.log('User logged in, using twitter');
         this.fillUsersTable(user.displayName, user.displayName);
-        this.props.history.push('/');
+        // this.props.history.push('/');
       })
       .catch((error) => {
         // eslint-disable-next-line no-console

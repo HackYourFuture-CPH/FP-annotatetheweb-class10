@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Header from '../../components/Header/Header.Component';
 import FormLoginRegister from '../../components/FormLoginRegister/FormLoginRegister.component';
-// import imageLogin from '../../assets/images/imageLogin.jpg';
+import imageLogin from '../../assets/images/imageLogin.jpg';
 import FormLogin from '../../components/FormLogin/FormLogin.component';
-// import './LoginPage.css';
+import './LoginPage.css';
 import '../../components/FormLoginRegister/FormLoginRegister.css';
 import FormButton from '../../components/FormButton/FormButton.component';
 import Loading from '../../components/Loading/Loading.component';
@@ -79,7 +79,7 @@ class LoginPage extends Component {
         </div>
         <div className="body-wrapper">
           <div className="image-wrapper">
-            {/* <img src={imageLogin} alt="login" className="login-page-image" /> */}
+            <img src={imageLogin} alt="login" className="login-page-image" />
           </div>
           {isLoading ? <Loading /> : null}
           {!isLoading && !user && (
