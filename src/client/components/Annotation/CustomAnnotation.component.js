@@ -51,7 +51,6 @@ class CustomAnnotation extends Component {
           type={this.state.type}
           value={this.state.annotation}
           onChange={this.onChange}
-          onSubmit={this.onSubmit}
           renderContent={({ annotation }) => {
             const { geometry } = annotation;
             return (

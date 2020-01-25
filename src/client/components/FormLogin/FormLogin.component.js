@@ -10,10 +10,10 @@ import {
   faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
 
-function FormLogin({ displayController }) {
+function FormLogin(props) {
   return (
     <div className="login-wrapper">
-      <div className={displayController}>
+      <div className={props.displayController}>
         <FormTitle />
         <div className="social-media-button-wrapper">
           <FormButton
@@ -21,19 +21,19 @@ function FormLogin({ displayController }) {
             buttons="google-btn"
             logo={faGoogle}
             align="logo-align"
-            click={() => console.log('clicked')}
+            click={props.onGoogleSignIn}
           />
           <FormButton
             title=""
             buttons="twitter-btn"
             logo={faTwitter}
-            click={() => console.log('clicked')}
+            click={props.onTwitterSignIn}
           />
           <FormButton
             title=""
             buttons="facebook-btn"
             logo={faFacebookSquare}
-            click={() => console.log('clicked')}
+            click={props.onFacebookSignIn}
           />
         </div>
         <FormLine />
@@ -44,9 +44,7 @@ function FormLogin({ displayController }) {
           inputType="email"
           //   textHolder="enter email here"
           inputClass="email-addres-box"
-          // changeHandler={(e) => {
-          //   e.target.value;
-          // }}
+          changeHandler={props.handleChange}
         />
         <FormField
           title="Password"
@@ -55,15 +53,14 @@ function FormLogin({ displayController }) {
           inputType="password"
           //   textHolder="enter password"
           inputClass="password-box"
-          // changeHandler={(e) => {
-          //   e.target.value;
-          // }}
+          changeHandler={props.handleChange}
         />
         <div className="login-button-wrapper">
           <FormButton
             title="Log In"
             buttons="submit-btn"
-            click={() => console.log('submitted')}
+            click={props.login}
+            logo=""
           />
         </div>
       </div>

@@ -6,19 +6,17 @@
   justify-content: center;
 }
 .logo {
-  width: 14rem;
   font-family: Pacifico;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 20px;
+  font-size: 40px;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+  color: #2d2e36;
+  padding-left: 2rem;  
   margin-top: 40px;
 }
 
-.logo {
-  font-family: Pacifico;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 1.5rem;
-  color: #2d2e36;
-  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+@media (max-width: 767px) {
+  .logo{
+    font-size: 20px;
+    padding-left: 0;  
+  }
 }
