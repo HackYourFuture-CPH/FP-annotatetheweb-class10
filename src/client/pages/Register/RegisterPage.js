@@ -53,7 +53,6 @@ class RegisterPage extends Component {
 
       const { name, userName, email } = this.state;
       this.getUserId(email);
-      console.log(name, userName, email);
       this.fillUsersTable(name, userName, email);
 
       this.setState({ email: '', password: '', name: '', userName: '' });
@@ -129,30 +128,30 @@ class RegisterPage extends Component {
   };
 
   render() {
-          return (
-            <div className="register-wrapper">
-              <div className="register-page">
-                <div className="register-head">
-                  <Header title="Annotate the web" />
-                </div>
-                <div className="register-content">
-                  <FormSignUp
-                    onClick={this.onRegisterClick}
-                    changeHandler={this.onInputChange}
-                    signInWithGoogle={this.signInWithGoogle}
-                    signInWithFacebook={this.signInWithFacebook}
-                    signInWithTwitter={this.signInWithTwitter}
-                  />
-                  <FormLoginRegister
-                    text="Already a member? "
-                    register="Sign in"
-                    href="/login"
-                    linewrapper="register-link-to-login-page"
-                  />
-                </div>
-              </div>
-            </div>
-          );
+    return (
+      <div className="register-wrapper">
+        <div className="register-page">
+          <div className="register-head">
+            <Header title="Annotate the web" />
+          </div>
+          <div className="register-content">
+            <FormSignUp
+              onClick={this.onRegisterClick}
+              changeHandler={this.onInputChange}
+              signInWithGoogle={this.signInWithGoogle}
+              signInWithFacebook={this.signInWithFacebook}
+              signInWithTwitter={this.signInWithTwitter}
+            />
+            <FormLoginRegister
+              text="Already a member? "
+              register="Sign in"
+              href="/login"
+              linewrapper="register-link-to-login-page"
+            />
+          </div>
+        </div>
+      </div>
+    );
   }
 }
 export default withRouter(RegisterPage);

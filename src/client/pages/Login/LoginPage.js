@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Consumer } from '../../context/AuthContext';
 import { withRouter } from 'react-router-dom';
 import Header from '../../components/Header/Header.Component';
 import FormLoginRegister from '../../components/FormLoginRegister/FormLoginRegister.component';
@@ -23,7 +22,7 @@ class LoginPage extends Component {
       user: null,
       email: '',
       password: '',
-      isLoading: false
+      isLoading: false,
     };
   }
 
@@ -94,12 +93,12 @@ class LoginPage extends Component {
         // Save user into local storage
         let user_id = data[0].user_id;
         localStorage.setItem('user_id', JSON.stringify(user_id));
-        this.props.history.push('/');
+        // this.props.history.push('/'); // We get a warning with this: Can't perform a React state update on an unmounted component(...) 
+        location.href = '/';
       });
   };
 
   render() {
-
     const { user, isLoading } = this.state;
     return (
       <div className="main-wrapper-login-page">

@@ -19,7 +19,7 @@ import { themeContent } from '../../components/theme';
 import './HomePage.css';
 
 class Home extends Component {
- hyfLogo = {
+  hyfLogo = {
     src: hyf,
     alt: 'hyf logo',
   };
@@ -51,8 +51,6 @@ class Home extends Component {
     this.setState({ desktopSize: val });
   };
 
-  
-
   createScreenshot = (project_id, value) => {
     this.setState({ screenshotUrl: value }, () => {
       // Check if desktop or mobile screenshot is requested
@@ -67,7 +65,10 @@ class Home extends Component {
         }).then((data) => {
           // Save screenshot into local storage
           let screenshot_key = data.key;
-          localStorage.setItem('screenshot_key', JSON.stringify(screenshot_key));
+          localStorage.setItem(
+            'screenshot_key',
+            JSON.stringify(screenshot_key),
+          );
           this.props.history.push('/projects');
         });
         // If user wants mobile size screenshot
@@ -82,7 +83,10 @@ class Home extends Component {
         }).then((data) => {
           // Save screenshot into local storage
           let screenshot_key = data.key;
-          localStorage.setItem('screenshot_key', JSON.stringify(screenshot_key));
+          localStorage.setItem(
+            'screenshot_key',
+            JSON.stringify(screenshot_key),
+          );
           this.props.history.push('/projects');
         });
       }
@@ -90,13 +94,12 @@ class Home extends Component {
   };
 
   createProjectAndScreenshot = (value) => {
-    // Create new project - now there's a new project created with every screenshot.
     // Get user_id from local storage
     let user_id = localStorage.getItem('user_id');
     if (!user_id) {
       user_id = 1;
     }
-
+    // Create new project
     this.postData('/api/projects/', {
       name: value,
       fk_user_id: user_id,
@@ -105,15 +108,10 @@ class Home extends Component {
         return data.project_id[0];
       })
       // Create screenshot, using the newly created project_id
-      .then((project_id) =>
-        this.createScreenshot(project_id, value),
-      );
+      .then((project_id) => this.createScreenshot(project_id, value));
   };
 
-  sendUrl = (
-    value,
-    isAuthenticated
-  ) => {
+  sendUrl = (value, isAuthenticated) => {
     // If user is authenticated, use the corresponding user_id
     if (isAuthenticated === true) {
       this.createProjectAndScreenshot(value);
@@ -132,12 +130,12 @@ class Home extends Component {
     const screenshot_key = '';
     localStorage.setItem('user_id', JSON.stringify(user_id));
     localStorage.setItem('screenshot_key', JSON.stringify(screenshot_key));
-    
-    doSignOut();
-  }
 
-   // eslint-disable-next-line class-methods-use-this
-   async postData (url = '', data = {}) {
+    doSignOut();
+  };
+
+  // eslint-disable-next-line class-methods-use-this
+  async postData(url = '', data = {}) {
     const response = await fetch(url, {
       method: 'POST',
       mode: 'cors',
@@ -149,10 +147,6 @@ class Home extends Component {
       body: JSON.stringify(data),
     });
     return response.json();
-  }
-
-  showUserId = (user_id) => {
-    console.log(user_id);
   }
 
   render() {
@@ -205,12 +199,7 @@ class Home extends Component {
                   <div className="url-Input">
                     <UrlInput
                       placeholder="Insert URL to annotate..."
-                      onEnter={(value) =>
-                        this.sendUrl(
-                          value,
-                          isAuthenticated
-                        )
-                      }
+                      onEnter={(value) => this.sendUrl(value, isAuthenticated)}
                     />
                   </div>
                   <div className="toggle-btn">

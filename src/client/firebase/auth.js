@@ -15,9 +15,7 @@ export async function doSignInWithEmailAndPassword(email, password) {
 }
 
 // SignOut
-export const doSignOut = () => {
-  auth.signOut();
-} 
+export const doSignOut = () => auth.signOut();
 
 export async function signOut() {
   try {

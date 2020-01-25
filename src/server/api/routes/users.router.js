@@ -44,9 +44,9 @@ router.delete('/:user_id', (req, res, next) => {
 // ENDPOINT: /api/user/email/:email :GET to get a user_id by email
 router.get('/email/:email', (req, res, next) => {
   usersController
-  .getUserIdByEmail(req.params.email)
-  .then((result) => res.json(result))
-  .catch(next)
-})
+    .getUserIdByEmail(req.params.email)
+    .then((result) => res.json(result))
+    .catch(next);
+});
 
 module.exports = router;
