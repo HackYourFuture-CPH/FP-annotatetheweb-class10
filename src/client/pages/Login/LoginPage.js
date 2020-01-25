@@ -23,7 +23,7 @@ class LoginPage extends Component {
       user: null,
       email: '',
       password: '',
-      isLoading: false,
+      isLoading: false
     };
   }
 
@@ -99,6 +99,7 @@ class LoginPage extends Component {
   };
 
   render() {
+
     const { user, isLoading } = this.state;
     return (
       <div className="main-wrapper-login-page">
