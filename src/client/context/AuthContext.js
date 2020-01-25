@@ -6,7 +6,7 @@ const AuthContext = React.createContext();
 export class Provider extends React.Component {
   state = {
     isAuthenticated: false,
-    user_id: 'initial',
+    user_id: 1,
     screenshot_key: 'initial context value',
   };
 
