@@ -77,10 +77,9 @@ class Home extends Component {
           fk_project_id: project_id,
         }).then((data) => {
           // Save screenshot into context
-          console.log(data.key); // This will be removed before merging, left here for testing.
           setScreenshotKey(data.key);
-            this.props.history.push('/projects'); // this will be enabled before merging.
-          this.setState({screenshotKey: data.key})
+
+          this.props.history.push('/projects');
         });
         // If user wants mobile size screenshot
       } else {
@@ -94,9 +93,8 @@ class Home extends Component {
           fk_project_id: project_id,
         }).then((data) => {
           // Save screenshot into context
-          console.log(data.key); // This will be removed before merging, left here for testing.
           setScreenshotKey(data.key);
-          this.props.history.push('/projects'); // this will be enabled before merging.
+          this.props.history.push('/projects');
         });
       }
     });
