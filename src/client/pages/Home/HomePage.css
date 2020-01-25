@@ -81,8 +81,8 @@ body {
   }
 
   .mobilemenu-menuwrap {
-    display: block;
-    position: initial;
+    /* display: block;
+    position: initial; */
     /* display:none; Something is off when this is turned on, so for now I just disable it. Needs to be fixed! */
   }
 
