@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../Header/Header.Component';
-import FormLoginRegister from '../FormLoginRegister/FormLoginRegister.component';
+import FormLoginRegister from '../FormloginRegister/FormLoginRegister.component';
 import imageLogin from '../../assets/images/imageLogin.jpg';
 import FormLogin from '../FormLogin/FormLogin.component';
 import './LoginPage.css';
