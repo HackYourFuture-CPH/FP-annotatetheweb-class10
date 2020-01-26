@@ -35,6 +35,7 @@ class Home extends Component {
     this.state = {
       desktopSize: true,
       screenshotUrl: '',
+      // eslint-disable-next-line react/no-unused-state
       screenshotImage: ''
     };
   }
