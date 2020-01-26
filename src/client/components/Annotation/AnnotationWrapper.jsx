@@ -1,6 +1,5 @@
 import React from 'react';
 import CustomAnnotation from './CustomAnnotation.component';
-import Consumer from '../../context/AuthContext';
 
 const onSave = (data, title, description, screenshotId) => {
   fetch('http://localhost:3000/api/annotations/', {

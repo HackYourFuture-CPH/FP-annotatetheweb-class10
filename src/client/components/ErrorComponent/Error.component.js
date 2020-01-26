@@ -1,6 +1,7 @@
 import React from 'react';
 import './Error.css';
 
+// eslint-disable-next-line no-empty-pattern
 const HomePageError = ({}) => {
   return (
     <div id="error">
