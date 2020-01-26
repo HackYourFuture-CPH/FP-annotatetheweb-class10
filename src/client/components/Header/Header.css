@@ -20,4 +20,9 @@
     font-size: 20px;
     padding-left: 0;  
   }
+
+  .header {
+    padding-left: 0;
+    justify-content: none;
+  }
 }

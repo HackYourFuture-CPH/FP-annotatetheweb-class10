@@ -82,12 +82,6 @@ class ProjectPage extends Component {
             <div>
               <div className="project-page-container">
               <SidebarMenu />
-              <div className="mobilemenu-menuwrap">
-                <div className="header-mobile">
-                  <Header title ={headerTitle}/>
-                </div>
-                <MenuButton />
-              </div>
               <div className="screenshot-image-container">
                 <AnnotationWrapper screenshotId={1}
                 screenshotURL ="https://annotatetheweb.z16.web.core.windows.net/1l2w5s/screenshot.jpg"

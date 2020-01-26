@@ -10,6 +10,7 @@ body {
   justify-content: space-between;
   margin-left: 4rem;
   margin-right: 4rem;
+  margin-top: -1rem;
   position: relative;
   z-index: 2;
 }
@@ -79,9 +80,6 @@ body {
     display: none;
   }
 
-  .mobilemenu-menuwrap {
-  }
-
   .home-page-image {
     display: none;
   }
@@ -98,8 +96,6 @@ body {
 
   .toggle-btn {
     margin-top: 0;
-    width: 50%;
-    margin: 0 auto;
   }
 
   .url-Input {
@@ -116,7 +112,9 @@ body {
   }
 
   .urlToggleBtn-wrapper {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .annotate-btn {
@@ -155,6 +153,6 @@ body {
   }
 
   .mobilemenu-menu {
-    width: 100vw;
+    width: 100%;
   }
 }
