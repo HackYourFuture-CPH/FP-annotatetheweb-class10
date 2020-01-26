@@ -18,6 +18,7 @@ import MobileMenu from '../../components/MobileMenu/MobileMenu.component';
 import { themeContent } from '../../components/theme';
 import './HomePage.css';
 
+
 class Home extends Component {
  hyfLogo = {
     src: hyf,
@@ -36,6 +37,7 @@ class Home extends Component {
       password: '',
       desktopSize: true,
       screenshotUrl: '',
+      screenshotImage: ''
     };
   }
 
@@ -53,15 +55,13 @@ class Home extends Component {
       });
   };
 
-  onInputChange = (event) => {
-    this.setState({ [event.target.name]: event.target.value });
+  onInputChange = (event) => {    
+      this.setState({ [event.target.name]: event.target.value });    
   };
 
   changeScreenshotSize = (val) => {
     this.setState({ desktopSize: val });
-  };
-
-  
+  };  
 
   createScreenshot = (project_id, value, setScreenshotKey) => {
     this.setState({ screenshotUrl: value }, () => {
@@ -78,6 +78,7 @@ class Home extends Component {
         }).then((data) => {
           // Save screenshot into context
           setScreenshotKey(data.key);
+
           this.props.history.push('/projects');
         });
         // If user wants mobile size screenshot
@@ -114,7 +115,7 @@ class Home extends Component {
         this.createScreenshot(project_id, value, setScreenshotKey),
       );
   };
-
+    
   sendUrl = (
     value,
     isAuthenticated,
@@ -129,9 +130,10 @@ class Home extends Component {
     } else {
       // If user is not authenticated, use user_id=1 which is 'Random user'.
       this.createProjectAndScreenshot(value, 1, setScreenshotKey);
-    }
+    }    
   };
-
+    
+    
   onSubmit = () => {
     console.log('This feature is not ready yet, try it on desktop version.');
   };

@@ -1,0 +1,105 @@
+.project-page-container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.project-page-rightside-container{
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    max-width: 300px;
+    height: 100%;
+
+    box-shadow: -2px 0px 10px 1px #AAAAAA;
+}
+
+.project-page-button{
+    font-family: 'open sans';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 34px;
+    color: #2d2e36;
+    background-color: white;
+    margin-bottom: 10px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+.register-button{
+    cursor: pointer;
+}
+.screenshot-image-container, .annotation-container{
+    width: 60%;
+    margin-left: 50px;
+    height: 85vh;
+    position: absolute;
+}
+
+.mobilemenu-menuwrap{
+    display: none;
+}
+.no-comment-message{
+margin-top: 1rem;
+width: 50%;
+font-family: sans-serif;
+background-color: #ffffff;
+position: relative;
+}
+.login-block{
+    border-bottom: solid 2px #CDE769;
+    margin-bottom: 30px;
+    padding: 10px;
+}
+@media (max-width: 566px) {
+    .project-page-container{
+        display: block;
+    }
+    .screenshot-image {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -3;
+        margin-top: 40px;
+      }
+    .project-page-footer{
+        display: none;
+    }
+    .mobilemenu-menuwrap{
+        display: flex;
+        flex-direction: row;
+        height: 10%;
+        position: absolute;
+        justify-content: center;
+        background-color: white;
+        border-bottom: solid 0.05rem rgb(125, 125, 139);
+        box-shadow: 5px 5px 5px lightgray;
+    }
+    .header-mobile{
+        margin-left: 0rem;
+        margin-top: 0px;
+        margin-right: 200px;
+    }
+    .container-menu-button {
+        display: inline-block;
+        cursor: pointer;
+        margin-top: 0.8rem;
+        margin-right: 3rem;
+      }
+
+    .project-page-rightside-innerContainer{
+        display: none;
+    }
+    .comment-container{
+    position: absolute;
+    z-index: 4;
+    margin-top: 400px;
+    }
+    .no-comment-message{
+    margin-top: 100px;
+    }
+}

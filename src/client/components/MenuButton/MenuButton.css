@@ -1,0 +1,24 @@
+.container-menu-button{
+    width: 35px;
+    height: 25px;
+    outline: none;
+    border: none;
+}
+.line-top, .line-middle, .line-bottom {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  .change .line-top {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+  }
+
+  .change .line-middle {opacity: 0;}
+
+  .change .line-bottom {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+  }
