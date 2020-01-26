@@ -65,7 +65,6 @@ class ProjectPage extends Component {
       alt: 'profile image',
     };
     const headerTitle = 'Annotate the web';
-   
     return (
       <Consumer>
         {() => {
