@@ -2,7 +2,6 @@ exports.up = function(knex) {
   return knex.schema.createTable('users', (table) => {
     table.increments('user_id').notNullable();
     table.string('name').notNullable();
-    table.string('email').notNullable();
     table
       .integer('fk_role_id')
       .unsigned()
