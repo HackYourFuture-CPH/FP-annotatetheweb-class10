@@ -51,7 +51,6 @@ class CustomAnnotation extends Component {
       title: data.title,
       description: data.description,
     });
-    localStorage.setItem('annotations', JSON.stringify(this.state.annotations));
   };
 
   render() {
