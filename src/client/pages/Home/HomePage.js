@@ -37,6 +37,7 @@ class Home extends Component {
       password: '',
       desktopSize: true,
       screenshotUrl: '',
+      // eslint-disable-next-line react/no-unused-state
       screenshotImage: ''
     };
   }

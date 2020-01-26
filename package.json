@@ -58,6 +58,7 @@
     "react-image-annotation": "^0.9.10",
     "react-router-dom": "^5.0.1",
     "react-scripts": "^3.3.0",
+    "react-share": "^4.0.1",
     "react-social-login-buttons": "^3.0.0",
     "serve-favicon": "^2.5.0",
     "swagger-ui-express": "^4.1.2",

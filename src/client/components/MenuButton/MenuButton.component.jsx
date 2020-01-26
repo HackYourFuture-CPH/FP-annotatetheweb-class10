@@ -4,14 +4,14 @@ import './MenuButton.css';
 const MenuButton = ({ buttonClassName }) => {
   return (
     <button type="button" className= {buttonClassName} onClick={onClickHandle}>
-        <div className="line-top"></div>
-        <div className="line-middle"></div>
-        <div className="line-bottom"></div>
+        <div className="line-top" />
+        <div className="line-middle" />
+        <div className="line-bottom" />
     </button>
   );
 };
 
 const onClickHandle=()=> {
-    this.classList.toggle("change");
+    this.classList.toggle('change');
   }
 export default MenuButton;

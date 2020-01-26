@@ -12,8 +12,6 @@ import MessageParagraph from '../../components/MessageParagraph/MessageParagraph
 import BlogCardList from '../../container/BlogCardList/BlogCardList.component';
 import { Consumer } from '../../context/AuthContext';
 import Loading from '../../components/Loading/Loading.component';
-import HomePageImage from '../../assets/images/HomePageImage.png';
-import CustomAnnotation from '../../components/Annotation/CustomAnnotation.component';
 import AnnotationWrapper from '../../components/Annotation/AnnotationWrapper';
 
 class ProjectPage extends Component {
@@ -27,6 +25,7 @@ class ProjectPage extends Component {
       data: {},
     };
   }
+
   onChange = (annotation, value = {}) => {
     if (value.title !== undefined && value.description !== undefined) {
       this.setState({
@@ -41,6 +40,7 @@ class ProjectPage extends Component {
       this.setState({ annotation });
     }
   };
+
   onSubmit = () => {
     const { annotation, annotations, data } = this.state;
     this.setState({
@@ -64,15 +64,10 @@ class ProjectPage extends Component {
       src: samplePhoto,
       alt: 'profile image',
     };
-    const headerTitle = "Annotate the web";
-    const backgroundImage = {
-      src: HomePageImage,
-      alt: 'sample screenshot',
-    };
-    //const screenshotImage= this.props;
+    const headerTitle = 'Annotate the web';
     return (
       <Consumer>
-        {({ isAuthenticated, user_id, screenshot_key, setScreenshotKey }) => {
+        {() => {
           return(
             <div>
             <div>

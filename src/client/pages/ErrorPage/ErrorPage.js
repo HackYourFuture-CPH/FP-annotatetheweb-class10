@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './ErrorPage.css';
 import Header from '../../components/Header/Header.Component';
 import ErrorImage from '../../assets/images/ErrorImage.jpg';
