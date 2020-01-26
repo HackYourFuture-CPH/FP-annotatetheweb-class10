@@ -85,6 +85,30 @@
         }
       }
     },
+    "/users/email/{email}": {
+      "get": {
+        "tags": ["Users"],
+        "summary": "Get user_id by email",
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "path",
+            "description": "The unique email",
+            "required": true,
+            "type": "string",
+            "properties": {
+              "name": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
     "/screenshots/": {
       "post": {
         "tags": ["Screenshots"],

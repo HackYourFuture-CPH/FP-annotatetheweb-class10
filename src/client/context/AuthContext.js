@@ -6,11 +6,7 @@ const AuthContext = React.createContext();
 export class Provider extends React.Component {
   state = {
     isAuthenticated: false,
-    user_id: '1',
-    screenshot_key: 'initial context value',
   };
-
-
 
   componentDidMount() {
     firebase.auth().onAuthStateChanged((user) => {
@@ -26,18 +22,11 @@ export class Provider extends React.Component {
     });
   }
 
-  setScreenshotKey = (key) => {
-    this.setState({ screenshot_key: key });
-  };
-
   render() {
     return (
       <AuthContext.Provider
         value={{
-          isAuthenticated: this.state.isAuthenticated,
-          user_id: this.state.user_id,
-          screenshot_key: this.state.screenshot_key,
-          setScreenshotKey: this.setScreenshotKey,
+          isAuthenticated: this.state.isAuthenticated
         }}
       >
         {this.props.children}
