@@ -229,7 +229,7 @@ class Home extends Component {
                   </div>
                   <div className="submit-btn-wrapper">
                     <button className="annotate-btn" 
-                    onClick={() => this.onSubmit({ isAuthenticated, user_id, screenshot_key, setScreenshotKey })}
+                    onClick={() => this.onSubmit({ isAuthenticated })}
                         >
                       Annotate
                     </button>
