@@ -24,6 +24,7 @@ const createUser = async (body) => {
       name: body.name,
       fk_role_id: body.fk_role_id,
       user_name: body.user_name,
+      email: body.email
     });
   }
   return { message: 'User has already created.' };
@@ -36,9 +37,17 @@ const deleteUserById = (userId) => {
     .del();
 };
 
+// Get user_id by email
+const getUserIdByEmail = (email) => {
+  return knex('users')
+  .where({email})
+  .select('user_id')
+}
+
 module.exports = {
   getUsers,
   getUserById,
   createUser,
   deleteUserById,
+  getUserIdByEmail
 };
