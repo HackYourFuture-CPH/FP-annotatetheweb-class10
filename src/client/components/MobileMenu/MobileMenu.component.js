@@ -10,7 +10,7 @@ const MobileMenu = ({ onClick }) => {
     <div className='mobilemenu-menuwrap'>
       <input type='checkbox' className='mobilemenu-toggler' />
       <div className='mobilemenu-hamburgur'>
-        <span></span>
+        <span/>
       </div>
       <div className='mobilemenu-menu'>
         <div>
@@ -21,7 +21,7 @@ const MobileMenu = ({ onClick }) => {
                 <a href='/'>Annotate</a>
               </li>
               <li>
-                <a href='http://codeart.dk/about/' target='_blank'>About</a>
+                <a href='http://codeart.dk/about/' target='_blank' rel="noopener noreferrer">About</a>
               </li>
               <li>
                 <a href='/login'>Login</a>

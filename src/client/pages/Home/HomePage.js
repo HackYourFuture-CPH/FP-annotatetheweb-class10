@@ -145,6 +145,10 @@ class Home extends Component {
     )
   };
 
+  inputChange = (event) =>  {
+    this.setState({ urlValue: event.target.value });
+  }
+  
    // eslint-disable-next-line class-methods-use-this
    async postData (url = '', data = {}) {
     const response = await fetch(url, {
@@ -158,10 +162,6 @@ class Home extends Component {
       body: JSON.stringify(data),
     });
     return response.json();
-  }
-
-  inputChange = (event) =>  {
-    this.setState({ urlValue: event.target.value });
   }
 
   render() {
