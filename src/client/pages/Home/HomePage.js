@@ -18,6 +18,7 @@ import MobileMenu from '../../components/MobileMenu/MobileMenu.component';
 import { themeContent } from '../../components/theme';
 import './HomePage.css';
 
+
 class Home extends Component {
   hyfLogo = {
     src: hyf,
@@ -34,6 +35,7 @@ class Home extends Component {
     this.state = {
       desktopSize: true,
       screenshotUrl: '',
+      screenshotImage: ''
     };
   }
 
@@ -118,7 +120,8 @@ class Home extends Component {
       this.createProjectAndScreenshot(value);
     }
   };
-
+    
+    
   onSubmit = () => {
     console.log('This feature is not ready yet, try it on desktop version.');
   };
