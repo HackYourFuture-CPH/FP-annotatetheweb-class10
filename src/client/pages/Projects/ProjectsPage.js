@@ -7,7 +7,7 @@ import Button from '../../components/Button/Button.component';
 import Footer from '../../components/Footer/Footer.component';
 import samplePhoto from '../../assets/images/profile.png';
 import './ProjectsPage.css';
-import MenuButton from '../../components/MenuButton/MenuButton.component';
+// import MenuButton from '../../components/MenuButton/MenuButton.component';
 import MessageParagraph from '../../components/MessageParagraph/MessageParagraph.component';
 import BlogCardList from '../../container/BlogCardList/BlogCardList.component';
 import { Consumer } from '../../context/AuthContext';

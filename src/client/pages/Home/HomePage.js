@@ -36,7 +36,7 @@ class Home extends Component {
       desktopSize: true,
       screenshotUrl: '',
       urlValue: '',
-      screenshotImage: ''
+      // screenshotImage: ''
     };
   }
 
