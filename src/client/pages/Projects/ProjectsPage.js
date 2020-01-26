@@ -12,6 +12,7 @@ import MessageParagraph from '../../components/MessageParagraph/MessageParagraph
 import BlogCardList from '../../container/BlogCardList/BlogCardList.component';
 import { Consumer } from '../../context/AuthContext';
 import Loading from '../../components/Loading/Loading.component';
+import HomePageImage from '../../assets/images/HomePageImage.png';
 import AnnotationWrapper from '../../components/Annotation/AnnotationWrapper';
 
 class ProjectPage extends Component {
@@ -64,8 +65,13 @@ class ProjectPage extends Component {
       src: samplePhoto,
       alt: 'profile image',
     };
+
     const headerTitle = 'Annotate the web';
-   
+    // eslint-disable-next-line no-unused-vars
+    const backgroundImage = {
+      src: HomePageImage,
+      alt: 'sample screenshot',
+    };
     return (
       <Consumer>
         {() => {

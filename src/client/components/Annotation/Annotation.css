@@ -17,13 +17,13 @@
   animation: fadeInScale 0.31s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transform-origin: top left;
   overflow: hidden;
-  position: absolute; 
+  position: absolute;
+  height: auto;
 }
 
 .annotation-form {
   display: flex;
   flex-direction: column;
-  width: 40%;
 }
 
 .annotation-form-input {
@@ -36,7 +36,7 @@
 
 .annotation-form-btnWrapper {
   display: flex;
-  width: 70%;
+  width: 50%;
   align-self: flex-end;
 }
 
