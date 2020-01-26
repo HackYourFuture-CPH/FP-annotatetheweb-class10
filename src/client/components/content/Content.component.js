@@ -31,7 +31,7 @@ const Content = ({
           textAlign: theme.textAlign,
         }}
       >
-        made by:
+        Made by:
       </h2>
       <div
         style={{ background: theme.colors.primary }}

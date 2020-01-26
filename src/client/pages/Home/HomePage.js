@@ -35,8 +35,8 @@ class Home extends Component {
     this.state = {
       desktopSize: true,
       screenshotUrl: '',
-      // eslint-disable-next-line react/no-unused-state
-      screenshotImage: ''
+      urlValue: '',
+      // screenshotImage: ''
     };
   }
 
@@ -121,11 +121,20 @@ class Home extends Component {
       this.createProjectAndScreenshot(value);
     }
   };
-    
-    
-  onSubmit = () => {
-    console.log('This feature is not ready yet, try it on desktop version.');
+
+  onSubmit = (value) => {
+    const { isAuthenticated } = value;
+
+    this.sendUrl(
+      this.state.urlValue,
+      isAuthenticated,
+    )
   };
+
+  inputChange = (event) =>  {
+    this.setState({ urlValue: event.target.value });
+  }
+
 
   onLogOut = () => {
     const user_id = 1;
@@ -184,7 +193,7 @@ class Home extends Component {
                     onClick={this.onRegisterClick}
                   />
                 )}
-                <MobileMenu />
+                <MobileMenu onClick={this.onRegisterClick}/>
               </div>
               <div className="home-page-image-wrapper">
                 <img
@@ -201,7 +210,13 @@ class Home extends Component {
                   <div className="url-Input">
                     <UrlInput
                       placeholder="Insert URL to annotate..."
-                      onEnter={(value) => this.sendUrl(value, isAuthenticated)}
+                      onEnter={(value) =>
+                        this.sendUrl(
+                          value,
+                          isAuthenticated,                  
+                        )
+                      }
+                      onChange={this.inputChange}
                     />
                   </div>
                   <div className="toggle-btn">
@@ -213,7 +228,9 @@ class Home extends Component {
                     />
                   </div>
                   <div className="submit-btn-wrapper">
-                    <button className="annotate-btn" onClick={this.onSubmit}>
+                    <button className="annotate-btn" 
+                    onClick={() => this.onSubmit({ isAuthenticated })}
+                        >
                       Annotate
                     </button>
                   </div>

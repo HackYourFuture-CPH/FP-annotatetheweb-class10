@@ -27,3 +27,9 @@
   width: 5rem;
   margin-left: 1rem;
 }
+
+@media (max-width: 722px) {
+  .footer-btn {
+    position: relative;
+  }
+}

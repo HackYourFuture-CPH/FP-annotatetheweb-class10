@@ -7,7 +7,7 @@ import Button from '../../components/Button/Button.component';
 import Footer from '../../components/Footer/Footer.component';
 import samplePhoto from '../../assets/images/profile.png';
 import './ProjectsPage.css';
-import MenuButton from '../../components/MenuButton/MenuButton.component';
+// import MenuButton from '../../components/MenuButton/MenuButton.component';
 import MessageParagraph from '../../components/MessageParagraph/MessageParagraph.component';
 import BlogCardList from '../../container/BlogCardList/BlogCardList.component';
 import { Consumer } from '../../context/AuthContext';
@@ -84,12 +84,6 @@ class ProjectPage extends Component {
             <div>
               <div className="project-page-container">
               <SidebarMenu />
-              <div className="mobilemenu-menuwrap">
-                <div className="header-mobile">
-                  <Header title ={headerTitle}/>
-                </div>
-                <MenuButton />
-              </div>
               <div className="screenshot-image-container">
                 <AnnotationWrapper screenshotId={1}
                 screenshotURL ="https://annotatetheweb.z16.web.core.windows.net/1l2w5s/screenshot.jpg"
