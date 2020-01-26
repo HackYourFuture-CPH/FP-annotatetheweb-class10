@@ -1,4 +1,5 @@
 import React from 'react';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { FacebookShareButton, FacebookIcon } from 'react-share';
 
 const FacebookButton =({ url, title })=> {
