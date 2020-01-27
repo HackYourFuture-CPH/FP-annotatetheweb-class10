@@ -30,26 +30,9 @@ class ProjectPage extends Component {
   }
 
   // eslint-disable-next-line react/sort-comp
-  getScreenshotURL = () => {
-    fetch(
-      `https://api.annotatetheweb.com/screenshot/1.0/GetScreenshot?key=${this.state.screenshotsKey}`,
-      {
-        method: 'GET',
-        mode: 'cors',
-        cache: 'no-cache',
-        credentials: 'same-origin',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      },
-    )
-      .then((result) => result.json())
-      .then((data) => {
-        return data.url;
-      })
-      .catch((error) => {
-        throw error;
-      });
+  getScreenshotURL = (screenshotKey) => {
+    const apiEndpoint = 'https://annotatetheweb.z16.web.core.windows.net/';
+    return `${apiEndpoint + screenshotKey}/screenshot.jpg`;
   };
 
   render() {
@@ -78,7 +61,9 @@ class ProjectPage extends Component {
                     <div className="screenshot-image-container">
                       <AnnotationWrapper
                         screenshotId={19}
-                        screenshotURL={this.getScreenshotURL()}
+                        screenshotURL={this.getScreenshotURL(
+                          this.state.screenshotsKey,
+                        )}
                       />
                     </div>
                     <div className="project-page-rightside-container">
