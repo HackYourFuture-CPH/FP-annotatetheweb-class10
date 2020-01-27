@@ -4,12 +4,12 @@ import ShareLink from '../ShareLink/ShareLink.component';
 import MediaButtons from '../MediaButtons/MediaButtons.component';
 import './ShareLinkDialog.css';
 
-function ShareLinkDialog(copyURL = { copyURL }, title = { title }) {
+function ShareLinkDialog(props) {
   return (
     // eslint-disable-next-line react/react-in-jsx-scope
     <div className="shareLink-dialog">
-      <ShareLink copyURL={copyURL} />
-      <MediaButtons url={copyURL} title={title} />
+      <ShareLink copyURL={props.copyURL}/>
+      <MediaButtons url={props.copyURL} title={props.title} />
     </div>
   );
 }

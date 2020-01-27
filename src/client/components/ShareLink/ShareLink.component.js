@@ -16,7 +16,6 @@ class ShareLink extends Component {
     this.setState({
       copyURL,
     });
-    console.log({ copyURL });
   };
 
   render() {
@@ -32,7 +31,10 @@ class ShareLink extends Component {
             onChange={this.handleInputUrlChange}
           />
         </label>
-        <div className="shareLink-viaLink-btnCopy" onClick={this.handleCopyClick}>
+        <div
+          className="shareLink-viaLink-btnCopy"
+          onClick={this.handleCopyClick}
+        >
           <span>Copy</span>
         </div>
       </div>
