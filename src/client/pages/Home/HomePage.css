@@ -11,6 +11,8 @@ body {
   margin-left: 4rem;
   margin-right: 4rem;
   margin-top: -1rem;
+  position: relative;
+  z-index: 2;
 }
 .image-wrapper {
   width: 95%;
@@ -20,7 +22,9 @@ body {
 
 .home-page-image-wrapper {
   width: 100%;
-  margin-top: -1rem;
+  margin-top: -3rem;
+  position: relative;
+  z-index: 0;
 }
 
 .home-page-image {
@@ -76,12 +80,6 @@ body {
     display: none;
   }
 
-  .mobilemenu-menuwrap {
-    display: block;
-    position: initial;
-    /* display:none; Something is off when this is turned on, so for now I just disable it. Needs to be fixed! */
-  }
-
   .home-page-image {
     display: none;
   }
@@ -91,15 +89,13 @@ body {
   }
 
   .homeheader-wrapper {
-    margin-left: 1rem;
+    margin-left: 30px;
     margin-right: 0;
     display: block;
   }
 
   .toggle-btn {
     margin-top: 0;
-    width: 50%;
-    margin: 0 auto;
   }
 
   .url-Input {
@@ -116,17 +112,20 @@ body {
   }
 
   .urlToggleBtn-wrapper {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .annotate-btn {
+    min-height: 35px;
     display: block;
     margin: 1rem auto;
     border-radius: 40px;
     border: unset;
     background-color: #cde769;
     font-family: 'Open Sans';
-    padding: 0.8rem 2rem;
+    padding: 0 2rem;
     margin-bottom: 2rem;
   }
 
@@ -140,12 +139,12 @@ body {
     margin: auto;
   }
 
-  .footer-wrapper {
-    display: none;
-  }
-
   .content-wrapper {
     padding-bottom: 0;
+  }
+
+  .content-text {
+    margin: 0 10px;
   }
 
   .mobilemenu-menu > div {
@@ -154,6 +153,6 @@ body {
   }
 
   .mobilemenu-menu {
-    width: 100vw;
+    width: 100%;
   }
 }

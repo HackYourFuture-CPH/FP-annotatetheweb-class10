@@ -8,6 +8,7 @@ const DropDown = ({ titleArray, onClickHandle }) => {
       key={element.id}
       title={element.title}
       onClickHandle={onClickHandle}
+      buttonClassName="button"
     />
   ));
   return (

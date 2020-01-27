@@ -31,8 +31,13 @@ function AnnotationWrapper(props) {
     <CustomAnnotation
       screenshot={backgroundImage}
       onSave={({ data, title, description }) =>
-        onSave(data, title, description, props.screenshotId)
-      }
+        onSave(data, title, description, props.screenshotId)}
+        onChange ={props.onChange}
+        onSubmit={props.onSubmit}
+        type={props.type}
+        annotations={props.annotations}
+        annotation={props.annotation}
+        data={props.data}
     />
   );
 }

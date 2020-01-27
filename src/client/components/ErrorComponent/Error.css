@@ -1,0 +1,16 @@
+.notFoundTitle {
+  position: absolute;
+  font-size: 3rem;
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+  color: rgb(39, 34, 34);
+  text-shadow: 0 1px 0 rgba(194, 207, 134, 0.616), 0 9px 0 transparent,
+    0 10px 10px rgba(58, 35, 35, 0.4);
+  height: 50%;
+  margin: auto;
+  text-align: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 5rem;
+}

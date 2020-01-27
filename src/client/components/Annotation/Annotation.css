@@ -17,9 +17,40 @@
   animation: fadeInScale 0.31s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transform-origin: top left;
   overflow: hidden;
+  position: absolute;
+  height: auto;
 }
 
 .annotation-form {
   display: flex;
   flex-direction: column;
+}
+
+.annotation-form-input {
+  background: #ffffff;
+  border: 2px solid #cde769;
+  box-sizing: border-box;
+  border-radius: 5px;
+  transform: matrix(1, 0.01, 0, 1, 0, 0);
+}
+
+.annotation-form-btnWrapper {
+  display: flex;
+  width: 50%;
+  align-self: flex-end;
+}
+
+.annotation-form-btn {
+  width: 7rem;
+  height: 2rem;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+}
+
+.annotation-form-btn-save {
+  background: #a3b93a;
+}
+
+.annotation-form-btn-cancel {
+  background: #ffffff;
 }
