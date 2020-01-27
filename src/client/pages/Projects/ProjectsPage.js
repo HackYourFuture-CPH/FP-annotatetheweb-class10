@@ -20,13 +20,43 @@ class ProjectPage extends Component {
     super();
     this.state = {
       user: null,
-      screenshotImage: '',
+      isReady: false,
       annotations: [],
       annotation: {},
       data: {},
+      screenshot_key: null,
+      screenshotId: null
     };
   }
+  componentDidMount() {
+    const annotations = JSON.parse(localStorage.getItem('annotations')) || [];
+    this.setState({ annotations });
+    const screenshot_key = JSON.parse(localStorage.getItem('screenshot_key'));
+    this.setState({screenshot_key});
+    const fetchInterval = setInterval(() => {
+      if(!this.state.isReady)
+      {
+        const screenshotImage = this.getScreenshotURL(screenshot_key);
+        if(screenshotImage)
+        this.setState({ isReady: true });
+      }
+      else{
 
+        clearInterval(fetchInterval);
+      }
+
+    }, 1000);
+  }
+  // eslint-disable-next-line react/sort-comp
+   getScreenshotURL = (screenshotKey) => {
+     const screenshotImage =
+     fetch(
+       `https://annotatetheweb.z16.web.core.windows.net/${screenshotKey}/screenshot.jpg`)
+       return screenshotImage;
+   };
+   getScreenshotId = (key) => {
+     this.state.screenshotId = fetch(`localhost:3000/screenshots/${screenshot_key}`);
+   }
   onChange = (annotation, value = {}) => {
     if (value.title !== undefined && value.description !== undefined) {
       this.setState({
@@ -52,13 +82,12 @@ class ProjectPage extends Component {
       }),
     });
 
-    this.props.onSave({
-      data: annotation.geometry,
-      title: data.title,
-      description: data.description,
-    });
   };
-
+  /*this.props.onSave({
+    data: annotation.geometry,
+    title: data.title,
+    description: data.description,
+  });*/
 
   render(){
     const profile = {
@@ -78,15 +107,15 @@ class ProjectPage extends Component {
           return(
             <div>
             <div>
-                {this.state.screenshotImage&&<Loading />}
+                {!this.state.isReady&&<Loading />}
               </div>
-            {!this.state.screenshotImage&&
+            {this.state.isReady&&
             <div>
               <div className="project-page-container">
               <SidebarMenu />
               <div className="screenshot-image-container">
-                <AnnotationWrapper screenshotId={1}
-                screenshotURL ="https://annotatetheweb.z16.web.core.windows.net/1l2w5s/screenshot.jpg"
+                <AnnotationWrapper screenshotId={this.state.screenshotId}
+                screenshotURL ={`https://annotatetheweb.z16.web.core.windows.net/6o0xx6/screenshot.jpg`}
                 onChange ={this.onChange}
                 onSubmit ={this.onSubmit}
                 type={this.state.type}
