@@ -31,6 +31,8 @@ class EditorComponent extends Component {
     this.props.onChange(this.props.annotation, data);
   };
 
+  // handleCancelClick = () => {};
+
   render() {
     return (
       <div className="annotation-form">
@@ -38,16 +40,31 @@ class EditorComponent extends Component {
           type="title"
           onChange={this.onChangeHandlerTitle}
           placeholder="title"
+          className="annotation-form-input"
         />
         <textarea
           rows="5"
           cols="50"
           onChange={this.onChangeHandlerDescription}
           placeholder="description"
+          className="annotation-form-input"
         />
-        <button type="submit" onClick={this.props.onSubmit}>
-          Submit
-        </button>
+        <div className="annotation-form-btnWrapper">
+          <button
+            type="submit"
+            className="annotation-form-btn annotation-form-btn-cancel"
+            onClick={this.handleCancelClick}
+          >
+            Cancel
+          </button>
+          <button
+            type="submit"
+            className="annotation-form-btn annotation-form-btn-save"
+            onClick={this.props.onSubmit}
+          >
+            Save
+          </button>
+        </div>
       </div>
     );
   }

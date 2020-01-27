@@ -3,69 +3,54 @@
   text-shadow: 2px 2px 5px gray;
 }
 .mobilemenu-menuwrap {
-  position: fixed;
+  position: absolute;
   top: 0;
-  right: 0;
+  right: 25px;
   z-index: 1;
 }
 .mobilemenu-toggler {
   position: absolute;
   top: 0;
   right: 0;
-  z-index: 2;
-  cursor: pointer;
-  width: 50px;
-  height: 50px;
+  z-index: 3;
+  width: 40px;
+  height: 26px;
   opacity: 0;
+  
 }
 .mobilemenu-hamburgur {
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 1;
-  width: 30px;
-  height: 30px;
-  padding: 1rem;
-  background: red;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.mobilemenu-lines {
   position: relative;
-  width: 100%;
-  height: 2px;
-  background-color: black;
-  display: flex;
-  justify-content: center;
-  transition: all 0.4s ease;
+  z-index: 2;
+  width: 40px;
 }
-.mobilemenu-lines::before,
-.mobilemenu-lines::after {
+.mobilemenu-hamburgur::before,
+.mobilemenu-hamburgur::after,
+.mobilemenu-hamburgur span {
   content: "";
-  position: absolute;
+  display: block;
   z-index: 1;
-  top: -7px;
-  width: 100%;
-  height: 2px;
-  background: inherit;
+  height: 4px;
+  background-color: #595959;
+  margin-bottom: 7px;
+  border-radius: 2px;
 }
 .mobilemenu-lines::after {
   top: 7px;
 }
 
 /* Toggler animate */
-.mobilemenu-toggler:checked + .mobilemenu-hamburgur > div {
-  transform: rotate(135deg);
+.mobilemenu-toggler:checked + .mobilemenu-hamburgur > span {
+  transform: rotate(180deg);
+  margin-top: 18px;
 }
 /* Turn line to X */
-.mobilemenu-toggler:checked + .mobilemenu-hamburgur > div::before,
-.mobilemenu-toggler:checked + .mobilemenu-hamburgur > div::after {
-  top: 0;
-  transform: rotate(90deg);
+.mobilemenu-toggler:checked + .mobilemenu-hamburgur::after {
+  transform: rotate(139deg);
+  margin-top: -33px;
 }
-.mobilemenu-toggler:checked:hover + .mobilemenu-hamburgur > div {
-  transform: rotate(225deg);
+.mobilemenu-toggler:checked + .mobilemenu-hamburgur::before {
+  transform: rotate(41deg);
+  margin-top: 10px;
 }
 .mobilemenu-toggler:checked ~ .mobilemenu-menu {
   visibility: visible;
@@ -80,6 +65,10 @@
   transition: opacity 0.4s ease;
 }
 
+.mobilemenu-toggler:checked ~ .mobilemenu-menu > div > div > ul {
+  padding-left: 0;
+}
+
 .mobilemenu-menu {
   position: fixed;
   top: 0;
@@ -89,26 +78,19 @@
   visibility: hidden;
   overflow: hidden;
   display: flex;
-  align-items: center;
   justify-content: center;
   background-color: white;
+  padding: 30px;
 }
 .mobilemenu-menu > div {
-  width: 200vw;
-  height: 200vw;
-  display: flex;
-  flex: none;
-  align-items: center;
-  justify-content: center;
+  width: 100vw;
+  height: 100vh;
   transform: scale(0);
   transition: all 0.4s ease;
 }
 .mobilemenu-menu > div > div {
-  text-align: center;
-  max-width: 90vw;
-  max-height: 100vh;
   opacity: 0;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.1s ease;
 }
 .mobilemenu-menu > div > div > ul > li {
   font-size: 18px;
@@ -125,17 +107,29 @@
 .mobilemenu-menu > div > div > ul > li > a {
   color: inherit;
   text-decoration: none;
-  transition: color 0.4s ease;
+  font-family: 'Open Sans' !important;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .mobilemenu-button {
   border-radius: 40px;
   background-color: white;
   border: 1px solid black;
-  width: 160px;
-  height: 40px;
+  padding: 5px 40px;
   color: black;
-  font-family: "Open Sans";
-  font-size: 18px;
-  margin-left: 40px;
+  font-family: 'Open Sans';
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.logos {
+  margin-top: 50px;
+  border-top: 2px solid black;
+}
+
+.logos img {
+  display: block;
+  width: 50%;
+  margin: 30px 0;
 }
