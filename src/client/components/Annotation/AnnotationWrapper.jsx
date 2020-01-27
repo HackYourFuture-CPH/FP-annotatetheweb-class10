@@ -39,7 +39,7 @@ function AnnotationWrapper(props) {
   const [numberOfTries, setnumberOfTries] = useState(0);
   const [errorMessage, seterrorMessage] = useState('');
 
-  const delay = 500;
+  const delay = 1000;
   const maxNumberOfTries = 10;
 
   useInterval(
