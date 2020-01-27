@@ -24,6 +24,7 @@ const onSave = (data, title, description, screenshotId) => {
 
 async function getScreenshot(url, setLoading, callback) {
   const response = await fetch(url);
+  // Check if image exists / is ready
   if (response.status === 200) {
     setLoading(false);
   }
@@ -41,6 +42,15 @@ function AnnotationWrapper(props) {
 
   const delay = 1000;
   const maxNumberOfTries = 10;
+
+  /**
+   *
+   * Using useInterval hook to pool for the screenshot to be ready from the server
+   * Checking if the status is 200 (ok) and then we stop checking
+   * While we check we add a loading component and if it fails to get ready
+   * we display a message and the user can try loading the image again
+   *
+   *  */
 
   useInterval(
     () => {
