@@ -20,14 +20,24 @@ class ProjectPage extends Component {
     user: null,
     screenshotImage: '',
     screenshotsKey: ' ',
+    annotations: [],
   };
 
   componentDidMount() {
     const screenshotsKey =
       JSON.parse(localStorage.getItem('screenshot_key')) || [];
-    // eslint-disable-next-line react/no-unused-state
     this.setState({ screenshotsKey });
+    // eslint-disable-next-line react/no-unused-state
+    const annotations = JSON.parse(localStorage.getItem('annotations')) || [];
+    this.setState({ annotations });
   }
+
+  getAnnotations = () => {
+    const annotations = JSON.parse(localStorage.getItem('annotations')) || [];
+    console.log(annotations);
+    this.setState({ annotations });
+    return annotations;
+  };
 
   // eslint-disable-next-line react/sort-comp
   getScreenshotURL = (screenshotKey) => {
@@ -41,7 +51,6 @@ class ProjectPage extends Component {
       alt: 'profile image',
     };
 
-    console.log(this.getScreenshotURL(this.state.screenshotsKey));
     const headerTitle = 'Annotate the web';
     // eslint-disable-next-line no-unused-vars
     const backgroundImage = {
@@ -93,7 +102,12 @@ class ProjectPage extends Component {
                         )}
                       </div>
                       {this.state.annotations ? (
-                        <BlogCardList annotations={this.state.annotations} />
+                        <BlogCardList
+                          annotations={
+                            JSON.parse(localStorage.getItem('annotations')) ||
+                            []
+                          }
+                        />
                       ) : (
                         <MessageParagraph
                           className="no-comment-message"
