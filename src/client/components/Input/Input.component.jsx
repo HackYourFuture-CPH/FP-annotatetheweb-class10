@@ -1,16 +1,14 @@
 import React from 'react';
-
+import MessageParagraph from '../MessageParagraph/MessageParagraph.component';
 const Input = (props) => {
   return (
     <div className="input-box">
       <label htmlFor={props.name} className="blog-card-label">
         {props.title}
       </label>
-      <input
+      <MessageParagraph
         className="blog-card-control"
-        type={props.inputType}
-        onKeyDown={props.handleInputChange}
-        placeholder={props.placeholder}
+        message={props.message}
       />
     </div>
   );
