@@ -9,6 +9,11 @@ class CustomAnnotation extends Component {
     data: {},
   };
 
+  componentDidMount() {
+    const annotations = JSON.parse(localStorage.getItem('annotations')) || [];
+    this.setState({ annotations });
+  }
+
   onChange = (annotation, value = {}) => {
     if (value.title !== undefined && value.description !== undefined) {
       this.setState({
@@ -26,13 +31,21 @@ class CustomAnnotation extends Component {
 
   onSubmit = () => {
     const { annotation, annotations, data } = this.state;
-    this.setState({
-      annotation: {},
-      annotations: annotations.concat({
-        geometry: annotation.geometry,
-        data: { ...data },
-      }),
-    });
+    this.setState(
+      {
+        annotation: {},
+        annotations: annotations.concat({
+          geometry: annotation.geometry,
+          data: { ...data },
+        }),
+      },
+      () => {
+        localStorage.setItem(
+          'annotations',
+          JSON.stringify(this.state.annotations),
+        );
+      },
+    );
 
     this.props.onSave({
       data: annotation.geometry,
@@ -51,7 +64,6 @@ class CustomAnnotation extends Component {
           type={this.state.type}
           value={this.state.annotation}
           onChange={this.onChange}
-          onSubmit={this.onSubmit}
           renderContent={({ annotation }) => {
             const { geometry } = annotation;
             return (
