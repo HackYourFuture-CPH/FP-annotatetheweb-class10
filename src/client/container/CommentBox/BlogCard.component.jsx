@@ -56,6 +56,7 @@ class BlogCard extends Component {
               placeholder="add comment..."
               type="input"
               handleInputChange={this.handleInputChange}
+              message={this.props.message}
             />
           </div>
           <CommentList inputValue={this.state.inputValue} />
