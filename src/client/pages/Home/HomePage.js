@@ -90,9 +90,14 @@ class Home extends Component {
         }).then((data) => {
           // Save screenshot into local storage
           const screenshot_key = data.key;
+          const screenshot_id = data.id;
           localStorage.setItem(
             'screenshot_key',
             JSON.stringify(screenshot_key),
+          );
+          localStorage.setItem(
+            'screenshot_id',
+            JSON.stringify(screenshot_id),
           );
           this.props.history.push('/projects');
         });
