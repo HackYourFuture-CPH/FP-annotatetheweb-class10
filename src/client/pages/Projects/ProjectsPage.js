@@ -20,13 +20,16 @@ class ProjectPage extends Component {
     user: null,
     screenshotImage: '',
     screenshotsKey: ' ',
+    screenshotId: null,
     annotations: [],
   };
 
   componentDidMount() {
     const screenshotsKey =
       JSON.parse(localStorage.getItem('screenshot_key')) || [];
-    this.setState({ screenshotsKey });
+    const screenshotId =
+      JSON.parse(localStorage.getItem('screenshot_id')) || null;
+    this.setState({ screenshotsKey, screenshotId });
     // eslint-disable-next-line react/no-unused-state
     const annotations = JSON.parse(localStorage.getItem('annotations')) || [];
     this.setState({ annotations });
@@ -69,7 +72,7 @@ class ProjectPage extends Component {
                     <SidebarMenu />
                     <div className="screenshot-image-container">
                       <AnnotationWrapper
-                        screenshotId={19}
+                        screenshotId={this.state.screenshotId}
                         screenshotURL={this.getScreenshotURL(
                           this.state.screenshotsKey,
                         )}
