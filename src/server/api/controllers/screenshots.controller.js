@@ -21,8 +21,8 @@ const createScreenshot = async (body) => {
   const response = await fetch(
     `https://api.annotatetheweb.com/screenshot/1.0/RequestScreenshot?url=${body.url}`,
     {
-      method: 'POST', // *GET, POST, PUT, DELETE, etc.
-      mode: 'cors', // no-cors, cors, *same-origin
+      method: 'POST', 
+      mode: 'cors',
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',

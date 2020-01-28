@@ -7,7 +7,6 @@ import Button from '../../components/Button/Button.component';
 import Footer from '../../components/Footer/Footer.component';
 import samplePhoto from '../../assets/images/profile.png';
 import './ProjectsPage.css';
-// import MenuButton from '../../components/MenuButton/MenuButton.component';
 import MessageParagraph from '../../components/MessageParagraph/MessageParagraph.component';
 import BlogCardList from '../../container/BlogCardList/BlogCardList.component';
 import { Consumer } from '../../context/AuthContext';
@@ -24,23 +23,19 @@ class ProjectPage extends Component {
     annotations: [],
   };
 
-  componentDidMount() {
+  async reloadAnnotations(){
+    const response = await fetch(`/api/annotations/screenshot/${this.state.screenshotId}`);
+    const annotations = await response.json();    
+    this.setState({ annotations });
+  }
+
+  async componentDidMount() {
     const screenshotsKey =
       JSON.parse(localStorage.getItem('screenshot_key')) || [];
     const screenshotId =
       JSON.parse(localStorage.getItem('screenshot_id')) || null;
-    this.setState({ screenshotsKey, screenshotId });
-    // eslint-disable-next-line react/no-unused-state
-    const annotations = JSON.parse(localStorage.getItem('annotations')) || [];
-    this.setState({ annotations });
+    this.setState({ screenshotsKey, screenshotId }, this.reloadAnnotations);
   }
-
-  getAnnotations = () => {
-    const annotations = JSON.parse(localStorage.getItem('annotations')) || [];
-    console.log(annotations);
-    this.setState({ annotations });
-    return annotations;
-  };
 
   // eslint-disable-next-line react/sort-comp
   getScreenshotURL = (screenshotKey) => {
@@ -76,6 +71,8 @@ class ProjectPage extends Component {
                         screenshotURL={this.getScreenshotURL(
                           this.state.screenshotsKey,
                         )}
+                        annotations={this.state.annotations}
+                        onAnnotationSaved={() => this.reloadAnnotations()}
                       />
                     </div>
                     <div className="project-page-rightside-container">
@@ -106,10 +103,7 @@ class ProjectPage extends Component {
                       </div>
                       {this.state.annotations ? (
                         <BlogCardList
-                          annotations={
-                            JSON.parse(localStorage.getItem('annotations')) ||
-                            []
-                          }
+                          annotations={this.state.annotations}
                         />
                       ) : (
                         <MessageParagraph

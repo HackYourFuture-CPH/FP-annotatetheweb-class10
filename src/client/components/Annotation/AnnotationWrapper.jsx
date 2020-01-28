@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import CustomAnnotation from './CustomAnnotation.component';
 import { useInterval } from '../../hooks/useInterval';
 
-const onSave = (data, title, description, screenshotId) => {
-  fetch('http://localhost:3000/api/annotations/', {
+const onSave = async (data, title, description, screenshotId) => {
+  await fetch('http://localhost:3000/api/annotations/', {
     method: 'POST',
     mode: 'cors',
     cache: 'no-cache',
@@ -17,9 +17,8 @@ const onSave = (data, title, description, screenshotId) => {
       area: data,
       fk_screenshot_id: screenshotId,
     }),
-  }).catch((error) => {
-    throw error;
   });
+  return true;
 };
 
 async function getScreenshot(url, setLoading, callback) {
@@ -91,7 +90,7 @@ function AnnotationWrapper(props) {
     <CustomAnnotation
       screenshot={backgroundImage}
       onSave={({ data, title, description }) =>
-        onSave(data, title, description, props.screenshotId)
+        onSave(data, title, description, props.screenshotId).then(props.onAnnotationSaved)
       }
       onChange={props.onChange}
       onSubmit={props.onSubmit}

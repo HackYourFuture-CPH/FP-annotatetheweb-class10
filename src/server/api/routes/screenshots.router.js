@@ -29,7 +29,6 @@ router.post('/', (req, res) => {
   screenshotsController
     .createScreenshot(req.body)
     .then((result) => {
-      console.log(result)
       res.json(result);
     })
     .catch((error) => {

@@ -3,11 +3,15 @@ import BlogCard from '../CommentBox/BlogCard.component';
 
 const BlogCardList = ({ annotations }) => {
   return (
-    <div className="comment-container">
-      {annotations.map((annotation) => (
-        <BlogCard key={annotation.id} title={annotation.data.title} />
-      ))}
-    </div>
+    <>
+      {annotations && (
+        <div className="comment-container">
+          {annotations.map((annotation, i) => {
+            return <BlogCard key={i} title={annotation.title} />;
+          })}
+        </div>
+      )}
+    </>
   );
 };
 
