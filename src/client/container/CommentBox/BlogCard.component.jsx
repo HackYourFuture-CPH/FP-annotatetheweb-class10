@@ -53,6 +53,7 @@ class BlogCard extends Component {
             <Input
               name="blogCardLabel"
               title={this.props.title}
+              description={this.props.description}
               placeholder="add comment..."
               type="input"
               handleInputChange={this.handleInputChange}

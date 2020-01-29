@@ -19,11 +19,13 @@
   overflow: hidden;
   position: absolute;
   height: auto;
+  z-index: 10;
 }
 
 .annotation-form {
   display: flex;
   flex-direction: column;
+  padding: 10px;
 }
 
 .annotation-form-input {
@@ -31,13 +33,17 @@
   border: 2px solid #cde769;
   box-sizing: border-box;
   border-radius: 5px;
-  transform: matrix(1, 0.01, 0, 1, 0, 0);
+  margin-bottom: 10px;
+  font-size: 12px;
+  padding: 5px 10px;
+  /* transform: matrix(1, 0.01, 0, 1, 0, 0); */
 }
 
 .annotation-form-btnWrapper {
   display: flex;
-  width: 50%;
+  width: 100%;
   align-self: flex-end;
+  justify-content: space-around;
 }
 
 .annotation-form-btn {

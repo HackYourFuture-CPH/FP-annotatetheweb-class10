@@ -31,7 +31,7 @@ class EditorComponent extends Component {
     this.props.onChange(this.props.annotation, data);
   };
 
-  // handleCancelClick = () => {};
+  handleCancelClick = () => {};
 
   render() {
     return (

@@ -5,7 +5,10 @@ const BlogCardList = ({ annotations }) => {
   return (
     <div className="comment-list">
       {annotations.map((annotation) => (
-        <BlogCard title={annotation.title} />
+        <BlogCard
+          title={annotation.title}
+          description={annotation.description}
+        />
       ))}
     </div>
   );

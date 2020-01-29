@@ -7,6 +7,7 @@
   background: rgb(42, 42, 43);
   max-height: 10vh;
   color: #99999e;
+  z-index: 2;
 }
 .footer-links-wrapper {
   display: flex;

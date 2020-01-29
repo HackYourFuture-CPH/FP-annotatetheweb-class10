@@ -13,6 +13,7 @@
     text-align: center;
     max-width: 300px;
     height: 100%;
+    z-index: 1;
 
     box-shadow: -2px 0px 10px 1px #AAAAAA;
 }
@@ -33,11 +34,12 @@
 .register-button{
     cursor: pointer;
 }
-.screenshot-image-container, .annotation-container{
-    width: 60%;
+.screenshot-image-container{
+    width: calc(100% - 350px);
     margin-left: 50px;
-    height: 85vh;
+    height: 100%;
     position: absolute;
+    /* z-index: -1; */
 }
 
 .no-comment-message{
@@ -82,7 +84,8 @@ position: relative;
         display: none;
     }
     .comment-container{
-    position: absolute;
+    /* position: absolute; */
+    width:100%;
     z-index: 4;
     margin-top: 400px;
     }
