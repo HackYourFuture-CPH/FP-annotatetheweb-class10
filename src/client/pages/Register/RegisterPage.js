@@ -22,8 +22,8 @@ class RegisterPage extends Component {
     };
   }
 
-  fillUsersTable = (name, userName, email) => {
-    fetch('/api/users/', {
+  fillUsersTable = async (name, userName, email) => {
+    const response = await fetch('/api/users/', {
       method: 'POST',
       mode: 'cors',
       cache: 'no-cache',
@@ -38,21 +38,30 @@ class RegisterPage extends Component {
         fk_role_id: 1,
       }),
     });
+
+    const userId = await response.json();
+    return userId;
   };
 
-  onRegisterClick = (event, errorMessage) => {
+  onRegisterClick = async (event, errorMessage) => {
     if (!errorMessage) {
       event.preventDefault();
       doCreateUserWithEmailAndPassword(this.state.email, this.state.password)
-        .then(alert('New user is created'))
+        .then(() => {
+          alert('New user is created')
+        })
         .catch((error) => {
           // eslint-disable-next-line no-console
           console.log(error.message);
         });
 
       const { name, userName, email } = this.state;
-      this.getUserId(email);
-      this.fillUsersTable(name, userName, email);
+      const userId = await this.fillUsersTable(name, userName, email);
+
+      const user_id = userId.id[0];
+      localStorage.setItem('user_id', JSON.stringify(user_id));
+     
+      // this.getUserId(email);
 
       this.setState({ email: '', password: '', name: '', userName: '' });
       this.props.history.push('/');
@@ -67,7 +76,7 @@ class RegisterPage extends Component {
       .then((user) => {
         console.log('User logged in, using google', user);
         this.fillUsersTable(user.displayName, user.displayName, user.email);
-        this.getUserId(user.email);
+        // this.getUserId(user.email);
         this.props.history.push('/');
       })
       .catch((error) => {
@@ -81,7 +90,7 @@ class RegisterPage extends Component {
       .then((user) => {
         console.log('User logged in, using facebook');
         this.fillUsersTable(user.displayName, user.displayName, user.email);
-        this.getUserId(user.email);
+        // this.getUserId(user.email);
         this.props.history.push('/');
       })
       .catch((error) => {
@@ -95,7 +104,7 @@ class RegisterPage extends Component {
       .then((user) => {
         console.log('User logged in, using twitter');
         this.fillUsersTable(user.displayName, user.displayName, user.email);
-        this.getUserId(user.email);
+        // this.getUserId(user.email);
         this.props.history.push('/');
       })
       .catch((error) => {
@@ -108,25 +117,19 @@ class RegisterPage extends Component {
     this.setState({ name, userName, email, password });
   };
 
-  getUserId = (email) => {
-    fetch(`/api/users/email/${email}`, {
-      method: 'GET',
-      mode: 'cors',
-      cache: 'no-cache',
-      credentials: 'same-origin',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then((result) => result.json())
-      .then((data) => {
-        // Save user into local storage
-        const { user_id } = data[0];
-        localStorage.setItem('user_id', JSON.stringify(user_id));
-      });
-  };
+  // getUserId = (email) => {
+  //   fetch(`/api/users/email/${email}`)
+  //     .then((result) => result.json())
+  //     .then((data) => {
+  //       console.log(data)
+  //       // Save user into local storage
+  //       // const { user_id } = data;
+  //       // localStorage.setItem('user_id', JSON.stringify(user_id));
+  //     });
+  // };
 
   render() {
+    // console.log(this.state)
     return (
       <div className="register-wrapper">
         <div className="register-page">

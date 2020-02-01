@@ -28,7 +28,9 @@ router.get('/:user_id', (req, res, next) => {
 router.post('/', (req, res, next) => {
   usersController
     .createUser(req.body)
-    .then((result) => res.json(result))
+    .then((result) => {
+      res.json(result);
+    })
     .catch((error) => console.log(error))
     .catch(next);
 });
@@ -45,7 +47,9 @@ router.delete('/:user_id', (req, res, next) => {
 router.get('/email/:email', (req, res, next) => {
   usersController
     .getUserIdByEmail(req.params.email)
-    .then((result) => res.json(result))
+    .then((result) => {
+      res.json(result)
+    })
     .catch(next);
 });
 

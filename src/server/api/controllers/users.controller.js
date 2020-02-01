@@ -15,18 +15,24 @@ const getUserById = (userId) => {
 
 // Create new user
 const createUser = async (body) => {
-  const isUserExist = await knex('users')
+  const isEmailExist = await knex('users')
     .select('user_id')
-    .where('name', body.name);
+    .where('email', body.email);
 
-  if (isUserExist.length === 0) {
-    return knex('users').insert({
+  if (isEmailExist.length === 0) {
+    const id = await knex('users').insert({
       name: body.name,
       fk_role_id: body.fk_role_id,
       user_name: body.user_name,
       email: body.email
     });
+
+    return {
+      success: true,
+      id
+    }
   }
+
   return { message: 'User has already created.' };
 };
 
@@ -38,16 +44,16 @@ const deleteUserById = (userId) => {
 };
 
 // Get user_id by email
-const getUserIdByEmail = (email) => {
-  return knex('users')
-  .where({email})
-  .select('user_id')
-}
+// const getUserIdByEmail = (email) => {
+//   return knex('users')
+//   .where({ email })
+//   .select('user_id');
+// }
 
 module.exports = {
   getUsers,
   getUserById,
   createUser,
   deleteUserById,
-  getUserIdByEmail
+  // getUserIdByEmail
 };
