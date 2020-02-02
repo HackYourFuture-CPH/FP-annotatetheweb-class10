@@ -24,6 +24,16 @@ router.get('/:user_id', (req, res, next) => {
     .catch(next);
 });
 
+// ENDPOINT: /api/users/uid/:uid :GET to get user by uid
+router.get('/uid/:uid', (req, res, next) => {
+  usersController
+    .getUserByUid(req.params.uid)
+    .then((result) => {
+      res.json(result)
+    })
+    .catch(next);
+});
+
 // ENDPOINT: /api/users/ :POST to create new user
 router.post('/', (req, res, next) => {
   usersController

@@ -13,6 +13,13 @@ const getUserById = (user_id) => {
     .select('*');
 };
 
+// Get user by uid
+const getUserByUid = (uid) => {
+  return knex('users')
+    .where({ uid })
+    .select('*');
+};
+
 // Create new user
 const createUser = async (body) => {
   const isUserExist = await knex('users')
@@ -32,6 +39,7 @@ const createUser = async (body) => {
       id: id[0],
     }
   }
+  
   if (isUserExist.length !== 0) {
     return {
       success: true,
@@ -52,6 +60,7 @@ const deleteUserById = (userId) => {
 module.exports = {
   getUsers,
   getUserById,
+  getUserByUid,
   createUser,
   deleteUserById
 };
