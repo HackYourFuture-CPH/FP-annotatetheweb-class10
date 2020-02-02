@@ -7,9 +7,9 @@ const getUsers = ({ limit, offset, orderBy = 'user_id', order } = {}) => {
 };
 
 // Get user by id
-const getUserById = (userId) => {
+const getUserById = (user_id) => {
   return knex('users')
-    .where({ userId })
+    .where({ user_id })
     .select('*');
 };
 
