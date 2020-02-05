@@ -21,7 +21,7 @@
     "code:lint": "eslint --ext .js,.jsx,.ts,.tsx \"src/\"",
     "code:format": "prettier './src/**/**.{js,jsx,ts,tsx}'",
     "code:check:rules": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
-    "heroku-prebuild": "npm install --dev"
+    "heroku-prebuild": "npm install"
   },
   "author": "Shanawaz Islam",
   "license": "MIT",
@@ -49,7 +49,6 @@
     "formik": "^1.5.8",
     "interactjs": "^1.5.3",
     "jest-css-modules-transform": "^3.1.0",
-    "jest-styled-components": "^7.0.0-beta.2",
     "knex": "^0.19.5",
     "moment-timezone": "^0.5.26",
     "morgan": "^1.9.1",
@@ -60,7 +59,6 @@
     "react-router-dom": "^5.0.1",
     "react-scripts": "^3.3.0",
     "react-social-login-buttons": "^3.0.0",
-    "serve-favicon": "^2.5.0",
     "swagger-ui-express": "^4.1.2",
     "winston": "^3.2.1"
   },

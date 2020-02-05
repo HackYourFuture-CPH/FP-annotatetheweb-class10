@@ -37,6 +37,14 @@ router.get('/:annotation_id', (req, res, next) => {
     .catch(next);
 });
 
+// ENDPOINT: /api/annotations/screenshot/:fk_screenshot_id :GET to get all annotations added to a specific screenshot
+router.get('/screenshot/:fk_screenshot_id', (req, res, next) => {
+  annotationsController
+    .getAnnotationsForScreenshot(req.params.fk_screenshot_id)
+    .then((result) => res.json(result))
+    .catch(next);
+});
+
 // ENDPOINT: /api/annotations/:annotation_id :DELETE
 router.delete('/:annotation_id', (req, res, next) => {
   annotationsController

@@ -45,6 +45,12 @@ const getAnnotationsById = async (annotationId) => {
   }
 };
 
+const getAnnotationsForScreenshot = (fk_screenshot_id) => {
+  return knex('annotations')
+    .where({ fk_screenshot_id })
+    .select('*');
+};
+
 const editAnnotation = async (annotationId, updatedannotation) => {
   return knex('annotations')
     .where({ annotation_id: annotationId })
@@ -67,4 +73,5 @@ module.exports = {
   getAnnotationsById,
   deleteAnnotations,
   editAnnotation,
+  getAnnotationsForScreenshot
 };

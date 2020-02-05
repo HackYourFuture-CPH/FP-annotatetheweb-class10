@@ -26,7 +26,7 @@ export class Provider extends React.Component {
     return (
       <AuthContext.Provider
         value={{
-          isAuthenticated: this.state.isAuthenticated
+          isAuthenticated: this.state.isAuthenticated,
         }}
       >
         {this.props.children}

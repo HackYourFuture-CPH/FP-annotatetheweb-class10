@@ -28,8 +28,8 @@ router.get('/:key', (req, res, next) => {
 router.post('/', (req, res) => {
   screenshotsController
     .createScreenshot(req.body)
-    .then(() => {
-      res.json(screenshotsController.getScreenshotKey());
+    .then((result) => {
+      res.json(result);
     })
     .catch((error) => {
       console.log(error);
