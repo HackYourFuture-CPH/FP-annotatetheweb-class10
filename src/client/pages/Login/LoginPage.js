@@ -20,8 +20,8 @@ class LoginPage extends Component {
     super();
     this.state = {
       user: null,
-      email: '',
-      password: '',
+      email: null,
+      password: null,
       isLoading: false,
     };
   }
@@ -32,14 +32,22 @@ class LoginPage extends Component {
 
   login = () => {
     if (this.state.password && this.state.email) {
-      this.setState({ isLoading: true });
+      this.getUserId(this.state.email);
+      auth.signInWithEmailAndPassword(this.state.email, this.state.password)
+      .catch((error) => {
+        if (error.code === 'auth/wrong-password') {
+          alert('Wrong password. Please try again.')
+        } else if (error.code === 'auth/user-not-found') {
+          alert('Email not found.')
+        } else {
+            alert("There's something wrogn. Try again.");
+        }
+        this.getUserId(this.state.email);
+      })
+    } else {
+      alert('Please type your username and password.');
     }
-    auth
-      .signInWithEmailAndPassword(this.state.email, this.state.password)
-      .then(() => {
-        this.setState({ isLoading: false });
-      });
-    this.getUserId(this.state.email);
+    
   };
 
   onGoogleSignIn = async () => {
@@ -79,6 +87,7 @@ class LoginPage extends Component {
   };
 
   getUserId = (email) => {
+    console.log(email);
     fetch(`/api/users/email/${email}`, {
       method: 'GET',
       mode: 'cors',
