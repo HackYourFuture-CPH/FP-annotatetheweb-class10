@@ -107,10 +107,11 @@ class LoginPage extends Component {
           {!user && !isLoading ? (
             <FormLoginRegister
               formLoginRegister="form-login-register"
-              text="Do not have account yet?"
+              text="Do not have account yet? "
               register="Register"
               classRegister="register-class"
               linewrapper="register-right-up-corner"
+              href='/register'
             />
           ) : null}
         </div>
