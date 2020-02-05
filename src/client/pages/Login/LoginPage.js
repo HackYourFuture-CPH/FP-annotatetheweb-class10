@@ -79,8 +79,8 @@ class LoginPage extends Component {
     }
   };
 
-  getUserId = (uid) => {
-    fetch(`/api/users/uid/${uid}`, {
+  getUserId = async (uid) => {
+    const response = await fetch(`/api/users/uid/${uid}`, {
       method: 'GET',
       mode: 'cors',
       cache: 'no-cache',
@@ -89,12 +89,10 @@ class LoginPage extends Component {
         'Content-Type': 'application/json',
       },
     })
-      .then((result) => result.json())
-      .then((data) => {
-        const { user_id } = data[0];
-        localStorage.setItem('user_id', JSON.stringify(user_id));
-        this.props.history.push('/'); // We get a warning with this: Can't perform a React state update on an unmounted component(...) 
-      });
+    const data = await response.json();
+    const { user_id } = data[0];
+    localStorage.setItem('user_id', JSON.stringify(user_id));
+    this.props.history.push('/');
   };
 
   render() {
