@@ -32,20 +32,26 @@ class FormSignUp extends Component {
   onClick = (event) => {
     if (this.state.acceptedTermsAndPolicy) {
       this.props.onClick(event, null);
-      this.setState({
-        name: '',
-        userName: '',
-        email: '',
-        password: '',
-        acceptedTermsAndPolicy: false,
-      });
+      // this.setState({
+      //   name: '',
+      //   userName: '',
+      //   email: '',
+      //   password: '',
+      //   acceptedTermsAndPolicy: false,
+      // });
     } else {
       this.props.onClick(null, 'You need to agree with terms and and policy');
     }
   };
 
   changeAcceptedTermsAndPolicy = (event) => {
-    this.setState({ acceptedTermsAndPolicy: event });
+    console.log('the event', event);
+    console.log('before state change', this.state.acceptedTermsAndPolicy);
+
+    this.setState({ acceptedTermsAndPolicy: event }, () => {
+console.log('after state change', this.state.acceptedTermsAndPolicy);
+    });
+    
   };
 
   render() {

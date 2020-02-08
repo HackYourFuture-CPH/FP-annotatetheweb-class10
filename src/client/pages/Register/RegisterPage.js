@@ -43,22 +43,28 @@ class RegisterPage extends Component {
   onRegisterClick = (event, errorMessage) => {
     if (!errorMessage) {
       event.preventDefault();
-      doCreateUserWithEmailAndPassword(this.state.email, this.state.password)
-        .then(alert('New user is created'))
+      console.log(this.state.email, this.state.name, this.state.password, this.state.userName);
+      if (this.state.email !== '' && this.state.name !== '' && this.state.password && this.state.userName) {
+        doCreateUserWithEmailAndPassword(this.state.email, this.state.password)
+        .then(() => {
+          const { name, userName, email } = this.state;
+          // this.getUserId(email);
+          this.fillUsersTable(name, userName, email);
+
+          alert('New user is created')
+        })
         .catch((error) => {
           // eslint-disable-next-line no-console
-          console.log(error.message);
+          alert(error.message);
         });
-
-      const { name, userName, email } = this.state;
-      this.getUserId(email);
-      this.fillUsersTable(name, userName, email);
-
+      } else {
+        alert ('You need to fill all fields.');
+      }
       this.setState({ email: '', password: '', name: '', userName: '' });
       this.props.history.push('/');
     } else {
       // eslint-disable-next-line no-console
-      console.log(errorMessage);
+      alert(errorMessage);
     }
   };
 
@@ -72,35 +78,35 @@ class RegisterPage extends Component {
       })
       .catch((error) => {
         // eslint-disable-next-line no-console
-        console.log(error);
+        alert(error);
       });
   };
 
   signInWithFacebook = () => {
     signInWithFacebook()
       .then((user) => {
-        console.log('User logged in, using facebook');
+        alert('User logged in, using facebook');
         this.fillUsersTable(user.displayName, user.displayName, user.email);
         this.getUserId(user.email);
         this.props.history.push('/');
       })
       .catch((error) => {
         // eslint-disable-next-line no-console
-        console.log(error);
+        alert(error);
       });
   };
 
   signInWithTwitter = () => {
     signInWithTwitter()
       .then((user) => {
-        console.log('User logged in, using twitter');
+        alert('User logged in, using twitter');
         this.fillUsersTable(user.displayName, user.displayName, user.email);
         this.getUserId(user.email);
         this.props.history.push('/');
       })
       .catch((error) => {
         // eslint-disable-next-line no-console
-        console.log(error);
+        alert(error);
       });
   };
 
@@ -125,6 +131,7 @@ class RegisterPage extends Component {
         localStorage.setItem('user_id', JSON.stringify(user_id));
       });
   };
+
 
   render() {
     return (
