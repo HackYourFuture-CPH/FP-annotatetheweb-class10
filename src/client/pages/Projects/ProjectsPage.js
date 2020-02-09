@@ -50,11 +50,13 @@ class ProjectPage extends Component {
     };
 
     const headerTitle = 'Annotate the web';
+
     // eslint-disable-next-line no-unused-vars
     const backgroundImage = {
       src: HomePageImage,
       alt: 'sample screenshot',
     };
+
     return (
       <Consumer>
         {() => {
