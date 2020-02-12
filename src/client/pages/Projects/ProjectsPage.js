@@ -116,7 +116,7 @@ class ProjectPage extends Component {
                           </div>
                         )}
                       </div>
-                      {this.state.annotations ? (
+                      {this.state.annotations.length ? (
                         <BlogCardList annotations={this.state.annotations} />
                       ) : (
                         <MessageParagraph
