@@ -9,15 +9,8 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import './SidebarMenu.css';
 import Button from './Button.component';
-import OpeningMenu from './OpeningMenu.component';
 
-const menuClick = (event) => {
-  console.log('button clicked', event);
-}
-
-const SidebarMenu = () => {
-  
-
+const SidebarMenuAuthenticated = ({onClick}) => {
   return (
     <div className="sidebar-menu-wrapper">
       <div className="sidebar-menu">
@@ -41,25 +34,21 @@ const SidebarMenu = () => {
           buttonClasses="sidebar-menu-button sidebar-menu-icon-width black sidebar-menu-inactive"
           fontClasses="sidebar-menu-invert-color"
         />
-        <div className="sidebar-button-container">
         <Button
-          id="share"
           icon={faShareAlt}
           buttonClasses="sidebar-menu-button sidebar-menu-icon-width black"
           fontClasses="sidebar-menu-invert-color"
-          onClick={() => {menuClick(event)}}
+          onClick={onClick}
         />
-        <OpeningMenu />
-        </div>
-        
         <Button
           icon={faCog}
-          buttonClasses="sidebar-menu-button sidebar-menu-icon-width black sidebar-menu-inactive"
+          buttonClasses="sidebar-menu-button sidebar-menu-icon-width black"
           fontClasses="sidebar-menu-invert-color"
+          onClick={onClick}
         />
       </div>
     </div>
   );
 };
 
-export default SidebarMenu;
+export default SidebarMenuAuthenticated;

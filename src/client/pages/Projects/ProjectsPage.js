@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SidebarMenu from '../../components/SidebarMenu/SidebarMenu.component';
+import SidebarMenuAuthenticated from '../../components/SidebarMenu/SidebarMenuAuthenticated.component';
 import ProfileSummery from '../../components/ProfileSummary/ProfileSummary.component';
 import Header from '../../components/Header/Header.Component';
 import RegisterButton from '../../components/RegisterButton/RegisterButton.component';
@@ -23,9 +24,11 @@ class ProjectPage extends Component {
     annotations: [],
   };
 
-  async reloadAnnotations(){
-    const response = await fetch(`/api/annotations/screenshot/${this.state.screenshotId}`);
-    const annotations = await response.json();    
+  async reloadAnnotations() {
+    const response = await fetch(
+      `/api/annotations/screenshot/${this.state.screenshotId}`,
+    );
+    const annotations = await response.json();
     this.setState({ annotations });
   }
 
@@ -43,6 +46,8 @@ class ProjectPage extends Component {
     return `${apiEndpoint + screenshotKey}/screenshot.jpg`;
   };
 
+
+
   render() {
     const profile = {
       src: samplePhoto,
@@ -57,14 +62,18 @@ class ProjectPage extends Component {
     };
     return (
       <Consumer>
-        {() => {
+        {({ isAuthenticated }) => {
           return (
             <div>
               <div>{this.state.screenshotImage && <Loading />}</div>
               {!this.state.screenshotImage && (
                 <div>
                   <div className="project-page-container">
-                    <SidebarMenu />
+                    {isAuthenticated ? (
+                      <SidebarMenuAuthenticated />
+                    ) : (
+                      <SidebarMenu />
+                    )}
                     <div className="screenshot-image-container">
                       <AnnotationWrapper
                         screenshotId={this.state.screenshotId}
@@ -80,7 +89,7 @@ class ProjectPage extends Component {
                         <div>
                           <Header title={headerTitle} />
                         </div>
-                        {this.state.user ? (
+                        {!isAuthenticated ? (
                           <div className="login-block">
                             <div>
                               <Button
@@ -102,9 +111,7 @@ class ProjectPage extends Component {
                         )}
                       </div>
                       {this.state.annotations ? (
-                        <BlogCardList
-                          annotations={this.state.annotations}
-                        />
+                        <BlogCardList annotations={this.state.annotations} />
                       ) : (
                         <MessageParagraph
                           className="no-comment-message"

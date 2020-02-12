@@ -24,6 +24,7 @@
   outline: inherit;
   display: block;
   padding: 1rem;
+  position: relative;
 }
 
 .sidebar-menu-button:hover {
