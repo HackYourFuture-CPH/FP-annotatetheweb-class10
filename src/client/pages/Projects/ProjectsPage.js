@@ -73,6 +73,7 @@ class ProjectPage extends Component {
     return (
       <Consumer>
         {() => {
+          console.log(this.state.annotations)
           return (
             <div>
               <div>{this.state.screenshotImage && <Loading />}</div>

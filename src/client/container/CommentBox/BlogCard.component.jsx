@@ -16,11 +16,35 @@ class BlogCard extends Component {
   handleInputChange = (event) => {//ON ENTER CHANGE
     if (event.keyCode === 13) {
       const newComment = event.target.value;
+
+      const fkAnnotationsId = this.props.annotationId;
+      const fkUserId = JSON.parse(localStorage.getItem('user_id')) || null;
+      this.postComment(newComment, fkAnnotationsId, null, fkUserId);
+
       const value = [newComment, ...this.state.inputValue];
       this.setState({ inputValue: value });
       event.target.value = '';
     }
   };
+
+  async postComment(description, fkAnnotationsId, fkCommentsId, fkUserId) {
+    await fetch('/api/comments/', {
+      method: 'POST',
+      mode: 'cors',
+      cache: 'no-cache',
+      credentials: 'same-origin',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        description,
+        fk_annotations_id: fkAnnotationsId,
+        fk_comments_id: fkCommentsId,
+        fk_user_id: fkUserId,
+      }),
+    });
+  }
+
 
   // button click event handler
   onClickHandle = () => {
@@ -38,7 +62,7 @@ class BlogCard extends Component {
       { id: 3, title: 'mark as done' },
       { id: 4, title: 'send to Trolle' },
     ];
-    console.log(this.state.inputValue)
+    console.log('comments', this.state.inputValue)
     return (
       <>
         <div className="work-panel">
@@ -61,7 +85,7 @@ class BlogCard extends Component {
               handleInputChange={this.handleInputChange}
             />
           </div>
-          <CommentList inputValue={this.state.inputValue} />
+          {/* <CommentList inputValue={this.state.inputValue} /> */}
         </div>
       </>
     );

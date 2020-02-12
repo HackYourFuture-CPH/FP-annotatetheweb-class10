@@ -2,15 +2,15 @@ const knex = require('../../config/db');
 
 const createComment = async ({
   description,
-  fkAnnotationsId,
-  fkCommentsId,
-  fkUserId,
+  fk_annotations_id,
+  fk_comments_id,
+  fk_user_id,
 }) => {
   await knex('comments').insert({
     description,
-    fkAnnotationsId,
-    fkCommentsId,
-    fkUserId,
+    fk_annotations_id,
+    fk_comments_id,
+    fk_user_id,
   });
 
   return {
