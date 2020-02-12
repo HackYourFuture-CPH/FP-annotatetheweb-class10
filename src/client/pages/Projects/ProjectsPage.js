@@ -21,12 +21,15 @@ class ProjectPage extends Component {
     screenshotsKey: ' ',
     screenshotId: null,
     annotations: [],
+    userName: '',
   };
 
-  async reloadAnnotations(){
-    const response = await fetch(`/api/annotations/screenshot/${this.state.screenshotId}`);
-    const annotations = await response.json();    
-    this.setState({ annotations });
+  async getUser() {
+    const userId = JSON.parse(localStorage.getItem('user_id')) || null;
+    const response = await fetch(`/api/users/${userId}`);
+    const user = await response.json();
+    const userName = user[0].name;
+    this.setState({ userName });
   }
 
   async componentDidMount() {
@@ -34,6 +37,8 @@ class ProjectPage extends Component {
       JSON.parse(localStorage.getItem('screenshot_key')) || [];
     const screenshotId =
       JSON.parse(localStorage.getItem('screenshot_id')) || null;
+      this.getUser();
+
     this.setState({ screenshotsKey, screenshotId }, this.reloadAnnotations);
   }
 
@@ -42,6 +47,14 @@ class ProjectPage extends Component {
     const apiEndpoint = 'https://annotatetheweb.z16.web.core.windows.net/';
     return `${apiEndpoint + screenshotKey}/screenshot.jpg`;
   };
+
+  async reloadAnnotations() {
+    const response = await fetch(
+      `/api/annotations/screenshot/${this.state.screenshotId}`,
+    );
+    const annotations = await response.json();
+    this.setState({ annotations });
+  }
 
   render() {
     const profile = {
@@ -97,16 +110,14 @@ class ProjectPage extends Component {
                         ) : (
                           <div className="profile-container">
                             <ProfileSummery
-                              profileName="Kseiina Zar"
+                              profileName={this.state.userName}
                               profileImage={profile}
                             />
                           </div>
                         )}
                       </div>
                       {this.state.annotations ? (
-                        <BlogCardList
-                          annotations={this.state.annotations}
-                        />
+                        <BlogCardList annotations={this.state.annotations} />
                       ) : (
                         <MessageParagraph
                           className="no-comment-message"
