@@ -13,11 +13,12 @@ class BlogCard extends Component {
   };
 
   // Input event handler
-  handleInputChange = (event) => {
+  handleInputChange = (event) => {//ON ENTER CHANGE
     if (event.keyCode === 13) {
       const newComment = event.target.value;
       const value = [newComment, ...this.state.inputValue];
       this.setState({ inputValue: value });
+      event.target.value = '';
     }
   };
 
@@ -37,6 +38,7 @@ class BlogCard extends Component {
       { id: 3, title: 'mark as done' },
       { id: 4, title: 'send to Trolle' },
     ];
+    console.log(this.state.inputValue)
     return (
       <>
         <div className="work-panel">
