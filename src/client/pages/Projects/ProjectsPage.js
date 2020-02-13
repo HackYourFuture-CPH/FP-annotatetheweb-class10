@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import SidebarMenu from '../../components/SidebarMenu/SidebarMenu.component';
 import ProfileSummery from '../../components/ProfileSummary/ProfileSummary.component';
 import Header from '../../components/Header/Header.Component';
@@ -22,14 +23,18 @@ class ProjectPage extends Component {
     screenshotId: null,
     annotations: [],
     userName: '',
+    haveAnnotations: false
   };
 
   async getUser() {
     const userId = JSON.parse(localStorage.getItem('user_id')) || null;
-    const response = await fetch(`/api/users/${userId}`);
-    const user = await response.json();
-    const userName = user[0].name;
-    this.setState({ userName });
+    if(userId){
+      const response = await fetch(`/api/users/${userId}`);
+      const user = await response.json();
+      this.setState({user});
+      const userName = user[0].name;
+      this.setState({ userName });
+    }    
   }
 
   async componentDidMount() {
@@ -38,7 +43,6 @@ class ProjectPage extends Component {
     const screenshotId =
       JSON.parse(localStorage.getItem('screenshot_id')) || null;
       this.getUser();
-
     this.setState({ screenshotsKey, screenshotId }, this.reloadAnnotations);
   }
 
@@ -53,8 +57,14 @@ class ProjectPage extends Component {
       `/api/annotations/screenshot/${this.state.screenshotId}`,
     );
     const annotations = await response.json();
-    this.setState({ annotations });
+      this.setState({ annotations });
+      if(this.state.annotations[0]){
+        this.setState({haveAnnotations: true});
+    }    
   }
+  onRegisterClick = () => {
+    this.props.history.push('/register');
+  };
 
   render() {
     const profile = {
@@ -95,7 +105,7 @@ class ProjectPage extends Component {
                         <div>
                           <Header title={headerTitle} />
                         </div>
-                        {this.state.user ? (
+                        {!this.state.user ? (
                           <div className="login-block">
                             <div>
                               <Button
@@ -104,7 +114,7 @@ class ProjectPage extends Component {
                               />
                             </div>
                             <div>
-                              <RegisterButton registerButtonTitle="Register" />
+                              <RegisterButton registerButtonTitle="Register" onClick={this.onRegisterClick}/>
                             </div>
                           </div>
                         ) : (
@@ -116,7 +126,7 @@ class ProjectPage extends Component {
                           </div>
                         )}
                       </div>
-                      {this.state.annotations ? (
+                      {this.state.haveAnnotations ? (
                         <BlogCardList annotations={this.state.annotations} />
                       ) : (
                         <MessageParagraph
@@ -139,4 +149,4 @@ class ProjectPage extends Component {
   }
 }
 
-export default ProjectPage;
+export default withRouter(ProjectPage);
