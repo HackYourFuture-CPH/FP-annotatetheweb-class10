@@ -1,0 +1,14 @@
+.media-wrapper {
+  display: flex;
+  flex-direction: row;
+  margin: 1rem 1rem 0 1rem;
+  justify-content: space-evenly;
+}
+.title-media {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  margin: 3px 0px 3px 15px;
+}

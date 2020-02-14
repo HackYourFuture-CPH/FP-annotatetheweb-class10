@@ -30,11 +30,12 @@ class LoginPage extends Component {
     this.setState({ [e.target.type]: e.target.value });
   };
 
-  login = () => {
+  onLoginClick = (event) => {
+    event.preventDefault();
     if (this.state.password && this.state.email) {
-      this.getUserId(this.state.email);
       auth.signInWithEmailAndPassword(this.state.email, this.state.password)
-      .then(() => {
+      .then((data) => {
+        this.getUserId(data.user.uid);
         this.props.history.push('/');
       })
       .catch((error) => {
@@ -58,8 +59,8 @@ class LoginPage extends Component {
       this.setState({ isLoading: true });
       const result = await auth.signInWithPopup(googleProvider);
       const { user } = result;
-      const { email } = user;
-      this.getUserId(email);
+      const { uid } = user;
+      this.getUserId(uid);
     } catch (error) {
       return error;
     }
@@ -70,8 +71,8 @@ class LoginPage extends Component {
       this.setState({ isLoading: true });
       const result = await auth.signInWithPopup(facebookProvider);
       const { user } = result;
-      const { email } = user;
-      this.getUserId(email);
+      const { uid } = user;
+      this.getUserId(uid);
     } catch (error) {
       return error;
     }
@@ -82,15 +83,15 @@ class LoginPage extends Component {
       this.setState({ isLoading: true });
       const result = await auth.signInWithPopup(twitterProvider);
       const { user } = result;
-      const { email } = user;
-      this.getUserId(email);
+      const { uid } = user;
+      this.getUserId(uid);
     } catch (error) {
       return error;
     }
   };
 
-  getUserId = (email) => {
-    fetch(`/api/users/email/${email}`, {
+  getUserId = async (uid) => {
+    const response = await fetch(`/api/users/uid/${uid}`, {
       method: 'GET',
       mode: 'cors',
       cache: 'no-cache',
@@ -99,14 +100,10 @@ class LoginPage extends Component {
         'Content-Type': 'application/json',
       },
     })
-      .then((result) => result.json())
-      .then((data) => {
-        // Save user into local storage
+    const data = await response.json();
         const { user_id } = data[0];
         localStorage.setItem('user_id', JSON.stringify(user_id));
-        // this.props.history.push('/'); // We get a warning with this: Can't perform a React state update on an unmounted component(...) 
-        location.href = '/';
-      });
+        this.props.history.push('/');
   };
 
   render() {
@@ -118,10 +115,11 @@ class LoginPage extends Component {
           {!user && !isLoading ? (
             <FormLoginRegister
               formLoginRegister="form-login-register"
-              text="Do not have account yet?"
+              text="Do not have account yet? "
               register="Register"
               classRegister="register-class"
               linewrapper="register-right-up-corner"
+              href="/register"
             />
           ) : null}
         </div>
@@ -133,7 +131,7 @@ class LoginPage extends Component {
           {!isLoading && !user && (
             <FormLogin
               handleChange={this.handleChange}
-              login={this.login}
+              login={this.onLoginClick}
               onGoogleSignIn={this.onGoogleSignIn}
               onFacebookSignIn={this.onFacebookSignIn}
               onTwitterSignIn={this.onTwitterSignIn}
