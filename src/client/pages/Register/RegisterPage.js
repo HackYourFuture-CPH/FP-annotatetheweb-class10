@@ -37,11 +37,12 @@ class RegisterPage extends Component {
         uid,
         fk_role_id: 1,
       }),
-    });
-
-    const data = await response.json();
-    const user_id = await data.id;
-    localStorage.setItem('user_id', JSON.stringify(user_id));
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        const user_id = data.id;
+        localStorage.setItem('user_id', JSON.stringify(user_id));
+      });
   };
 
   onRegisterClick = async (event, errorMessage) => {
@@ -54,15 +55,17 @@ class RegisterPage extends Component {
         this.state.password !== '' &&
         this.state.userName !== ''
       ) {
-        await doCreateUserWithEmailAndPassword(this.state.email, this.state.password)
+        await doCreateUserWithEmailAndPassword(
+          this.state.email,
+          this.state.password,
+        )
           .then((data) => {
-            const { name, userName } = this.state;
-            uid = data.user.uid;
-
-            this.fillUsersTable(name, userName, uid);
-            
             alert('New user is created');
+            uid = data.user.uid;
+            const { name, userName } = this.state;
+            this.fillUsersTable(name, userName, uid);
             this.props.history.push('/');
+            this.setState({ email: '', password: '', name: '', userName: '' });
           })
           .catch((error) => {
             // eslint-disable-next-line no-console
@@ -71,12 +74,35 @@ class RegisterPage extends Component {
       } else {
         alert('You need to fill all fields.');
       }
-      this.setState({ email: '', password: '', name: '', userName: '' });
     } else {
       // eslint-disable-next-line no-console
       alert(errorMessage);
     }
   };
+
+  // onRegisterClick = async (event, errorMessage) => {
+  //   if (!errorMessage) {
+  //     let uid;
+  //     event.preventDefault();
+  //     await doCreateUserWithEmailAndPassword(
+  //       this.state.email,
+  //       this.state.password,
+  //     )
+  //       .then((data) => {
+  //         alert('new user is created');
+  //         uid = data.user.uid;
+  //       })
+  //       .catch((error) => {
+  //         console.log(error);
+  //       });
+  //     const { name, userName } = this.state;
+  //     this.fillUsersTable(name, userName, uid);
+  //     this.setState({ email: '', password: '', name: '', userName: '' });
+  //     this.props.history.push('/');
+  //   } else {
+  //     console.log(errorMessage);
+  //   }
+  // };
 
   signInWithGoogle = () => {
     signInWithGoogle()
@@ -95,15 +121,14 @@ class RegisterPage extends Component {
   signInWithFacebook = () => {
     signInWithFacebook()
       .then((user) => {
-        if(!user.message){
-        // eslint-disable-next-line no-console
-        console.log('User logged in, using facebook');
-        this.fillUsersTable(user.displayName, user.displayName, user.uid);
-        this.props.history.push('/');
-        }
-        else {
-        // eslint-disable-next-line no-console
-          console.log(user.message)
+        if (!user.message) {
+          // eslint-disable-next-line no-console
+          console.log('User logged in, using facebook');
+          this.fillUsersTable(user.displayName, user.displayName, user.uid);
+          this.props.history.push('/');
+        } else {
+          // eslint-disable-next-line no-console
+          console.log(user.message);
         }
       })
       .catch((error) => {
