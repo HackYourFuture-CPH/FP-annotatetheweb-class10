@@ -64,7 +64,6 @@ class Home extends Component {
           width,
           fk_project_id: project_id,
         }).then((data) => {
-          console.log(data)
           // Save screenshot into local storage
           const screenshot_key = data.key;
           const screenshot_id = data.id;
