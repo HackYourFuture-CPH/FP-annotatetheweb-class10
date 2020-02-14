@@ -108,7 +108,8 @@ class LoginPage extends Component {
               register="Register"
               classRegister="register-class"
               linewrapper="register-right-up-corner"
-              href="/register"
+              href='/register'
+
             />
           ) : null}
         </div>
