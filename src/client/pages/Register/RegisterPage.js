@@ -43,25 +43,28 @@ class RegisterPage extends Component {
   onRegisterClick = (event, errorMessage) => {
     if (!errorMessage) {
       event.preventDefault();
-      console.log(this.state.email, this.state.name, this.state.password, this.state.userName);
-      if (this.state.email !== '' && this.state.name !== '' && this.state.password && this.state.userName) {
+      if (
+        this.state.email !== '' &&
+        this.state.name !== '' &&
+        this.state.password !== '' &&
+        this.state.userName!== ''
+      ) {
         doCreateUserWithEmailAndPassword(this.state.email, this.state.password)
-        .then(() => {
-          const { name, userName, email } = this.state;
-          // this.getUserId(email);
-          this.fillUsersTable(name, userName, email);
+          .then(() => {
+            const { name, userName, email } = this.state;
+            this.fillUsersTable(name, userName, email);
 
-          alert('New user is created')
-        })
-        .catch((error) => {
-          // eslint-disable-next-line no-console
-          alert(error.message);
-        });
+            alert('New user is created');
+            this.props.history.push('/');
+          })
+          .catch((error) => {
+            // eslint-disable-next-line no-console
+            alert(error.message);
+          });
       } else {
-        alert ('You need to fill all fields.');
+        alert('You need to fill all fields.');
       }
       this.setState({ email: '', password: '', name: '', userName: '' });
-      this.props.history.push('/');
     } else {
       // eslint-disable-next-line no-console
       alert(errorMessage);
@@ -131,7 +134,6 @@ class RegisterPage extends Component {
         localStorage.setItem('user_id', JSON.stringify(user_id));
       });
   };
-
 
   render() {
     return (

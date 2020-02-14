@@ -9,8 +9,7 @@ const FormField = ({
   textHolder,
   inputClass,
   changeHandler,
-  name,
-  required
+  name
 }) => {
   return (
     <label className={text}>

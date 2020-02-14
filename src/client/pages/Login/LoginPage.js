@@ -34,6 +34,9 @@ class LoginPage extends Component {
     if (this.state.password && this.state.email) {
       this.getUserId(this.state.email);
       auth.signInWithEmailAndPassword(this.state.email, this.state.password)
+      .then(() => {
+        this.props.history.push('/');
+      })
       .catch((error) => {
         if (error.code === 'auth/wrong-password') {
           alert('Wrong password. Please try again.')
@@ -87,7 +90,6 @@ class LoginPage extends Component {
   };
 
   getUserId = (email) => {
-    console.log(email);
     fetch(`/api/users/email/${email}`, {
       method: 'GET',
       mode: 'cors',
