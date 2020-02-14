@@ -24,11 +24,23 @@ router.get('/:user_id', (req, res, next) => {
     .catch(next);
 });
 
+// ENDPOINT: /api/users/uid/:uid :GET to get user by uid
+router.get('/uid/:uid', (req, res, next) => {
+  usersController
+    .getUserByUid(req.params.uid)
+    .then((result) => {
+      res.json(result)
+    })
+    .catch(next);
+});
+
 // ENDPOINT: /api/users/ :POST to create new user
 router.post('/', (req, res, next) => {
   usersController
     .createUser(req.body)
-    .then((result) => res.json(result))
+    .then((result) => {
+      res.json(result);
+    })
     .catch((error) => console.log(error))
     .catch(next);
 });
@@ -38,14 +50,6 @@ router.delete('/:user_id', (req, res, next) => {
   usersController
     .deleteUserById(req.params.user_id)
     .then((result) => res.json({ success: result === 1 }))
-    .catch(next);
-});
-
-// ENDPOINT: /api/user/email/:email :GET to get a user_id by email
-router.get('/email/:email', (req, res, next) => {
-  usersController
-    .getUserIdByEmail(req.params.email)
-    .then((result) => res.json(result))
     .catch(next);
 });
 

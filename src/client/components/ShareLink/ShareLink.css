@@ -1,0 +1,33 @@
+.shareLink-viaLink {
+  display: flex;
+}
+
+.shareLink-viaLink-label {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  margin: 3px 0px 3px 15px;
+}
+
+.shareLink-viaLink-input {
+  width: 233px;
+  background-color: #c4c4c4;
+  border: none;
+  background-color: #c4c4c4;
+  margin: 0px 8px 0px 10px;
+  border: none;
+  padding: 10px 10px 10px 7px;
+}
+
+.shareLink-viaLink-btnCopy {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bolder !important;
+  font-size: 12px;
+  line-height: 12px;
+  color: #a3b93a;
+  margin: 24px 0px 0px 0px;
+  align-self: center;
+}
