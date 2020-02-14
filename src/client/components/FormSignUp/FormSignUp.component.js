@@ -38,13 +38,7 @@ class FormSignUp extends Component {
   };
 
   changeAcceptedTermsAndPolicy = (event) => {
-    console.log('the event', event);
-    console.log('before state change', this.state.acceptedTermsAndPolicy);
-
-    this.setState({ acceptedTermsAndPolicy: event }, () => {
-console.log('after state change', this.state.acceptedTermsAndPolicy);
-    });
-    
+    this.setState({ acceptedTermsAndPolicy: event });
   };
 
   render() {

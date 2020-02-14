@@ -47,7 +47,7 @@ class RegisterPage extends Component {
         this.state.email !== '' &&
         this.state.name !== '' &&
         this.state.password !== '' &&
-        this.state.userName!== ''
+        this.state.userName !== ''
       ) {
         doCreateUserWithEmailAndPassword(this.state.email, this.state.password)
           .then(() => {
@@ -74,7 +74,6 @@ class RegisterPage extends Component {
   signInWithGoogle = () => {
     signInWithGoogle()
       .then((user) => {
-        console.log('User logged in, using google', user);
         this.fillUsersTable(user.displayName, user.displayName, user.email);
         this.getUserId(user.email);
         this.props.history.push('/');
