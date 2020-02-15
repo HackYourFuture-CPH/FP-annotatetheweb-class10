@@ -19,9 +19,14 @@ class RegisterPage extends Component {
       userName: '',
       email: '',
       password: '',
+      screenshotsKey: ''
     };
   }
-
+  async componentDidMount() {
+    const screenshotsKey =
+      JSON.parse(localStorage.getItem('screenshot_key')) || [];    
+    this.setState({ screenshotsKey });
+  }
   fillUsersTable = async (name, userName, uid) => {
     const response = await fetch('/api/users/', {
       method: 'POST',
@@ -78,7 +83,10 @@ class RegisterPage extends Component {
         console.log('User logged in, using google');
         this.fillUsersTable(user.displayName, user.displayName, user.uid);
         // this.getUserId(user.email);
-        this.props.history.push('/');
+        if(this.state.screenshotsKey==='')
+          this.props.history.push('/');
+        else
+          this.props.history.push('/projects');
       })
       .catch((error) => {
         // eslint-disable-next-line no-console
