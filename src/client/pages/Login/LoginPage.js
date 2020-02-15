@@ -23,9 +23,14 @@ class LoginPage extends Component {
       email: '',
       password: '',
       isLoading: false,
+      screenshotsKey: ''
     };
   }
-
+  async componentDidMount() {
+    const screenshotsKey =
+      JSON.parse(localStorage.getItem('screenshot_key')) || [];    
+    this.setState({ screenshotsKey });
+  }
   handleChange = (e) => {
     this.setState({ [e.target.type]: e.target.value });
   };
@@ -92,7 +97,10 @@ class LoginPage extends Component {
     const data = await response.json();
     const { user_id } = data[0];
     localStorage.setItem('user_id', JSON.stringify(user_id));
-    this.props.history.push('/');
+    if(this.state.screenshotsKey ==='')
+      this.props.history.push('/');
+    else
+      this.props.history.push('/projects');
   };
 
   render() {
