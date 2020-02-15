@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
+import { doSignOut } from '../../firebase/auth';
 import SidebarMenu from '../../components/SidebarMenu/SidebarMenu.component';
 import ProfileSummery from '../../components/ProfileSummary/ProfileSummary.component';
 import Header from '../../components/Header/Header.Component';
@@ -28,12 +29,15 @@ class ProjectPage extends Component {
 
   async getUser() {
     const userId = JSON.parse(localStorage.getItem('user_id')) || null;
+    console.log(userId);
     if(userId){
-      const response = await fetch(`/api/users/${userId}`);
-      const user = await response.json();
-      this.setState({user});
-      const userName = user[0].name;
-      this.setState({ userName });
+      if(userId!==1){      
+        const response = await fetch(`/api/users/${userId}`);
+        const user = await response.json();
+        this.setState({user});
+        const userName = user[0].name;
+        this.setState({ userName });
+      }
     }    
   }
 
@@ -64,6 +68,17 @@ class ProjectPage extends Component {
   }
   onRegisterClick = () => {
     this.props.history.push('/register');
+    this.getUser();
+  };
+  onLogin = () => {
+    this.props.history.push('/login');
+    this.getUser();
+  };
+  onLogOut = () => {
+    const user_id = 1;
+    localStorage.setItem('user_id', JSON.stringify(user_id));    
+    
+    doSignOut();
   };
 
   render() {
@@ -82,7 +97,7 @@ class ProjectPage extends Component {
 
     return (
       <Consumer>
-        {() => {
+        {({ isAuthenticated }) => {
           return (
             <div>
               <div>{this.state.screenshotImage && <Loading />}</div>
@@ -105,12 +120,13 @@ class ProjectPage extends Component {
                         <div>
                           <Header title={headerTitle} />
                         </div>
-                        {!this.state.user ? (
+                        {!isAuthenticated ? (
                           <div className="login-block">
                             <div>
                               <Button
                                 buttonClassName="project-page-button"
                                 title="Login"
+                                onClick={this.onLogin}
                               />
                             </div>
                             <div>
@@ -118,12 +134,21 @@ class ProjectPage extends Component {
                             </div>
                           </div>
                         ) : (
-                          <div className="profile-container">
-                            <ProfileSummery
-                              profileName={this.state.userName}
-                              profileImage={profile}
-                            />
-                          </div>
+                          <React.Fragment>
+                            <div className="logout-block">                            
+                              <Button
+                                buttonClassName="project-page-button"
+                                title="Logout"
+                                onClick={this.onLogOut}
+                              />
+                            </div>                           
+                            <div className="profile-container">
+                              <ProfileSummery
+                                profileName={this.state.userName}
+                                profileImage={profile}
+                              />
+                            </div>
+                          </React.Fragment>
                         )}
                       </div>
                       {this.state.haveAnnotations ? (
