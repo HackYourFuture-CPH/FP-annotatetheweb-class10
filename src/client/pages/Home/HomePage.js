@@ -36,11 +36,12 @@ class Home extends Component {
       desktopSize: true,
       screenshotUrl: '',
       urlValue: '',
-      // screenshotImage: ''
+      screenshotKey: ''
     };
   }
 
   onRegisterClick = () => {
+    this.setScreenshotKey(this.state.screenshotKey);
     this.props.history.push('/register');
   };
 
@@ -103,7 +104,12 @@ class Home extends Component {
       }
     });
   };
-
+  setScreenshotKey = (screenshot_key) => {
+    localStorage.setItem(
+      'screenshot_key',
+      JSON.stringify(screenshot_key),
+    );
+  }
   createProjectAndScreenshot = (value) => {
     // Get user_id from local storage
     let user_id = localStorage.getItem('user_id');
