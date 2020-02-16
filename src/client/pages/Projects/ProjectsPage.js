@@ -19,7 +19,6 @@ import AnnotationWrapper from '../../components/Annotation/AnnotationWrapper';
 class ProjectPage extends Component {
   state = {
     user: null,
-    screenshotImage: '',
     screenshotsKey: ' ',
     screenshotId: null,
     annotations: [],
@@ -100,8 +99,6 @@ class ProjectPage extends Component {
         {({ isAuthenticated }) => {
           return (
             <div>
-              <div>{this.state.screenshotImage && <Loading />}</div>
-              {!this.state.screenshotImage && (
                 <div>
                   <div className="project-page-container">
                     <SidebarMenu />
@@ -164,8 +161,7 @@ class ProjectPage extends Component {
                   <div className="project-page-footer">
                     <Footer />
                   </div>
-                </div>
-              )}
+                </div>              
             </div>
           );
         }}
