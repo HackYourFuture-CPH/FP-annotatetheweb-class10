@@ -23,7 +23,7 @@ class LoginPage extends Component {
       email: '',
       password: '',
       isLoading: false,
-      screenshotsKey: ''
+      screenshotsKey: ""
     };
   }
   async componentDidMount() {
@@ -97,7 +97,9 @@ class LoginPage extends Component {
     const data = await response.json();
     const { user_id } = data[0];
     localStorage.setItem('user_id', JSON.stringify(user_id));
-    if(this.state.screenshotsKey ==='')
+    const screenshotsKey =
+      JSON.parse(localStorage.getItem('screenshot_key')) || []; 
+    if(screenshotsKey.length=== 0)
       this.props.history.push('/');
     else
       this.props.history.push('/projects');
