@@ -19,7 +19,7 @@ class RegisterPage extends Component {
       userName: '',
       email: '',
       password: '',
-      screenshotsKey: ''
+      screenshotsKey: ""
     };
   }
   async componentDidMount() {
@@ -76,14 +76,15 @@ class RegisterPage extends Component {
     }
   };
 
-  signInWithGoogle = () => {
+  signInWithGoogle = async() => {
     signInWithGoogle()
       .then((user) => {
         // eslint-disable-next-line no-console
         console.log('User logged in, using google');
         this.fillUsersTable(user.displayName, user.displayName, user.uid);
         // this.getUserId(user.email);
-        if(this.state.screenshotsKey==='')
+       this.getUserId(user.uid);       
+        if(this.state.screenshotsKey.length==0)
           this.props.history.push('/');
         else
           this.props.history.push('/projects');
@@ -128,7 +129,21 @@ class RegisterPage extends Component {
         console.log(error);
       });
   };
-
+  getUserId = async (uid) => {
+    const response = await fetch(`/api/users/uid/${uid}`, {
+      method: 'GET',
+      mode: 'cors',
+      cache: 'no-cache',
+      credentials: 'same-origin',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+    
+    const data = await response.json();
+    const { user_id } = data[0];
+    localStorage.setItem('user_id', JSON.stringify(user_id));
+  }
   onInputChange = ({ name, userName, email, password }) => {
     this.setState({ name, userName, email, password });
   };
