@@ -18,24 +18,25 @@ const createComment = async ({
   };
 };
 
-const getCommentsForAnnotation = (fkAnnotationsId) => {
+const getCommentsForAnnotation = (fk_annotations_id) => {
+  console.log(fk_annotations_id)
   return knex('comments')
-    .where({ fkAnnotationsId })
+    .where({ fk_annotations_id })
     .select('*');
 };
 
-const updateCommentById = (commentId, body) => {
+const updateCommentById = (comment_id, body) => {
   return knex('comments')
-    .where({ commentId })
+    .where({ comment_id })
     .update({
       description: body.description,
       updated_at: new Date(),
     });
 };
 
-const deleteCommentById = (commentId) => {
+const deleteCommentById = (comment_id) => {
   return knex('comments')
-    .where({ commentId })
+    .where({ comment_id })
     .del();
 };
 

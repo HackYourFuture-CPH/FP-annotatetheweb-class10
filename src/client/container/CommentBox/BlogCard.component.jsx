@@ -12,12 +12,25 @@ class BlogCard extends Component {
     showDropdown: false,
   };
 
+  async componentDidMount() {
+    const fkAnnotationsId = this.props.annotationId;
+    const response =  await fetch(`/api/comments/annotation/${fkAnnotationsId}`, {
+      headers : { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+       }
+
+    });
+    const previousComments = await response.json();
+    console.log(previousComments)
+    this.setState({inputValue: previousComments})
+  }
   // Input event handler
-  handleInputChange = (event) => {//ON ENTER CHANGE
+  handleInputChange = async (event) => {//ON ENTER CHANGE
     if (event.keyCode === 13) {
       const newComment = event.target.value;
-
-      const fkAnnotationsId = this.props.annotationId;
+      
+      const fkAnnotationsId = this.props.annotationId;      
       const fkUserId = JSON.parse(localStorage.getItem('user_id')) || null;
       this.postComment(newComment, fkAnnotationsId, null, fkUserId);
 
@@ -44,7 +57,6 @@ class BlogCard extends Component {
       }),
     });
   }
-
 
   // button click event handler
   onClickHandle = () => {
@@ -85,7 +97,7 @@ class BlogCard extends Component {
               handleInputChange={this.handleInputChange}
             />
           </div>
-          {/* <CommentList inputValue={this.state.inputValue} /> */}
+          <CommentList inputValue={this.state.inputValue} />
         </div>
       </>
     );

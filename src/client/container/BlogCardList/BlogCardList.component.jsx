@@ -2,8 +2,6 @@ import React from 'react';
 import BlogCard from '../CommentBox/BlogCard.component';
 
 const BlogCardList = ({ annotations }) => {
-  console.log('annotations', { annotations });
-
   return (
     <>
       {annotations && (
