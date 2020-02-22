@@ -12,7 +12,7 @@ class BlogCard extends Component {
     showDropdown: false,
   };
 
-  async componentDidMount() {
+  getComments = async() => {
     const fkAnnotationsId = this.props.annotationId;
     const response =  await fetch(`/api/comments/annotation/${fkAnnotationsId}`, {
       headers : { 
@@ -22,21 +22,22 @@ class BlogCard extends Component {
 
     });
     const previousComments = await response.json();
-    console.log(previousComments)
-    this.setState({inputValue: previousComments})
+    this.setState({inputValue: previousComments});
+  }
+
+  async componentDidMount() {
+    this.getComments();
   }
   // Input event handler
   handleInputChange = async (event) => {//ON ENTER CHANGE
     if (event.keyCode === 13) {
-      const newComment = event.target.value;
-      
+      const input = event.target;
+      const newComment = event.target.value;      
       const fkAnnotationsId = this.props.annotationId;      
       const fkUserId = JSON.parse(localStorage.getItem('user_id')) || null;
-      this.postComment(newComment, fkAnnotationsId, null, fkUserId);
-
-      const value = [newComment, ...this.state.inputValue];
-      this.setState({ inputValue: value });
-      event.target.value = '';
+      await this.postComment(newComment, fkAnnotationsId, null, fkUserId);
+      await this.getComments();
+      input.value = '';
     }
   };
 
@@ -74,7 +75,7 @@ class BlogCard extends Component {
       { id: 3, title: 'mark as done' },
       { id: 4, title: 'send to Trolle' },
     ];
-    console.log('comments', this.state.inputValue)
+    console.log(' this.state.inputValue', this.state.inputValue)
     return (
       <>
         <div className="work-panel">

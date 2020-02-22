@@ -7,7 +7,6 @@ const BlogCardList = ({ annotations }) => {
       {annotations && (
         <div className="comment-container" style={{ width: '100%' }}>
           {annotations.map((annotation, i) => {
-            console.log('ann', annotation)
             return (
               <BlogCard
                 key={i}
