@@ -12,6 +12,10 @@ class BlogCard extends Component {
     showDropdown: false,
   };
 
+  async componentDidMount() {
+    this.getComments();
+  }
+
   getComments = async() => {
     const fkAnnotationsId = this.props.annotationId;
     const response =  await fetch(`/api/comments/annotation/${fkAnnotationsId}`, {
@@ -25,11 +29,8 @@ class BlogCard extends Component {
     this.setState({inputValue: previousComments});
   }
 
-  async componentDidMount() {
-    this.getComments();
-  }
-  // Input event handler
-  handleInputChange = async (event) => {//ON ENTER CHANGE
+  // Input event handler //ON ENTER CHANGE
+  handleInputChange = async (event) => {   
     if (event.keyCode === 13) {
       const input = event.target;
       const newComment = event.target.value;      
@@ -38,6 +39,15 @@ class BlogCard extends Component {
       await this.postComment(newComment, fkAnnotationsId, null, fkUserId);
       await this.getComments();
       input.value = '';
+    }
+  };
+
+  // button click event handler
+  onClickHandle = () => {
+    if (this.state.showDropdown) {
+      this.setState({ showDropdown: false });
+    } else {
+      this.setState({ showDropdown: true });
     }
   };
 
@@ -59,15 +69,6 @@ class BlogCard extends Component {
     });
   }
 
-  // button click event handler
-  onClickHandle = () => {
-    if (this.state.showDropdown) {
-      this.setState({ showDropdown: false });
-    } else {
-      this.setState({ showDropdown: true });
-    }
-  };
-
   render() {
     const titleArray = [
       { id: 1, title: '...' },
@@ -75,7 +76,6 @@ class BlogCard extends Component {
       { id: 3, title: 'mark as done' },
       { id: 4, title: 'send to Trolle' },
     ];
-    console.log(' this.state.inputValue', this.state.inputValue)
     return (
       <>
         <div className="work-panel">

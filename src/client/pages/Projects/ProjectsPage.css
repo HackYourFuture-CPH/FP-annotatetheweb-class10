@@ -1,22 +1,23 @@
 .project-page-container{
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+    flex-direction: row;
 }
 .project-page-rightside-container{
     align-self: flex-end;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
     text-align: center;
     max-width: 300px;
-    height: 100%;
     z-index: 1;
-
     box-shadow: -2px 0px 10px 1px #AAAAAA;
+    padding-bottom: 50px;
+    min-height: 100vh;
 }
+/* .project-page-rightside-innerContainer{
+    margin-top: 80px;
+} */
 
 .project-page-button{
     font-family: 'open sans';
@@ -38,8 +39,6 @@
     width: calc(100% - 350px);
     margin-left: 50px;
     height: 100%;
-    position: absolute;
-    /* z-index: -1; */
 }
 
 .no-comment-message{
@@ -80,7 +79,7 @@ position: relative;
         margin-right: 3rem;
       }
 
-    .project-page-rightside-innerContainer{
+    .project-page-rightside-innerContainer{        
         display: none;
     }
     .comment-container{

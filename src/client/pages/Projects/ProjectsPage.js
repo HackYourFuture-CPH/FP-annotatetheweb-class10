@@ -24,22 +24,22 @@ class ProjectPage extends Component {
     userName: '',
   };
 
+  async componentDidMount() {
+    const screenshotsKey =
+      JSON.parse(localStorage.getItem('screenshot_key')) || [];
+    const screenshotId =
+      JSON.parse(localStorage.getItem('screenshot_id')) || null;
+    this.getUser();
+
+    this.setState({ screenshotsKey, screenshotId }, this.reloadAnnotations);
+  }
+
   async getUser() {
     const userId = JSON.parse(localStorage.getItem('user_id')) || null;
     const response = await fetch(`/api/users/${userId}`);
     const user = await response.json();
     const userName = user[0].name;
     this.setState({ userName });
-  }
-
-  async componentDidMount() {
-    const screenshotsKey =
-      JSON.parse(localStorage.getItem('screenshot_key')) || [];
-    const screenshotId =
-      JSON.parse(localStorage.getItem('screenshot_id')) || null;
-      this.getUser();
-
-    this.setState({ screenshotsKey, screenshotId }, this.reloadAnnotations);
   }
 
   // eslint-disable-next-line react/sort-comp
