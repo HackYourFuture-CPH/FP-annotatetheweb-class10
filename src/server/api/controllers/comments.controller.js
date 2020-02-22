@@ -19,7 +19,6 @@ const createComment = async ({
 };
 
 const getCommentsForAnnotation = (fk_annotations_id) => {
-  console.log(fk_annotations_id)
   return knex('comments')
     .where({ fk_annotations_id })
     .select('*');

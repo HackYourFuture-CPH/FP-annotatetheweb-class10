@@ -23,10 +23,9 @@ router.post('/', (req, res) => {
 
 // ENDPOINT: /api/comments/annotation/:fk_annotation_id :GET to get all comments added to a specific annotation
 router.get('/annotation/:fk_annotations_id', (req, res, next) => {
-  console.log(req.param.fk_annotations_id)
   commentsController
     .getCommentsForAnnotation(req.params.fk_annotations_id)
-    .then((result) => { console.log(result); res.json(result)})
+    .then((result) => { res.json(result)})
     .catch(next);
 });
 
