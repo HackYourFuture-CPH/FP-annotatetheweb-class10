@@ -14,6 +14,9 @@
     box-shadow: -2px 0px 10px 1px #AAAAAA;
     padding-bottom: 50px;
     min-height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
 }
 
 .project-page-button{

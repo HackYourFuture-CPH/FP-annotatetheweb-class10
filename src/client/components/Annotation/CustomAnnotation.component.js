@@ -51,7 +51,7 @@ class CustomAnnotation extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="App custom-annotation-style">
         <Annotation
           src={this.props.screenshot.src}
           alt={this.props.screenshot.alt}
