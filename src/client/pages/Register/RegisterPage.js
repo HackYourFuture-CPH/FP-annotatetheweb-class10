@@ -128,7 +128,8 @@ class RegisterPage extends Component {
           this.props.history.push('/');
         } else {
           // eslint-disable-next-line no-console
-          console.log(user.message);
+          alert(user.message);
+
         }
       })
       .catch((error) => {
