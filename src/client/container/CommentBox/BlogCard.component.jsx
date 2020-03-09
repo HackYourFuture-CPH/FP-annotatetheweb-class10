@@ -16,25 +16,27 @@ class BlogCard extends Component {
     this.getComments();
   }
 
-  getComments = async() => {
+  getComments = async () => {
     const fkAnnotationsId = this.props.annotationId;
-    const response =  await fetch(`/api/comments/annotation/${fkAnnotationsId}`, {
-      headers : { 
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-       }
-
-    });
+    const response = await fetch(
+      `/api/comments/annotation/${fkAnnotationsId}`,
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+      },
+    );
     const previousComments = await response.json();
-    this.setState({inputValue: previousComments});
-  }
+    this.setState({ inputValue: previousComments });
+  };
 
   // Input event handler //ON ENTER CHANGE
-  handleInputChange = async (event) => {   
+  handleInputChange = async (event) => {
     if (event.keyCode === 13) {
       const input = event.target;
-      const newComment = event.target.value;      
-      const fkAnnotationsId = this.props.annotationId;      
+      const newComment = event.target.value;
+      const fkAnnotationsId = this.props.annotationId;
       const fkUserId = JSON.parse(localStorage.getItem('user_id')) || null;
       await this.postComment(newComment, fkAnnotationsId, null, fkUserId);
       await this.getComments();
@@ -66,7 +68,17 @@ class BlogCard extends Component {
         fk_comments_id: fkCommentsId,
         fk_user_id: fkUserId,
       }),
-    });
+    })
+      .then((response) => {
+        if (response.status >= 400 && response.status < 600) {
+          throw new Error('Something went wrong with response from server. Maybe you should write shorter comment.');
+        }
+        return response;
+      })
+      .catch((error) => {
+        // Your error is here!
+        alert(error);
+      });
   }
 
   render() {
