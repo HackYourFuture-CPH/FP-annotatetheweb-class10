@@ -25,13 +25,19 @@ class ProjectPage extends Component {
   };
 
   async componentDidMount() {
-    const screenshotsKey =
-      JSON.parse(localStorage.getItem('screenshot_key')) || [];
-    const screenshotId =
-      JSON.parse(localStorage.getItem('screenshot_id')) || null;
-    this.getUser();
-
+    // Do not get id and key from local storage, since they can change. But get it from the url. 
+    // const screenshotsKey =
+    //   JSON.parse(localStorage.getItem('screenshot_key')) || [];
+    //  ScreenshotId used to be provided from localhost
+    // const screenshotId =
+    //   JSON.parse(localStorage.getItem('screenshot_id')) || null;
+    // this.getUser();
+    // Get screenshot_id from url
+    const urlParams = new URLSearchParams(window.location.search);
+    const screenshotId = urlParams.get('screenshot_id');
+    const screenshotsKey = urlParams.get('screenshot_key');
     this.setState({ screenshotsKey, screenshotId }, this.reloadAnnotations);
+
   }
 
   async getUser() {
@@ -58,7 +64,7 @@ class ProjectPage extends Component {
 
   onHover = () => {
     console.log('onHover');
-  }
+  };
 
   render() {
     const profile = {
