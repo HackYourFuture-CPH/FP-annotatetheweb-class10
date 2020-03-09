@@ -149,8 +149,10 @@ class Home extends Component {
   onLogOut = () => {
     const user_id = 1;
     const screenshot_key = '';
+    const screenshot_id = '';
     localStorage.setItem('user_id', JSON.stringify(user_id));
     localStorage.setItem('screenshot_key', JSON.stringify(screenshot_key));
+    localStorage.setItem('screenshot_id', JSON.stringify(screenshot_id));
 
     doSignOut();
   };
