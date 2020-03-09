@@ -1,0 +1,30 @@
+.annotation-error-container {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.annotation-error-message {
+    font-family: "Open Sans", sans-serif;
+    font-size: 2rem;
+}
+
+.annotation-error-button {
+    background-color: rgb(205, 231, 105);
+    width: 10rem;
+    height: 3rem;
+    color: gray;
+    border: none;
+    font-family: 'Open Sans';
+    font-size: 1rem;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.annotation-error-button-container {
+    display: flex;
+    justify-content: space-around;
+}

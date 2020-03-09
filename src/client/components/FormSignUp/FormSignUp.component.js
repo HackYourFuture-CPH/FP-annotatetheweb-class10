@@ -32,13 +32,6 @@ class FormSignUp extends Component {
   onClick = (event) => {
     if (this.state.acceptedTermsAndPolicy) {
       this.props.onClick(event, null);
-      this.setState({
-        name: '',
-        userName: '',
-        email: '',
-        password: '',
-        acceptedTermsAndPolicy: false,
-      });
     } else {
       this.props.onClick(null, 'You need to agree with terms and and policy');
     }
