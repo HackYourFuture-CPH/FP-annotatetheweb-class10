@@ -5,7 +5,7 @@ const CommentList = ({ inputValue }) => {
   return (
     <div className="comment-list">
       {inputValue.map((item) => (
-        <List title={item.comment} />
+        <List title={item.description} key={item.comment_id}/>
       ))}
     </div>
   );
