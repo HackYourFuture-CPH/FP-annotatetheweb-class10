@@ -26,21 +26,27 @@ class CustomAnnotation extends Component {
 
   onSubmit = () => {
     const { annotation, annotations, data } = this.state;
-    this.setState(
-      {
-        annotation: {},
-        annotations: annotations.concat({
-          geometry: annotation.geometry,
-          data: { ...data },
-        }),
-      },
-      // () => {
-      //   localStorage.setItem(
-      //     'annotations',
-      //     JSON.stringify(this.state.annotations),
-      //   );
-      // },
-    );
+    if (data.title || data.description) {
+      this.setState(
+        {
+          annotation: {},
+          annotations: annotations.concat({
+            geometry: annotation.geometry,
+            data: { ...data },
+          }),
+        },
+        // () => {
+        //   localStorage.setItem(
+        //     'annotations',
+        //     JSON.stringify(this.state.annotations),
+        //   );
+        // },
+      );
+    } else {
+      this.setState({
+        annotation: {}
+      });
+    }
 
     this.props.onSave({
       data: annotation.geometry,
