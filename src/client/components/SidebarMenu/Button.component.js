@@ -11,16 +11,16 @@ class Button extends Component {
     };
   }
 
-  showDialog = () => {
+  showDialog = (hasDialog) => {
     const dialog = document.querySelector('.shareLink-dialog');
-    if (this.state.showDialog) {
-      this.setState({ showDialog: false });
-      console.log('dialog closed');
-      dialog.style.display = 'none';
-    } else {
-      this.setState({ showDialog: true });
-      console.log('dialog open');
-      dialog.style.display = 'block';
+    if (hasDialog) {
+      if (this.state.showDialog) {
+        this.setState({ showDialog: false });
+        dialog.style.display = 'none';
+      } else {
+        this.setState({ showDialog: true });
+        dialog.style.display = 'block';
+      }
     }
   };
 
@@ -29,7 +29,7 @@ class Button extends Component {
       <button
         type="button"
         className={this.props.buttonClasses}
-        onClick={() => this.showDialog()}
+        onClick={() => this.showDialog(this.props.hasDialog)}
       >
         <FontAwesomeIcon
           icon={this.props.icon}
@@ -37,7 +37,7 @@ class Button extends Component {
           className={this.props.fontClasses}
           fixedWidth
         />
-        <ShareLinkDialog />
+        {this.props.hasDialog ? <ShareLinkDialog /> : null}
       </button>
     );
   }

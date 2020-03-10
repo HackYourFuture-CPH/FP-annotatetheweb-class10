@@ -25,27 +25,17 @@ class ProjectPage extends Component {
   };
 
   async componentDidMount() {
-    // Do not get id and key from local storage, since they can change. But get it from the url.
-    // const screenshotsKey =
-    //   JSON.parse(localStorage.getItem('screenshot_key')) || [];
-    //  ScreenshotId used to be provided from localhost
-    // const screenshotId =
-    //   JSON.parse(localStorage.getItem('screenshot_id')) || null;
-    // this.getUser();
     // Get screenshot_id from url
-
     const urlParams = new URLSearchParams(window.location.search);
     const screenshotId = urlParams.get('screenshot_id');
     let screenshotsKey;
+    // Get screenshot key using screenshot_id
     fetch(`api/screenshots/screenshot_id/${screenshotId}`)
       .then((res) => res.json())
       .then((data) => {
         screenshotsKey = data[0].key;
-        console.log(screenshotsKey);
         this.setState({ screenshotsKey, screenshotId }, this.reloadAnnotations);
-        console.log(this.state.screenshotsKey, this.state.screenshotId);
       });
-    // Get screenshot key using screenshot_id
   }
 
   async getUser() {

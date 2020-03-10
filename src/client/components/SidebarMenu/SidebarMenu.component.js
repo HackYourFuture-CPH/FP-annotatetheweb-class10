@@ -39,6 +39,7 @@ class SidebarMenu extends Component {
             icon={faShareAlt}
             buttonClasses="sidebar-menu-button sidebar-menu-icon-width black"
             fontClasses="sidebar-menu-invert-color"
+            hasDialog={true}
           />
           <Button
             icon={faCog}
