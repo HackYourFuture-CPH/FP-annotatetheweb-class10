@@ -40,11 +40,11 @@ router.post('/', (req, res) => {
     });
 });
 
-// Get screenshot_key by project_id
-// ENDPOINT: /api/screenshots/project_id
-router.get('/project_id/:project_id', (req, res, next) => {
+// Get screenshot_key by screenshot_id
+// ENDPOINT: /api/screenshots/screenshot_id
+router.get('/screenshot_id/:screenshot_id', (req, res, next) => {
   screenshotsController
-    .getScreenshotKeyByProjectId(req.params.project_id)
+    .getScreenshotKeyByProjectId(req.params.screenshot_id)
     .then((result) => res.json(result))
     .catch(next);
 });
