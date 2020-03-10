@@ -50,8 +50,17 @@ const createScreenshot = async (body) => {
   };
 };
 
+// Get screenshot key by project id
+const getScreenshotKeyByProjectId = (fk_project_id) => {
+  return knex('screenshots')
+    .where({ fk_project_id })
+    .select('key');
+};
+
+
 module.exports = {
   getScreenshots,
   getScreenshotByKey,
-  createScreenshot
+  createScreenshot,
+  getScreenshotKeyByProjectId
 };
