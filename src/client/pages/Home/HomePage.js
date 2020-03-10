@@ -75,7 +75,7 @@ class Home extends Component {
           //   'screenshot_id',
           //   JSON.stringify(screenshot_id),
           // );
-          this.props.history.push(`/projects/?screenshot_id=${screenshot_id}&screenshot_key=${screenshot_key}`);
+          this.props.history.push(`/projects/?screenshot_id=${screenshot_id}`);
         });
         // If user wants mobile size screenshot
       } else {
@@ -98,7 +98,7 @@ class Home extends Component {
           //   'screenshot_id',
           //   JSON.stringify(screenshot_id),
           // );
-          this.props.history.push(`/projects/?screenshot_id=${screenshot_id}&screenshot_key=${screenshot_key}`);
+          this.props.history.push(`/projects/?screenshot_id=${screenshot_id}`);
         });
       }
     });
