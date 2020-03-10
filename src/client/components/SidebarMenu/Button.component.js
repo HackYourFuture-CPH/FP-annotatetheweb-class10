@@ -13,13 +13,16 @@ class Button extends Component {
 
   showDialog = (hasDialog) => {
     const dialog = document.querySelector('.shareLink-dialog');
+    const dialogBackground = document.querySelector('.dialog-background');
     if (hasDialog) {
       if (this.state.showDialog) {
         this.setState({ showDialog: false });
         dialog.style.display = 'none';
+        dialogBackground.style.display = 'none';
       } else {
         this.setState({ showDialog: true });
         dialog.style.display = 'block';
+        dialogBackground.style.display = 'block';
       }
     }
   };
