@@ -60,10 +60,6 @@ class ProjectPage extends Component {
     this.setState({ annotations });
   }
 
-  onHover = () => {
-    console.log('onHover');
-  };
-
   render() {
     const profile = {
       src: samplePhoto,

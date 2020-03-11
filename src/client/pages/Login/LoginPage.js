@@ -101,7 +101,6 @@ class LoginPage extends Component {
       },
     })
     const data = await response.json();
-      console.log(data);
         const { user_id } = data[0];
         localStorage.setItem('user_id', JSON.stringify(user_id));
         this.props.history.push('/');
