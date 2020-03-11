@@ -17,22 +17,29 @@ class Button extends Component {
     const screenshot = document.querySelector('.lmGPCf');
     const screenshotTools = document.querySelectorAll('.inYJUn');
     console.log(screenshotTools);
+    // If button is given a dialog
     if (hasDialog) {
+      // If dialog is already open -> close it, by clicking on the background do not display dialog, dialog-bg.
+      // I also needed to change screenshot positions/displays, since by they were covering the dialog
       if (this.state.showDialog) {
         this.setState({ showDialog: false });
         dialog.style.display = 'none';
         dialogBackground.style.display = 'none';
-        screenshot.style.position = "relative";
-        screenshotTools.forEach(tool => {tool.style.display = "block"});
+        screenshot.style.position = 'relative';
+        screenshotTools.forEach((tool) => {
+          tool.style.display = 'block';
+        });
       } else {
+        // Open dialog
         this.setState({ showDialog: true });
         dialog.style.display = 'block';
         dialogBackground.style.display = 'block';
-        screenshot.style.position = "static";
-        screenshotTools.forEach(tool => {tool.style.display = "none"});
+        screenshot.style.position = 'static';
+        screenshotTools.forEach((tool) => {
+          tool.style.display = 'none';
+        });
       }
     }
-    console.log('clicked');
   };
 
   render() {
@@ -50,9 +57,13 @@ class Button extends Component {
             fixedWidth
           />
         </button>
+        {/* Only active buttons can open dialog */}
         {this.props.hasDialog ? (
           <React.Fragment>
-            <div className="dialog-background" onClick={() => this.showDialog(this.props.hasDialog)}></div>
+            <div
+              className="dialog-background"
+              onClick={() => this.showDialog(this.props.hasDialog)}
+            ></div>
             <ShareLinkDialog />
           </React.Fragment>
         ) : null}

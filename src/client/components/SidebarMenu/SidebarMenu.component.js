@@ -17,7 +17,7 @@ class SidebarMenu extends Component {
         <div className="sidebar-menu">
           <Button
             icon={faSearch}
-            buttonClasses="sidebar-menu-button sidebar-menu-icon-width black pink"
+            buttonClasses="sidebar-menu-button sidebar-menu-icon-width black pink sidebar-menu-inactive"
             fontClasses="sidebar-menu-invert-color"
           />
           <Button
@@ -32,7 +32,7 @@ class SidebarMenu extends Component {
           />
           <Button
             icon={faCommentAlt}
-            buttonClasses="sidebar-menu-button sidebar-menu-icon-width black"
+            buttonClasses="sidebar-menu-button sidebar-menu-icon-width black sidebar-menu-inactive"
             fontClasses="sidebar-menu-invert-color"
           />
           <Button
