@@ -9,6 +9,7 @@
   font-size: 16px;
   line-height: 22px;
   margin: 3px 0px 3px 15px;
+  color: black;
 }
 
 .shareLink-viaLink-input {
@@ -19,6 +20,7 @@
   margin: 0px 8px 0px 10px;
   border: none;
   padding: 10px 10px 10px 7px;
+  color: black;
 }
 
 .shareLink-viaLink-btnCopy {

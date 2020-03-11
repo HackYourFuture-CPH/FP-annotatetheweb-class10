@@ -25,23 +25,31 @@ class Button extends Component {
         dialogBackground.style.display = 'block';
       }
     }
+    console.log('clicked');
   };
 
   render() {
     return (
-      <button
-        type="button"
-        className={this.props.buttonClasses}
-        onClick={() => this.showDialog(this.props.hasDialog)}
-      >
-        <FontAwesomeIcon
-          icon={this.props.icon}
-          size="lg"
-          className={this.props.fontClasses}
-          fixedWidth
-        />
-        {this.props.hasDialog ? <ShareLinkDialog /> : null}
-      </button>
+      <React.Fragment>
+        <button
+          type="button"
+          className={this.props.buttonClasses}
+          onClick={() => this.showDialog(this.props.hasDialog)}
+        >
+          <FontAwesomeIcon
+            icon={this.props.icon}
+            size="lg"
+            className={this.props.fontClasses}
+            fixedWidth
+          />
+        </button>
+        {this.props.hasDialog ? (
+          <React.Fragment>
+            <div className="dialog-background" onClick={() => this.showDialog(this.props.hasDialog)}></div>
+            <ShareLinkDialog />
+          </React.Fragment>
+        ) : null}
+      </React.Fragment>
     );
   }
 }

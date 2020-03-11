@@ -13,10 +13,10 @@ function ShareLinkDialog(props) {
   return (
     // eslint-disable-next-line react/react-in-jsx-scope
     <React.Fragment>
-      <div className="dialog-background"></div>
+      
       <div className="shareLink-dialog">
         <ShareLink copyURL={getUrl()} />
-        <MediaButtons url={props.copyURL} title={props.title} />
+        <MediaButtons url={getUrl()} title={props.title} />
       </div>
     </React.Fragment>
   );

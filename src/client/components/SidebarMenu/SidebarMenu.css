@@ -49,6 +49,16 @@
   color: rgb(255, 255, 255);
 }
 
+.dialog-background {
+  position: absolute;
+  top: -10rem;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  display: none;
+}
+
 @media (min-width: 566px) {
   .sidebar-menu-wrapper {
     justify-content: center;
