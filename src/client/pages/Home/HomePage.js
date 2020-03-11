@@ -128,7 +128,6 @@ class Home extends Component {
     this.setState({ urlValue: event.target.value });
   }
 
-
   onLogOut = () => {
     const user_id = 1;
     localStorage.setItem('user_id', JSON.stringify(user_id));
