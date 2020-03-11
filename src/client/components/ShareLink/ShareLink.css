@@ -32,4 +32,13 @@
   color: #a3b93a;
   margin: 24px 0px 0px 0px;
   align-self: center;
+  cursor: pointer;
 }
+
+.shareLink-viaLink-btnCopy:active {
+  color: darkgreen;
+  background: rgb(223, 219, 219);
+  border-radius: 15px;
+}
+
+
