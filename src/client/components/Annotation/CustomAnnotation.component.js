@@ -10,22 +10,21 @@ class CustomAnnotation extends Component {
   };
 
   onChange = (annotation, value = {}) => {
-    if (value.title !== undefined && value.description !== undefined) {
-      this.setState({
-        annotation,
-        data: {
-          title: value.title,
-          description: value.description,
-          id: Math.random() * 1000,
-        },
-      });
-    } else {
-      this.setState({ annotation });
-    }
+    this.setState({
+      annotation,
+      data: {
+        title: value.title,
+        description: value.description,
+        id: Math.random() * 1000,
+      },
+    });
   };
 
-  onSubmit = () => {
-    const { annotation, annotations, data } = this.state;
+  onSubmit = (isClancelClicked) => {
+    let { annotation, annotations, data } = this.state;
+    if (isClancelClicked === 'clicked') {
+      data = {};
+    }
     if (data.title || data.description) {
       this.setState(
         {
@@ -44,7 +43,7 @@ class CustomAnnotation extends Component {
       );
     } else {
       this.setState({
-        annotation: {}
+        annotation: {},
       });
     }
 
