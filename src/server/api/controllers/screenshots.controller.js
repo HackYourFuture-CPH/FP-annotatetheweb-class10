@@ -51,7 +51,7 @@ const createScreenshot = async (body) => {
 };
 
 // Get screenshot key by screenshot id
-const getScreenshotKeyByProjectId = (screenshot_id) => {
+const getScreenshotKeyByScreenshotId = (screenshot_id) => {
   return knex('screenshots')
     .where({ screenshot_id })
     .select('key');
@@ -62,5 +62,5 @@ module.exports = {
   getScreenshots,
   getScreenshotByKey,
   createScreenshot,
-  getScreenshotKeyByProjectId
+  getScreenshotKeyByScreenshotId
 };

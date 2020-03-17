@@ -27,7 +27,7 @@ class ProjectPage extends Component {
   async componentDidMount() {
     // Get screenshot_id from url
     const urlParams = new URLSearchParams(window.location.search);
-    const screenshotId = urlParams.get('screenshot_id');
+    const screenshotId = urlParams.get('id');
     let screenshotsKey;
     // Get screenshot key using screenshot_id
     fetch(`api/screenshots/screenshot_id/${screenshotId}`)
