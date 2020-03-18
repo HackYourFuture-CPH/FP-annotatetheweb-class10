@@ -54,6 +54,7 @@ function FormLogin(props) {
           //   textHolder="enter password"
           inputClass="password-box"
           changeHandler={props.handleChange}
+          onKeyDown={props.onKeyDown}
         />
         <div className="login-button-wrapper">
           <FormButton
