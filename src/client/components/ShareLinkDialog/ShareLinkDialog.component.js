@@ -1,5 +1,5 @@
 /* eslint-disable react/react-in-jsx-scope */
-import React, { Component } from 'react';
+import React from 'react';
 import ShareLink from '../ShareLink/ShareLink.component';
 import MediaButtons from '../MediaButtons/MediaButtons.component';
 import './ShareLinkDialog.css';

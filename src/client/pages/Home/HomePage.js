@@ -66,7 +66,7 @@ class Home extends Component {
           // Save screenshot into local storage
           const screenshot_key = data.key;
           const screenshot_id = data.id;
-          this.props.history.push(`/projects/?id=${screenshot_id}`);
+          this.props.history.push(`/projects/${screenshot_id}`);
         });
         // If user wants mobile size screenshot
       } else {
@@ -81,7 +81,7 @@ class Home extends Component {
           // Save screenshot into local storage
           const screenshot_key = data.key;
           const screenshot_id = data.id;
-          this.props.history.push(`/projects/?id=${screenshot_id}`);
+          this.props.history.push(`/projects/${screenshot_id}`);
         });
       }
     });

@@ -16,7 +16,6 @@ class Button extends Component {
     const dialogBackground = document.querySelector('.dialog-background');
     const screenshot = document.querySelector('.lmGPCf');
     const screenshotTools = document.querySelectorAll('.inYJUn');
-    console.log(screenshotTools);
     // If button is given a dialog
     if (hasDialog) {
       // If dialog is already open -> close it, by clicking on the background do not display dialog, dialog-bg.
@@ -63,7 +62,7 @@ class Button extends Component {
             <div
               className="dialog-background"
               onClick={() => this.showDialog(this.props.hasDialog)}
-            ></div>
+            />
             <ShareLinkDialog />
           </React.Fragment>
         ) : null}
