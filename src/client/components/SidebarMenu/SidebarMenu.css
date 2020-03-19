@@ -26,9 +26,18 @@
   padding: 1rem;
 }
 
-.sidebar-menu-button:hover {
+.sidebar-menu-button:hover{
   background-color: rgb(71, 71, 71);
+
 }
+
+.shareLink-dialog {
+  display: none;
+  position: absolute;
+  bottom: 2rem;
+  left: 3.4rem;
+}
+
 
 .sidebar-menu {
   display: flex;
@@ -38,6 +47,15 @@
 
 .black:hover {
   color: rgb(255, 255, 255);
+}
+
+.dialog-background {
+  position: absolute;
+  top: -10rem;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: none;
 }
 
 @media (min-width: 566px) {

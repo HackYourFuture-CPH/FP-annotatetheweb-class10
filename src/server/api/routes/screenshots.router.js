@@ -40,4 +40,13 @@ router.post('/', (req, res) => {
     });
 });
 
+// Get screenshot_key by screenshot_id
+// ENDPOINT: /api/screenshots/screenshot_id
+router.get('/screenshot_id/:screenshot_id', (req, res, next) => {
+  screenshotsController
+    .getScreenshotKeyByScreenshotId(req.params.screenshot_id)
+    .then((result) => res.json(result))
+    .catch(next);
+});
+
 module.exports = router;

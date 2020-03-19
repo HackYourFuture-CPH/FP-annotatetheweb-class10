@@ -25,13 +25,16 @@ class ProjectPage extends Component {
   };
 
   async componentDidMount() {
-    const screenshotsKey =
-      JSON.parse(localStorage.getItem('screenshot_key')) || [];
-    const screenshotId =
-      JSON.parse(localStorage.getItem('screenshot_id')) || null;
-    this.getUser();
-
-    this.setState({ screenshotsKey, screenshotId }, this.reloadAnnotations);
+    // Get screenshot_id from url
+    const screenshotId = location.pathname.split("/").pop()
+    let screenshotsKey;
+    // Get screenshot key using screenshot_id
+    fetch(`api/screenshots/screenshot_id/${screenshotId}`)
+      .then((res) => res.json())
+      .then((data) => {
+        screenshotsKey = data[0].key;
+        this.setState({ screenshotsKey, screenshotId }, this.reloadAnnotations);
+      });
   }
 
   async getUser() {
