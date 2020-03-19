@@ -10,37 +10,42 @@ class CustomAnnotation extends Component {
   };
 
   onChange = (annotation, value = {}) => {
-    if (value.title !== undefined && value.description !== undefined) {
-      this.setState({
-        annotation,
-        data: {
-          title: value.title,
-          description: value.description,
-          id: Math.random() * 1000,
-        },
-      });
-    } else {
-      this.setState({ annotation });
-    }
+    this.setState({
+      annotation,
+      data: {
+        title: value.title,
+        description: value.description,
+        id: Math.random() * 1000,
+      },
+    });
   };
 
-  onSubmit = () => {
-    const { annotation, annotations, data } = this.state;
-    this.setState(
-      {
+  onSubmit = (isClancelClicked) => {
+    let { annotation, annotations, data } = this.state;
+    if (isClancelClicked === 'clicked') {
+      data = {};
+    }
+    if (data.title || data.description) {
+      this.setState(
+        {
+          annotation: {},
+          annotations: annotations.concat({
+            geometry: annotation.geometry,
+            data: { ...data },
+          }),
+        },
+        // () => {
+        //   localStorage.setItem(
+        //     'annotations',
+        //     JSON.stringify(this.state.annotations),
+        //   );
+        // },
+      );
+    } else {
+      this.setState({
         annotation: {},
-        annotations: annotations.concat({
-          geometry: annotation.geometry,
-          data: { ...data },
-        }),
-      },
-      // () => {
-      //   localStorage.setItem(
-      //     'annotations',
-      //     JSON.stringify(this.state.annotations),
-      //   );
-      // },
-    );
+      });
+    }
 
     this.props.onSave({
       data: annotation.geometry,
