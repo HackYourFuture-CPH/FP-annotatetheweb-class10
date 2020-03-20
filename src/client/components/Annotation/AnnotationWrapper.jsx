@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import CustomAnnotation from './CustomAnnotation.component';
 import { useInterval } from '../../hooks/useInterval';
+import Button from '../Button/Button.component';
+import './AnnotationWrapper.css';
 
 const onSave = async (data, title, description, screenshotId) => {
   await fetch('http://localhost:3000/api/annotations/', {
@@ -55,7 +57,7 @@ function AnnotationWrapper(props) {
     () => {
       if (numberOfTries >= maxNumberOfTries) {
         setLoading(false);
-        seterrorMessage('Screenshot took too long to load');
+        seterrorMessage('Oops! Screenshot took too long to load. Did you use the right url?');
       }
       getScreenshot(props.screenshotURL, setLoading, () => {
         setnumberOfTries(numberOfTries + 1);
@@ -70,18 +72,27 @@ function AnnotationWrapper(props) {
 
   if (errorMessage) {
     return (
-      <div>
-        {errorMessage}
-        <button
-          type="button"
-          onClick={() => {
-            seterrorMessage('');
-            setnumberOfTries(0);
-            setLoading(true);
-          }}
-        >
-          Try loading it again
-        </button>
+      <div className="annotation-error-container">
+        <h3 className="annotation-error-message">{errorMessage}</h3>
+        <div className="annotation-error-button-container">
+          <Button
+            title="Try again"
+            buttonClassName="annotation-error-button"
+            onClickHandle={() => {
+              seterrorMessage('');
+              setnumberOfTries(0);
+              setLoading(true);
+            }}
+          />
+          <h4>Or</h4>
+          <Button
+            title="Try another link"
+            buttonClassName="annotation-error-button"
+            onClickHandle={() => {
+              location.href = '/';
+            }}
+          />
+        </div>
       </div>
     );
   }
@@ -90,7 +101,9 @@ function AnnotationWrapper(props) {
     <CustomAnnotation
       screenshot={backgroundImage}
       onSave={({ data, title, description }) =>
-        onSave(data, title, description, props.screenshotId).then(props.onAnnotationSaved)
+        onSave(data, title, description, props.screenshotId).then(
+          props.onAnnotationSaved,
+        )
       }
       onChange={props.onChange}
       onSubmit={props.onSubmit}

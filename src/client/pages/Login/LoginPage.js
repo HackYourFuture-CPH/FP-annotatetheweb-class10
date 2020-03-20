@@ -20,8 +20,8 @@ class LoginPage extends Component {
     super();
     this.state = {
       user: null,
-      email: '',
-      password: '',
+      email: null,
+      password: null,
       isLoading: false,
       screenshotsKey: ""
     };
@@ -38,14 +38,25 @@ class LoginPage extends Component {
   onLoginClick = (event) => {
     event.preventDefault();
     if (this.state.password && this.state.email) {
-      this.setState({ isLoading: true });
-    }
-    auth
-      .signInWithEmailAndPassword(this.state.email, this.state.password)
+      auth.signInWithEmailAndPassword(this.state.email, this.state.password)
       .then((data) => {
-        this.setState({ isLoading: false });
         this.getUserId(data.user.uid);
-      });
+        this.props.history.push('/');
+      })
+      .catch((error) => {
+        if (error.code === 'auth/wrong-password') {
+          alert('Wrong password. Please try again.')
+        } else if (error.code === 'auth/user-not-found') {
+          alert('Email not found.')
+        } else {
+            alert("There's something wrogn. Try again.");
+        }
+        this.getUserId(this.state.email);
+      })
+    } else {
+      alert('Please type your username and password.');
+    }
+    
   };
 
   onGoogleSignIn = async () => {
@@ -61,7 +72,7 @@ class LoginPage extends Component {
   };
 
   onFacebookSignIn = async () => {
-    try { 
+    try {
       this.setState({ isLoading: true });
       const result = await auth.signInWithPopup(facebookProvider);
       const { user } = result;
@@ -118,7 +129,8 @@ class LoginPage extends Component {
               register="Register"
               classRegister="register-class"
               linewrapper="register-right-up-corner"
-              href="/register"
+              href='/register'
+
             />
           ) : null}
         </div>
@@ -150,5 +162,6 @@ class LoginPage extends Component {
     );
   }
 }
+
 
 export default withRouter(LoginPage);

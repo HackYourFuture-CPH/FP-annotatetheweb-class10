@@ -12,12 +12,35 @@ class BlogCard extends Component {
     showDropdown: false,
   };
 
-  // Input event handler
-  handleInputChange = (event) => {
+  async componentDidMount() {
+    this.getComments();
+  }
+
+  getComments = async () => {
+    const fkAnnotationsId = this.props.annotationId;
+    const response = await fetch(
+      `/api/comments/annotation/${fkAnnotationsId}`,
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+      },
+    );
+    const previousComments = await response.json();
+    this.setState({ inputValue: previousComments });
+  };
+
+  // Input event handler //ON ENTER CHANGE
+  handleInputChange = async (event) => {
     if (event.keyCode === 13) {
+      const input = event.target;
       const newComment = event.target.value;
-      const value = [newComment, ...this.state.inputValue];
-      this.setState({ inputValue: value });
+      const fkAnnotationsId = this.props.annotationId;
+      const fkUserId = JSON.parse(localStorage.getItem('user_id')) || null;
+      await this.postComment(newComment, fkAnnotationsId, null, fkUserId);
+      await this.getComments();
+      input.value = '';
     }
   };
 
@@ -29,6 +52,34 @@ class BlogCard extends Component {
       this.setState({ showDropdown: true });
     }
   };
+
+  async postComment(description, fkAnnotationsId, fkCommentsId, fkUserId) {
+    await fetch('/api/comments/', {
+      method: 'POST',
+      mode: 'cors',
+      cache: 'no-cache',
+      credentials: 'same-origin',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        description,
+        fk_annotations_id: fkAnnotationsId,
+        fk_comments_id: fkCommentsId,
+        fk_user_id: fkUserId,
+      }),
+    })
+      .then((response) => {
+        if (response.status >= 400 && response.status < 600) {
+          throw new Error('Something went wrong with response from server. Maybe you should write shorter comment.');
+        }
+        return response;
+      })
+      .catch((error) => {
+        // Your error is here!
+        alert(error);
+      });
+  }
 
   render() {
     const titleArray = [

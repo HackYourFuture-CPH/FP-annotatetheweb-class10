@@ -68,15 +68,7 @@ class Home extends Component {
           // Save screenshot into local storage
           const screenshot_key = data.key;
           const screenshot_id = data.id;
-          localStorage.setItem(
-            'screenshot_key',
-            JSON.stringify(screenshot_key),
-          );
-          localStorage.setItem(
-            'screenshot_id',
-            JSON.stringify(screenshot_id),
-          );
-          this.props.history.push('/projects');
+          this.props.history.push(`/projects/${screenshot_id}`);
         });
         // If user wants mobile size screenshot
       } else {
@@ -91,15 +83,7 @@ class Home extends Component {
           // Save screenshot into local storage
           const screenshot_key = data.key;
           const screenshot_id = data.id;
-          localStorage.setItem(
-            'screenshot_key',
-            JSON.stringify(screenshot_key),
-          );
-          localStorage.setItem(
-            'screenshot_id',
-            JSON.stringify(screenshot_id),
-          );
-          this.props.history.push('/projects');
+          this.props.history.push(`/projects/${screenshot_id}`);
         });
       }
     });
@@ -151,13 +135,9 @@ class Home extends Component {
     this.setState({ urlValue: event.target.value });
   }
 
-
   onLogOut = () => {
     const user_id = 1;
-    const screenshot_key = '';
     localStorage.setItem('user_id', JSON.stringify(user_id));
-    localStorage.setItem('screenshot_key', JSON.stringify(screenshot_key));
-
     doSignOut();
   };
 

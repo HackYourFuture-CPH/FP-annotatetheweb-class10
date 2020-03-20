@@ -16,7 +16,8 @@ import Loading from '../../components/Loading/Loading.component';
 import HomePageImage from '../../assets/images/HomePageImage.png';
 import AnnotationWrapper from '../../components/Annotation/AnnotationWrapper';
 
-class ProjectPage extends Component {
+
+class ProjectPage extends Component { 
   state = {
     user: null,
     screenshotsKey: ' ',
@@ -25,6 +26,19 @@ class ProjectPage extends Component {
     userName: '',
     haveAnnotations: false
   };
+
+  async componentDidMount() {
+    // Get screenshot_id from url
+    const screenshotId = location.pathname.split("/").pop()
+    let screenshotsKey;
+    // Get screenshot key using screenshot_id
+    fetch(`api/screenshots/screenshot_id/${screenshotId}`)
+      .then((res) => res.json())
+      .then((data) => {
+        screenshotsKey = data[0].key;
+        this.setState({ screenshotsKey, screenshotId }, this.reloadAnnotations);
+      });
+  }
 
   async getUser() {
     const userId = JSON.parse(localStorage.getItem('user_id')) || null;
@@ -39,7 +53,6 @@ class ProjectPage extends Component {
       }
     }    
   }
-
   async componentDidMount() {
     const screenshotsKey =
       JSON.parse(localStorage.getItem('screenshot_key')) || [];
@@ -48,7 +61,6 @@ class ProjectPage extends Component {
       this.getUser();
     this.setState({ screenshotsKey, screenshotId }, this.reloadAnnotations);
   }
-
   // eslint-disable-next-line react/sort-comp
   getScreenshotURL = (screenshotKey) => {
     const apiEndpoint = 'https://annotatetheweb.z16.web.core.windows.net/';

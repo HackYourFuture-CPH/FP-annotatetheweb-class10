@@ -31,7 +31,9 @@ class EditorComponent extends Component {
     this.props.onChange(this.props.annotation, data);
   };
 
-  handleCancelClick = () => {};
+  handleCancelClick = () => {
+    this.props.onSubmit('clicked');
+  };
 
   render() {
     return (
@@ -60,7 +62,7 @@ class EditorComponent extends Component {
           <button
             type="submit"
             className="annotation-form-btn annotation-form-btn-save"
-            onClick={this.props.onSubmit}
+            onClick={() => this.props.onSubmit('')}
           >
             Save
           </button>

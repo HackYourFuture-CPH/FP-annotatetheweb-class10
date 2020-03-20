@@ -25,7 +25,7 @@ router.post('/', (req, res) => {
 router.get('/annotation/:fk_annotations_id', (req, res, next) => {
   commentsController
     .getCommentsForAnnotation(req.params.fk_annotations_id)
-    .then((result) => res.json(result))
+    .then((result) => { res.json(result)})
     .catch(next);
 });
 
