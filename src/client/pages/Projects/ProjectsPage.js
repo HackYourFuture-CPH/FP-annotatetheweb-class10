@@ -14,7 +14,8 @@ import Loading from '../../components/Loading/Loading.component';
 import HomePageImage from '../../assets/images/HomePageImage.png';
 import AnnotationWrapper from '../../components/Annotation/AnnotationWrapper';
 
-class ProjectPage extends Component {
+
+class ProjectPage extends Component { 
   state = {
     user: null,
     screenshotImage: '',
