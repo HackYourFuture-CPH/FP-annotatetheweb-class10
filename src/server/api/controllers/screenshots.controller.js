@@ -19,7 +19,7 @@ const getScreenshotByKey = (key) => {
 
 const createScreenshot = async (body) => {
   const response = await fetch(
-    `https://api.annotatetheweb.com/screenshot/1.0/RequestScreenshot?url=${body.url}`,
+    `https://api.annotatetheweb.com/screenshot/1.0/RequestScreenshot?url=${body.url}&width=${body.width}`,
     {
       method: 'POST', 
       mode: 'cors',

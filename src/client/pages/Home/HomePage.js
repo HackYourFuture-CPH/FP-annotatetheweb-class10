@@ -55,6 +55,7 @@ class Home extends Component {
     this.setState({ screenshotUrl: value }, () => {
       // Check if desktop or mobile screenshot is requested
       if (this.state.desktopSize) {
+        console.log('laptop size');
         const width = 1342; // These numbers should be adjusted ??
         const height = 1152; // These numbers should be adjusted??
         this.postData('/api/screenshots/', {
@@ -63,13 +64,13 @@ class Home extends Component {
           width,
           fk_project_id: project_id,
         }).then((data) => {
-          // Save screenshot into local storage
-          const screenshot_key = data.key;
+          // Use screenshot_id in url
           const screenshot_id = data.id;
           this.props.history.push(`/projects/${screenshot_id}`);
         });
         // If user wants mobile size screenshot
       } else {
+        console.log('mobile size');
         const width = 640; // These numbers should be adjusted ??
         const height = 960; // These numbers should be adjusted ??
         this.postData('/api/screenshots/', {
@@ -78,8 +79,7 @@ class Home extends Component {
           width,
           fk_project_id: project_id,
         }).then((data) => {
-          // Save screenshot into local storage
-          const screenshot_key = data.key;
+          // Use screenshot_id in url
           const screenshot_id = data.id;
           this.props.history.push(`/projects/${screenshot_id}`);
         });
