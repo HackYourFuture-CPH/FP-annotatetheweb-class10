@@ -55,7 +55,7 @@
     "mysql2": "^1.6.5",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
-    "react-image-annotation": "^0.9.10",
+    "react-image-annotation": "zkwsk/react-image-annotation#master",
     "react-router-dom": "^5.0.1",
     "react-scripts": "^3.3.0",
     "react-share": "^4.0.1",
