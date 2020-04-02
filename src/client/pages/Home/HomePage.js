@@ -63,8 +63,7 @@ class Home extends Component {
           width,
           fk_project_id: project_id,
         }).then((data) => {
-          // Save screenshot into local storage
-          const screenshot_key = data.key;
+          // Use screenshot_id in url
           const screenshot_id = data.id;
           this.props.history.push(`/projects/${screenshot_id}`);
         });
@@ -78,8 +77,7 @@ class Home extends Component {
           width,
           fk_project_id: project_id,
         }).then((data) => {
-          // Save screenshot into local storage
-          const screenshot_key = data.key;
+          // Use screenshot_id in url
           const screenshot_id = data.id;
           this.props.history.push(`/projects/${screenshot_id}`);
         });
