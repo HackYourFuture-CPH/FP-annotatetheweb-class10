@@ -30,6 +30,12 @@ class LoginPage extends Component {
     this.setState({ [e.target.type]: e.target.value });
   };
 
+  onEnter = (event) => {
+    if (event.key === 'Enter') {
+      this.onLoginClick(event);
+    }
+  }
+
   onLoginClick = (event) => {
     event.preventDefault();
     if (this.state.password && this.state.email) {
@@ -137,6 +143,7 @@ class LoginPage extends Component {
               onFacebookSignIn={this.onFacebookSignIn}
               onTwitterSignIn={this.onTwitterSignIn}
               displayController="login-part-display-controller"
+              onKeyDown={this.onEnter}
             />
           )}
           {user && (

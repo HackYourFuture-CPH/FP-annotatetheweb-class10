@@ -10,6 +10,7 @@ const FormField = ({
   inputClass = { inputClass },
   changeHandler,
   name,
+  onKeyDown
 }) => {
   return (
     <label className={text}>
@@ -20,6 +21,8 @@ const FormField = ({
         placeholder={textHolder}
         onChange={changeHandler}
         className={inputClass}
+        onKeyDown={onKeyDown}
+
       />
     </label>
   );
