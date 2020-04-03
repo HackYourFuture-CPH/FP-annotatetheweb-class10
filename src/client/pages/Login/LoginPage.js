@@ -23,9 +23,14 @@ class LoginPage extends Component {
       email: null,
       password: null,
       isLoading: false,
+      screenshotsKey: ""
     };
   }
-
+  async componentDidMount() {
+    const screenshotsKey =
+      JSON.parse(localStorage.getItem('screenshot_key')) || [];    
+    this.setState({ screenshotsKey });
+  }
   handleChange = (e) => {
     this.setState({ [e.target.type]: e.target.value });
   };
@@ -107,9 +112,14 @@ class LoginPage extends Component {
       },
     })
     const data = await response.json();
-        const { user_id } = data[0];
-        localStorage.setItem('user_id', JSON.stringify(user_id));
-        this.props.history.push('/');
+    const { user_id } = data[0];
+    localStorage.setItem('user_id', JSON.stringify(user_id));
+    const screenshotsKey =
+      JSON.parse(localStorage.getItem('screenshot_key')) || []; 
+    if(screenshotsKey.length=== 0)
+      this.props.history.push('/');
+    else
+      this.props.history.push('/projects');
   };
 
   render() {

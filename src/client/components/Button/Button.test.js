@@ -14,7 +14,7 @@ test('button is clicked and onClick prop is called', () => {
   const title = '...';
   const onClick = jest.fn();
   const { getByText } = render(
-    <Button title={title} onClickHandle={onClick} />,
+    <Button title={title} onClick={onClick} />,
   );
 
   fireEvent.click(getByText(title));

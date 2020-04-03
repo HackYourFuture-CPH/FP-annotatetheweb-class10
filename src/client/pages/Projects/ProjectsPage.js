@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
+import { doSignOut } from '../../firebase/auth';
 import SidebarMenu from '../../components/SidebarMenu/SidebarMenu.component';
 import ProfileSummery from '../../components/ProfileSummary/ProfileSummary.component';
 import Header from '../../components/Header/Header.Component';
@@ -18,11 +20,11 @@ import AnnotationWrapper from '../../components/Annotation/AnnotationWrapper';
 class ProjectPage extends Component { 
   state = {
     user: null,
-    screenshotImage: '',
     screenshotsKey: ' ',
     screenshotId: null,
     annotations: [],
     userName: '',
+    haveAnnotations: false
   };
 
   async componentDidMount() {
@@ -40,12 +42,25 @@ class ProjectPage extends Component {
 
   async getUser() {
     const userId = JSON.parse(localStorage.getItem('user_id')) || null;
-    const response = await fetch(`/api/users/${userId}`);
-    const user = await response.json();
-    const userName = user[0].name;
-    this.setState({ userName });
+    console.log(userId);
+    if(userId){
+      if(userId!==1){      
+        const response = await fetch(`/api/users/${userId}`);
+        const user = await response.json();
+        this.setState({user});
+        const userName = user[0].name;
+        this.setState({ userName });
+      }
+    }    
   }
-
+  async componentDidMount() {
+    const screenshotsKey =
+      JSON.parse(localStorage.getItem('screenshot_key')) || [];
+    const screenshotId =
+      JSON.parse(localStorage.getItem('screenshot_id')) || null;
+      this.getUser();
+    this.setState({ screenshotsKey, screenshotId }, this.reloadAnnotations);
+  }
   // eslint-disable-next-line react/sort-comp
   getScreenshotURL = (screenshotKey) => {
     const apiEndpoint = 'https://annotatetheweb.z16.web.core.windows.net/';
@@ -57,8 +72,25 @@ class ProjectPage extends Component {
       `/api/annotations/screenshot/${this.state.screenshotId}`,
     );
     const annotations = await response.json();
-    this.setState({ annotations });
+      this.setState({ annotations });
+      if(this.state.annotations[0]){
+        this.setState({haveAnnotations: true});
+    }    
   }
+  onRegisterClick = () => {
+    this.props.history.push('/register');
+    this.getUser();
+  };
+  onLogin = () => {
+    this.props.history.push('/login');
+    this.getUser();
+  };
+  onLogOut = () => {
+    const user_id = 1;
+    localStorage.setItem('user_id', JSON.stringify(user_id));    
+    
+    doSignOut();
+  };
 
   render() {
     const profile = {
@@ -76,11 +108,9 @@ class ProjectPage extends Component {
 
     return (
       <Consumer>
-        {() => {
+        {({ isAuthenticated }) => {
           return (
             <div>
-              <div>{this.state.screenshotImage && <Loading />}</div>
-              {!this.state.screenshotImage && (
                 <div>
                   <div className="project-page-container">
                     <SidebarMenu />
@@ -99,28 +129,38 @@ class ProjectPage extends Component {
                         <div>
                           <Header title={headerTitle} />
                         </div>
-                        {this.state.user ? (
+                        {!isAuthenticated ? (
                           <div className="login-block">
                             <div>
                               <Button
                                 buttonClassName="project-page-button"
                                 title="Login"
+                                onClick={this.onLogin}
                               />
                             </div>
                             <div>
-                              <RegisterButton registerButtonTitle="Register" />
+                              <RegisterButton registerButtonTitle="Register" onClick={this.onRegisterClick}/>
                             </div>
                           </div>
                         ) : (
-                          <div className="profile-container">
-                            <ProfileSummery
-                              profileName={this.state.userName}
-                              profileImage={profile}
-                            />
-                          </div>
+                          <React.Fragment>
+                            <div className="logout-block">                            
+                              <Button
+                                buttonClassName="project-page-button"
+                                title="Logout"
+                                onClick={this.onLogOut}
+                              />
+                            </div>                           
+                            <div className="profile-container">
+                              <ProfileSummery
+                                profileName={this.state.userName}
+                                profileImage={profile}
+                              />
+                            </div>
+                          </React.Fragment>
                         )}
                       </div>
-                      {this.state.annotations.length ? (
+                      {this.state.haveAnnotations ? (
                         <BlogCardList annotations={this.state.annotations} />
                       ) : (
                         <MessageParagraph
@@ -133,8 +173,7 @@ class ProjectPage extends Component {
                   <div className="project-page-footer">
                     <Footer />
                   </div>
-                </div>
-              )}
+                </div>              
             </div>
           );
         }}
@@ -143,4 +182,4 @@ class ProjectPage extends Component {
   }
 }
 
-export default ProjectPage;
+export default withRouter(ProjectPage);

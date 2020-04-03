@@ -52,6 +52,8 @@ position: relative;
     border-bottom: solid 2px #CDE769;
     margin-bottom: 30px;
     padding: 10px;
+    height: 130px;
+    justify-items: center;
 }
 @media (max-width: 566px) {
     .project-page-container{

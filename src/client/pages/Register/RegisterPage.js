@@ -19,9 +19,14 @@ class RegisterPage extends Component {
       userName: '',
       email: '',
       password: '',
+      screenshotsKey: ""
     };
   }
-
+  async componentDidMount() {
+    const screenshotsKey =
+      JSON.parse(localStorage.getItem('screenshot_key')) || [];    
+    this.setState({ screenshotsKey });
+  }
   fillUsersTable = async (name, userName, uid) => {
     const response = await fetch('/api/users/', {
       method: 'POST',
@@ -80,37 +85,18 @@ class RegisterPage extends Component {
     }
   };
 
-  // onRegisterClick = async (event, errorMessage) => {
-  //   if (!errorMessage) {
-  //     let uid;
-  //     event.preventDefault();
-  //     await doCreateUserWithEmailAndPassword(
-  //       this.state.email,
-  //       this.state.password,
-  //     )
-  //       .then((data) => {
-  //         alert('new user is created');
-  //         uid = data.user.uid;
-  //       })
-  //       .catch((error) => {
-  //         console.log(error);
-  //       });
-  //     const { name, userName } = this.state;
-  //     this.fillUsersTable(name, userName, uid);
-  //     this.setState({ email: '', password: '', name: '', userName: '' });
-  //     this.props.history.push('/');
-  //   } else {
-  //     console.log(errorMessage);
-  //   }
-  // };
-
-  signInWithGoogle = () => {
-    signInWithGoogle()
+  signInWithGoogle = async() => {
+     signInWithGoogle()
       .then((user) => {
         // eslint-disable-next-line no-console
         console.log('User logged in, using google');
         this.fillUsersTable(user.displayName, user.displayName, user.uid);
-        this.props.history.push('/');
+        // this.getUserId(user.email);
+       this.getUserId(user.uid);       
+        if(this.state.screenshotsKey.length==0)
+          this.props.history.push('/');
+        else
+          this.props.history.push('/projects');
       })
       .catch((error) => {
         // eslint-disable-next-line no-console
@@ -151,7 +137,21 @@ class RegisterPage extends Component {
         alert(error);
       });
   };
-
+  getUserId = async (uid) => {
+    const response = await fetch(`/api/users/uid/${uid}`, {
+      method: 'GET',
+      mode: 'cors',
+      cache: 'no-cache',
+      credentials: 'same-origin',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+    
+    const data = await response.json();
+    const { user_id } = data[0];
+    localStorage.setItem('user_id', JSON.stringify(user_id));
+  }
   onInputChange = ({ name, userName, email, password }) => {
     this.setState({ name, userName, email, password });
   };
