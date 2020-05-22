@@ -3,11 +3,35 @@ import Annotation from 'react-image-annotation';
 import EditorWrapper from './EditorWrapper';
 
 class CustomAnnotation extends Component {
-  state = {
-    annotations: [],
-    annotation: {},
-    data: {},
-  };
+  constructor(props) {
+    super(props);   
+
+    this.state = {
+      annotations: [],
+      annotation: {},
+      data: {},
+    };    
+  }
+
+  componentDidMount() {
+    const annotations = this.props.annotations.map(item => {
+      const annotation = {};
+      annotation.data = {
+        id: item.annotation_id,
+        description: item.description,
+        title: item.title
+      };
+      annotation.geometry = item.area;
+      return annotation;
+    })
+    this.setState({ annotations })
+  }
+  
+  // state = {
+  //   annotations: [],
+  //   annotation: {},
+  //   data: {},
+  // };
 
   onChange = (annotation, value = {}) => {
     this.setState({
@@ -21,7 +45,8 @@ class CustomAnnotation extends Component {
   };
 
   onSubmit = (isClancelClicked) => {
-    let { annotation, annotations, data } = this.state;
+    const { annotation, annotations } = this.state;
+    let { data } = this.state;
     if (isClancelClicked === 'clicked') {
       data = {};
     }
