@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component, withContext } from 'react';
 import DotButton from '../../components/DotButton/DotButton.component';
 import DropDown from '../DropDown/DropDown.component';
 import Input from '../../components/Input/Input.component';
 import CommentList from '../CommentList/CommentList.component';
 import './BlogCardcss.css';
+import { AnnotationContext, AnnotationConsumer } from '../../context/AnnotationContext';
 
 // BlogCard class component
 class BlogCard extends Component {
@@ -15,6 +16,7 @@ class BlogCard extends Component {
   async componentDidMount() {
     this.getComments();
   }
+
 
   getComments = async () => {
     const fkAnnotationsId = this.props.annotationId;
@@ -71,7 +73,9 @@ class BlogCard extends Component {
     })
       .then((response) => {
         if (response.status >= 400 && response.status < 600) {
-          throw new Error('Something went wrong with response from server. Maybe you should write shorter comment.');
+          throw new Error(
+            'Something went wrong with response from server. Maybe you should write shorter comment.',
+          );
         }
         return response;
       })
@@ -90,31 +94,47 @@ class BlogCard extends Component {
     ];
     return (
       <>
-        <div className="work-panel">
-          <div className="blog-card">
-            <div className="menu-right">
-              <DotButton title="..." onClickHandle={this.onClickHandle} />
-              {this.state.showDropdown && (
-                <DropDown
-                  titleArray={titleArray}
-                  onClickHandle={this.onClickHandle}
-                />
-              )}
-            </div>
-            <Input
-              name="blogCardLabel"
-              title={this.props.title}
-              description={this.props.description}
-              placeholder="add comment..."
-              type="input"
-              handleInputChange={this.handleInputChange}
-            />
-          </div>
-          <CommentList inputValue={this.state.inputValue} />
-        </div>
+        <AnnotationConsumer>
+          {( context ) => {
+            return (
+              <div className="work-panel">
+                <div
+                  className="blog-card"
+                  onMouseEnter={() =>
+                    context.updateAnnotationId(this.props.annotationId)
+                  }
+                  onMouseLeave={() =>
+                    context.updateAnnotationId(null)
+                  }
+                >
+                  <div className="menu-right">
+                    <DotButton title="..." onClickHandle={this.onClickHandle} />
+                    {this.state.showDropdown && (
+                      <DropDown
+                        titleArray={titleArray}
+                        onClickHandle={this.onClickHandle}
+                      />
+                    )}
+                  </div>
+                  <Input
+                    name="blogCardLabel"
+                    title={this.props.title}
+                    description={this.props.description}
+                    placeholder="add comment..."
+                    type="input"
+                    handleInputChange={this.handleInputChange}
+                  />
+                </div>
+                <CommentList inputValue={this.state.inputValue} />
+              </div>
+            );
+          }}
+        </AnnotationConsumer>
       </>
     );
   }
 }
+
+BlogCard.contextType = AnnotationContext;
 
 export default BlogCard;

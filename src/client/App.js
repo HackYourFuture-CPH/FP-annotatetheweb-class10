@@ -9,35 +9,38 @@ import ScreenshotsPage from './pages/Screenshots/ScreenshotsPage';
 import UserPage from './pages/User/UserPage';
 import ErrorPage from './pages/ErrorPage/ErrorPage';
 import { Provider } from './context/AuthContext';
+import { AnnotationProvider } from './context/AnnotationContext';
 
 function App() {
   return (
     <Provider>
-      <Router>
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route exact path="/register">
-            <RegisterPage />
-          </Route>
-          <Route exact path="/login">
-            <LoginPage />
-          </Route>
-          <Route path="/projects">
-            <ProjectsPage />
-          </Route>
-          <Route exact path="/screenshots">
-            <ScreenshotsPage />
-          </Route>
-          <Route exact path="/user">
-            <UserPage />
-          </Route>
-          <Route exact path="*">
-            <ErrorPage />
-          </Route>
-        </Switch>
-      </Router>
+      <AnnotationProvider >
+        <Router>
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route exact path="/register">
+              <RegisterPage />
+            </Route>
+            <Route exact path="/login">
+              <LoginPage />
+            </Route>
+            <Route path="/projects">
+              <ProjectsPage />
+            </Route>
+            <Route exact path="/screenshots">
+              <ScreenshotsPage />
+            </Route>
+            <Route exact path="/user">
+              <UserPage />
+            </Route>
+            <Route exact path="*">
+              <ErrorPage />
+            </Route>
+          </Switch>
+        </Router>
+      </AnnotationProvider>
     </Provider>
   );
 }
