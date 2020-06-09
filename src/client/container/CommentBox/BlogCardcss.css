@@ -16,7 +16,8 @@
     border-width: 2px;
     border-color: hsl(72, 9%, 68%);
 }
-.blog-card:hover{
+.blog-card:hover,
+.blog-card-hover{
     border-color: hsl(71, 53%, 77%);
 }
 

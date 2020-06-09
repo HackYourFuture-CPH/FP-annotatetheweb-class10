@@ -88,8 +88,6 @@ class CustomAnnotation extends Component {
       <AnnotationConsumer>
         {(context) => {
           const highlightedAnnotation = context.state.annotationId ? this.state.annotations.find(ann => ann.data.id === context.state.annotationId) : null;
-          // console.log('highlightedAnnotation', highlightedAnnotation)
-          // console.log('context var from annotation', context.state.annotationId)
           return (
             <div className="App">
               <Annotation className="x"
@@ -104,23 +102,46 @@ class CustomAnnotation extends Component {
                 renderContent={({ annotation }) => {
                   const { geometry } = annotation;
                   return (
-                    <div className="y"
-                      key={annotation.data.id}
-                      style={{
-                        background: 'black',
-                        color: 'white',
-                        padding: 10,
-                        position: 'absolute',
-                        fontSize: 12,
-                        left: `${geometry.x}%`,
-                        top: `${geometry.y + geometry.height}%`,
-                      }}
-                    >
-                      <div className="z">{annotation.data.title}</div>
-                      {annotation.data && annotation.data.text}
+                    <div key={annotation.data.id}>
+                      <div                      
+                        onMouseEnter={() =>
+                          context.updateAnnotationId(annotation.data.id)
+                        }
+                        onMouseLeave={() =>
+                          context.updateAnnotationId(null)
+                        }
+                        style={{
+                          position: 'absolute',
+                          left: `${geometry.x}%`,
+                          top: `${geometry.y}%`,
+                          height: `${geometry.height}%`,
+                          width: `${geometry.width}%`,
+                        }}>
+                      </div>
+                      <div
+                        onMouseEnter={() =>
+                          context.updateAnnotationId(annotation.data.id)
+                        }
+                        onMouseLeave={() =>
+                          context.updateAnnotationId(null)
+                        }                        
+                        style={{
+                          background: 'black',
+                          color: 'white',
+                          padding: 10,
+                          position: 'absolute',
+                          fontSize: 12,
+                          left: `${geometry.x}%`,
+                          top: `${geometry.y + geometry.height}%`,
+                          maxWidth: `${geometry.width}%`,
+                        }}
+                      >
+                        <div>{annotation.data.title}</div>
+                        {annotation.data && annotation.data.text}
+                      </div>
                     </div>
                   );
-                }}                
+                }}  
                 renderEditor={() => (
                   <EditorWrapper
                     onChange={this.onChange}

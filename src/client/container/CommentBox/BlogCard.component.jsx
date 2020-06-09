@@ -96,10 +96,11 @@ class BlogCard extends Component {
       <>
         <AnnotationConsumer>
           {( context ) => {
+            const highlightedAnnotation = context.state.annotationId;
             return (
               <div className="work-panel">
                 <div
-                  className="blog-card"
+                  className={highlightedAnnotation === this.props.annotationId ? "blog-card blog-card-hover" : "blog-card"}
                   onMouseEnter={() =>
                     context.updateAnnotationId(this.props.annotationId)
                   }
