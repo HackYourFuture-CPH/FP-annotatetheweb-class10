@@ -1,10 +1,13 @@
-import React, { Component, withContext } from 'react';
+import React, { Component } from 'react';
 import DotButton from '../../components/DotButton/DotButton.component';
 import DropDown from '../DropDown/DropDown.component';
 import Input from '../../components/Input/Input.component';
 import CommentList from '../CommentList/CommentList.component';
 import './BlogCardcss.css';
-import { AnnotationContext, AnnotationConsumer } from '../../context/AnnotationContext';
+import {
+  AnnotationContext,
+  AnnotationConsumer,
+} from '../../context/AnnotationContext';
 
 // BlogCard class component
 class BlogCard extends Component {
@@ -16,7 +19,6 @@ class BlogCard extends Component {
   async componentDidMount() {
     this.getComments();
   }
-
 
   getComments = async () => {
     const fkAnnotationsId = this.props.annotationId;
@@ -95,18 +97,20 @@ class BlogCard extends Component {
     return (
       <>
         <AnnotationConsumer>
-          {( context ) => {
+          {(context) => {
             const highlightedAnnotation = context.state.annotationId;
             return (
               <div className="work-panel">
                 <div
-                  className={highlightedAnnotation === this.props.annotationId ? "blog-card blog-card-hover" : "blog-card"}
+                  className={
+                    highlightedAnnotation === this.props.annotationId
+                      ? 'blog-card blog-card-hover'
+                      : 'blog-card'
+                  }
                   onMouseEnter={() =>
                     context.updateAnnotationId(this.props.annotationId)
                   }
-                  onMouseLeave={() =>
-                    context.updateAnnotationId(null)
-                  }
+                  onMouseLeave={() => context.updateAnnotationId(null)}
                 >
                   <div className="menu-right">
                     <DotButton title="..." onClickHandle={this.onClickHandle} />
