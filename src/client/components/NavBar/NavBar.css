@@ -10,19 +10,21 @@
 
 .nav-elements {
    display: flex; 
-  list-style-type: none;     
+   list-style-type: none;     
 }
 .nav-elements li {
- padding: 5px 10px ;  
+  padding: 5px 10px ;  
 }
 .nav-bar {
-display: flex;
-flex-direction: row;
-float:right;
-margin:30px 10rem 20px 10px;
+  display: flex;
+  flex-direction: row;
+  float:right;
+  margin:30px 10rem 20px 10px;
 }
 .nav-link {
-color: #2D2E36;
+  font-family: 'Open Sans', sans-serif;
+  color: #2D2E36;
+  font-size: 16px;
 }
 .nav-link:link {
   text-decoration: none;
