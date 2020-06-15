@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import Header from '../../components/Header/Header.Component';
 import FormLoginRegister from '../../components/FormLoginRegister/FormLoginRegister.component';
 import imageLogin from '../../assets/images/imageLogin.jpg';
+import '../Register/Register.css';
 import FormLogin from '../../components/FormLogin/FormLogin.component';
 import './LoginPage.css';
 import '../../components/FormLoginRegister/FormLoginRegister.css';
@@ -34,30 +35,30 @@ class LoginPage extends Component {
     if (event.key === 'Enter') {
       this.onLoginClick(event);
     }
-  }
+  };
 
   onLoginClick = (event) => {
     event.preventDefault();
     if (this.state.password && this.state.email) {
-      auth.signInWithEmailAndPassword(this.state.email, this.state.password)
-      .then((data) => {
-        this.getUserId(data.user.uid);
-        this.props.history.push('/');
-      })
-      .catch((error) => {
-        if (error.code === 'auth/wrong-password') {
-          alert('Wrong password. Please try again.')
-        } else if (error.code === 'auth/user-not-found') {
-          alert('Email not found.')
-        } else {
+      auth
+        .signInWithEmailAndPassword(this.state.email, this.state.password)
+        .then((data) => {
+          this.getUserId(data.user.uid);
+          this.props.history.push('/');
+        })
+        .catch((error) => {
+          if (error.code === 'auth/wrong-password') {
+            alert('Wrong password. Please try again.');
+          } else if (error.code === 'auth/user-not-found') {
+            alert('Email not found.');
+          } else {
             alert("There's something wrogn. Try again.");
-        }
-        this.getUserId(this.state.email);
-      })
+          }
+          this.getUserId(this.state.email);
+        });
     } else {
       alert('Please type your username and password.');
     }
-    
   };
 
   onGoogleSignIn = async () => {
@@ -105,60 +106,54 @@ class LoginPage extends Component {
       headers: {
         'Content-Type': 'application/json',
       },
-    })
+    });
     const data = await response.json();
-        const { user_id } = data[0];
-        localStorage.setItem('user_id', JSON.stringify(user_id));
-        this.props.history.push('/');
+    const { user_id } = data[0];
+    localStorage.setItem('user_id', JSON.stringify(user_id));
+    this.props.history.push('/');
   };
 
   render() {
     const { user, isLoading } = this.state;
     return (
-      <div className="main-wrapper-login-page">
-        <div className="header-wrapper">
-          <Header title="Annotate the web" />
-          {!user && !isLoading ? (
-            <FormLoginRegister
-              formLoginRegister="form-login-register"
-              text="Do not have account yet? "
-              register="Register"
-              classRegister="register-class"
-              linewrapper="register-right-up-corner"
-              href='/register'
-
-            />
-          ) : null}
-        </div>
-        <div className="body-wrapper">
-          <div className="image-wrapper">
-            <img src={imageLogin} alt="login" className="login-page-image" />
+      <div className="register-wrapper">
+        <div className="login-page">
+          <div className="register-head">
+            <Header title="Annotate the web" />
           </div>
-          {isLoading ? <Loading /> : null}
-          {!isLoading && !user && (
-            <FormLogin
-              handleChange={this.handleChange}
-              login={this.onLoginClick}
-              onGoogleSignIn={this.onGoogleSignIn}
-              onFacebookSignIn={this.onFacebookSignIn}
-              onTwitterSignIn={this.onTwitterSignIn}
-              displayController="login-part-display-controller"
-              onKeyDown={this.onEnter}
-            />
-          )}
-          {user && (
-            <FormButton
-              title="Log Out"
-              buttons="logout-btn"
-              click={this.logout}
-              logo=""
-            />
-          )}
+          <div className="register-content">
+            {isLoading ? <Loading /> : null}
+            {!isLoading && !user && (
+              <>
+                <FormLogin
+                  handleChange={this.handleChange}
+                  login={this.onLoginClick}
+                  onGoogleSignIn={this.onGoogleSignIn}
+                  onFacebookSignIn={this.onFacebookSignIn}
+                  onTwitterSignIn={this.onTwitterSignIn}
+                  onKeyDown={this.onEnter}
+                />
+                <FormLoginRegister
+                  text="Do not have account yet? "
+                  register="Register"
+                  linewrapper="register-link-to-login-page"
+                  href="/register"
+                />
+              </>
+            )}
+            {/* {user && (
+              <FormButton
+                title="Log Out"
+                buttons="logout-btn"
+                click={this.logout}
+                logo=""
+              />
+            )} */}
+          </div>
         </div>
       </div>
     );
   }
 }
-
 
 export default withRouter(LoginPage);
