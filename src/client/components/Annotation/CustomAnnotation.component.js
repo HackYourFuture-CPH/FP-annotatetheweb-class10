@@ -1,13 +1,41 @@
 import React, { Component } from 'react';
 import Annotation from 'react-image-annotation';
 import EditorWrapper from './EditorWrapper';
+import {
+  AnnotationContext,
+  AnnotationConsumer,
+} from '../../context/AnnotationContext';
 
 class CustomAnnotation extends Component {
-  state = {
-    annotations: [],
-    annotation: {},
-    data: {},
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      annotations: [],
+      annotation: {},
+      data: {},
+    };
+  }
+
+  componentDidMount() {
+    const annotations = this.props.annotations.map((item) => {
+      const annotation = {};
+      annotation.data = {
+        id: item.annotation_id,
+        description: item.description,
+        title: item.title,
+      };
+      annotation.geometry = item.area;
+      return annotation;
+    });
+    this.setState({ annotations });
+  }
+
+  // state = {
+  //   annotations: [],
+  //   annotation: {},
+  //   data: {},
+  // };
 
   onChange = (annotation, value = {}) => {
     this.setState({
@@ -21,7 +49,8 @@ class CustomAnnotation extends Component {
   };
 
   onSubmit = (isClancelClicked) => {
-    let { annotation, annotations, data } = this.state;
+    const { annotation, annotations } = this.state;
+    let { data } = this.state;
     if (isClancelClicked === 'clicked') {
       data = {};
     }
@@ -56,47 +85,86 @@ class CustomAnnotation extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Annotation
-          src={this.props.screenshot.src}
-          alt={this.props.screenshot.alt}
-          annotations={this.state.annotations}
-          type={this.state.type}
-          value={this.state.annotation}
-          onChange={this.onChange}
-          renderContent={({ annotation }) => {
-            const { geometry } = annotation;
-            return (
-              <div
-                key={annotation.data.id}
-                style={{
-                  background: 'black',
-                  color: 'white',
-                  padding: 10,
-                  position: 'absolute',
-                  fontSize: 12,
-                  left: `${geometry.x}%`,
-                  top: `${geometry.y + geometry.height}%`,
+      <AnnotationConsumer>
+        {(context) => {
+          const highlightedAnnotation = context.state.annotationId
+            ? this.state.annotations.find(
+                (ann) => ann.data.id === context.state.annotationId,
+              )
+            : null;
+          return (
+            <div className="App">
+              <Annotation
+                className="x"
+                src={this.props.screenshot.src}
+                alt={this.props.screenshot.alt}
+                annotations={this.state.annotations}
+                type={this.state.type}
+                value={this.state.annotation}
+                onChange={this.onChange}
+                activeAnnotations={
+                  context.state.annotationId ? [highlightedAnnotation] : []
+                }
+                activeAnnotationComparator={(current, active) =>
+                  active.data.id === current.data.id
+                }
+                renderContent={({ annotation }) => {
+                  const { geometry } = annotation;
+                  return (
+                    <div key={annotation.data.id}>
+                      <div
+                        onMouseEnter={() =>
+                          context.updateAnnotationId(annotation.data.id)
+                        }
+                        onMouseLeave={() => context.updateAnnotationId(null)}
+                        style={{
+                          position: 'absolute',
+                          left: `${geometry.x}%`,
+                          top: `${geometry.y}%`,
+                          height: `${geometry.height}%`,
+                          width: `${geometry.width}%`,
+                        }}
+                      />
+                      <div
+                        onMouseEnter={() =>
+                          context.updateAnnotationId(annotation.data.id)
+                        }
+                        onMouseLeave={() => context.updateAnnotationId(null)}
+                        style={{
+                          background: 'black',
+                          color: 'white',
+                          padding: 10,
+                          position: 'absolute',
+                          fontSize: 12,
+                          left: `${geometry.x}%`,
+                          top: `${geometry.y + geometry.height}%`,
+                          maxWidth: `${geometry.width}%`,
+                        }}
+                      >
+                        <div>{annotation.data.title}</div>
+                        {annotation.data && annotation.data.text}
+                      </div>
+                    </div>
+                  );
                 }}
-              >
-                <div>{annotation.data.title}</div>
-                {annotation.data && annotation.data.text}
-              </div>
-            );
-          }}
-          renderEditor={() => (
-            <EditorWrapper
-              onChange={this.onChange}
-              annotation={this.state.annotation}
-              description={this.description}
-              title={this.title}
-              onSubmit={this.onSubmit}
-            />
-          )}
-        />
-      </div>
+                renderEditor={() => (
+                  <EditorWrapper
+                    onChange={this.onChange}
+                    annotation={this.state.annotation}
+                    description={this.description}
+                    title={this.title}
+                    onSubmit={this.onSubmit}
+                  />
+                )}
+              />
+            </div>
+          );
+        }}
+      </AnnotationConsumer>
     );
   }
 }
+
+CustomAnnotation.contextType = AnnotationContext;
 
 export default CustomAnnotation;
