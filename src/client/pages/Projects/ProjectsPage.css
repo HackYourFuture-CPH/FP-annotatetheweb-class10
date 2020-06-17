@@ -56,7 +56,12 @@ position: relative;
 }
 @media (max-width: 566px) {
     .project-page-container{
-        display: block;
+        display: flex;
+        flex-direction: column;
+    }
+    .screenshot-image-container{
+        width: unset;
+        margin-left: 0;
     }
     .screenshot-image {
         width: 100%;
@@ -83,11 +88,9 @@ position: relative;
     .project-page-rightside-innerContainer{        
         display: none;
     }
-    .comment-container{
-    /* position: absolute; */
-    width:100%;
-    z-index: 4;
-    margin-top: 400px;
+    .project-page-rightside-container{
+        max-width: unset;
+        position: unset;
     }
     .no-comment-message{
     margin-top: 100px;

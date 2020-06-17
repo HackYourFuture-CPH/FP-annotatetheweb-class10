@@ -14,7 +14,10 @@ function FormLogin(props) {
   return (
     <div className="login-wrapper">
       <div className={props.displayController}>
-        <FormTitle />
+      <FormTitle
+              formTitle="form-title"
+              text="Sign in to Annotate the web"
+            />
         <div className="social-media-button-wrapper">
           <FormButton
             title="Log In With Google"

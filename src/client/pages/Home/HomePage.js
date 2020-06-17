@@ -152,7 +152,7 @@ class Home extends Component {
       <Consumer>
         {({ isAuthenticated }) => {
           return (
-            <>
+            <div className='home-page'>
               <div className="homeheader-wrapper">
                 <Header title="Annotate the web" />
                 {isAuthenticated ? (
@@ -183,16 +183,16 @@ class Home extends Component {
                 <MobileMenu onClick={this.onRegisterClick}/>
               </div>
               <div className="home-page-image-wrapper">
-                <img
+                {/* <img
                   alt="home"
                   src={imageHomePage}
                   className="home-page-image"
-                />
-                <img
+                /> */}
+                {/* <img
                   alt="home"
                   src={imageHomePageMobile}
                   className="home-page-image-mobile"
-                />
+                /> */}
                 <div className="urlToggleBtn-wrapper">
                   <div className="url-Input">
                     <UrlInput
@@ -236,7 +236,7 @@ class Home extends Component {
               <div className="footer-wrapper">
                 <Footer />
               </div>
-            </>
+            </div>
           );
         }}
       </Consumer>

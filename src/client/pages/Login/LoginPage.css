@@ -22,9 +22,10 @@
     max-width: 40%;
   }
   
-  .login-page-image {
-    width: 100%;
-    height: 85vh;
+  .login-page {
+    height: 100vh;
+    padding-top: 20px;
+    background: url('../../assets/images/imageLogin.jpg') no-repeat 50px 150px;
   }
   
   .register-right-up-corner {
@@ -46,6 +47,10 @@
   
   /* Media querries */
   @media (min-width: 481px) and (max-width: 767px) {
+    .login-page {
+      background: none;
+    }
+
     .register-right-up-corner {
       display: none;
     }
@@ -64,11 +69,6 @@
       margin-right: auto;
     }
   
-    .login-wrapper {
-      padding-top: 4rem;
-      width: 100%;
-    }
-  
     .body-wrapper {
       margin-left: 0;
     }
@@ -84,9 +84,20 @@
       padding-top: 2rem;
       text-align: center;
     }
+
+    .login-wrapper {
+      padding: 0 20px;
+      max-width: 400px;
+      display: flex;
+      justify-content: center;
+  }
   }
   
   @media (max-width: 480px) {
+    .login-page {
+      background: none;
+    }
+
     .register-right-up-corner {
       display: none;
     }
@@ -105,11 +116,6 @@
       margin-right: auto;
     }
   
-    .login-wrapper {
-      padding-top: 4rem;
-      width: 100%;
-    }
-  
     .body-wrapper {
       margin-left: 0;
     }
@@ -124,6 +130,13 @@
       display: block;
       padding-top: 2rem;
       text-align: center;
+    }
+
+    .login-wrapper {
+      padding: 0 20px;
+      max-width: 400px;
+      display: flex;
+      justify-content: center;
     }
   }
   

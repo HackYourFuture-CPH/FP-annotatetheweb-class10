@@ -86,6 +86,7 @@ button.btn-right {
 /*class for div consists .btn-right and .dropdown-contentcontent*/
 
 .menu-right {
+    display: none;
   position: absolute;
   right: 0px;
   top: 0px;
@@ -148,7 +149,7 @@ button.btn-right {
       flex-direction: column;
       justify-content: center;
       align-content: center;
-      position: absolute;
+      /* //position: absolute; */
       /* z-index: 3; */
   }
 }

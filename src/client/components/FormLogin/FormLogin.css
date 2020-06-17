@@ -1,6 +1,6 @@
 .login-wrapper {
-    position: relative;
-    width: 50%;
+    min-width: 400px;
+    max-width: 40%;
   }
   
   .login-part {
@@ -12,7 +12,6 @@
   }
   
   .login-button-wrapper {
-    width: 90%;
     margin: 0 auto;
     padding-top: 1.5rem;
   }
